@@ -7,6 +7,7 @@ public class Quiz1 {
         System.out.println(num3);
         System.out.println(2+4+8);
         System.out.println("num1+num2="+(num1+num2));
+        //-----------------정수 printf출력---------------------------//
         System.out.printf("%d + %d=%d\n", num1, num2, num1 + num2);
         System.out.printf("%d - %d=%d\n", num1, num2, num1 - num2);
         System.out.printf("%d * %d=%d\n", num1, num2, num1 * num2);
@@ -15,7 +16,14 @@ public class Quiz1 {
 
         float fnum1=2.7f, fnum2=1.2f, fnum3=5.4f;
         System.out.println(fnum1-fnum2);
+        //-----------------실수 printf출력---------------------------//
+        //소수점은 1까지만!
         System.out.printf("%.1f + %.1f=%.1f\n", fnum1, fnum2, fnum1+fnum2);
+        System.out.printf("%.1f - %.1f=%.1f\n", fnum1, fnum2, fnum1-fnum2);
+        System.out.printf("%.1f * %.1f=%.1f\n", fnum1, fnum2, fnum1*fnum2);
+        System.out.printf("%.1f / %.1f=%.1f\n", fnum1, fnum2, fnum1/fnum2);
+        System.out.printf("%.1f %% %.1f=%.1f\n", fnum1, fnum2, fnum1%fnum2);
+
         
 
 
