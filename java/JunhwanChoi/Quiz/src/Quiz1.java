@@ -31,7 +31,7 @@ public class Quiz1 {
         System.out.printf("%d + %d= %d\n",num1, num2, num1+num2);
         System.out.printf("%d - %d= %d\n",num1, num2, num1-num2);
 
-        System.out.printf("%.1f * %.1f= %.1f\n",fnum1,fnum2,(fnum1 * fnum2)); // %.1f : 소숫점 1자리로 제한 / 기본 : 소숫점 6자리
+        System.out.printf("%.1f * %.1f= %.1f\n",fnum1,fnum2,(fnum1 * fnum2)); // %.1f : 소숫점 1자리로 제한 / 기본 : 소숫점 6자리.
         System.out.printf("%.2f / %.2f= %.2f\n",fnum1,fnum2,(fnum1 / fnum2));
 
         System.out.printf("%d %% %d = %d\n", num1, num2, num1 % num2 );
