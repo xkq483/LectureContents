@@ -17,5 +17,6 @@ public class Homework2 {
         //4 + 7 + 3.1 + 4.3 = ??
         System.out.printf("%d + %d + %.1f + %.1f = %.1f"
                 , num1, num2, fnum1, fnum2, num1 + num2 + fnum1 + fnum2);
+
     }
 }
