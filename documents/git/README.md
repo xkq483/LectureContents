@@ -47,6 +47,45 @@
 18. git config --global user.name "silenc3502"
 
 17번, 18번은 각자 자신의 깃 계정 이메일과 깃 아이디를 기입해야 한다.
+
+19. 올바르게 입력했는지 확인하기 위해 git config --list 를 입력한다.
+    위의 17번, 18번에서 입력한 email과 name이 보이면 성공!
+20. 테스트를 위해 IntelliJ에서 새로운 프로젝트를 만들도록 한다.
+    (우선 내 사본 저장소에 저장하는 방법부터 진행한다)
+    File -> New -> Project 클릭
+21. Java 설정을 하고 Next 신공을 펼친다.
+    중간에 경로 설정과 이름 설정이 나오는 부분만 주의하자!
+    경로===> D:\java_work\LectureContents\java\SanghoonLee 와 같이 자신의 이름을 선택한다.
+    (여기서 경로는 LectureContents로 앞서서 clone 받은 위치여야 한다)
+    프로젝트명을 설정할때 경로에 프로젝트명과 동일한 글자를 한 번 더 적어준다.
+    예: 경로===> D:\java_work\LectureContents\java\SanghoonLee\SecondJava
+    이름===> SecondJava
+22. 프로젝트 생성 이후 src 폴더를 우클릭 -> New -> Java Class
+    PrintTest 라고 이름을 지어준다.
+23. 아래와 같이 코드를 작성한다.
+
+public class PrintTest {
+    public static void main(String[] args) {
+        // 각자 자신의 이름을 작성하도록 한다.
+        System.out.println("이상훈");
+    }
+}
+
+24. File -> Settings
+25. Version Control -> Git
+26. Test를 눌러서 버전이 잘 나타나는지 확인한다.
+27. GitHub 탭에서 Add Account를 누른다.
+28. Authorize를 진행해주세요.
+29. You have been successfully authorized in GitHub. You can close the page. 메시지가 나오면 성공!
+30. 작업을 전부 진행하고 Apply -> OK로 닫는다.
+31. 이후 상단에 있는 Git -> commit을 누른다.
+32. 그러면 어떤 작업을 했는지 기록하는 창이 나타난다.
+33. '[이상훈]두 번째 자바 작업 + 깃(Git) 사본 저장 연습' 형태로 메시지를 적어주세요.
+    실제 이 부분에는 여러분들이 작업한 내용에 대해 간략하게 적어야 나중에 프로젝트가 수월해집니다.
+    (팀원들간에 서로 어떤 작업을 했는지 파악하는데 활용하곤 합니다)
+    작성 이후 commit을 눌러 작업을 진행한다.
+34. commit 이후 상단의 Git -> push를 눌러서 사본 저장소에 저장을 완료한다.
+35. push를 눌렀을때 메시지가 나올텐데 merge를 누르면 됩니다.
 ```
 
 ## 주의할 부분
