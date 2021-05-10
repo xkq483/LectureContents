@@ -93,3 +93,13 @@ public class PrintTest {
 윈도우에서 git을 사용하는 경우 작업표시줄에 등록한 상태로 띄우면 경로 설정이 이상하게 적용된다.  
 그러므로 올바른 경로를 사용하기 위해서 윈도우 시작 버튼(MS사 로고 - 좌측 하단)을 눌러서  
 Git Bash로 실행을 시켜야 올바른 경로가 적용된다.  
+
+## 이번에는 사본의 내용을 원본으로 업로드 해보자!
+
+```make
+1. 먼저 자신의 사본 저장소로 이동한다(cd, ls, pwd 등의 명령어를 활용하여 이동)
+2. git remote -v 로 사본이 맞는지 확인한다.
+3. git remote add upstream (원본저장소주소)
+   ex) git remote add upstream https://github.com/KHWeb18/LectureContents.git
+4. git remote -v 를 입력하였을때 origin, upstream 두 개가 같이 보일 것이다.
+```
