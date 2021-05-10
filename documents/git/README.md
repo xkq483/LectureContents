@@ -102,4 +102,10 @@ Git Bash로 실행을 시켜야 올바른 경로가 적용된다.
 3. git remote add upstream (원본저장소주소)
    ex) git remote add upstream https://github.com/KHWeb18/LectureContents.git
 4. git remote -v 를 입력하였을때 origin, upstream 두 개가 같이 보일 것이다.
+5. git fetch upstream 를 통해 원격 저장소의 원본 내용을 받아올 준비를 갖춘다.
+6. git merge upstream/main 을 통해 원본의 내용을 전부 땡겨온다.
+
+* 실수로 오타를 입력하여 삭제를 해야 하는 경우엔 아래와 같이 한다.
+
+git remote rm 오타낸이름
 ```
