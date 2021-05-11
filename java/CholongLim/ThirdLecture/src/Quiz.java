@@ -4,8 +4,8 @@ public class Quiz {
     public static void main(String[] args) {
 //        3.if문제
         int i1 = 3, i2 = 2;
-        if (i2 % i1 >= 0) {
-            System.out.println("홀수이다");
+        if (i1 % i2 > 0) {
+            System.out.println("3은 홀수이다");
         }
 //        4.Scanner(키보드 입력) 문제
         Scanner scan = new Scanner(System.in);
