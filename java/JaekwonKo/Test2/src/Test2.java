@@ -30,7 +30,7 @@ public class Test2 {
         System.out.printf("%f / %f = %f\n", fnum3, fnum1, fnum3 / fnum1);
         System.out.printf("%f * %f = %f\n", fnum3, fnum1, fnum3 * fnum1);
         System.out.printf("%f %% %f = %f\n", fnum3, fnum1, fnum3 % fnum1);
-
+        System.out.println("123");
 
     }
 }
