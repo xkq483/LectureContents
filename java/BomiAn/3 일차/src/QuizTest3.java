@@ -15,7 +15,7 @@ public class QuizTest3 {
                 System.out.println(select + " 는 짝수!");
             } else {
                 System.out.println(select + " 는 홀수!");
-            }
-        }
-    }
-}
+                  }
+                        }
+                    }
+                }
