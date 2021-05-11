@@ -134,7 +134,7 @@ public class Lecture {
         //    %%라고 적으면 아! 이것은 변수를 바꿔치기할려고 놓은 양식이 아니라
         //    진짜 % 기호를 표기하려고 적은 문자구나! 라는 것을 인식하게 만들기 위한 용도라 보면 됩니다.
         System.out.printf("%d %% %d = %d\n", num1, num2, num1 % num2);
-        System.out.printf("%.2f %% %.10f = %.3f\n", fnum2, fnum1, fnum2 % fnum1);
+        System.out.printf("%.2f %% %.3f = %.5f\n", fnum2, fnum1, fnum2 % fnum1);
 
         // Q: 오차가 발생하는 이유가 무엇인가요 ?
         // A: float이든, double이든 전부 데이터를 표현하는 bit(비트) 수에 한계가 있습니다.
