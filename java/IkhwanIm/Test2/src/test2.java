@@ -1,11 +1,14 @@
 public class test2 {
     public static void main(String[] args) {
-        int a = 2, b= 3;
-        float c = 2.3f, d= 3.5f;
-        double e = 2.3f, f= 3.5f;
+        int num1 = 6, num2 = 4;
+        float fnum1 = 3.3f, fnum2 = 4.2f, fnum3 = 5.2f;
 
-        System.out.println(a + b);
-        System.out.println(c + d);
-        System.out.println(e + f);
+        System.out.printf("%d + %d = %d\n", num1, num2, num1 + num2);
+        System.out.printf("%d - %d = %d\n", num1, num2, num1 - num2);
+        System.out.printf("%d / %d = %d\n", num1, num2, num1 / num2);
+        System.out.printf("%d * %d = %d\n", num1, num2, num1 * num2);
+
+        System.out.printf("%d %% %d = %d\n", num1, num2, num1 % num2);
+        System.out.printf("%.2f %% %.10f = %.3f\n", fnum2, fnum1, fnum2 % fnum1);
     }
 }
