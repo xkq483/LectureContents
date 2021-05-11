@@ -1,5 +1,6 @@
 public class TrickTest {
     public static void main(String[] args) {
+        //and와 or을 사용할 때 특성에 따른 오류
         int num1 =3,num2=4;
 
         if((num1 % 3 == 1) && (num2++ % 5==0)){

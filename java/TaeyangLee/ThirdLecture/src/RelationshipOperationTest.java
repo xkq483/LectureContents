@@ -1,5 +1,6 @@
 public class RelationshipOperationTest {
     public static void main(String[] args) {
+        //논리연산자 사용하기!!
         int num1 = 3, num2 = 7;
         int num3 = 21, num4 = 24;
         if ((num3 % num1 == 0) && (num3 % num2 == 0)) {
