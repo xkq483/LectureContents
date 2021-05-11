@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Prob68 {
+public class Prov67 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 //        int select = 1;
