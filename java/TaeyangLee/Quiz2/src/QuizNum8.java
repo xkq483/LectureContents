@@ -22,6 +22,8 @@ public class QuizNum8 {
                 System.out.println("짝수");
 
             }
+            if(num1 ==0)
+                break;
 
 
         }
