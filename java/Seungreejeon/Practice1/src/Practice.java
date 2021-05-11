@@ -11,7 +11,7 @@ public class Practice {
         int num8;
         num8 = 129;
 
-        System.out.println("\t정수 129 바이트 =" + (byte)num8);//
+        System.out.println("\t정수 129 바이트 =" + (byte)num8);
 
 
 
