@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class number8 {
+public class Number8munzae {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

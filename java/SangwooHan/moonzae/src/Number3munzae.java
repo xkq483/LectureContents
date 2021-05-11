@@ -1,4 +1,4 @@
-public class ifstudy {
+public class Number3munzae {
     public static void main(String[] args) {
         int i =3;
         if(i % 2 == 1){

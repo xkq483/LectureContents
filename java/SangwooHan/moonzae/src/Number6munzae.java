@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class baesu3 {
+public class Number6munzae {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("숫자를입력해보시오");
