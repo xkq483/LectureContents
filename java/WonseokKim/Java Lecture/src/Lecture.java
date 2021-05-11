@@ -137,6 +137,7 @@ public class Lecture {
         System.out.printf("%.2f %% %.3f = %.5f\n", fnum2, fnum1, fnum2 % fnum1);
 
         // Q: 오차가 발생하는 이유가 무엇인가요 ?
+        //
         // A: float이든, double이든 전부 데이터를 표현하는 bit(비트) 수에 한계가 있습니다.
         //    float은 32비트, double은 64비트
         //    부호비트, 지수비트, 소수점비트 <<<--- 표현에 한계가 있어서 오차가 발생합니다.
