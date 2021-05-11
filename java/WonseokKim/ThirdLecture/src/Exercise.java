@@ -35,9 +35,9 @@ public class Exercise {
         System.out.println("3번째 문제 입니다.");
 
         int i = 0;
-        while(i<10){
-            i++;
-            System.out.println(2*i);
+        while(i++<10){
+            System.out.println(i*2);
+
         }
 
         System.out.println(" 끝 ");
