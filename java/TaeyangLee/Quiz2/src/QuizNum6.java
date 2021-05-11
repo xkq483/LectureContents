@@ -9,5 +9,8 @@ public class QuizNum6 {
         if(num1 % 3 == 0){
             System.out.println(num1+"은 3의 배수입니다");
         }
+        else{
+            System.out.println(num1+"은 3의 배수가 아닙니다");
+        }
     }
 }
