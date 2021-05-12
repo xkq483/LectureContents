@@ -16,7 +16,7 @@ public class Quiz7 {
 
         System.out.print("1 ~ n까지 숫자중 3의 배수를 찾아봅시다 (n을 입력하세요)");
         int loop = scan.nextInt();
-        //반복,숫자를 입력하면 루프에 들어가는건가..
+        //반복,숫자를 입력하면 루프에 들어가는건가
         int i = 1;
 
         while (i <= loop) { //1보다 크거나 같으면 반복

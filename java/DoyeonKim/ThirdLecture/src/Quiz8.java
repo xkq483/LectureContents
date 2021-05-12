@@ -4,7 +4,7 @@ public class Quiz8 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int select = 1;
-        //왜 1이지..?뭐였을까..
+
 
         while(select != 0) {
             //0이 아니라면 참, 계속 실행
