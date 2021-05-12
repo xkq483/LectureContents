@@ -13,7 +13,10 @@ public class ScannerTest {
         System.out.print("num2입력: ");
         int num2= scan.nextInt();
 
-        System.out.printf("%d + %d = %d\n",num1,num2,num1+num2);
+        System.out.print("num2입력: ");
+        int num3= scan.nextInt();
+
+        System.out.printf("%d + %d + %d = %d\n",num1,num2,num3,num1+num2+num3);
 
 
 

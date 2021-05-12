@@ -9,7 +9,8 @@ public class IfWhileScannerTest {
 
         Scanner scan= new Scanner(System.in);
 
-        int num=0;
+
+        int num=1;
 
         while(true)
         {
