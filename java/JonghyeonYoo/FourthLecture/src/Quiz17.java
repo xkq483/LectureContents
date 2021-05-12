@@ -6,8 +6,8 @@ public class Quiz17 {
 
         System.out.println("컴퓨터 주사위 게임을 해보자!!");
         int A = 0, B = 0;
-
-        for(A=1; A < 2; A++){
+        int i;
+        for(i=1; i < 2; i++){
             A +=((int)(Math.random() * 6 + 1));
             B +=((int)(Math.random() * 6 + 1));
 
