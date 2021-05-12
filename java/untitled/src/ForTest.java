@@ -21,5 +21,21 @@ public class ForTest {
         for(int i = 1; i <= 10; i++) {
             System.out.println("i = " + i);
         }
+        /*
+        //while(true)무한루프
+        for(;;) {
+            System.out.println("나도 무한루프야");
+
+        }
+        //활용1 i가 1씩 계속 증가
+        for(int i = 1;;i++) {
+            System.out.println("i = " + i);
+        }
+        //활용2 i는 1씩 증가 j 는 1 감소
+        for (int i = 1, j = 0; ; i++,j--) {
+            System.out.println("i = " + i + "j = " + j);
+        }
+         */
+
     }
 }
