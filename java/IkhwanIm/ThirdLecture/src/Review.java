@@ -29,8 +29,8 @@ public class Review {
         //    num5 += 2;
         //    System.out.println(num5);
         //라고 썼더니 4~22까지의 수가 출력된다;;
-        //생각해보니 sout을 맨 아래에 쓰면 2에 2를 더한 값이 첫째 값으로 출력된다는
-        //것을 꺠달았다..
+        //생각해보니 sout을 맨 아래에 쓰면 2에 2를 더한 값이
+        //첫째 값으로 출력된다는 것을 꺠달았다..
         //그래서
         //    System.out.println(num5);
         //    num5 += 2;
@@ -56,13 +56,14 @@ public class Review {
         //            System.out.println("1 ~ num7 까지 3의 배수를 출력합니다: " + i);
         //        }
         //        i++;
-                // if(i % 3==0)에 모르고 i 대신 num7을 넣었더니 num7까지의 모든 수를 출력해버렸다.
+        // if(i % 3==0)에 모르고 i 대신 num7을 넣었더니 num7까지의 모든 수를 출력해버렸다.
         //}
 
         //8번. 키보드 입력이 0이 들어오기 전까지 무한반복 및 짝수 홀수 판별
         
         int num8 = 1; //처음에 num8에 1을 선언하는 이유??
-        while(num8 != 0) {   //num8 ==0 이라고 하지않고 num8 != 이라고 선언하는 이유??
+        while(num8 != 0) {
+            //num8 ==0 이라고 하지않고 num8 != 이라고 선언하는 이유??
             System.out.println("짝수 홀수 판별하기");
             num8 = sc.nextInt();
 
