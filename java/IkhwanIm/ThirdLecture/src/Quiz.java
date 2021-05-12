@@ -24,8 +24,10 @@ public class Quiz {
         //5번. while 문제
         int j = 0;
         while (j++ < 20) {
-            if(j%2 ==0)
-            System.out.println(j);
+            if (j % 2 == 0)
+                System.out.println(j);
+        }
+
         }
     }
-}
+
