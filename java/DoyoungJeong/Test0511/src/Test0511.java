@@ -50,6 +50,7 @@ public class Test0511 {
         System.out.println();
         System.out.println("문제8");
         int num5 = 2;   //지금 여기서 변수를 지정하지 않으면 와일문 소괄호에서 조건문 수립이 안되니까 미리 변수를 지정하는건 알겠습니다만.. 뭔가 더 깔끔한 방법이있을것 같은데 잘 모르겠습니다.
+        //그리고 처음 문제를 풀때 num5 변수 지정을 int num5;라고 값을 넣지 않고 지정을 헀는데요. 왜 값이 미리 들어가야만 하는지 궁금합니다. 그냥 int num5;이라고 하면 왜 오류가 뜨는건가요?
         while(num5 != 0) {
             System.out.print("num input : ");
             num5 = sc.nextInt();
