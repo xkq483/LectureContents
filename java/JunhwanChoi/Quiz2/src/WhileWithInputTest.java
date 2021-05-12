@@ -15,6 +15,10 @@ public class WhileWithInputTest {
             if (i % 3 == 0) {
                 System.out.println("1 ~ " + loop + " 까지 3의 배수를 출력합니다: " + i);
             }
+            else if(i<3)
+            {
+                System.out.println("3의배수가 없습니다.");
+            }
             i++;
         }
     }
