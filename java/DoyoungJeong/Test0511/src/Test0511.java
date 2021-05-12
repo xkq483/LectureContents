@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
 public class Test0511 {
-    public Test0511() {
-    }
 
     public static void main(String[] args) {
+
         System.out.println("문제3");
-        System.out.println("3은 홀수");
+        if(3%2==0) {
+            System.out.println("3은 짝수");
+        } else  System.out.println("3은 홀수");
+
         System.out.println("문제4");
         Scanner sc = new Scanner(System.in);
         System.out.print("input num1 : ");
@@ -37,7 +39,6 @@ public class Test0511 {
         System.out.print("num input : ");
         int num6 = sc.nextInt();
         int num7 = 0;
-
         while(num7 < num6) {
             ++num7;
             while (num7 % 3 == 0) {
@@ -48,8 +49,7 @@ public class Test0511 {
 
         System.out.println();
         System.out.println("문제8");
-        int num5 = 2;
-
+        int num5 = 2;   //지금 여기서 변수를 지정하지 않으면 와일문 소괄호에서 조건문 수립이 안되니까 미리 변수를 지정하는건 알겠습니다만.. 뭔가 더 깔끔한 방법이있을것 같은데 잘 모르겠습니다.
         while(num5 != 0) {
             System.out.print("num input : ");
             num5 = sc.nextInt();
