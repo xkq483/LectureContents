@@ -11,7 +11,7 @@ public class Quiz8 {
             System.out.println("짝수인지 홀수인지 판별해보자:");
             select = scan.nextInt();
 
-            if (select % 2 ==0) { //짝수홀수 감별하는거
+            if (select % 2 ==0) { //짝수홀수 감별하는거,나머지가 0이면 짝수 아님 홀수
                 System.out.println(select + "는 짝수!");
             } else {System.out.println( select + "는 홀수!");
             }
