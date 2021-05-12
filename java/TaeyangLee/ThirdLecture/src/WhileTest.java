@@ -1,7 +1,8 @@
 public class WhileTest {
     public static void main(String[] args) {
+        //무한루프
         while(true){
-            System.out.println("안녕 숟가락으로 n번 맞으면 죽을수도 있대");
+            System.out.println("돌고돌아 n번 돌아");
         }
     }
 }
