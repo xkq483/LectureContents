@@ -17,5 +17,14 @@ public class InfinityLoopWithForTest {
         for(int i = 1, j = 0; ; i++, j--) {
             System.out.println("i = " +i + ", j = " +j);
         }
+        // ## for 문제 1
+        // 1~10까지 출력하는 프로그램을 만들어보자!
+
+
+        // ## for 문제 2
+        // 1~20에서 3의 배수를 출력하는 프로그램을 만들어보자(if문 없이!)
+
+        //## for+if 문제
+        // 1~30까지 숫자중 짝수와 홀수를 각각 모두 판정 하도록 프로그래밍 해보자
     }
 }
