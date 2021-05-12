@@ -21,9 +21,9 @@ public class Test0511 {
         int j = 0;
         while(j < 20) {
             j += 2;
-            System.out.println(j);
+            System.out.print(j + "\t");
         }
-
+        System.out.println();
         System.out.println("문제6");
         System.out.print("num input : ");
         int num4 = sc.nextInt();
