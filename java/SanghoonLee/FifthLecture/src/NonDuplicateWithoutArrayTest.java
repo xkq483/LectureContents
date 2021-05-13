@@ -26,7 +26,8 @@ public class NonDuplicateWithoutArrayTest {
 
             // 나온 randNum에 대한 중복 판정을 어떻게 할 것인가 ? bit 연산
             // 2^9   2^8   2^7   2^6   2^5   2^4   2^3   2^2   2^1   2^0
-            
+            //                          1     1                 1
+
             // BIN = 2로 시작하면 2^1 에서 시작하는 것이라
             // 맨 마지막값이 무조건 2^1 x 2^9이 되서 1024가 더해지므로 논리적 오류가 발생함
             // 그러므로 BIN = 1로 만들어서 2^0 x 2^9 으로 512가 되게 처리해야 정상적인 결과가 나옴
@@ -46,13 +47,20 @@ public class NonDuplicateWithoutArrayTest {
             // 이진수는 위치가 이동할 때마다 2씩 곱해진다.
 
             // 이 부분은 중복이 있는지 없는지 검사하는 루틴
+            /*
+               testBit는 int형이니까 전체가 4바이트(32비트)
+               ex) 4, 5, 4, 1
+             */
             while ((testBit & (BIN << randNum)) != 0) {
+                System.out.println("중복이 이렇게나 많이 발생합니다: " + randNum);
                 randNum = (int)(Math.random() * 10);
             }
 
             System.out.printf("randNum = %d\n", randNum);
 
             // 실제 자리수 셋팅은 여기서 한다.
+            // A += B ===> A = A + B
+            // A |= B ===> A = A | B
             testBit |= (BIN << randNum);
         }
 
