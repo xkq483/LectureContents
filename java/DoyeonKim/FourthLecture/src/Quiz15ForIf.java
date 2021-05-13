@@ -3,7 +3,6 @@ public class Quiz15ForIf {
         for (int i = 1; i <= 100; i++){
 
             //4의 배수를 구해야한다
-            //그리고 그합을 어디에 넣어서 점점 총 합을 더한다
 
             if (i % 4 == 0){
                 System.out.printf("%d는 4 배수 입니다\n", i);
