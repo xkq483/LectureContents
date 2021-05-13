@@ -1,6 +1,6 @@
 public class NonDuplicateWithoutArrayTest {
     // 0 ~ 9까지의 숫자가 중복되지 않게 나오게 만들어보자! (배열 없이)
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         final int BIN = 1;
 
         // 2진 비트 연산자 AND와 OR 연산자를 활용함
@@ -65,8 +65,6 @@ public class NonDuplicateWithoutArrayTest {
         }
 
         System.out.println("testBit의 최종값은 1023이다. 진짜 ? " + testBit);
-
-        Thread.sleep(500);
     }
 }
 
