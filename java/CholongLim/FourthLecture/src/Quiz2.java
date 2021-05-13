@@ -33,12 +33,33 @@ public class Quiz2 {
 //        무제한이 아닌, 두번만 랜덤
 //        첫 번째 주사위 값 + 두 번째 주사위 값
 
-        int dice1 = (int)(Math.random()* 6 + 1);
-        int dice2 = (int)(Math.random()* 6 + 1);
-        System.out.println("첫 번째 주사위 값은 = " + dice1);
-        System.out.println("두 번째 주사위 값은 = " + dice2);
+        System.out.println(" 주사위는 두번 굴려 합산값이 큰 쪽의 승리입니다.");
+        System.out.println("컴퓨터가 주사위를 굴립니다.");
 
-        System.out.printf(" %d + %d = %d\n", dice1, dice2, dice1 + dice2);
+        int comdice1 = (int)(Math.random()* 6 + 1);
+        int comdice2 = (int)(Math.random()* 6 + 1);
+        System.out.println("첫 번째 주사위 값은 = " + comdice1);
+        System.out.println("두 번째 주사위 값은 = " + comdice2);
+        int comsum = comdice1 + comdice2;
+
+        System.out.printf(" 컴퓨터의 주사위 값은 %d + %d = %d\n", comdice1, comdice2, comsum);
+
+        System.out.println("사용자가 주사위를 굴립니다.");
+        int userdice1 = (int)(Math.random()* 6 + 1);
+        int userdice2 = (int)(Math.random()* 6 + 1);
+        System.out.println("첫 번째 주사위 값은 = " + userdice1);
+        System.out.println("두 번째 주사위 값은 = " + userdice2);
+        int usersum = userdice1 + userdice2;
+
+        System.out.printf(" 컴퓨터의 주사위 값은 %d + %d = %d\n", userdice1, userdice2, usersum);
+
+        if(comsum > usersum) {
+            System.out.print("컴퓨터 승리");
+        } else if (comsum < usersum ){
+            System.out.println("사용자 승리");
+        } else {
+            System.out.println("무승부");
+        }
 
 
 
