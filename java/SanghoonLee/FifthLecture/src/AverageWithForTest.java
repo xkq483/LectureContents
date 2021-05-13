@@ -1,8 +1,12 @@
 public class AverageWithForTest {
     public static void main(String[] args) {
         int sum = 0;
+        // final 키워드가 붙으면 고정된 값이 되어 변경이 불가능해짐
+        // 이것이 유용한 이유는 직접 숫자를 적을 경우에 해당한다.
+        final int START = 1;
+        final int END = 10;
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = START; i <= END; i++) {
             // sum = sum + i
             sum += i;
             System.out.println("sum = " + sum);
@@ -11,7 +15,7 @@ public class AverageWithForTest {
         System.out.println("최종 합산 값 = " + sum);
 
         // 주식과 관련된 작업을 한다면 이 부분을 상당히 조심해야 한다.
-        float average = sum / 10;
+        float average = (float)sum / END;
         System.out.println("평균 = " + average);
 
         // 차이가 나는 이유가 뭘까 ?
