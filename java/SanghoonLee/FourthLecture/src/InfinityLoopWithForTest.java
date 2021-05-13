@@ -14,7 +14,7 @@ public class InfinityLoopWithForTest {
         // for(int i = 1; ; i++) {
 
         // 이 코드는 무한하게 i에 대해서는 1씩 더하고 j에 대해서는 1씩 뺀다.
-        for(int i = 1, j = 0; ; i++, j--) {
+        for(int i = 1, j = -1; ; i++, j--) {
             System.out.println("i = " + i + ", j = " + j);
         }
     }
