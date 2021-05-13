@@ -11,8 +11,11 @@ public class Review1 {
         }
         Scanner scan = new Scanner(System.in);
         System.out.print("아무숫자나 입력해보세요 : ");
+
         int num = scan.nextInt();
         System.out.println("당신이 입력한 숫자는 = " + num);
+
+        //Q1 : prinln, print. printf 의 차이점이 뭘까요? 어떤 상황에 쓰여지는건지 궁금합니다.
 
         // while 루프를 작성하는 방법
 
