@@ -1,5 +1,6 @@
 public class Prob17 {
     public static void main(String[] args) throws InterruptedException {
+        //문제17
         int i=1;
         int comTime1 = 0;
         int comTime2 = 0;
