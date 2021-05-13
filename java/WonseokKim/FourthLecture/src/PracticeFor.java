@@ -19,6 +19,11 @@ public class PracticeFor {
                 System.out.println();
             }
         }
+        // 12번
+        // 1 ~ 20에서 3의 배수를 출력
+        for (int i = 3; i < 21; i += 3) {
+            System.out.println("i = " + i);
+        }
 
         System.out.println("13번 문제 입니다.");
 
