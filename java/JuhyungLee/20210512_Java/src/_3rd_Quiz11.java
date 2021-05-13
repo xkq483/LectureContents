@@ -1,6 +1,5 @@
 public class _3rd_Quiz11 {
     public static void main(String[] args) {
-
 //        Quiz 11. for 사용해서
 //        1~10까지 출력하는 프로그램 만들기
         for(int i = 1; i <= 10; i++){
@@ -9,6 +8,7 @@ public class _3rd_Quiz11 {
             // %3d에서 '3'의 의미는 '3칸을 확보'하라는 뜻이다.
             // 숫자 '10'의 경우 '2칸'을 차지하니까
             // '%2d'를 사용했다면 9와 10이 구별이 안됨. 이런식으로 될거임 >> 7_8_910
+            // 100까지도 해볼 것
 
                 if(i % 5 == 0){
                     System.out.println();
