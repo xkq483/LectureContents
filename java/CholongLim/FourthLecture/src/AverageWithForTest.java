@@ -13,6 +13,14 @@ public class AverageWithForTest {
         float average = sum / 10;
         System.out.println("평균 = " + average);
 
+        double average1 = sum / 10;
+        System.out.println("평균 = " + average1);
+//        정수는 int, 소수점은 double, float 입니다.
+//        double을 사용해도 평균값이 도출되는데 위에서 float을 사용하신 이유가 궁금합니다.
+//        같은 소수점 표현이라도 double과 float의 차이점이 있을까요?
+//        있다면 각각 어떤 경우에 따라 분류하여 사용할까요?
+
+
         // 차이가 나는 이유가 뭘까 ?
         // 위의 케이스는 sum이 int형, 숫자 10도 디폴트로 int형입니다
         // (기본적으로 정수는 int, 소수점은 double을 채택함)
