@@ -12,14 +12,14 @@ public class HomeWorkProb3 {
         Scanner scan = new Scanner(System.in);
         System.out.println("컴퓨터가 주사위대결을 신청하였습니다 주사위를 굴리시겠습니까? 예 1 아니오 2");
         int zz = scan.nextInt();
-        if(zz == 1){for (int i = 1; i <= 6; i++) {
+        if(zz == 1){for (int i = 1; i <= 1; i++) {
             int num = ((int) (Math.random() * 6 + 1));
             System.out.println("나의첫번쨰주사위의눈=" + num);
             sum += num;
         }
             System.out.println(" ");
 
-            for (int i = 1; i <= 6; i++) {
+            for (int i = 1; i <= 1; i++) {
                 int num2 = ((int) (Math.random() * 6 + 1));
                 System.out.println("나의두번째주사위의눈=" + num2);
                 sum2 += num2;
@@ -34,13 +34,13 @@ public class HomeWorkProb3 {
 
             System.out.println(" ");
 
-            for (int i = 1; i <= 6; i++) {
+            for (int i = 1; i <= 1; i++) {
                 int bom = ((int) (Math.random() * 6 + 1));
                 System.out.println("컴퓨터의첫번쨰주사위의눈=" + bom);
                 nice += bom;}
             System.out.println(" ");
 
-            for (int i = 1; i <= 6; i++){
+            for (int i = 1; i <= 1; i++){
                 int bom2 = ((int) (Math.random() * 6 + 1));
                 System.out.println("컴퓨터의두번째주사위의눈=" + bom2);
                 nice2 += bom2;}
