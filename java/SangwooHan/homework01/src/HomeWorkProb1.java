@@ -10,4 +10,3 @@ public class HomeWorkProb1 {
         }
     }
 }
-//ㅁ

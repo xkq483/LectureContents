@@ -1,7 +1,7 @@
 public class HomeWork0404
 {
 // InfinityLoopWithForTest04
-    //ㄷ
+
     // 무한루프
     // 이거말고도
     // for(;;)

@@ -3,7 +3,7 @@ public class HomeWork0403
 //ForTest04
     public static void main(String[] args)
     {
-        //ㄴ
+
         //for 문의 구성
         // for(초기화 코드; 조건식 코드; 증감식코드)로 구성된다.
         // 초기화 코드는 for문에 최초 진입시 한번만 실행이 된다.

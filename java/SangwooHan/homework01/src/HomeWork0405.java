@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//ㄹ
+
 public class HomeWork0405
 {
     //RandomTest04

@@ -2,7 +2,7 @@ public class HomeWork0401 {
     public static void main(String[] args) {
         int sum = 0;
 //AverageWithForTest
-        //ㄱ
+
         for(int i = 1; i <=10; i++)
         // 현재 for 문은 i가 1에 시작해서 10에 같아질때까지 1씩 더해가는 로직이다.
         //이말은즉 1~10 10번 돌겠다는 뜻이다.
