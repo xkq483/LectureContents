@@ -43,23 +43,39 @@ public class Home512 {
         // a>b되면 a 승리 아니면 b가 승리 이렇게 ?
         // 누가 이기는지 까지는 구현했지만 2번 굴린 합산을 못구하겠다...
 
-            System.out.println("주사위 대결!");
 
 
+        //3~4번의 개념을 이해하기 위해 4자리수 시작으로 바꿔봄
+        for (i = 1; i < 10; i++) {
 
-            while (true) {
-                int num1 = (int)(Math.random() * 6 + 1);
+                System.out.printf("%-3d_", i);
 
-                int num2 = (int)(Math.random() * 6 + 1);
-                if(num1>num2) {
-                System.out.println("컴퓨터가 더 높으므로 승리"+ "[값"+ num1+"]");
-                }
-                else{
 
-                System.out.println("사람이 더 높으므로 승리" +"[값"+ num2+"]" );
+                if (i % 5 == 0) {
 
-                }
-            }
+                    System.out.println();}
+        }
     }
 }
+
+
+           // System.out.println("주사위 대결!");
+
+
+            //while (true) {
+              //  int num1 = (int)(Math.random() * 6 + 1);
+
+              //  int num2 = (int)(Math.random() * 6 + 1);
+               // if(num1>num2) {
+              //  System.out.println("컴퓨터가 더 높으므로 승리"+ "[값"+ num1+"]");
+              //  }
+              //  else{
+
+              //  System.out.println("사람이 더 높으므로 승리" +"[값"+ num2+"]" );
+
+              //  }
+           // }
+
+          //  }
+      //  }
 
