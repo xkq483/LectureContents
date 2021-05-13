@@ -1,6 +1,7 @@
 public class HomeWork0402
 {
 //  DiceTest
+    //ㄴ
     public static void main(String[] args) throws InterruptedException {
         System.out.println("주사위를 굴려봅시다.");
         //1초 = 1000 밀리세컨드 = 1000000마이크로세컨드

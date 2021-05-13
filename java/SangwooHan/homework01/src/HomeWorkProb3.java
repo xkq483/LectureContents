@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//ㅅ
 public class HomeWorkProb3 {
     public static void main(String[] args) {
         int sum = 0;
