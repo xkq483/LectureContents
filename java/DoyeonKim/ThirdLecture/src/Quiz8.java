@@ -4,6 +4,7 @@ public class Quiz8 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int select = 1;
+        //0이 아니라 참이니까 와일로 넘어간것
 
 
         while(select != 0) {
