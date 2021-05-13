@@ -1,0 +1,7 @@
+public class ForTest {
+    public static void main(String[] args) {
+        for (int i = 3; i < 21; i += 3)
+            System.out.println("i =" + i);
+        }
+
+}
