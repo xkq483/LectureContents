@@ -34,9 +34,11 @@ public class QuestionAnswer {
         System.out.println("두 개의 숫자를 받아 입력해봅시다.");
         Scanner scan = new Scanner(System.in);
 
+
         System.out.print("첫 번째 숫자를 입력하세요.");
         int anum1 = scan.nextByte();
         //scan.nextInt()는 키보드로 입력받은 값을 숫자로 변환해준다(키보드로 입력된 6은 그냥 숫자6이지 값이 아님)
+
         System.out.print("두 번째 숫자를 입력하세요.");
         int anum2 = scan.nextByte();
 
