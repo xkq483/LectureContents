@@ -33,7 +33,17 @@ public class ArrayTest {
         // for 문이나 while 문등의 반복문과의 혼합구성에 있어 매우 탁월하다.
 
         for (int i = 0; i < 5; i++) {
-            System.out.printf("arr[%d] = %d\n", i, arr[i]);
+            // System.out.printf("arr[%d] = %d\n", i, arr[i]);
+            System.out.println("arr[" + i + "] = " + arr[i]);
         }
     }
 }
+
+// stack(지역변수)에 할당한다는 것은 지역변수로 처리함을 의미합니다.
+// 그렇기 때문에 나중에 매서드나 클래스를 학습한 이후 스택에 할당하면
+// 해당 매서드 혹은 클래스 내부에서만 해당 배열이 활성화됩니다.
+
+// arr[0] = x, arr[1] = y, arr[2] = z, arr[3] = k
+// System.out.println("arr[" + 0 + "] = " + x + ", arr[" + 1 + "] = " + y + ", arr[ ........ 지옥");
+// System.out.printf("arr[%d] = %d, arr[%d] = %d, arr[%d] = %d, arr[%d] = %d\n",
+//                    0, arr[0], 1, arr[1], 2, arr[2], 3, arr[3])
