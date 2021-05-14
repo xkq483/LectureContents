@@ -13,7 +13,7 @@ public class NonDuplicateWithoutArrayTest {
             // 0 ~ 9 가 나올것               //중복된 수 없이 모든 수가 출력된다면 for문을 빠져나온다
             randNum = (int)(Math.random() * 10);
 
-            // 나온 randNum에 대한 중복 판정을 어떻게 할 것인가 ? : bit 연산으로
+            // 나온 randNum에 대한 중복 판정을 어떻게 할 것인가 ? : bit 연산으로!
             // 2^9   2^8   2^7   2^6   2^5   2^4   2^3   2^2   2^1   2^0  <-testBit에 점점 값이 쌓여감
             //                                1                           <-쌓인 값은 이렇게 채워짐(중복되면 다시 반복)
 
