@@ -32,6 +32,7 @@ public class Quiz23 {
                 //System.out.println("중복이 이렇게 많이 발생합니다" + randNum1);
                 randNum1 = (int) (Math.random() * 11);
             }
+            testBit1 += (BIN << randNum1);
             //Q. 중복체크 방식이 어떤 건지는 알겠는데 testBit1값이 while문을 반복해도 31값이 변하지 않아 중복체크를 못 해야 정상 아닌가요?
             //   예를 들어 6이 나왔다면
             //
@@ -45,6 +46,7 @@ public class Quiz23 {
             //   00000000000 AND
             //   ----------------------
             //   00000000000  0     ===>  false while문 탈출하고 또 6 출력해야 정상 아닌가요?
+            //   실제로 제가 하면 중복체를 못해서 35행처럼   testBit1 += (BIN << randNum1);로 따로 누적시켜주니 잘 되었습니다.
             //   testBit에 누적되야 중복체크를 할 수 있는데 어디서 누적되는 건가요?
 
             System.out.printf("ranNum = %d\n", randNum1);
@@ -57,6 +59,7 @@ public class Quiz23 {
                 //System.out.println("중복이 이렇게 많이 발생합니다" + randNum2);
                 randNum2 = (int) (Math.random() * 11);
             }
+            testBit2 += (BIN << randNum2);
 
             System.out.printf("ranNum2 = %d\n", randNum2);
         }
