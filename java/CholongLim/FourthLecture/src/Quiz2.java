@@ -51,7 +51,7 @@ public class Quiz2 {
         System.out.println("두 번째 주사위 값은 = " + userdice2);
         int usersum = userdice1 + userdice2;
 
-        System.out.printf(" 컴퓨터의 주사위 값은 %d + %d = %d\n", userdice1, userdice2, usersum);
+        System.out.printf(" 사용자의 주사위 값은 %d + %d = %d\n", userdice1, userdice2, usersum);
 
         if(comsum > usersum) {
             System.out.print("컴퓨터 승리");
@@ -60,10 +60,6 @@ public class Quiz2 {
         } else {
             System.out.println("무승부");
         }
-
-
-
-
 
         }
 
