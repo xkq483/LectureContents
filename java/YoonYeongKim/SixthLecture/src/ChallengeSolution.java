@@ -1,8 +1,11 @@
 public class ChallengeSolution {
     public static void main(String[] args) {
+        // 우리는 현재 5 ~ 10을 사용하고 있음
+        // 하지만 비트는 0 ~ 5를 표현해야하므로 5를 뺴줘야함(뺴는 바이어스 값)
         final int FIRST_BIAS = 5;
         final int SECOND_BIAS = 1;
-
+        // 두 번째는 7 ~ 10을 사용하고 있음
+        // 하지만 비트는 6 ~ 9를 사용해야하므로 1을 빼서 사용해야함(마찬가지로 빼는 바이어스값)
         final int FIRST_RANGE = 6;
         final int FIRST_OFFSET = 5;
 
