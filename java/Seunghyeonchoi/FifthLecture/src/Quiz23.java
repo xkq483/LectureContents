@@ -32,12 +32,10 @@ public class Quiz23 {
                 //System.out.println("중복이 이렇게 많이 발생합니다" + randNum1);
                 randNum1 = (int) (Math.random() * 11);
             }
-            testBit1 += (BIN << randNum1);
-            //Q. 결과는 잘 나오는데 제대로 쓴 건지 잘 모르겠습니다.
-            //
-            //   22번대로 하면 제가 생각하기에는 testBit1값이 while문을 반복해도 31값이 변하지 않아 중복체크를 못 해야 하는데 정상작동하는 게 이해가 되지 않습니다.
-            //   quiz23을 풀 때도 testBit값이 변하질 않아 중복체크가 안 돼서 위처럼 밖으로 빼 randNum1을 testBit1에 더해 중복체크를 했습니다.
-            //   저처럼 따로 빼는 거 없이도 돌아가는 22번 예제와 차이가 무엇인지 궁금합니다.
+            //Q. 중복체크 방식이 어떤 건지는 알겠는데 testBit1값이 while문을 반복해도 31값이 변하지 않아 중복체크를 못 해야 정상 아닌가요?
+            //   예를 들어 랜덤값이 4가 나오면 (BIN<<randNum1) 값은 00000010000
+            //                                 testBit1하고     00000011111 AND -> 00000010000
+            //   이러면 최종적으로 testBit1 값이 00000010000이 되는 게 아닌가요?
 
             System.out.printf("ranNum = %d\n", randNum1);
             }
@@ -49,7 +47,6 @@ public class Quiz23 {
                 //System.out.println("중복이 이렇게 많이 발생합니다" + randNum2);
                 randNum2 = (int) (Math.random() * 11);
             }
-            testBit2 += (BIN << randNum2);
 
             System.out.printf("ranNum2 = %d\n", randNum2);
         }
