@@ -51,6 +51,9 @@ public class NonDuplicateWithoutArrayTest {
                testBit는 int형이니까 전체가 4바이트(32비트)
                ex) 4, 5, 4, 1
              */
+
+            // 2번이 나온 상태에서 testBit ===> 00 0000 0100
+            // BIN << 2^2 ===>               00 0000 0100
             while ((testBit & (BIN << randNum)) != 0) {
                 System.out.println("중복이 이렇게나 많이 발생합니다: " + randNum);
                 randNum = (int)(Math.random() * 10);
@@ -62,6 +65,7 @@ public class NonDuplicateWithoutArrayTest {
             // A += B ===> A = A + B
             // A |= B ===> A = A | B
             testBit |= (BIN << randNum);
+            // 2번이 나온 상태에서 testBit ===> 00 0000 0100
         }
 
         System.out.println("testBit의 최종값은 1023이다. 진짜 ? " + testBit);
