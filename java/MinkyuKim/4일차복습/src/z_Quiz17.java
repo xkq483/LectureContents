@@ -1,8 +1,8 @@
-public class z_Quiz17 {
+/* public class z_Quiz17
     //17. Math.random() 응용 문제
     //컴퓨터와 주사위 게임을 해보자!
     //주사위를 2번 굴려서 합산 눈금 숫자가 큰 사람이 이기는 것으로 한다.
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         int com1, com2;
         if((com1 > com2) || (com2 > com1)) {
         System.out.println((int)(Math.random() * 6 + 1));
@@ -12,7 +12,7 @@ public class z_Quiz17 {
             // int com1 = Math.random() * 6 + 1;
             // int com2 = Math.random() * 6 + 1;
             // 안되는 것 같음
-
+ㅊ
             // ...
 
 
@@ -28,6 +28,6 @@ public class z_Quiz17 {
             // System.out.println("com2가 승리하였다.");
             // printf가 아닌 println으로?
 
-            }
-    }
-}
+
+     */
+
