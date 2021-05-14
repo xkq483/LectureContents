@@ -44,7 +44,7 @@ public class TodayTask {
         System.out.println("======================난수 범위 7~10======================");
         marker = 0;
         for(int i=0;i<4;i++){
-            int randI =(int)(Math.random() * 3 +7);
+            int randI =(int)(Math.random() * 4 +7);
 
             while((marker&(BIN << randI)) !=0){
                 System.out.println("중복검사 : "+ randI+" 중복 !");
