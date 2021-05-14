@@ -27,7 +27,7 @@ public class ChallengeShortCutExample {
             // 무조건 카운트는 증가하고 뒤의 조건을 확인하게 된다.
             if (((++bigFrontCnt != 0) && (i % 2 == 0)) ||
                     ((++bigFrontCnt != 0) && (i % 33 == 0))) {
-                ;
+                ; // 아무것도 안합니다라는 뜻의 코드입니다.
             }
 
             if (((++smallFrontCnt != 0) && (i % 33 == 0)) ||
