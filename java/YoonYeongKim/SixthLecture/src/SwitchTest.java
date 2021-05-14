@@ -20,6 +20,8 @@ public class SwitchTest {
             // 0번이 눌렸다면 case 0, 1번이라면 case 1과 같은 형식이다.
 
             switch (num) {
+                // 문자 낱개로는 가능함(홑따옴표)
+                // 현재는 숫자값이라서 현재는 문장 여러개의 문자열(쌍따옴표는 불가능함)
                 case 0:
                     System.out.println("탈출합니다.");
                     isTrue = false;
