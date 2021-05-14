@@ -26,6 +26,7 @@ public class Prob25 {
                 sum -= i;
             } else if (i % 2 == 0) {
                 System.out.println("2의 배수 = " + i);
+                // System.out.printf("2의 배수 = %d\n", i);
                 sum += i;
             }
         }
