@@ -8,6 +8,7 @@ public class NonDuplicateQuestionAnswer {
         for (int i = 0; i < 10; i++) {
             randNum = (int)(Math.random() * 10);
 
+
             // 우선 randNum은 랜덤하게 나오겠지만 설명을 위해 특정 상황을 가정하도록 한다.
             // randNum은 아래와 같이 나온다고 가정해보자!
             // 2, 6, 3, 5, 2, 2, 1

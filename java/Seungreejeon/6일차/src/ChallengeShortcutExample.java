@@ -8,6 +8,7 @@ public class ChallengeShortcutExample {
         // if (case B || case A)
         // 합격 케이스 30개 + 불합격 970개 + 추가검사 970개
 
+
         // 1 ~ 1000까지의 숫자중 2의 배수는 A
         // 1 ~ 1000까지의 숫자중 33의 배수는 B
         for (int i = 0; i <= 1000; i++) {

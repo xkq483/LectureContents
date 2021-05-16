@@ -9,7 +9,6 @@ public class SwitchTest {
         Scanner sc = new Scanner(System.in);
 
         while (isTrue) {
-
             System.out.println("저희 상점에 방문해주셔서 감사합니다. 물건을 골라주세요");
             num = sc.nextInt();
             switch (num){

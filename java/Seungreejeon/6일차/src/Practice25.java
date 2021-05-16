@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Practice25 {
     public static void main(String[] args) {
         //1 ~ 100 까지의 숫자중 2의 배수는 모두 더한다.
