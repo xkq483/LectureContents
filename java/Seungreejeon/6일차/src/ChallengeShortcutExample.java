@@ -20,6 +20,7 @@ public class ChallengeShortcutExample {
                     ;
                 }
         }
+
         System.out.println("케이스수가 많은 A가 앞 에있는 경우" + bigFrontCnt);
         System.out.println("케이스수가 적은 B가 앞 에있는 경우" + smallFrontcut);
     }
