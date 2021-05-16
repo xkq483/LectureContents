@@ -3,15 +3,10 @@ import java.util.Scanner;
 public class ArrayTest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // 배열은 왜 써야 할까 ?
+        //===========배열의 주 목적과 생성방법==============
         // 동일한 데이터 타입의 변수가 여러개 필요할때
-        // 일일히 int a, b, c, d, e, f, g, h, i ... z 까지 해봐야 26개 밖에 안됨
-        // 만약 회사에서 직원 1000명을 관리해야 한다 가정한다면
-        // 이것을 일일히 변수로 선언한다면 죽을 것이다.
-        // 당연히 배열을 만들어서 관리해야할 것이다.
-        int arr[] = {1, 2, 3, 4, 5};
 
-        // 배열을 만드는 방법
+        // 배열을 생성 방법
         // 1. stack에 할당하는 방법(지역 변수)
         //    1-1. 일단은 배열의 데이터 타입(int 같은)을 적는다.
         //    1-2. 배열의 이름이 될 변수명을 적는다.
@@ -24,9 +19,12 @@ public class ArrayTest {
         // int arr[] = { 1, 2, 3, 4, 5 };
 
         //============for 또는 while 을 통해 배열을 하면 편리하다===========
+
+        int arr[] = {1, 2, 3, 4, 5};
+
         for (int i = 0; i < 5; i++) {
             // System.out.printf("arr[%d] = %d\n", i, arr[i]);
-            System.out.println("arr[" + i + "] = " + arr[i]);
+            System.out.println(arr[i]);
         }
         int i = 0;
 
@@ -41,6 +39,5 @@ public class ArrayTest {
 // 배열 주의사항
 // 배열의 인덱스(방) 번호는 0번부터 시작함에 주의하도록 한다.
 // stack(지역변수)에 할당한다는 것은 지역변수로 처리함을 의미합니다.
-// 그렇기 때문에 나중에 매서드나 클래스를 학습한 이후 스택에 할당하면
-// 해당 매서드 혹은 클래스 내부에서만 해당 배열이 활성화됩니다.
+// 그렇기 때문에 해당 매서드 혹은 클래스 내부에서만 해당 배열이 활성화됩니다.
 
