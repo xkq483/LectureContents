@@ -24,6 +24,7 @@ public class BitShiftTest {
         System.out.printf("%d << %d = %d\n", num3, num3, num3 << num3);
 
         System.out.printf("%d >> %d = %f\n", num2, num1, (float)(num2 >> num1));
+//나눌땐 소수점 부분 버리기
 
     }
 }
