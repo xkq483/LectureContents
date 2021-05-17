@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="925677d5-a28a-4fe6-853f-81edb3c70eef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ArrayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/BitShiftQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ChallengeShortCutExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ChallengeSolution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ChallengeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ContinueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/NonDuplicateQuestionAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/Prob27.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/SwitchStringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/SwithTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/prob25.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1sbLiT5CXtEI8CZJHY9rSm2SJVS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Forpractice">
+    <configuration name="Forpractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Forpractice" />
+      <module name="Practive" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Practice2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Practice2" />
+      <module name="Practive" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Practive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Practive" />
+      <module name="Practive" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RandomTest" />
+      <module name="Practive" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ss" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss" />
+      <module name="Practive" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Forpractice" />
+        <item itemvalue="Application.RandomTest" />
+        <item itemvalue="Application.ss" />
+        <item itemvalue="Application.Practive" />
+        <item itemvalue="Application.Practice2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="925677d5-a28a-4fe6-853f-81edb3c70eef" name="Default Changelist" comment="" />
+      <created>1621136475389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621136475389</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
