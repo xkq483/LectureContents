@@ -37,7 +37,8 @@ public class SwutchTest {
                 default:
                     //말그대로 기본값에 해당
                     /*
-                    우리가 예상치 못한 입력이
+                    우리가 예상치 못한 입력이 존재할 수 있음
+                    이 경우에 활용하는것이 default라고 보면 됨.
 
                      */
                     System.out.println("그런건 없습니다!");
