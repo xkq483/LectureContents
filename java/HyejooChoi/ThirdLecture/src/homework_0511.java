@@ -16,8 +16,5 @@ public class homework_0511 {
         System.out.println("if ((case == C) || (case == F))");
 
 
-
-
-
     }
 }
