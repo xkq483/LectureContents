@@ -11,6 +11,7 @@ public class SwichStringTest {
         //주의점 : swich에서 사용하는 데이터 타입과
         //         case에서 사용하는 데이터 타입을 일치시킬 필요가 있다!
 
+
         switch (str)
         {
             case "hi" :

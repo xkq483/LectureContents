@@ -11,6 +11,7 @@ public class ChallengeShortCutExample {
         // 1 ~ 1000까지의 숫자중 33의 배수는 B
         int bigFrontCnt = 0, smallFrontCnt = 0;
 
+
         for (int i = 1; i <= 1000; i++) {
             // if (i % 2 == 0 || i % 33 == 0) {
             //     cnt++;

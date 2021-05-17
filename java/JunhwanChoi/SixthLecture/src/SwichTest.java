@@ -37,7 +37,6 @@ public class SwichTest {
 
                     System.out.println("그런건 없습니다."); break;
 
-
             }
         }
     }

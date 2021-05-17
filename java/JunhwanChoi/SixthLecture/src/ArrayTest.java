@@ -29,8 +29,7 @@ public class ArrayTest {
         for문이나 while문등의 반복문과의 혼합구성에 있어 매우 탁월하다.
 
 
-
-        * */
+         */
 
 
         int arr[]={1,2,3,4,5};      // 지역변수로서 사용되기때문에 main안에서만 작동한다.
