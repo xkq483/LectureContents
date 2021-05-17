@@ -1,4 +1,4 @@
-public class ForTest {
+public class ForTest04 {
     public static void main(String[] args) {
         //for 문의 구성
         // for(초기화 코드; 조건식 코드; 증감식코드)로 구성된다.

@@ -1,0 +1,2 @@
+public class TrickTest03 {
+}

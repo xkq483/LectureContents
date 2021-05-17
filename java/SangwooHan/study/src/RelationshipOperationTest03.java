@@ -1,4 +1,4 @@
-public class RelationshipOperationTest {
+public class RelationshipOperationTest03 {
     //관계연산자 and (&&)
     public static void main(String[] args) {
         int num1 = 3 , num2 = 7 , num3 = 21;

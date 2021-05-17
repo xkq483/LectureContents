@@ -1,4 +1,4 @@
-public class WhileTest {
+public class WhileTest03 {
     public static void main(String[] args) {
         // ++i와
         // i++의 차이가 뭘까??
