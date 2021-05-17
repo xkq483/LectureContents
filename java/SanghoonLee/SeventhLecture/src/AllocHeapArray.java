@@ -34,6 +34,7 @@ public class AllocHeapArray {
         int arr[] = { 1, 2, 3, 4, 5 };
 
         for (int i = 0; i < studentNum; i++) {
+            // studentNum 만큼 생성되니 해당 학생숫자에 맞게 80 ~ 100점의 점수를 가지도록 만듬
             studentArr[i] = (int)(Math.random() * 21) + 80;
             System.out.printf("studentArr[%d] = %d\n", i, studentArr[i]);
         }
