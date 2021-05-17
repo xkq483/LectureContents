@@ -27,7 +27,7 @@ public class BitShiftTest {
         // 오른쪽 쉬프트의 경우 단순히 2^n을 나누면 안된다.
         // 5 / 2^2 = 1.25
         // 결론: 오른쪽 쉬프트는 2^n으로 나누되 소수점을 버려야 한다.
-        System.out.printf("%d >> %d = %f\n", num2, num1, (float)(num2 >> num1));
+        System.out.printf("%d >> %d = %d\n", num2, num1, (num2 >> num1));
 
         // 이유:
         // 0101 ----> 5
