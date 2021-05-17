@@ -1,6 +1,20 @@
 class Person {
     int age;
     String name;
+
+    int getAge() {
+        return age;
+    }
+    void setAge(int age) {
+        this.age = age;
+    }
+
+    String getName() {
+        return name;
+    }
+    void setName(String name) {
+        this.name = name;
+    }
 }
 // new Person()을 통해 만든 공간은
 // 위의 커스텀 데이터타입에 해당하는 정보들을 저장할 수 있는 공간을 생성한 것이다.
@@ -27,5 +41,11 @@ public class ClassTest {
 
         System.out.println("이 사람은 며짤 ? " + person.age);
         System.out.println("얘 이름은 뭐 ? " + person.name);
+
+        person.setAge(33);
+        person.setName("줄행랑");
+
+        System.out.printf("%s님의 나이는 %d입니다.\n",
+                person.getName(), person.getAge());
     }
 }
