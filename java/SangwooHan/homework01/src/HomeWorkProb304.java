@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HomeWorkProb3 {
+public class HomeWorkProb304 {
     public static void main(String[] args) {
         int sum = 0;
         int sum2 = 0;

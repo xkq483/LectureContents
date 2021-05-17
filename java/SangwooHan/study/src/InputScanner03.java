@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class InputScanner {
+public class InputScanner03 {
     public static void main(String[] args) {
         System.out.println("슷자 두개를 입력하여 비교해봅니다.");
         Scanner scan = new Scanner(System.in);

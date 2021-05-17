@@ -15,7 +15,7 @@ public class Test01 {
         // 첫번째 %d 에는 num1
         // 두번째 %d 에는 num2
         // 마지막(세번째) %d 에는 num1 + num 2
-        System.out.printlnf("%d + %d = %d", num1,num2,num1+num2);
+        System.out.printf("%d + %d = %d", num1,num2,num1+num2);
     }
 
 }
