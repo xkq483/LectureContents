@@ -9,6 +9,7 @@ public class ChallengeSolution {
         final int FIRST_RANGE = 6;
         final int FIRST_OFFSET = 5;
 
+
         final int SECOND_RANGE = 4;
         final int SECOND_OFFSET = 7;
 
