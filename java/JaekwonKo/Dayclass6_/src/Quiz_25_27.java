@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Quiz_25_27 {
     public static void main(String[] args) {
         //25번 문제
@@ -26,7 +28,23 @@ public class Quiz_25_27 {
 
         System.out.println("최종값 : " + sum);
 
-        //27번 문제  변수3개만있으면 된데!!! (피보나치수열)
+        //27번 문제   (피보나치수열)
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("숫자를 입력하세요 : ");
+
+        int num = scan.nextInt();
+
+        int a = 0, b = 1, c = 0;
+
+
+        for(int i = 1; i < num; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        System.out.println(num + "번째 숫자 값 : " + c);
 
 
 
