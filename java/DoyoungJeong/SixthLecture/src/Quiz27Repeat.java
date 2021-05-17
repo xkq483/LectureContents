@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Quiz27Repeat {
     public static void main(String[] args) {
+        //챌린지문제
 
         int num = 1, num2 = 0, i=1, valuN=1;
 
         Scanner sc = new Scanner(System.in);
-
 
         while (valuN!=0) { //while문으로 입력, 출력을 반복하려했는데 첫 번째는 정상 출력이 되는데 두 번째부터 이상하게 출력이 되네요;;
 
@@ -26,9 +26,7 @@ public class Quiz27Repeat {
                         System.out.print(i + "번 째 값은 : " + num + "\n");
                     } else System.out.print(i + "번 째 값은 : " + num2 + "\n");
                 }
-
             }
-
         }
         System.out.println("프로그램 종료");
     }

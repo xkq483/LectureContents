@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Test0514 {
     public static void main(String[] args) {
+        //챌린지문제
 
         int num=1, num2=0, i=1;
 

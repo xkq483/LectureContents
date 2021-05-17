@@ -3,7 +3,6 @@ public class NonDupliReview {
         int ranNum;
         int testbit=0;
 
-
         for(int i=1; i<=6; i++) {
             ranNum = (int)(Math.random()*6+5);
 
