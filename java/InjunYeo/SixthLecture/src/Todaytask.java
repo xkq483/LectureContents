@@ -23,7 +23,7 @@ public class Todaytask {
         피보나치 수열은 0번째항과 1번째항의 합을 시작으로 2번째항 부터 시작한다.
         즉 0,1 을 입력하면 0번째나 1번째 항을 말하는것이므로 항을 출력해주면 된다.
          */
-        if(select ==1){
+        if(select <2){
             System.out.println("답은 : "+select);;
 
         }
