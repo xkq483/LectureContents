@@ -33,6 +33,7 @@ public class i_Quiz23_challenge {
             while ((b & (bin << input2)) != 0) {
                 input2 = (int) (Math.random() * 4 + 7);
             }
+            // 범위가 4, 7부터 시작 이라는 의미
 
 
             System.out.printf("7부터10 : %d\n", input2);
