@@ -17,6 +17,7 @@ class TestDice3 {
         return (int)(Math.random() * 6 + 1);
     }
 
+    // 리턴이 없어서 void(Setter도 리턴이 없어서 void)
     void checkWinner() {
         switch (whoWin()) {
             case 1:
