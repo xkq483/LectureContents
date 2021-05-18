@@ -4,13 +4,13 @@ public class Test0514 {
     public static void main(String[] args) {
         //챌린지문제
 
-        int num=1, num2=0, i=1;
-
         Scanner sc = new Scanner(System.in);
         System.out.print("n번 째 값 입력 : ");
         int valuN = sc.nextInt();
 
+        int num, num2, i=1;
         while(i<100) {
+            num=1, num2=0, i=1;
             if(i==1 || i%2==1) {
                 num = num2 + num;
  //               System.out.println(num);
