@@ -23,7 +23,7 @@ public class ClassTest {
         // 클래스는 사용자가 직접 만들 수 있는 데이터타입(커스텀 가능)
         // 변수를 만드는것과 동일하게 클래스를 사용해서 변수를 만들어보자!
         // 변수 이름 person으로 Person 형태의 텅 빈 공간이 만들어진다(만들어지는 위치는 Heap)
-        Person person = new Person();
+        Dog dog = new Dog();
         // 새로운 개념 new를 통해 공간을 만드는 방법
         // 1. new 를 적는다.
         // 2. 데이터타입을 적는다.
@@ -32,17 +32,17 @@ public class ClassTest {
         //    (여기서 인자 다루는 방법은 아직 학습하지 않음)
         // '.' 은 공간 내부에 접근하겠다는 뜻을 내포한다.
         // person 변수가 가지고 있는 공간중 age 에 21을 저장한다.
-        person.age = 21;
+        dog.age = 21;
         // person 변수가 가지고 있는 공간중 name에 "안녀엉"을 저장한다.
-        person.name = "안녀엉";
+        dog.name = "안녀엉";
 
-        System.out.println("이 사람은 며짤 ? " + person.age);
-        System.out.println("얘 이름은 뭐 ? " + person.name);
+        System.out.println("이 사람은 며짤 ? " + dog.age);
+        System.out.println("얘 이름은 뭐 ? " + dog.name);
 
-        person.setAge(33);
-        person.setName("줄행랑");
+        dog.setAge(33);
+        dog.setName("줄행랑");
 
         System.out.printf("%s님의 나이는 %d입니다.\n",
-                person.getName(), person.getAge());
+                dog.getName(), dog.getAge());
     }
 }
