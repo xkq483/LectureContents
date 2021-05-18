@@ -9,6 +9,8 @@ public class Prob28Enhance {
         System.out.print("몇 번째 항을 구할까요 ? ");
         int num = scan.nextInt();
 
+        // byte test = scan.nextByte();
+
         if (num <= 0) {
             System.out.println("잘못된 값을 입력하였습니다.");
         } else if (num < 2) {
