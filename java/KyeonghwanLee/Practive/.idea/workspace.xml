@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="925677d5-a28a-4fe6-853f-81edb3c70eef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ArrayTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/BitShiftQuestion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ChallengeShortCutExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ChallengeSolution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ChallengeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/ContinueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/NonDuplicateQuestionAnswer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/Prob27.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/SwitchStringTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/SwithTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SixthLecture/src/prob25.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SixthLecture" />
   </component>
   <component name="RunManager" selected="Application.Forpractice">
     <configuration name="Forpractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -114,5 +105,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
