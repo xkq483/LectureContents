@@ -21,7 +21,7 @@ class Teacher {
     // 누군가가 age가 궁금해서 물어본다.
     // 이에 대한 답을 해준다면 Getter에 해당한다.
     // 클래스 작성할 때는 이니셜마다 대문자를 붙였다.
-    // 매서드는 시작은 소문자 그 이후부터의 이니셜은 대문자
+    // 매서드는 시작은 소문자 그 이후부터의 이니셜은 대문자    //헝가리안 입력??
     // 소괄호 내부는 인자가 배치되는데 텅 비어 있는 것은 인자(입력)이 없다는 뜻이다.
     // 결론: 값을 얻는 목적으로 사용하는 것이 Getter
     int getAge() {
@@ -37,9 +37,7 @@ class Teacher {
         this.age = age;
     }
 
-    String getName() {
-        return name;
-    }
+    String getName() { return name; }
     void setName(String name) {
         this.name = name;
     }
