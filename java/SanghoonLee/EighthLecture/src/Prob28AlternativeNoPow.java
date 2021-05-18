@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Prob28 {
+public class Prob28AlternativeNoPow {
     public static void main(String[] args) {
         System.out.println("1, 2, 4, 8, ... 1024, ...");
 
@@ -19,13 +19,9 @@ public class Prob28 {
             numArr[0] = 1;
 
             for (int i = 1; i < numArr.length; i++) {
-                // 현재값은 이전값 x 2
-                // ------------------------------
-                // | 1 | 2 | 4 |   |   |   |   |
-                // ------------------------------
-                //  [0] [1] [2] [3] [4] [5] [6]
-
-                numArr[i] = numArr[i - 1] * 2;
+                // 1번 케이스 numArr[i] = numArr[i - 1] << 1;
+                // 2번 케이스
+                numArr[i] = numArr[0] << i;
             }
 
             System.out.printf("%d 번째 항은 = %d\n", num, numArr[num - 1]);
