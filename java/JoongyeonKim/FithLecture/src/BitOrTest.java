@@ -18,6 +18,7 @@ public class BitOrTest {
         // 138 ===> 10001010
         System.out.printf("%d OR %d = %d\n", num1, num2, num1 | num2);
 
+
         // OR 연산은 합집합 개념, AND 연산은 교집합 개념
     }
 }

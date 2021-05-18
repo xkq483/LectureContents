@@ -19,7 +19,7 @@ public class HomeWork {
         int Bit1= 0, Bit2 = 0;
 
 
-        for(int i = 1; i < 10;i++){
+        for(int i = 0; i < 10;i++){
 
             // 5 ~ 10 까지 설정
             // (Math.random() * (10 - 5 + 1)+5)

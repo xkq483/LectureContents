@@ -1,5 +1,5 @@
 public class NonDupliNum {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int testBit = 0;
         int random;
         int bin = 1;
@@ -14,7 +14,7 @@ public class NonDupliNum {
             System.out.println(random + "을 출력");
             testBit |= (bin << random);
 
-
+        Thread.sleep(800);
         }
 //        System.out.println(19 & 10); //10011 & 1010 ===> 00010 (2)
 //        System.out.println(19 | 10); //10011 | 1010 ===> 11011 (27)
