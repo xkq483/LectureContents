@@ -113,11 +113,12 @@ public class Prob32to33 {
         System.out.print("고양이 c1의 나이 입력 : ");
         c1.age = sc.nextInt();
         System.out.print("고양이 c1의 종 입력 : ");
-        c1.setBrood(sc.nextLine()); //종 입력이 안되는데 왜인지 모르겠네요;
+        sc.nextLine();
+        c1.setBrood(sc.nextLine());
         System.out.print("고양이 c1의 몸무게 입력 : ");
         c1.setWeight(sc.nextFloat());
         System.out.print("고양이 c1의 키 입력 : ");
-        c1.setHeight(sc.nextFloat());
+        c1.height = sc.nextFloat();
 //        System.out.println("고양이 c1의 알러지 여부 : "); //char를 써서 문자를 입력해보고 싶은데 어떻게 넣어야 하나요?
 //        c1.allergy = sc.next
 

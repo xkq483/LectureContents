@@ -19,7 +19,6 @@ public class Prob30 {
         st.grade = 2;
         st.averageScore = 88.45f;
 
-
         System.out.println(st.name);
     }
 }

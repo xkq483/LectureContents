@@ -36,7 +36,7 @@ class Person {
             ps.setGender('M');
 
             System.out.printf("%s는 %d세이고 성별은 %c이다.", ps.getName(), ps.getAge(), ps.getGender());
-
-
+            //System.out.printf("%s는 %d세이고 성별은 %c이다.", ps.name(), ps.age(), ps.gender()); -- 이렇게 해도 출력이 가능
+            //아직 겟터 메소드를 쓰는 정확한 이유는 모르겠다.
     }
 }
