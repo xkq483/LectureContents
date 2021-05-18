@@ -6,9 +6,11 @@ class TestDice {
         comDice = getRandomDice();
         userDice = getRandomDice();
     }
+
     int getRandomDice() {
         return (int)(Math.random() * 6 + 1);
     }
+
     Boolean userWin() {
         System.out.printf("%d(컴퓨터) vs %d(사용자)\n", comDice, userDice);
 
