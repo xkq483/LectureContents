@@ -35,6 +35,7 @@ public class ClassMethodTest {
         t.setName("GAORICK");
 
         // 설정된 값을 Getter를 통해 얻는다.
+        // 보고 싶은 매서드를 더블클릭하여 빗금치고 Ctrl + B를 누르면 내부 코드를 볼 수 있다.
         System.out.printf("%s 는 %s를 전공하였고 %d 세다.\n",
                 t.getName(), t.getMajor(), t.getAge());
 
