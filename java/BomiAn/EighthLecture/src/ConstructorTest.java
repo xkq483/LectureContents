@@ -2,10 +2,16 @@ class PersonTest {
     String name;
     int age;
 
+    // 생성자의 특징
+    // 1. 정말 희안하게도 리턴 타입이 없다.
+    // 2. 클래스 이름과 메서드 이름이 같다.
+    // 3. new할 떼 호출된다.
+
 
     PersonTest () {
         System.out.println("안녕 나는 생성자야!");
     }
+
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
     public int getAge() {return age;}
