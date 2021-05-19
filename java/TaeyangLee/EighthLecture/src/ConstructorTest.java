@@ -32,8 +32,8 @@ public class ConstructorTest {
     public static void main(String[] args) {
     PersonTest pt = new PersonTest();
 
-    pt.setAge(10);
-    pt.setName("가오왕");
+    pt.setAge(22);
+    pt.setName("투투");
 
         System.out.printf("나는 %s 이고 %d 살이다!\n",pt.getName(),pt.getAge());
     }

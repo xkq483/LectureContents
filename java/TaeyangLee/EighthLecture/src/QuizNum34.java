@@ -2,7 +2,6 @@ class DiceGame {
     int human1;
     int human2;
 
-
     DiceGame(int a, int b){
         human1 = a;
         human2 = b;
@@ -17,7 +16,6 @@ class DiceGame {
 
     }
 }
-
 
 public class QuizNum34 {
     public static void main(String[] args) {
