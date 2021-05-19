@@ -3,12 +3,12 @@
     int age;
 
      // 생성자의 특징
-     // 1. 정말 희얀하게도 리턴 타입이 없다.
+     // 1. 정말 희안하게도 리턴 타입이 없다.
      // 2. 클래스 이름과 매서드 이름이 같다.
      // 3. new를 할 때 호출된다.
 
-    PersonTest() {
-        System.out.println("안녕 나는 생성자야!");
+    PersonTest(int a) {
+        int age = a;
     }
 
     public String getName() {
@@ -31,7 +31,7 @@
 
 public class ConstructorTest {
     public static void main(String[] args) {
-        PersonTest pt = new PersonTest();
+        PersonTest pt = new PersonTest(5);
 
         pt.setAge(10);
         pt.setName("가오왕");
