@@ -49,6 +49,11 @@ class Fibonacci {
     }
 }
 
+// 1. 코드를 눈으로 보고 이해하기
+// 2. 복사 붙여넣기를 통해서 일단 동작하게 만들기
+// 3. 일부는 작성하고 일부를 복붙을 해서 동작하게 만들기
+// 4. 직접 모든 코드를 작성함
+// 5. 소프트웨어 아키텍처 관점에서 프로그램을 설계하고 코딩함
 public class FibonacciTest {
     public static void main(String[] args) {
         Fibonacci fib = new Fibonacci();
