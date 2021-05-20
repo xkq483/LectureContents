@@ -83,6 +83,8 @@ class StudentsScore {
         return stdDeviation;
     }
 }
+
+
 // 키보드 입력을 통해 점수를 입력 받도록 만들자
 // 또한 특정키를 입력하면 더 이상 점수 입력을 받지 않고
 public class Day9_Quiz38Explain {
