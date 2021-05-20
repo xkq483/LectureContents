@@ -44,6 +44,6 @@ public class SpecialQuestionAnswer {
 
         // 아래와 같이 이름을 활용함에 있어 혼동을 유발할 수 있음
         // 주의해야하는 부분중 하나입니다 ~
-        DiceGame d = new DiceGame(max,max2);
+        // DiceGame d = new DiceGame(max,max2);
     }
 }
