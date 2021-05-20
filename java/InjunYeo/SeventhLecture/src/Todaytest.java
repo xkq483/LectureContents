@@ -52,7 +52,7 @@ public class Todaytest {
         //2.1,3,9,27,81...n을 입력해서 n번째 값을 구하도록 프로그래밍하자
 
         for(int i= 0 ;i<arr.length;i++){
-            arr[i] = (int)Math.pow(3,i);
+            arr[i] = (int)Math.pow(2,i);
         }
         System.out.println("답은 : "+arr[num-1]);
 

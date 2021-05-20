@@ -78,6 +78,8 @@ class Cat{
 
 }
 
+
+
 public class TodayTask {
     public static void main(String[] args) {
 
@@ -96,5 +98,7 @@ public class TodayTask {
 
 
     }
+    Cat cat= new Cat();
+
 
 }
