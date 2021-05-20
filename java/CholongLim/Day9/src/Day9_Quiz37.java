@@ -26,6 +26,4 @@ public class Day9_Quiz37 {
 
         System.out.printf("%s는 %d살이다",pn.getName(),pa.getAge());
     }
-
-
 }
