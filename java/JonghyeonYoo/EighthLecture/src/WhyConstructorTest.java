@@ -18,6 +18,7 @@ class ConsTest {
     }
     ConsTest(float f) {
         System.out.println("안녕 나는 ConsTest(float f) 라고해!");
+
     }
     ConsTest(int a, String n) {
         System.out.println("안녕 나는 ConsTest(int a, String n) 이라고해!");
@@ -63,12 +64,15 @@ public class WhyConstructorTest {
         // Tip: 아직 우리는 초보자 단계에 있다.
         //      그러므로 Setter를 안써서 구현을 못하는것보다는
         //      Setter를 사용해서 일단 구현을 할 수 있도록 하는 것이 중요하다!
-
         System.out.printf("ct1 name = %s, age = %d\n", ct1.getName(), ct1.getAge());
         System.out.printf("ct2 name = %s, age = %d\n", ct2.getName(), ct2.getAge());
         System.out.printf("ct1 name = %s, age = %d\n", ct1.getName(), ct1.getAge());
-
         System.out.printf("ct3 name = %s, age = %d\n", ct3.getName(), ct3.getAge());
         System.out.printf("ct4 name = %s, age = %d\n", ct4.getName(), ct4.getAge());
+        System.out.printf("ct5 name = %s, age = %d\n", ct5.getName(), ct5.getAge());//getAge가 정수형이라서 float값인 3.3은 0으로 출력됨.
+        //ct5를 출력하고싶으면 현재 *데이터 저장영역* float형 변수 선언하고
+        // contest(float f)안에다가 float형 변수 선언한거 초기화 시키고
+        // public float get000() {return 000} 입력하고
+        // 출력할때 %f로 변경하고 ct5.get000()으로 변경 입력하면 됨.
     }
 }
