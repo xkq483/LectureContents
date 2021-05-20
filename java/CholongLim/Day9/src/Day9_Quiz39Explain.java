@@ -25,7 +25,6 @@ public class Day9_Quiz39Explain {
         DiceGame dg = new DiceGame();
 
         //dg.comDice = 3;
-
         dg.checkWinner();
     }
 }
