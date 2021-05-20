@@ -37,6 +37,5 @@ public class Day9_Quiz40 {
         fibon.Fibores();
 
 
-
     }
 }
