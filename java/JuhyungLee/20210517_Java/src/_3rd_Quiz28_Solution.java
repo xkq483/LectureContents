@@ -18,7 +18,7 @@ public class _3rd_Quiz28_Solution {
             int x2Array[] = new int[n];
             x2Array[0] = 1;
 
-            for (int i = 1; i < n+1; i++) { //"x2Array.length"를 (n+1)로 바꾸면 왜 error가 나는지..?
+            for (int i = 1; i < n; i++) { //"x2Array.length"를 (n+1)로 바꾸면 왜 error가 나는지..?
                 x2Array[i] = x2Array[i - 1] * 2;
             }
             System.out.printf("%d 번째 항의 값은 %d\n", n, x2Array[n - 1]);
