@@ -31,7 +31,6 @@ class DiceGame {
 public class Day9_Quiz39 {
     public static void main(String[] args) {
         DiceGame dg = new DiceGame();
-
         dg.checkWinner();
 
     }
