@@ -48,6 +48,7 @@ public class Pro33 {
         kitty.setAge(scan.nextInt());
 
         System.out.println("고양이의 성별은 ? ");
+        scan.nextLine();
         kitty.setSex(scan.nextLine());
 
         System.out.println("고양이의 품종은 ? ");
