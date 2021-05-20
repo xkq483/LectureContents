@@ -44,7 +44,7 @@ public class Prob33 {
         c.setName("스핑크스");
         c.setSpecies("페르시안");
 
-        System.out.printf("고양이의 이름은 %s 입니다. 종은 %s 이고, 나이는 1살이며 몸무게는 %s 입니다.\n",
+        System.out.printf("고양이의 이름은 %s 입니다. 종은 %s 이고, 나이는 %d살이며 몸무게는 %s 입니다.\n",
                 c.name, c.species, c.age, c.weight);
     }
 }
