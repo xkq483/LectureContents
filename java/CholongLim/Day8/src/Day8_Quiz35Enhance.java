@@ -67,7 +67,7 @@ class TestDice4 {
 
 public class Day8_Quiz35Enhance {
     public static void main(String[] args) {
-        TestDice3 td = new TestDice3();
+        TestDice4 td = new TestDice4();
 
         // do ~ while()의 경우엔
         // 무조건 처음은 실행하고 이후엔 조건에 따라 반복을할지 말지를 결정한다.
