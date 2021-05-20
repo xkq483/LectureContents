@@ -1,54 +1,16 @@
+import java.util.Scanner;
+
 public class Home0513 {
     // 0 ~ 9까지의 숫자가 중복되지 않게 나오게 만들어보자! (배열 없이)
     public static void main(String[] args) {
-        /*
-          18.
-          십진수 21을 이진수로 표현
-           21 -> 16,4,1
-           2^4 + 2^3 + 2^2 + 2^1 + 2^0
-            1     0     1     0     1
-            검산 : (2^4 x 1) + (2^3 x 0) + (2^2 x 1) + (2^1 x 0) + (2^0 x 1) = 21
-                      16    +     0     +      4    +    0      +     1
-            19.
-          십진수 73을 이진수로 표현
-           73 -> 64 ,8, 1
-           2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0
-            1     0     0     1     0     0     1
-              검산 : (2^6 x 1)+ (2^5 x 1)+ (2^4 x 1) + (2^3 x 0) + (2^2 x 1) + (2^1 x 0) + (2^0 x 1) = 73
-                        64   +    0     +     0    +     8      +     0     +    0      +     1
-             20.
-            2^1 + 2^3 + 2^5 + 2^6 을 2진수로 표현해보자!
-             101011
-             21.
-             2^0 + 2^3 + 2^6 + 2^7 + 2^8 + 2^9 을 2진수로 표현해보자!
-              1001001111
- */
 
+        Scanner scan = new Scanner(System.in);
+        System.out.println("2의 배수 곱하기");
+        int num = scan.nextInt();
 
-        final int BIN = 1;
-
-        int testBit1 = 0;
-        int randNum1;
-        // 첫번째 난수(5 ~ 10)
-
-        int testBit2 = 0;
-        int randNum2;
-        // 두번째 난수(7 ~ 10)
-
-        for (int i = 0; i < 6; i++) {
-            // 0 ~ 5 까지 1씩증가
-
-            randNum1 = (int) (Math.random() * (11 - 5) + 5);
-            // math.random : 0 ~ 1미만의 숫자를 랜덤 생성
-            // 11미만까지 랜덤 생성하려면 11을 곱해야함
-            // 근데 *11 +5로 입력하게 되면 5 ~ 16의 수로 변하기 때문에
-            // 최대값에서 최소값을 빼고 입력해야함(11-5)+5
-            while ((testBit1 & (BIN << randNum1)) != 0) {
-
-                randNum1 = (int) (Math.random() * (11 - 5) + 5);
-
-            }
-        }
+        if (num % 2 == 0)
+            System.out.println(num);
+        else
+            System.out.println("넌 배수가 아냐" + num);
     }
 }
-
