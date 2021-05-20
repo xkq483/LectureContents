@@ -21,6 +21,7 @@ class Person1 {
     }
 }
 
+
 public class Day9_Quiz37Explain {
     public static void main(String[] args) {
         Person1 p = new Person1("프라이버시", 100);
