@@ -30,11 +30,9 @@ class Teacher {
     // 회원가입시 집 주소 적으라고 나오는데, 여기서 입력하는 값들을 처리하는게 Setter에 해당한다.
     // 결론: 값을 설정하는 목적으로 사용하는 것이 Setter.
 
-    void setAge(int age){
-        // this.age는 class 내부에 있는 age를 의미.
-        // (아래 검은색)age는 입력으로 들어온 age에 해당한다.
-        this.age = age;
-    }
+    void setAge(int age){this.age = age;}
+    //void setAge(int a){age = a;}
+
 
     String getName(){
         return name;
