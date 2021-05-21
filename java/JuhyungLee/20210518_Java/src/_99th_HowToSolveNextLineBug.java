@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 class Dog {
     int age;
     int weight;
@@ -38,7 +37,6 @@ class Dog {
         this.weight = weight;
     }
 }
-
 public class _99th_HowToSolveNextLineBug {
     public static void main(String[] args) {
         System.out.println("32. 멍멍이 클래스 만들기(Setter/Getter)");
