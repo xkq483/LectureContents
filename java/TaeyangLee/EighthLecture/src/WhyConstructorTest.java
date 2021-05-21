@@ -40,8 +40,8 @@ public class WhyConstructorTest {
         ConsTest ct4 = new ConsTest(40);
         ConsTest ct5 = new ConsTest(3.3f);
 
-        //우리가 사용하는 모든 데이터는
-        //메모리에 올라가야지만 사용할 수 있고 눈으로 볼 수 있다.
+        //메모리에
+        //우리가 사용하는 모든 데이터는 올라가야지만 사용할 수 있고 눈으로 볼 수 있다.
         //결국 객체라는 단어 자체는 메모리에 데이터를 올렸습니다의의 추상화된 표현
 
         //원래 여기서 사용하던 setter는?
