@@ -23,7 +23,6 @@ class DiceGame {
 public class DiceGameTest {
     public static void main(String[] args) {
         DiceGame dg = new DiceGame();
-
         //dg.comDice = 3;
 
         dg.checkWinner();

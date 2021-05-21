@@ -9,6 +9,9 @@ class ClassScore {
         scores = new int[studentsScoreArr.length];
         for (int studentsScore : studentsScoreArr) {
             scores[i++] = studentsScore;
+            calcAverage ();
+            calcVariance ();
+            calcStdDeviation ();
         }
     }
     // 평균
@@ -49,8 +52,7 @@ public class AverageClassTest {
         int studentsScoreArr[] = {100, 92, 66, 77, 54, 89, 75, 60};
         ClassScore cs = new ClassScore(studentsScoreArr);
 
-        cs.calcAverage();
-        cs.calcVariance();
+
         cs.calcStdDeviation();
 
         System.out.printf("우리반의 평균은 %.4f, 분산 %.3f, 표준편차 %f\n",
