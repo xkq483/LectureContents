@@ -11,7 +11,7 @@ class ScanTest {
 
     void enterName () {
         System.out.print("이름은 입력하세요 : ");
-        String a = scan.nextLine();
+        String a = scan.nextLine();`
         System.out.println("당신의 이름은 : " + a + "입니다. ");
     }
 }
