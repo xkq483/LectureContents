@@ -1,40 +1,40 @@
 import java.util.Scanner;
 
 class Fibonacci {
-    private int fibo;
+   private int fiBo;
+//   결과값은 출력되지만, fiBo가 사용되지않음.
+   private int scanNum;
+   private int res;
 
-    public void Fibores() {
-        Scanner scan = new Scanner(System.in);
+   public Fibonacci() {
+       Scanner scan = new Scanner(System.in);
+       System.out.print("피보나치 수열의 n 번째 값을 구하시오. (n을 입력하세요) : ");
+       scanNum = scan.nextInt();
+   }
+   public void FibonacciRes() {
 
-        System.out.print("피보나치 수열값에서 n번째 값을 구하시오.(n을 입력하세요) : \n");
-        int fibo = scan.nextInt();
-        int i ;
-        int f1 = 1;
-        int f2 = 1;
-        int fiboRes = 0;
-
-       if (fibo <= 0) {
-           System.out.println("잘못된 값입니다.");
-        } else if(fibo < 3) {
-           System.out.printf("구하고자 하는 %d번째 피보나치 수열값은 1입니다.\n", fibo);
-       } else {
-           for(i = 3; i <= fibo; i++) {
-
-               fiboRes = f1 + f2;
-               f1 = f2;
-               f2 = fiboRes + f1;
-
+           if(scanNum <= 0) {
+               System.out.println("잘못된 입력입니다.");
+           } else if (scanNum < 3) {
+               System.out.printf("%d번째 피보나치 수열의 값은 1입니다.", scanNum);
+           } else {
+               int f1 = 1;
+               int f2 = 1;
+               for(int i = 2; i < scanNum; i++) {
+                   res = f1 + f2;
+                   f1 = f2;
+                   f2 = res;
+               }
+               System.out.printf("%d번째 피보나치 수열값은 : %d", scanNum, res);
            }
-
-           System.out.println("피보나치 수열값은 : " + f2);
        }
-    }
-}
+   }
 public class Day9_Quiz40 {
     public static void main(String[] args) {
+        Fibonacci fb = new Fibonacci();
 
-        Fibonacci fibon = new Fibonacci();
-        fibon.Fibores();
+        fb.FibonacciRes();
+
 
 
     }
