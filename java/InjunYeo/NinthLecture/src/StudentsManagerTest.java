@@ -82,7 +82,7 @@ class StudentsScore{
         //분산 : [각각의 샘플(A 사람의 점수, B사람의 점수, ...x사람의 점수) - 평균] 의 제곱을 모두 더함
         //      더해서 나온 값을 사람수로 나누면 분산을 얻을수 있음
         for(int i = 0; i<scores.length;i++){
-            Math.pow((scores[i] - mean),2);
+            sum += Math.pow((scores[i] - mean),2);
         }
 
         variance = (float)sum/(float) scores.length;
