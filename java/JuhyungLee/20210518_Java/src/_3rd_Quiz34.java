@@ -24,9 +24,9 @@ public class _3rd_Quiz34 {
         // 컴퓨터 vs 사용자
         Dice dice = new Dice();
 
-        if(dice.getDice1()>dice.getDice2()){
+        if(dice.computer>dice.zu){
             System.out.println("computer win");
-        } else if (dice.getDice1() == dice.getDice2()) {
+        } else if (dice.computer == dice.zu) {
             System.out.println("draw");
         }  else {
             System.out.println("zu win");
