@@ -3,8 +3,8 @@ class DiceGame2 {
     private int userDice;
 
     public DiceGame2 () {
-        comDice = getRandDice();
-        userDice = getRandDice();
+        int comDice = getRandDice();
+        int userDice = getRandDice();
     }
     private int getRandDice () {
         return (int)(Math.random() * 6 + 1);
@@ -22,9 +22,11 @@ class DiceGame2 {
 
 public class Day9_Quiz39Explain {
     public static void main(String[] args) {
-        DiceGame dg = new DiceGame();
+        DiceGame2 dg = new DiceGame2();
 
         //dg.comDice = 3;
         dg.checkWinner();
     }
 }
+
+
