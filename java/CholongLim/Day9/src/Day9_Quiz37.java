@@ -1,29 +1,35 @@
-import jdk.swing.interop.SwingInterOpUtils;
-import org.w3c.dom.ls.LSOutput;
-
 class Person {
     private String name;
-    private int age;
+    private  int age;
 
-    public Person(String name) {
+    public Person(String name, int age) {
         this.name = name;
-    }
-    public Person(int age) {
         this.age = age;
+    }
+
+    public void setName(String name){
+        this.name = name;
     }
     public String getName() {
         return name;
     }
-    public int getAge() {
+
+    public void setage(int age){
+        this.age =age;
+    }
+    public int getAge(){
         return age;
     }
 
 }
 public class Day9_Quiz37 {
     public static void main(String[] args) {
-        Person pn = new Person("나비");
-        Person pa = new Person(12);
+        Person ps = new Person("나비", 12);
 
-        System.out.printf("%s는 %d살이다",pn.getName(),pa.getAge());
+        System.out.printf("아이의 이름은 %s이고 %d살이다.\n", ps.getName(),ps.getAge());
+
+        ps.setName("체리");
+        ps.setage(10);
+        System.out.printf("아이의 이름은 %s이고 %d살이다.\n", ps.getName(),ps.getAge());
     }
 }
