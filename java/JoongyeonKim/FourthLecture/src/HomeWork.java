@@ -27,7 +27,7 @@ public class HomeWork {
         System.out.print("키보드 자판을(숫자 빼고!) 눌러서 주사위를 굴려보세요!");
         //스캐너 변수 배운거 까먹을 것 같아서 사용함
         String dice=scan.nextLine();
-             int num1, num2, num3, num4; // 먼저 4개의 주사위의 변수를 지정함
+             int num1, num2, num3, num4; // 먼저 4개의   주사위의 변수를 지정함
              
              
 
