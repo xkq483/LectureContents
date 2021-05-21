@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 class ForEachTestClass {
     int[] arr;
+    Scanner scan;
 
     public ForEachTestClass (int[] inputArr) {
         int len = inputArr.length;
@@ -9,6 +12,18 @@ class ForEachTestClass {
 
         for (int data : inputArr) {
             arr[i++] = data;
+        }
+    }
+    public ForEachTestClass () {
+        scan = new Scanner(System.in);
+        System.out.print("몇 개를 입력하시겠습니까 ? ");
+        int num = scan.nextInt();
+
+        arr = new int[num];
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("입력할 값을 적어주세요: ");
+            arr[i] = scan.nextInt();
         }
     }
     public void printArr () {
@@ -24,5 +39,8 @@ public class ForEachTest {
 
         ForEachTestClass fetc = new ForEachTestClass(testArr);
         fetc.printArr();
+
+        ForEachTestClass fetc2 = new ForEachTestClass();
+        fetc2.printArr();
     }
 }
