@@ -8,9 +8,9 @@ class TestDice3 {
 
     TestDice3() { //생성자를 만든다!
         comDice = getRandomDice();
-        userDice = getRandomDice();
+        userDice = getRandomDice();  
 
-        scan = new Scanner(System.in);
+        scan = new Scanner(System.in);  //메모리의 소모를 막기 위해서 생성자 사용시에만 스캐너를 쓰게끔 만든다
     }
 
     int getRandomDice() {
@@ -74,7 +74,7 @@ public class Prob35 {
         do {
             // 일단 한 번 해봐 ~
             td.checkWinner();
-        } while(td.redoDiceGame()); // 한 판 더 할까 ?
+        } while(td.redoDiceGame()); // 한 판 더 할까 ?  false가 입력된다면 while문이 정지됨
         // 주사위를 다시 굴려서 셋팅
         // 다시 진행할지 여부는 어떻게 설정할 것인가 ?
     }

@@ -17,7 +17,7 @@ class ConsTest {
         age = a;
     }
     ConsTest(float f) {
-        System.out.println("안녕 나는 ConsTest(float f) 라고해!");
+        System.out.println("안녕 나는 ConsTest(float f) 라고해!"); //생성자에 들어있어서 생성자 호출시에 같이 출력됨
     }
     ConsTest(int a, String n) {
         System.out.println("안녕 나는 ConsTest(int a, String n) 이라고해!");
@@ -38,7 +38,7 @@ class ConsTest {
 public class WhyConstructorTest {
     public static void main(String[] args) {
         ConsTest ct1 = new ConsTest();          //같은 클래스 변수이지만 각각 생성되는 인스턴스가 다르다 ct1
-        ConsTest ct2 = new ConsTest(10);     //같은 클래스 변수이지만 각각 생성되는 인스턴스가 다르다 ct2
+        ConsTest ct2 = new ConsTest(10, "ㅜ");     //같은 클래스 변수이지만 각각 생성되는 인스턴스가 다르다 ct2
         ConsTest ct3 = new ConsTest(20, "hi");  //같은 클래스 변수이지만 각각 생성되는 인스턴스가 다르다 ct3
         ConsTest ct4 = new ConsTest(40);  //같은 클래스 변수이지만 각각 생성되는 인스턴스가 다르다 ct4
         ConsTest ct5 = new ConsTest(3.3f);  //같은 클래스 변수이지만 각각 생성되는 인스턴스가 다르다 ct5
@@ -68,7 +68,6 @@ public class WhyConstructorTest {
         //ct2, 3, 4는 각각 입력한 변수의 값이 호출된다.
         System.out.printf("ct1 name = %s, age = %d\n", ct1.getName(), ct1.getAge());
         System.out.printf("ct2 name = %s, age = %d\n", ct2.getName(), ct2.getAge());
-        System.out.printf("ct1 name = %s, age = %d\n", ct1.getName(), ct1.getAge());
 
         System.out.printf("ct3 name = %s, age = %d\n", ct3.getName(), ct3.getAge());
         System.out.printf("ct4 name = %s, age = %d\n", ct4.getName(), ct4.getAge());
