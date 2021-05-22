@@ -2,25 +2,26 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 class Salaryman {
-    float randomMoney;
+    int randomMoney;
     float random_Rate;
-    float random_RateMoney;
-    float toTal = 0;
+    int random_RateMoney;
+    int toTal = 0;
     float arrRecord[] = new float[10];
-    float sum = 0;
+    int sum = 0;
 
+    //100만원단위까지만 출력하는 방법..
 
     public Salaryman() {
         RandomBox();
         Random_Rate();
-        System.out.printf("1년차 연봉 : %.0f \n",randomMoney);
-        toTal = randomMoney;
+        System.out.printf("  1년차 연봉 : %d \n",randomMoney);
+        toTal = (int)randomMoney;
         arrRecord[0] = randomMoney;
+
        for (int i = 1; i < 10; i++) {
-            toTal += random_RateMoney;
-            Random_Rate();
-           System.out.printf((i+1) +"년차 인상률 : %.1fP  연봉 : %.0f 만원 \n  ", (random_Rate*100), toTal);
-           randomMoney = toTal;
+           Random_Rate();
+           toTal += random_RateMoney;
+           System.out.printf( i + 1 +" 년차 인상률 : %.1fP  연봉 : %d 만원 \n  ", (random_Rate*100), toTal);
            sum += toTal;
            arrRecord[i] = toTal;
         }
@@ -33,7 +34,7 @@ class Salaryman {
     //랜덤 인상율 범위 1~20%
     void Random_Rate() {
         random_Rate = ((float)(Math.random() * 19 + 1))/100;
-        random_RateMoney = randomMoney*random_Rate;
+        random_RateMoney = (int)(randomMoney*random_Rate);
     }
 
     public float[] getArrRecord() {
