@@ -25,3 +25,4 @@ public class TwoClassTest {
         System.out.println("B = " + b.getNum());
     }
 }
+
