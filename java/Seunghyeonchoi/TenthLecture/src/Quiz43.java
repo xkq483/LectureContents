@@ -19,8 +19,7 @@ class AnnualSalary  {
                 System.out.println("sum값은 : " + sum);
             }
             raise[i] = sum;
-            finalsal[i] = raise[i] * sal[i]; // Q. double형과 int형 계산 방법?
-        }
+            finalsal[i] = raise[i] * sal[i];
 
     }
 
