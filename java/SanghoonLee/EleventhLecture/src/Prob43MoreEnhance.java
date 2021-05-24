@@ -8,6 +8,7 @@ class SalaryTest2 {
         this.name = name;
         salary = (int)(Math.random() * 1101 + 2400);
     }
+    // 편의성 제공 (하지만 확장성 Down)
     public void calcRandomSalary (int year) {
         float incRate;
 
@@ -18,6 +19,7 @@ class SalaryTest2 {
             // System.out.printf("%s의 %d년차 연봉은 = %d이며 올해 인상률 = %f\n", name, i + 1, salary, incRate);
         }
     }
+    // 편의성 Down (그러나 확장성 Up)
     public void calcRandomSalary () {
         float incRate = (int)(Math.random() * 20 + 1);
 
@@ -88,3 +90,11 @@ public class Prob43MoreEnhance {
         // 결국 10년동안 각 해의 평균 연봉을 계산하여 출력함
     }
 }
+
+/* 생성자에서 하는 일들은 아래와 같은 형태를 만드는 것
+int num = 3;
+int arr[] = { 2, 3, 4 };
+int randNum = (int)(Math.random() * 6 + 1); */
+
+/* 아래와 같은 계산은 생성자에서 작성하지 말자!
+float mean = sum / num; */
