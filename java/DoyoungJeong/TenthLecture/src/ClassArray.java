@@ -23,7 +23,7 @@ class ScoresArray {
         for(int i=0; i<stuNum; i++) {
             sum+=stuScores[i];
         }
-        mean = sum/(float)stuNum; //stuNum앞에 (float)을 넣어주는 이유가 소숫점을 값을 넣어주는 이유인가요?
+        mean = sum/(float)stuNum;
         return mean;
     }
     public int getSum() {
