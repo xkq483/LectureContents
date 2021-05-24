@@ -57,11 +57,10 @@ public class Quiz43 {
         AnnualSalary cs = new AnnualSalary();
 
         for (int i = 0; i < 10; i++) {
-            System.out.printf("%s 회사원의 시작 연봉은 %d이며 10년 후 연봉은 %d이다.\n", employeesNameArr[i], cs.getSal()[i], cs.getFinalsal()[i]);
+            System.out.printf("%s 회사원의 시작 연봉은 %d이며 10년 후 연봉은 %f이다.\n", employeesNameArr[i], cs.getSal()[i], cs.getFinalsal()[i]);
         }
-        //위에서 구한 Sal 값은 정상적으로 불러와지는데 finalsal 값을 불러오질 못하겠습니다(오류)
-
-        //gg
+        
+        
 
     }
 }
