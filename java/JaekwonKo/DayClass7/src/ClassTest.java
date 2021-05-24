@@ -32,7 +32,7 @@ public class ClassTest {
         Person person = new Person();
 
 
-        // 새로운 개념 new를 통해 공간을 만드느 방법
+        // 새로운 개념 new를 통해 공간을 만드는 방법
         // 1. new를 적는다
         // 2. 데이터타입을 적는다
         // 3. 만약 데어터타입이 배열이라면 대괄호를 열고 몇 개를 만들지 적는다.
