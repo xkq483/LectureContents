@@ -8,11 +8,19 @@ class MeanTest {
 
     public MeanTest (int[] arr) {
         length = arr.length;
+//        받는 배열 값의 길이를, length에 대입
+//        int[] A = { 1, 2, 3 }; 로 받았음
+//        length = 3
 
         scores = new int[length];
+//        int [] scores = new int[length];
 
         for (int i = 0; i < length; i++) {
             scores[i] = arr[i];
+//            scores[0] = arr[0] : 1
+//            scores[1] = arr[1] : 2
+//            scores[2] = arr[2] : 3
+
         }
     }
 
@@ -21,9 +29,14 @@ class MeanTest {
 
         for (int i = 0; i < length; i++) {
             sum += scores[i];
+//            sum = sum + scores[i];
+//            sum = 0 + scores[0]
+//            sum = scores[0] + scores[1]
+//            sum = (scores[0] + scores[1]) + scores[2]
         }
 
         mean = sum / (float)length;
+//        mean =  (scores[0] + scores[1]) + scores[2] / 3
     }
 
     public void businessA() {
@@ -93,6 +106,7 @@ public class QnaAnswerTest {
 
         MeanTest mt = new MeanTest(A);
         MeanTest mt2 = new MeanTest(A);
+        
     }
 }
 
