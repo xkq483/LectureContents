@@ -93,7 +93,7 @@ public class TodayTest {
 
             Employee e = new Employee();
             em[i] = e;
-            System.out.println(em[i]+"님의 연봉은 "+em[i].getPay());
+            System.out.println(em[i].getName()+"님의 연봉은 "+em[i].getPay());
         }
         PayCalculator p = new PayCalculator(em);
         p.showIncrease(3);
