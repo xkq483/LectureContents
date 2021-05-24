@@ -62,9 +62,8 @@ class Employee
             sum=0;  // while문을 다시 돌때마다 sum을 0으로 초기화
 
             next_income();  // 질문: 다음년도 연봉을 가져옴? 이라고 해석해도 될까요?
-                            // 질문: 메소드를 가져왔다고 하면, while문안에 for문이 2개인데
-                            //      동작할때..  한개의 for문이 조건을 다 돌고난 후에  다음 for문이 실행되는지
-                            //      아니면 같이 한개씩 돌아가는지 궁금합니다..
+                            // nextYearIncome[0] ~ nextYearIncome[9]의 값만 가져오게 되는건가요??
+                            // return의 개념을 잘 모르겠습니다..
 
             for(int i=0; i<MAX; i++)
             {
