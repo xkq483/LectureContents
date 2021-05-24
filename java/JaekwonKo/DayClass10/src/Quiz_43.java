@@ -8,7 +8,7 @@ class Income {
         for(int i =0; i < str.length; i++) {
 
             income =(int)(Math.random() * 1100 + 2400); //연봉
-            increase = (float)(Math.random() * (0.2f-0.01f+0.01f))+0.01f; //최대값 0.2f 최소값 0.01f
+            increase = (float)(Math.random() * (0.2f-0.01f))+0.01f; //최대값 0.2f 최소값 0.01f
 
             System.out.printf("%s의 연봉 : %d만원, 매년 %.2f%% 연봉인상\n"
                     ,str[i],income,increase);
