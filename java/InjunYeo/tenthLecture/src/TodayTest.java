@@ -29,6 +29,7 @@ class PayCalculator{
     double increase;
     Employee em[];
 
+
     PayCalculator(Employee[] em){
         this.em = em;
     }
@@ -43,11 +44,24 @@ class PayCalculator{
     }
 
     //입력받은 int값만큼 연봉인상
-    public void forIncrease(int year){
+    public void showIncrease(int year){
         for(int i =0;i<year;i++){
+            System.out.println(i+"년차 연봉 평균은"+averagePay());
             employeesIncrease();
+
         }
 
+
+    }
+
+    public int averagePay(){
+        int sum = 0;
+        int average = 0;
+        for(int i=0;i<em.length;i++){
+            sum+=em[i].getPay();
+        }
+        average= sum / em.length;
+        return average;
 
     }
 
@@ -82,7 +96,8 @@ public class TodayTest {
             System.out.println(em[i]+"님의 연봉은 "+em[i].getPay());
         }
         PayCalculator p = new PayCalculator(em);
-        p.forIncrease(3);
+        p.showIncrease(3);
+
 
 
 
