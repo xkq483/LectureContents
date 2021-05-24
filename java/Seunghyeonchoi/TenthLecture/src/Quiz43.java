@@ -2,15 +2,14 @@ import javax.swing.text.Style;
 import java.util.Scanner;
 
 class AnnualSalary  {
-    double sal[] = new double[10]; //연봉을 입력할 배열 생성
+    int sal[] = new int[10]; //연봉을 입력할 배열 생성
     double raise[] = new double[10]; //마찬가지로 인상률 배열 생성
     double finalsal[] = new double[10];  //최종 연봉
     //String[] name; //사원 이름 입력받을 배열
 
     public AnnualSalary()  {
         for (int i = 0; i < 10; i++) {
-            sal[i] = (double) (Math.random() * 1100 + 2400);
-            System.out.println("랜덤으로 구한 연봉값은 : " +sal[i]);
+            sal[i] = (int) (Math.random() * 1100 + 2400);
         }
 
         for (int i = 0; i < 10; i++) {
@@ -21,12 +20,11 @@ class AnnualSalary  {
             }
             raise[i] = sum;
             finalsal[i] = raise[i] * sal[i]; // Q. double형과 int형 계산 방법?
-            System.out.println("finalsal값은?" +finalsal[i]);
         }
 
     }
 
-    public double[] getSal()   {
+    public int[] getSal()   {
         return sal;
     }
     public double[] getRaise()  {
@@ -60,7 +58,7 @@ public class Quiz43 {
 
         for (int i = 0; i < 10; i++) {
             System.out.printf("%s 회사원의 시작 연봉은 %d이며 10년 후 연봉은 %d이다.\n", employeesNameArr[i], cs.getSal()[i], cs.getFinalsal()[i]);
-        }//값은 다 제대로 구했는데 불러오질 못하겠습니다.
+        }
 
         //gg
 
