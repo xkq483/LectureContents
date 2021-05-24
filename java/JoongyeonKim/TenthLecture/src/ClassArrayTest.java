@@ -60,7 +60,7 @@ public class ClassArrayTest {
         //--------------------------------------
         //  [0]    [1]    [2]    [3]     [4]
         for (int i = 0; i < num; i++) {
-            st[i] = new ScoresTest(); //이 부분을 통해 객체1, 객체2...
+            st[i] = new ScoresTest(); //이 부분을 통해 객체1, 객체2...  (st[i]가 학급을 의미함0
             st[i].calcMean();  //위에 있던 한 객체의 평균을 구하는 메소드
             totalSum += st[i].getSum(); //각각의 반 하나에 값을 더함
             totalNumber += st[i].getMAX();  //반의 수를 대입함
