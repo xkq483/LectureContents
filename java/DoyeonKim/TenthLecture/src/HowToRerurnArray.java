@@ -3,12 +3,12 @@ class ReTurnArray {
     float [] farr;
 
     public  ReTurnArray() {
-        arr = new int[3];
-        farr = new float[3];
+        arr = new int[5];
+        //farr = new float[3];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int)(Math.random() * 5 + 3);
-            farr[i] = (float)(Math.random() * 5 + 3);
+            //farr[i] = (float)(Math.random() * 5 + 3);
 
         }
     }
