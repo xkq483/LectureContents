@@ -14,7 +14,7 @@ class Employee{
         System.out.print("직원 이름을 입력해주세요 : ");
         Scanner scan = new Scanner(System.in);
         this.name= scan.nextLine();
-        pay =(int)(Math.random()*1100+2400);
+        pay =(int)(Math.random()*1101+2400);
     }
     public void setYearArr(int year){
         increasedPay = new int[year];
