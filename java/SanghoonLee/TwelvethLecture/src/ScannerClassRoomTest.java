@@ -39,13 +39,22 @@ class Employee {
         pay[0] = (int)(Math.random() * 1101 + 2400);
     }
 
+    // Convention(규약)
+    // 나중에 팀 프로젝트 할 때도 팀간에 컨벤션 설정이 중요
+    // 전부 다 가져오는 것은 표기를 어떻게 하자
+    // 낱개로 가져오는 것은 표기를 어떻게 하자
+    // 위와 같은 규약에 따라 그냥 지금 생각나는대로 작성한 부분
+    // calc_종류_변수 : 변수의 속성에 해당하는 종류 전체값을 전부 처리함
+    // calcYearPay : pay 변수의 속성 year에 해당하는 전체값을 모두 처리
+    // 이 규약은 만들기 나름이고 팀 프로젝트를 하는 경우엔 반드시 필요함
+    // (왜냐하면 내가 만든 매서드를 다른 사람이 사용할 수도 있기 때문)
     public void calcYearPay () {
         for (int i = curYear + 1; i < pay.length; i++) {
             pay[i] = pay[i - 1] + (int)(pay[i - 1] * getRandomIncRate() * PERCENT);
         }
     }
     public void calcPay () {
-        pay[curYear] = pay[curYear] + (int)(pay[curYear] * getRandomIncRate() * PERCENT);
+        pay[curYear + 1] = pay[curYear] + (int)(pay[curYear] * getRandomIncRate() * PERCENT);
         curYear++;
     }
     public void printPay () {
@@ -110,9 +119,11 @@ public class ScannerClassRoomTest {
         int length = emp[0].getPay().length;
         float mean[] = new float[length];
 
+        // 몇 년간
         for (int i = 0; i < length; i++) {
             float sum = 0;
 
+            // 사람 수
             for (int j = 0; j < emp.length; j++) {
                 // j 번째 사람의 i 년차 연봉
                 sum += emp[j].getYearPay(i);
