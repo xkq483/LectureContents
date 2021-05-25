@@ -13,6 +13,8 @@ class ScoreTest {
 
         for(int i = 0; i < MAX; i++) {
             randArr[i] = (int)(Math.random()* 50 + 50);
+            //배열 안에 index를 넣어주어야하니까 i값 입력.
+            // ++ 50~99까지의 랜덤 수자 randArr에 배열 생성된다. i만큼. 즉 MAX값만큼 배열생성된다.
         }
     }
     public void calcMean() {
@@ -52,8 +54,8 @@ public class e_Quiz {
         for(int i = 0; i < num; i++) {
             st[i] = new ScoreTest();
             st[i].calcMean();
-            totalSum += st[i].getSum();
-            totalNumber += st[i].getMAX();
+            totalSum += st[i].getSum(); //학급수
+            totalNumber += st[i].getMAX(); // 학생숫자
             System.out.println("각 반의 평균 = " + st[i].getMean());
         }
 
