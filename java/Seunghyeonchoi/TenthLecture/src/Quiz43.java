@@ -19,7 +19,7 @@ class AnnualSalary  {
                 System.out.println("sum값은 : " + sum);
             }
             raise[i] = sum;
-            finalsal[i] = raise[i] * sal[i];
+            finalsal[i] = raise[i] * sal[i]; // Q. double형과 int형 계산 방법?
         }
 
     }
@@ -57,10 +57,10 @@ public class Quiz43 {
         AnnualSalary cs = new AnnualSalary();
 
         for (int i = 0; i < 10; i++) {
-            System.out.printf("%s 회사원의 시작 연봉은 %d이며 10년 후 연봉은 %f이다.\n", employeesNameArr[i], cs.getSal()[i], cs.getFinalsal()[i]);
+            System.out.printf("%s 회사원의 시작 연봉은 %d이며 10년 후 연봉은 %d이다.\n", employeesNameArr[i], cs.getSal()[i], cs.getFinalsal()[i]);
         }
-        
-        
+
+        //gg
 
     }
 }
