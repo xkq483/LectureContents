@@ -9,6 +9,7 @@ class Foreachtest {
 
         for (int data : inputArr) {
             arr[i++] = data;
+            // ++ 배열을 복사하는 과정이므로 i++
         }
     }
     public void printArr () {
