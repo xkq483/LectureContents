@@ -13,26 +13,29 @@ class Salary_Print {
         First_Salary();
         Year_Print();
     }
+
     //초봉 설정
     void First_Salary() {
-        RandomMoney(a,b);
+        RandomMoney();
         yearArr[0] =  (int)random_Money;
         sum += random_Money;
     }
 
-    int rate; //입력한 인상률 범위
-    //연봉 인상범위
-    void RandomRate(int rate) {
+    //연봉 인상률
+    int rate;
+    void RandomRate() {
         randome_Rate = (float) (Math.random() * rate + 1)/100;
     }
-    //연도 설정
+
+    //기간 설정
     void Year_Setting() {
         System.out.printf("원하는 기간 설정 : ");
         int year = sc.nextInt();
         yearArr = new int[year];
         yearRate = new float [yearArr.length];
     }
-    //연도별 연봉 배열 초기화
+
+    //기간별 연봉 배열 초기화
     void Year_Print() {
         for (int i = 1; i < yearArr.length; i++) {
             RadomMoneyIc();
@@ -42,11 +45,10 @@ class Salary_Print {
         }
     }
 
-    float random_Money; //연봉
-    int a,b; //연봉 인상범위 범위 시작 값 a 최대값 b
-
     //연봉 범위
-    void RandomMoney(int a, int b) {
+    float random_Money;
+    int a,b; //연봉 인상범위 범위 시작 값 a 최대값 b
+    void RandomMoney() { //int a, int b 참조변수로
         random_Money = (float) (Math.random() * (a+1-b) + b);
     }
 
@@ -55,7 +57,7 @@ class Salary_Print {
 
     //연봉 증가 , 연봉 sum에 추가
     void RadomMoneyIc() {
-        RandomRate(rate);
+        RandomRate();
         inMoney = (randome_Rate*random_Money+ random_Money);
         sum += inMoney;
     }
@@ -68,11 +70,9 @@ class Salary_Print {
         b = sc.nextInt();
         System.out.printf(b+" ~ x 까지 원하는 연봉 범위 입력 : ");
         a = sc.nextInt();
-        RandomMoney(a,b);
         sc.nextLine();
         System.out.printf("1 ~ x 원하는 연봉 인상범위 : ");
         rate = sc.nextInt();
-        RandomRate(rate);
     }
 
     public String getName() {
