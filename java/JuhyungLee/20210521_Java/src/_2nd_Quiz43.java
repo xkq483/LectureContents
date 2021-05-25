@@ -29,7 +29,7 @@ public class _2nd_Quiz43 {
         // 회사직원 employee[0]~employee[9]를 갖는 배열 employee를 만듬.
         for(int i = 0; i < 10; i++){
             employee[i] = new annualIncome();
-            System.out.printf("10년 후employee[%d]의 연봉은: %f\n", i, employee[i].getlastAnnulIncome());
+            System.out.printf("10년 후 employee[%d]의 연봉은: %f\n", i, employee[i].getlastAnnulIncome());
         }
     }
 }
