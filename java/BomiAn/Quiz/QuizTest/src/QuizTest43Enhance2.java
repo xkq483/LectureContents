@@ -16,7 +16,7 @@ class SalaryTest2 {
             incRate = (int)(Math.random() * 20 + 1);
             // 원가 + 증액분
             salary = (int)(salary + salary * incRate * PERCENT);
-            // System.out.printf("%s의 %d년차 연봉은 = %d이며 올해 인상률 = %f\n", name, i + 1, salary, incRate);
+            System.out.printf("%s의 %d년차 연봉은 = %d이며 올해 인상률 = %f\n", name, i + 1, salary, incRate);
         }
     }
     public void calcRandomSalary () {
@@ -65,5 +65,6 @@ public class QuizTest43Enhance2 {
             System.out.println("올해 평균 연봉 = " + (sum / 10.f));
 
         }
+
     }
 }
