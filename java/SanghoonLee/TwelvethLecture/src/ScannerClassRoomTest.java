@@ -105,6 +105,24 @@ public class ScannerClassRoomTest {
 
         return num;
     }
+    public static float[] calcEmployeeMean(Employee[] emp) {
+        int[] pay;
+        int length = emp[0].getPay().length;
+        float mean[] = new float[length];
+
+        for (int i = 0; i < length; i++) {
+            float sum = 0;
+
+            for (int j = 0; j < emp.length; j++) {
+                // j 번째 사람의 i 년차 연봉
+                sum += emp[j].getYearPay(i);
+            }
+
+            mean[i] = sum / (float)emp.length;
+        }
+
+        return mean;
+    }
     // psvm
     public static void main(String[] args) {
         final int YEAR = 10;
@@ -140,6 +158,12 @@ public class ScannerClassRoomTest {
 
             emp[i].calcYearPay();
             emp[i].printPay();
+        }
+
+        float[] mean = calcEmployeeMean(emp);
+
+        for (int i = 0; i < mean.length; i++) {
+            System.out.printf("%d년차 평균 연봉은 %f\n", i + 1, mean[i]);
         }
     }
 }
