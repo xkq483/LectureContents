@@ -108,12 +108,11 @@ public class TodayTest {
         Employee[] em = new Employee[num];
         //for 문을 돌면서 em배열에 직원정보를 기입
         for(int i=0;i<num;i++){
-
             Employee e = new Employee();
             em[i] = e;
             System.out.println(em[i].getName()+"님의 연봉은 "+em[i].getPay());
         }
-        PayCalculator p = new PayCalculator(em,3);
+        PayCalculator p = new PayCalculator(em,4);
         p.showIncrease();
 
 
