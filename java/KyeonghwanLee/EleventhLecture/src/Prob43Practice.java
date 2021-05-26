@@ -58,7 +58,7 @@ public class Prob43Practice {
 
 
         for (int i = 0; i < nameLen; i++) {
-            sp[i] = new SalaryPractice(nameArr[i]);
+            sp[i] = new SalaryPractice(nameArr[i]);//인덱스마다 개체할당
         }
 
         for (int i = 0; i < 10; i++) {
