@@ -13,8 +13,9 @@ class Employee {
         startSalary = salary;
     }
     public void calcSalaryOfAYear() {
-        payRiseRate = (int)(Math.random()*20+1);
         salary = (int)(salary + (salary*(payRiseRate*0.01)));
+        //System.out.println(payRiseRate);
+        payRiseRate = (int)(Math.random()*20+1); //얘가 밑으로가면 위에 payRiseRate가 0으로 나온다.
     }
     public int getSalary() {
         return salary;
@@ -34,15 +35,17 @@ public class Prob43Revised {
     public static void main(String[] args) {
         String empName[] = {"이규호", "강선혁", "주하민", "장하늘", "이종화", "손현구", "정도영", "조유라", "장준하", "신준호"};
         Employee em[] = new Employee[empName.length];
+        int year = 10;
 
         for(int i=0; i< empName.length; i++) {
             em[i] = new Employee(empName[i]);
-        }
+            }
 
-        for (int i=0; i<em[i].getYear(); i++) { //for문 안에서 em[i].getYear()은 어짜피 10이므로 같은 값인데, i<em[i].getYear();으로 했을 때 에러가난다. i<10으로 했을 때는 문제가 없다. 왜그런지 잘 모르겠습니다.
-            int sumAYear = 0;
+        for (int i=0; i<year; i++) { //for문 안에서 em[i].getYear()은 어짜피 10이므로 같은 값인데, i<em[i].getYear();으로 했을 때 에러가난다. i<10으로 했을 때는 문제가 없다. 왜그런지 잘 모르겠습니다.
+            int sumAYear = 0;                   //<---특정한 값이 제한으로 정해진게 아니라 [i]가 들어있기 때문에 계속 ++되려한다. 즉 i가 10으로 넘어가는데 10번째 배열은 없기때문에 에러가나는것이다.
 
             for (int j = 0; j < empName.length; j++) {
+
                 if (i == 0) { //1년차 시작 연봉 즉 i가 0일때는 인상률이 salary에 안곱해지게 계산해야할것아서 밑 부분을 추가했습니다.
                     em[j].calcStartSalary();
                     System.out.printf("%s의 시작 연봉은 %d만원입니다.\n", empName[j], em[j].getStartSalary());
