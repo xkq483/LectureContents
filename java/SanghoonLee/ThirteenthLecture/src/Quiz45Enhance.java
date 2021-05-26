@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class RandomDiceGame {
+class RandomDiceGame2 {
     Scanner scan;
     int comBudget;
     int userBudget;
@@ -11,7 +11,7 @@ class RandomDiceGame {
     int userScore;
 
 
-    public RandomDiceGame() {
+    public RandomDiceGame2() {
         scan = new Scanner(System.in);
         comBudget = 1000;
         userBudget = 1000;
@@ -29,14 +29,26 @@ class RandomDiceGame {
         }
     }
 
+    public void runMultiDice (int[] diceArr) {
+        for (int i = 0; i < diceArr.length; i++) {
+            diceArr[i] = (int)(Math.random() * 6 + 1);
+        }
+        if (diceArr[0] % 2 == 1) {
+            diceArr[1] = 0;
+        }
+    }
+
     public void comRandDice() {
         comDiceArr = new int[2];
+        /*
         for (int i = 0; i < 2; i++) {
             comDiceArr[i] = (int)(Math.random() * 6 + 1);
         }
         if(comDiceArr[0] % 2 == 1) {
             comDiceArr[1] = 0;
         }
+         */
+        runMultiDice(comDiceArr);
         comScore = comDiceArr[0] + comDiceArr[1];
     }
 
@@ -136,7 +148,7 @@ class RandomDiceGame {
 }
 
 
-public class QuestionAnswer {
+public class Quiz45Enhance {
     public static void main(String[] args) {
 
         RandomDiceGame2 rdg = new RandomDiceGame2();
@@ -158,12 +170,6 @@ public class QuestionAnswer {
             rdg.comDice2Option();
 
             rdg.printResult();
-
-            /*
-            if(rdg.getComBudget() == 0 || rdg.getUserBudget() == 0) {
-                break;
-            }
-             */
         }
         rdg.printLastResult();
     }
