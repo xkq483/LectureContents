@@ -40,7 +40,7 @@ class Casino {
 
     public int gamedice2 () {
         dice2[0] = (int)(Math.random() * 6 + 1);
-        \
+
     }
 
 
