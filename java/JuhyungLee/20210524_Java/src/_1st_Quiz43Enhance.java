@@ -58,10 +58,11 @@ public class _1st_Quiz43Enhance {
         // 직원수 만큼의 인자를 같는 String배열 생성(직원 이름 넣을 것이므로 String)
 
         for (int i = 0; i < n; i++) {
-            scan.nextLine(); // java nextLine bug
+            if(i == 0){
+                scan.nextLine();
+            }
             System.out.print("직원의 이름: ");
             employeeName[i] = scan.nextLine(); // 직원의 이름 Scanner로 입력
-            System.out.println("Enter를 입력"); // java nextLine bug 인지용 멘트
         }
         Money[] employee = new Money[employeeName.length];
         // Money class를 datatype으로 하는 employee 배열 생성. 그 index수는 employeeName.length로 설정.
