@@ -172,6 +172,12 @@ public class ScannerClassRoomTest {
         }
 
         float[] mean = calcEmployeeMean(emp);
+        // 다른클래스에 만들었을 경우엔
+        // float[] mean = 다른클래스.calcEmployeeMean(emp);
+        // 그리고 그 다른클래스가 과연 범용적일 수 있는지도 설계 관점에선 중요!
+        // Math.pow
+        // Math.exp
+        // Math.sqrt
 
         for (int i = 0; i < mean.length; i++) {
             System.out.printf("%d년차 평균 연봉은 %f\n", i + 1, mean[i]);
