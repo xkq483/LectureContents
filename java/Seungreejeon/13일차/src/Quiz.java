@@ -73,7 +73,7 @@ class DeathDiceGame {
             System.out.printf("이번판은 사용자가 이겼습니다! %d  %d T : %d(사용자) VS  %d %d T : %d(컴퓨터)\n",
                     userDice[FIRST_IDX],userDice[SECOND_IDX],userToDice,comDice[FIRST_IDX],comDice[SECOND_IDX], comToDice);
         } else if (comToDice > userToDice) {
-            System.out.printf("이번판은 컴퓨터가 이겼습니다! %d %d T : %d(사용자) VS %d  %d T : %d(컴퓨터)\n",
+            System.out.printf("이번판은 컴퓨터가 이겼습니다! %d %d T : %d(컴퓨터) VS %d  %d T : %d(사용자)\n",
                     comDice[FIRST_IDX],comDice[SECOND_IDX], comToDice, userDice[FIRST_IDX],userDice[SECOND_IDX],userToDice);
         } else {
             System.out.printf("무승부 %d(사용자) VS %d(컴퓨터)",
