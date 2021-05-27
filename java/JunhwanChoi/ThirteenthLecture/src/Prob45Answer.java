@@ -158,7 +158,7 @@ class DiceDeathGame {
     }
 }
 
-public class Quiz45 {
+public class Prob45Answer {
     public static void main(String[] args) {
         DiceDeathGame ddg = new DiceDeathGame();
 
