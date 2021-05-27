@@ -59,11 +59,23 @@ class Gamble {
     }
     private void calcDice(int[] curDice, int[] targetDice) {
         switch (curDice[1]) {
-            case 1 : curDice[2] = curDice[0] + 3; break;
-            case 3 : targetDice[2] = targetDice[2] - 2; curDice[2] = curDice[0] + 0; break;
-            case 4 : curDice[2] = 0; break;
-            case 6 : curDice[2] = (curDice[0]+curDice[1])*2; targetDice[2] = (targetDice[0]+targetDice[1])*2; break;
-            default : curDice[2] = curDice[0] + curDice[1];
+            case 1 :
+                // curDice[2] = curDice[2] + curDice[0] + 3
+                curDice[2] += (curDice[0] + 3);
+                break;
+            case 3 :
+                targetDice[2] += (targetDice[2] - 2);
+                curDice[2] += curDice[0];
+                break;
+            case 4 :
+                curDice[2] = 0;
+                break;
+            case 6 :
+                curDice[2] += (curDice[0]+curDice[1])*2;
+                targetDice[2] += (targetDice[0]+targetDice[1])*2;
+                break;
+            default :
+                curDice[2] += (curDice[0] + curDice[1]);
         }
     }
     private void printDice() {
