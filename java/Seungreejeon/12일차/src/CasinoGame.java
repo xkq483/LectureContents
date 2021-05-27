@@ -65,7 +65,6 @@ class Dice {
     }
     //두번째 주사위
     void SecondDice(int[] inputarr) {
-        inputarr[1] = R_Num();
         System.out.println(inputarr[1]+" 주사위 값");
         switch (inputarr[1]) {
             case 1:
