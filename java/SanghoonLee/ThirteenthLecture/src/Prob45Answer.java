@@ -65,6 +65,7 @@ class DiceDeathGame {
                 "판돈을 입력하시오: ");
         betMoney = scan.nextInt();
     }
+    // 중재자
     public void gameStart () {
         do {
             bettingMoney();
