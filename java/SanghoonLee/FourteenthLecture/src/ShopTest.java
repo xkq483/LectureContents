@@ -15,6 +15,11 @@ class Shop {
         lists.add(scan.nextLine());
     }
 
+    public void cancelOrder () {
+        System.out.print("취소할 물품을 말씀하세요: ");
+        lists.remove(scan.nextLine());
+    }
+
     // toString 으로 자동 완성 가능
     // 객체 정보 출력에 사용합니다.
     // 아직 인터페이스 배우지 않았으므로 설명은 향후 진행
@@ -33,6 +38,8 @@ public class ShopTest {
         for(int i = 0; i < 3; i++) {
             s.deliveryCome();
         }
+
+        s.cancelOrder();
 
         // 아래와 같이 객체를 전달하면 toString이 호출됨
         System.out.println(s);
