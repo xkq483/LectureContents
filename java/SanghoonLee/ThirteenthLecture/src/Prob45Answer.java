@@ -23,8 +23,8 @@
 import java.util.Scanner;
 
 class DiceDeathGame {
-    final int MAX_PLAYER = 2;
-    final int DICE_IDX = MAX_PLAYER + 1;
+    final int MAX_DICE = 2;
+    final int DICE_IDX = MAX_DICE + 1;
     final int START_MONEY = 1000;
 
     final int FIRST_IDX = 0;
@@ -65,6 +65,7 @@ class DiceDeathGame {
                 "판돈을 입력하시오: ");
         betMoney = scan.nextInt();
     }
+    // 중재자
     public void gameStart () {
         do {
             bettingMoney();
