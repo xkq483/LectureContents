@@ -131,6 +131,7 @@ public class b_static {
 
             emp[i].calcYearPay();
             emp[i].printPay();
+            //emp[i] 객체안에 있는 printPay를 사용(실행)하라
         }
     }
 }
