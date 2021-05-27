@@ -31,7 +31,7 @@ class Employee {
 
     public Employee (String name, int year) {
         this.name = name;
-        curYear = 0;
+        curYear += 0;
 
         pay = new int[year];
         incRate = new float[year];
