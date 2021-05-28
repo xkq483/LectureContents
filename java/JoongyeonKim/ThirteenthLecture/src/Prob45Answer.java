@@ -21,14 +21,14 @@
 
 import java.util.Scanner;
 
-class DiceDeathGame { //우선 코드에 사용할 변수들을 입력한다
-    final int MAX_PLAYER = 2;
-    final int DICE_IDX = MAX_PLAYER + 1;
+class DiceDeathGame { //우선 객체에 사용할 변수들을 입력한다
+    final int MAX_DICE = 2;  //인덱스[1],[2]는 첫 번째와 두 번째 주사위이고
+    final int DICE_IDX = MAX_DICE + 1;  //인덱스 [2]가 합산 주사위이다
     final int START_MONEY = 1000;
 
-    final int FIRST_IDX = 0;
-    final int SECOND_IDX = 1;
-    final int TOTAL_IDX = 2;
+    final int FIRST_IDX = 0; //첫번째 인덱스
+    final int SECOND_IDX = 1; //두번째 인덱스
+    final int TOTAL_IDX = 2; //세번째 인덱스
 
     final int DICE_RANGE = 6;
     final int DICE_START_OFFSET = 1;
@@ -45,7 +45,7 @@ class DiceDeathGame { //우선 코드에 사용할 변수들을 입력한다
     int[] comDice;
     int[] usrDice;
 
-    public DiceDeathGame () {  // 생성자에서 메소드의 계산을 통해 나온 변수들의 값을 대입해주는 건가요??(클래스 바로 아래에 있는 변수와 생성자에 있는 변수의 차이점을 알고 싶습니다)
+    public DiceDeathGame () {  // 생성자는 변수의 값을 초기화해준다
         roundNum = 0;
 
         comDice = new int[DICE_IDX];
@@ -64,7 +64,7 @@ class DiceDeathGame { //우선 코드에 사용할 변수들을 입력한다
                 "판돈을 입력하시오: ");
         betMoney = scan.nextInt();  //betMoney를 키보드 입력으로 설정
     }
-    public void gameStart () {   //모든 메소드들을 불러온다(이렇게 해놓으면 메인에서 이 메소드만 호출하면 끝난다)
+    public void gameStart () {   //모든 메소드들을  중재한다(이렇게 해놓으면 메인에서 이 메소드만 호출하면 끝난다)
         do {                    // 아래에 있는 메소드들은 순서대로 나열해야 한다 순서대로 하지않으면 사소한 불량이 발생한다(게임이 제때 안끝난다던가)
             bettingMoney();
             runDice();
