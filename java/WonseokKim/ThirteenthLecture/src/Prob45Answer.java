@@ -64,6 +64,8 @@ class DiceDeathGame {
                 "판돈을 입력하시오: ");
         betMoney = scan.nextInt();
     }
+    // do while 반복문 : do {} 안의 코드는 무조건 한번은 실행한 후에 조건식(while)보고 반복한다.
+    // isAlive = true;를 선언했던 isAlive가 false 될 때까지 반복한다.
     public void gameStart () {
         do {
             bettingMoney();
