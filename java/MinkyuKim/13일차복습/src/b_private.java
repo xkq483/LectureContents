@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 class DiceDeathGame {
-    final int MAX_PLAYER = 2;
-    final int DICE_IDX = MAX_PLAYER + 1;
+    final int MAX_DICE = 2;
+    // 주사위 갯수를 의미,
+    final int DICE_IDX = MAX_DICE + 1;
+    // 배열의 시작은 0부터니까 +1 . total_idx를 사용하려면 +1을 해줘야함.
     final int START_MONEY = 1000;
 
     final int FIRST_IDX = 0;
@@ -29,6 +31,9 @@ class DiceDeathGame {
 
         comDice = new int[DICE_IDX];
         usrDice = new int[DICE_IDX];
+        //주사위 1, 2,3 (배열상 0, 1, 2 인덱스)
+        // 즉, comDice, userDice에 대한 공간을 3칸 생성하라. 2칸이하일시에는 에러가 발생(공간부족) 따라서 TOTAL_IDX가 들어갈 수없음
+        // 무조건 4개 이상의 공간이 있어야, 첫번째 주사위, 두번재 주사위, 주사위의 합산값이 출력될 수 있음.
 
         isAlive = true;
         scan = new Scanner(System.in);
