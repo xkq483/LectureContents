@@ -25,6 +25,12 @@ class Test {
         arr[1] = 10000000;
     }
 
+    public void vectorAdd (int[] vec) {
+        for (int i = 0; i < vec.length; i++) {
+            arr[i] += vec[i];
+        }
+    }
+
     @Override
     public String toString() {
         return "Test{" +
@@ -55,5 +61,16 @@ public class CanWeClone {
         for (int i = 0; i < cloneArr.length; i++) {
             System.out.printf("cloneArr[%d] = %d\n", i, cloneArr[i]);
         }
+
+        System.out.println("--------------절취선--------------");
+        cloneArr[1] = 77777777;
+
+        for (int i = 0; i < cloneArr.length; i++) {
+            System.out.printf("cloneArr[%d] = %d\n", i, cloneArr[i]);
+        }
+
+        t.vectorAdd(cloneArr);
+
+        System.out.println(t);
     }
 }
