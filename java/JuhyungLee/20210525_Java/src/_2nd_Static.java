@@ -1,5 +1,9 @@
 class StudyStatic{
 
+    public final int _FINAL = 5;
+    public static int _static = 5;
+
+
     public static void printout_Static(){
         System.out.println("this is static");
     }
