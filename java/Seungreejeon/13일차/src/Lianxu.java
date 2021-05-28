@@ -118,7 +118,7 @@ class DiceDeathGam {
                 targetDice[TOTAL_IDX] = (targetDice[FIRST_IDX] ) * 2;
                 break;
             default:
-                curDice[TOTAL_IDX] = curDice[FIRST_IDX] + curDice[SECOND_IDX];
+                curDice[TOTAL_IDX] += curDice[FIRST_IDX] + curDice[SECOND_IDX];
                 break;
         }
     }
