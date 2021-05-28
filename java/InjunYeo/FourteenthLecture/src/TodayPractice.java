@@ -42,7 +42,7 @@ class DrawGame{
         while (i < arr.length) {
 
             arr[i] = (int) (Math.random() * peopleCount);
-            if (checkDuplication(i)) {
+            if (checkDuplication(arr,i)) {
                 continue;
             }
             i++;
@@ -51,9 +51,9 @@ class DrawGame{
 
     }
 
-    private boolean checkDuplication(int idx){
+    private boolean checkDuplication(int[] arr,int idx){
         for(int i=0;i<idx;i++){
-            if(getRandNum[idx] == getRandNum[i]){
+            if(arr[idx] == arr[i]){
                 return true;
             }
         }
