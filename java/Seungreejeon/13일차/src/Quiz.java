@@ -87,7 +87,7 @@ class DeathDiceGame {
                 curDice[TOTAL_IDX] = curDice[FIRST_IDX] + 3;
                 break;
             case 3:
-                targetDice[TOTAL_IDX] = targetDice[FIRST_IDX] - 2;
+                targetDice[TOTAL_IDX] += targetDice[FIRST_IDX] - 2;
                 break;
             case 4:
                 curDice[TOTAL_IDX] = 0;
