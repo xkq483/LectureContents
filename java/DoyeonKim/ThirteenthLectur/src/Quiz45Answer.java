@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 class DiceDeathGame {
     final int MAX_PLAYER = 2; //플레이어 수
-    final int DICE_IDX = MAX_PLAYER + 1;
+    final int DICE_IDX = MAX_PLAYER + 1; //
     final int START_MONEY = 1000;
 
     final int FIRST_IDX = 0; //첫번째 주사위값
@@ -39,7 +39,7 @@ class DiceDeathGame {
 
     int roundNum;
 
-    Boolean isAlive;
+    Boolean isAlive;//살았는지 죽었는지,반복할 것인지 아닌지,while (isAlive); //false
     Scanner scan;
 
     int[] comDice;
@@ -102,7 +102,7 @@ class DiceDeathGame {
         }
     }
     private void checkSkill (int[] curDice, int[] targetDice) {
-        switch (curDice[SECOND_IDX]) {
+        switch (curDice[SECOND_IDX]) {//배열표기,curdice배열의 두번째 인덱스의 값을 보겠다는 뜻,
             case 1:
                 curDice[TOTAL_IDX] = curDice[FIRST_IDX] + 3;//1+3을 총합에 넣어줌
                 break;
@@ -121,15 +121,15 @@ class DiceDeathGame {
                 break;
         }
     }
-    private void checkMagicDiceSkill () {
+    private void checkMagicDiceSkill () { //중복을 없애기 위해서 만들어준것
         // 사용자 관점에서의 2번째 주사위 스킬 발동
         checkSkill(usrDice, comDice);
         // 컴퓨터 관점에서의 2번째 주사위 스킬 발동
         checkSkill(comDice, usrDice);
     }
-    private void runSecondDice (int[] dice) {
+    private void runSecondDice (int[] dice) { //아래 getRandomValue 세팅
         if (dice[FIRST_IDX] % 2 == 0) {//두번째 주사위를 실행하기 위한 조건
-            dice[SECOND_IDX] = getRandomValue(DICE_RANGE, DICE_START_OFFSET);
+            dice[SECOND_IDX] = getRandomValue(DICE_RANGE, DICE_START_OFFSET);//세컨드 인덱스에 값을 넣어라
         }
     }
     private void runFirstDice (int[] dice) {
@@ -165,5 +165,5 @@ public class Quiz45Answer {
     }
 }
 
-//여러개가 있으니 헷갈린다 어떻게 한번에 위치를 기억하고 코드를 짤 수 있는지
+//여러개가 있으니 헷갈린다 어떻게 한번에 위치를 기억하고 코드를 짤 수 있는지 신기하다
 //많이 복습해서 구조를 많이 익혀야겠다

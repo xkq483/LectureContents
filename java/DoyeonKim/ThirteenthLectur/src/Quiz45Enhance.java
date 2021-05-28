@@ -34,7 +34,7 @@ class RandomDiceGame2 {
         for (int i = 0; i < diceArr.length; i++) {
             diceArr[i] = (int) (Math.random() * 6 + 1);
         }
-        if (diceArr[0] % 2 == 1) {
+        if (diceArr[0] % 2 == 1) { //홀수면 다이스배열1을 0으로 초기화
             diceArr[1] = 0;
         }
     }
