@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 class DrawGame {
-    //중복이 발생하지 않게 랜덤한 배열에 사람 이름을 무작위로 믹스한다.
+//중복이 발생하지 않게 랜덤한 배열에 사람 이름을 무작위로 믹스한다.
 //그리고 당첨자 번호를 3개 뽑도록 한다(마찬가지로 중복 x)
 //당첨된 사람의 이름을 출력하고 "당첨되셨습니다. 누구 누구 누구 축하합니다 ^^" 를 출력하자!
 
@@ -83,13 +83,22 @@ class DrawGame {
     public void printSuccessArr () {
         for (int i = 0; i < 3; i++) {
             System.out.printf("success[%d] = %d\n", i, success[i]);
+
         }
     }
+    public void printName() {
+        for(int i = 0; i < 3; i++) {
+            System.out.printf("%d번 당첨 %s님 축하드립니다.\n", success[i], tmpArr[success[i]]);
+
+        }
+     }
+
+
 
     @Override
     public String toString() {
-        return "Name {" + Arrays.toString(tmpArr) +
-                "\nNum=" + Arrays.toString(tmpIdx)+
+        return "DrawGame {" +
+                "tmpIdx=" + Arrays.toString(tmpIdx)+
                 '}';
     }
 
@@ -112,6 +121,7 @@ public class Quiz48ArrayList {
 
            dg.checkSuccess();
            dg.printSuccessArr();
+           dg.printName();
 
        }
    }
