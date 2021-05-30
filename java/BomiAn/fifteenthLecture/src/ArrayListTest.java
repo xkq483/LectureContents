@@ -14,7 +14,9 @@ public class ArrayListTest {
 
         ArrayList<String> clone = (ArrayList<String>)fruitsList.clone();
         for (int i = 0; i < 4; i++){
-            System.out.printf("get (%d) = %s\n", i, clone.get(i));
+            if (clone.get(i) == "apple") {
+                System.out.println("야홋");
+            }
 
         }
 
