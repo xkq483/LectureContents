@@ -43,7 +43,6 @@ public class ShopTest {
 
         s.cancelOrder();
         System.out.println(s);
-
-
+        
     }
 }
