@@ -66,6 +66,8 @@ class Roulette {
         printIntArr(tmpIdx);
         printStringArr(tmpArr);
         printIntArr(success);
+
+        printWinner();
     }
 
     public void checkDuplicateArr (int[] arr) {
@@ -186,6 +188,12 @@ class Roulette {
             } else if (option == DATA_STRING) {
                 System.out.printf("arr[%d] = %s\n", i, arr[i]);
             }
+        }
+    }
+
+    public void printWinner () {
+        for (int i = 0; i < success.length; i++) {
+            System.out.printf("당첨자의 이름은 = %s\n", tmpArr[tmpIdx[success[i]]]);
         }
     }
 
