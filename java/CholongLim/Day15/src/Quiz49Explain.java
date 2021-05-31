@@ -40,6 +40,15 @@ class ArrayListCount {
         // 위와 같이 취급하겠다는 전략
         for (int i = 0; i < RAND_RANGE; i++) {
             duplicateLists.add(0);
+            // duplicateLists.add(x): x를 현재 리스트에서 가장 마지막에 추가함
+            // ex) 0, 1, 4, 8
+            // ArrayList.add(77)
+            // ex) 0, 1, 4, 8, 77
+
+            // duplicateLists.add(0); 의 for문 3번이 반복될때,
+            // ex) 0(i=0), 0(i=1), 0(i=3)
+            // 각각 for문에 따른 인덱스 3개가 duplicateLists에 생긴다.
+
         }
     }
 

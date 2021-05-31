@@ -24,7 +24,7 @@ class Test {
         return testArr;
         // testArr[0] = 1 ~ 6
         // testArr[1] = 1 ~ 6
-        // testArr[2] = 1 ~ 6 를 리턴받는 건가?
+        // testArr[2] = 1 ~ 6 를 리턴
     }
 
     public void changeArr () {
