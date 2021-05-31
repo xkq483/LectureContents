@@ -118,7 +118,7 @@ public class Quiz48 {
         System.out.println(r);
 
         r.shuffle();
-
+        
         System.out.println(r);
 
         r.checkSuccess();
