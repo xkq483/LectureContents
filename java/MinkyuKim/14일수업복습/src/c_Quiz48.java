@@ -3,7 +3,7 @@
 class Roulette {
     ArrayList<String> nameLists;
     final int winner = 3;
-    int[] randNum;
+    int[] randNum; // 3명을 뽑으려면 배열로
 
     String[] names = {
             "박세진", "김창욱", "김민규", "김중연", "문성호",
