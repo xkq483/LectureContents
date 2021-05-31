@@ -57,12 +57,13 @@ class Order{
     private void showProduct(ArrayList<Product> arr){
         System.out.println("0 . 나가기");
         for(int i=0;i<arr.size();i++){
-            System.out.println((i+1)+" . "+arr.get(i).getProductName()+"    가격 : "+arr.get(i).getPrice()+" 원    수량 : "
-                +arr.get(i).count);
+            //System.out.println((i+1)+" . "+arr.get(i).getProductName()+"    가격 : "+arr.get(i).getPrice()+" 원    수량 : "
+            //    +arr.get(i).count);
+            System.out.printf("%d. %-9s가격 : %6s원%-5s수량 : %s\n",i+1,arr.get(i).getProductName(),arr.get(i).getPrice()," ",arr.get(i).count);
         }
     }
 
-    //물건 사는주문
+    //물건 사는주문1
     public void buyProduct(){
         System.out.println("--------구매 할 수 있는 아이템--------");
         showProduct(buyList);
@@ -74,7 +75,7 @@ class Order{
         System.out.print("구매 할 수량 : ");
         int ctn = scan.nextInt();
         countSet(buyList,sellList,num,ctn);
-        calcMoney(buyList,num,ctn);
+        buyCalcMoney(buyList,num,ctn);
     }
 
     //물건 파는주문
@@ -89,7 +90,7 @@ class Order{
         System.out.print("판매 할 수량 : ");
         int ctn = scan.nextInt();
         countSet(sellList,buyList,num,ctn);
-        calcMoney(sellList,num,ctn);
+        sellCalcMoney(sellList,num,ctn);
 
     }
     //물건갯수 처리로직
@@ -102,12 +103,21 @@ class Order{
             removeList.get(num-1).count-=ctn;
             //주문에 따라 새로만들 Product
             Product newProduct = new Product(removeList.get(num-1).getProductName(),removeList.get(num-1).getPrice(),ctn);
-            if(addList.contains(newProduct.getProductName())){
-               addList.get(addList.indexOf(newProduct.getProductName())).count+=ctn;
-            }
-            else {
+            if(addList.size() == 0){
                 addList.add(newProduct);
+            }else{
+                for(int i=0;i<addList.size();i++){
+                    if(addList.get(i).getProductName().equals(newProduct.getProductName())){
+                        addList.get(i).count+=ctn;
+                        break;
+                    }
+                    else{
+                        addList.add(newProduct);
+                    }
+                }
             }
+
+
         }
         else{
             removeList.remove(removeList.get(num-1));
@@ -117,9 +127,11 @@ class Order{
 
     }
     //돈계산 로직
-    private void calcMoney(ArrayList<Product> removeList,int num,int cnt){
+    private void sellCalcMoney(ArrayList<Product> removeList,int num,int cnt){
+        person.setMoney(person.getMoney()+(removeList.get(num-1).getPrice()*cnt));
+    }
+    private void buyCalcMoney(ArrayList<Product> removeList,int num,int cnt){
         person.setMoney(person.getMoney()-(removeList.get(num-1).getPrice()*cnt));
-        System.out.println("현재 남은 돈 : "+person.getMoney()+" 원");
     }
 
 }
@@ -235,6 +247,7 @@ class Store{
     //활동 반복 제어 메서드
     public void actSelect(){
         do{
+            System.out.println("현재 소지금 : "+person.getMoney()+"원");
             showACt();
             act();
         }while(isTrue);
