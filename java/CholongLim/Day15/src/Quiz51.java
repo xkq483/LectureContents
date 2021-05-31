@@ -86,8 +86,6 @@ class Shop{
             System.out.println(myList);
 
             plusSellObj();
-
-
         } else if(answer == 2){
             System.out.printf("판매를 종료합니다. 현재 내 장바구니 = %s, 소지 금액은 %d입니다",myList,wallet);
         } else {
@@ -113,10 +111,7 @@ class Shop{
             }
             break;
         }
-
     }
-
-
     public  void buyObject() {
         System.out.print("구매할 물건의 번호를 입력하여 주세요.\n");
         purchaseNum = scan.nextInt();
