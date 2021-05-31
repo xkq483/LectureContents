@@ -78,7 +78,8 @@ return;
             if (input[0] == "목록") {
                 //처음에 목록에 list를 넣어주고싶었는데 실패했다..그래서 목록을 치면 리스트가 나오도록 해주고싶었지만
                 //목록을 입력하면 Exception in thread "main" java.lang 이 뜨는 이유를 모르겠다
-                //막혀서 더이상 모모               for (int i = 0; i < 1; i++) {
+                //막혀서 더이상 모
+               for (int i = 0; i < 1; i++) {
                    list();
                }
 
@@ -96,7 +97,7 @@ return;
 
 
   @Override
-    public String toString() {
+    public String toString() { //이부분은 잘 모르겠는데 넣어줬다
         return "Shop{" +
                 "list=" + Arrays.toString(liIdx) +
                 '}';
