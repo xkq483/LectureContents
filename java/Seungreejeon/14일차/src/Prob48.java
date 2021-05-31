@@ -110,7 +110,6 @@ public class Prob48 {
 
         r.shuffle();
 
-
         System.out.println(r);
         r.checkSuccess(names);
 
