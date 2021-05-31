@@ -38,6 +38,7 @@ class Market {
         scan = new Scanner(System.in);
     }
 
+    // 16일차!
     public void doShopping () {
         do {
             // 1. 마켓에서 판매하는 물품을 보여줌
