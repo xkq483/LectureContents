@@ -51,14 +51,21 @@ class CloneMemory {
 public class a_MemoryCloneTest {
     public static void main(String[] args) {
         CloneMemory cm = new CloneMemory();
+        // CloneMemory 객체 생성(CloneMemory를 메모리에 올림), cm 변수 선언 -> 객체 그 자체
         System.out.println(cm);
+        // 주사위 돌린 값 출력
+
+
         int[] save = cm.getCloneArr();
         System.out.printf("save[0] = %d, save[1] = %d, save[2] = %d\n",
                 save[0], save[1], save[2]);
-        cm.reRandArr();
+        // cm에 접근해서 생성된 객체를 복제.
 
+        cm.reRandArr();
+        // 새로운 주사위 돌리기 ★★★ 생성자가 아닌 객체에 직접 접근하여 출력하기 때문에, 위와는 다른 새로운 값이 출력됨.
         System.out.println("객체에 접근해 출력");
         System.out.println(cm);
+        // 새로운 주사위 돌린것이 출력
 
         System.out.println("사전 저장 정보 출력");
         System.out.printf("save[0] = %d, save[1] = %d, save[2] = %d\n",
