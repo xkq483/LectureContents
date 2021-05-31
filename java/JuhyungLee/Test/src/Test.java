@@ -7,7 +7,7 @@ public class Test {
          >> int byte float double long ...... 등등
          byte: 1byte
          int: 4byte
-         long: 4byte
+         short: 2byte /  long: 8byte
          float: 4byte
          double: 8byte
          */
