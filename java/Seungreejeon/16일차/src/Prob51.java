@@ -1,4 +1,4 @@
-//따로 클론코딩으로 복습을 해봤습니다.
+//따로 클론코딩위주로 복습했습니다.
 import java.util.ArrayList;
 import java.util.Scanner;
 
