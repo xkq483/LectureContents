@@ -156,17 +156,6 @@ class Market{
         }while(isOK);
 
     }
-    /*버그방지 메소드(숙제부분) */
-    private String bugPreventQuestion(){
-        System.out.print("쇼핑을 계속하시겠습니까? Y/N ");
-        String res = scan.nextLine();
-        scan.nextLine();
-        return res;
-    }
-
-
-
-
 
 
     /*숙제부분*/
