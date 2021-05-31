@@ -5,26 +5,28 @@ class Roulette {
     ArrayList<String> nameLists;
     String[] tmpArr;
     int[] tmpIdx;
-
+    final  int winner = 3;
     int[] success;
 
     int nameLength;
     Boolean isRedundant;
 
-    public Roulette (String[] names) {//생성자 초기값 설정
-        nameLength = names.length;
+    public Roulette (String[] names)// 매개변수를적어 매인매소드에있는 배열을 가져왔다.
+    {
+        nameLength = names.length; // 현재 nameLength 정수28
         isRedundant = true;
 
         nameLists = new ArrayList<String>();
-        tmpArr = new String[nameLength];
-        tmpIdx = new int[nameLength];
+        tmpArr = new String[nameLength]; // String 배열인 tmpArr을  28개방을 만들겠다.
+        tmpIdx = new int[nameLength];  // int 배열인 tmpIdx 방도  28개만들겠다.
 
-        success = new int[3];
+        success = new int[winner]; // success그러니까 당첨자 3명을 여기다가 넣겠다. 그말인거같다.
 
         int i = 0;
 
         for (String name : names) {
-            tmpArr[i++] = name;
+            tmpArr[i++] = name;// String 배열 tmpArr[0]...[27]까지에 각각의 방마다 우항의값 names를 좌항의값 name에게 넘겨주겠다.
+            //tmpArr은 현재 각방마다. 사람들의 이름이 넣어져있을것이다.
         }
     }
 
@@ -73,7 +75,6 @@ class Roulette {
             i++;
 
             if (i == 3) {
-
                 isRedundant = false;
             }
         } while (isRedundant);
@@ -82,6 +83,7 @@ class Roulette {
     public void printSuccessArr () {
         for (int i = 0; i < 3; i++) {
             System.out.printf("success[%d] = %d\n", i, success[i]);
+
         }
     }
 
@@ -90,6 +92,11 @@ class Roulette {
         return "Roulette{" +
                 "tmpIdx=" + Arrays.toString(tmpIdx) +
                 '}';
+    }
+    public void printWinningNames(){
+        for(int i = 0; i <3; i++){
+            System.out.println("당첨자="+tmpArr[tmpIdx[success[i]]]);
+        }
     }
 }
 
@@ -114,5 +121,7 @@ public class Prob48 {
 
         r.checkSuccess();
         r.printSuccessArr();
+        r.printWinningNames();
+
     }
 }
