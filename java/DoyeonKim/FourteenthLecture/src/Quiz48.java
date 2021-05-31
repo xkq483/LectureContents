@@ -73,6 +73,8 @@ class Roulette {
             printIntArr(tmpIdx);
             printStringArr(tmpArr);
             printIntArr(success);
+
+            printWinner(); //!!
         }
         public void checkDuplicateArr (int[] arr) {
             int i = 0;
@@ -149,14 +151,22 @@ class Roulette {
 
     //public void printArr () { 이거보다 예쁘게 리팩토링 하려면면
        public void printIntArr (int[] arr) {
-            for (int i = 0; i < nameLength; i++) {
+            for (int i = 0; i < arr.length; i++) {
                 System.out.printf("tmp[%d] = %d\n", i, arr[i]);
 
                 if ( i % 5 == 4) {
                     System.out.println();
                 }
             }
+           System.out.println();
         }
+
+    // 문자열 출력 <<< 리팩토링 대상
+    public void printArr () {
+        for (int i = 0; i < nameLength; i++) {
+            System.out.printf("tmpArr[%d] = %s\n", i, tmpArr[i]);
+        }
+    }
 
     public void printStringArr (String[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -172,12 +182,15 @@ class Roulette {
     // 아직 멀티 데이터 타입 처리하는 방식을 학습하지 않았기 때문에
     // String 타입의 배열, int 타입의 배열을 혼성하여 인자로 받을 수 없음
     public void printVariousArr (int[] arr, int option) {
-            for (int i = 0; i < nameLength; i++) {
-                System.out.printf("tmpArr[%d] = %s\n", i, tmpArr[i]);
+        for (int i = 0; i < arr.length; i++) {
+            if (option == DATA_INT) {
+                System.out.printf("arr[%d] = %d\n", i, arr[i]);
+            } else if (option == DATA_STRING) {
+                System.out.printf("arr[%d] = %s\n", i, arr[i]);
             }
 
         }
-
+    }
 
  /*   public void successName() {
         //당첨 숫자와 이름 배열에 있는 같은 숫자를 꺼내와야 할 것 같은데 어떻게 해야하는지 모르겠다
@@ -194,6 +207,7 @@ class Roulette {
             System.out.printf("당첨자의 이름은 = %s\n", tmpArr[tmpIdx[success[i]]]);
         }
     }
+
     @Override
     public String toString() { //toString은 자동완성 가능함. 객체의 정보 출력 사용
         return "Roulette{" +

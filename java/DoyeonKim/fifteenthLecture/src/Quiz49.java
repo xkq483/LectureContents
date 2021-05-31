@@ -1,4 +1,4 @@
-
+/*
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -104,3 +104,5 @@ public class Quiz49 {
         System.out.println(alc);
     }
 }
+
+ */
