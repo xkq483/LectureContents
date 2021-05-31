@@ -83,9 +83,12 @@ class Roulette {
     }
 
     public void printResult() throws InterruptedException {
+        shuffle();
+        checkSuccess();
+
         for (int i = 0; i < 3; i++) {
             Thread.sleep(1000);
-            System.out.println( i + 1 + "번째 주인공~! "+tmpArr[success[i]] + "님 축하합니다. 당첨되셨습니다.^^ ");
+            System.out.println( i + 1 + "번째 주인공~! "+tmpArr[tmpIdx[success[i]]] + "님 축하합니다. 당첨되셨습니다.^^ ");
         }
 
     }
@@ -112,6 +115,7 @@ public class QuizTest48 {
         Roulette r = new Roulette(names);
 
         System.out.println("두구두구두구~ 당첨자를 공개합니다~~!!!!");
+
 
         r.printResult();
     }
