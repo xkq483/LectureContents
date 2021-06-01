@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13e23aef-fb1b-46af-9af0-d841589d4afe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Day15/src/Practice1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Day15/src/Prob48.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Quizz/src/Quiz49.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Quizz/src/Quiz49Enhance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Quizz/src/Quiz51.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Quizz/src/Quiz48.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Quizz/src/Quiz48.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Quizz/src/Quiz51.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Quizz/src/Quiz51.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

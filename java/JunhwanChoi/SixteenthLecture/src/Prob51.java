@@ -18,14 +18,12 @@ class Market {
     private ArrayList<String> userBuyList;
     private ArrayList<Integer> userBuyListStock;
 
-    private String[] marketSellList = {"선풍기", "키보드", "마우스", "모니터"}; // 물건
-    private int[] marketSellListPrice = {380000, 80000, 70000, 400000};  // 물건 가격
+    private String[] marketSellList = {"선풍기", "키보드", "마우스", "모니터"};
+    private int[] marketSellListPrice = {380000, 80000, 70000, 400000};
 
     private int myMoney;
-     int totalPrice=0;
 
     private Boolean continueShopping;
-
     Scanner scan;
 
     final int DEFAULT_IDX = 1;
@@ -78,8 +76,6 @@ class Market {
     }
 
     private void doPayment () {
-        //숙제
-
         // userBuyList, userBuyListStock에
         // 구매 물품과 구매 물량이 기록되어 있음
         // 물건 가격 정보는 marketSellList, marketSellListPrice 를 통해 알 수 있음
@@ -87,21 +83,8 @@ class Market {
         // marketSellList, marketSellListPrice를 활용하여 가격 정보를 획득하여
         // 전부 합산 얼마가 나오는지 계산하도록 한다.
         // 그리고 지갑에다가 적용한다.(지갑 설정기능이 빠져있음 현재)
-        System.out.println("***결제를 진행합니다.***");
-        System.out.println("구매할 물건: " + userBuyList);
-        System.out.println("개수: " + userBuyListStock);
-
-
-        for(int i=0; i<userBuyList.size(); i++) {
-            for (int j = 0; j < marketSellList.length; j++)
-            {
-                if (userBuyList.get(i).equals(marketSellList[j])) {
-                    totalPrice += userBuyListStock.get(i) * marketSellListPrice[j];
-                }
-            }
-        }
-            System.out.printf("가격: %d\n", totalPrice);
     }
+
     private void selectBuyItemStock (String selectItem) {
         Boolean isntErrorAmount = true;
         int amount;
@@ -139,7 +122,7 @@ class Market {
                 continue;
             } else if (itemNum == 0) {
                 continueBuying = false;
-                continue;  // ?
+                continue;
             }
 
             // 실제 물건의 구매 수량을 결정하기 전에 해당 물품을 구매하므로 ArrayList 설정이 필요하다.
@@ -164,7 +147,7 @@ class Market {
         } while (continueBuying);
     }
 
-    private void createNonDuplicateBuyList (String target, int amount) { //중복제어 메소드
+    private void createNonDuplicateBuyList (String target, int amount) {
         // 실제 중복이 되었다면 인덱스 값이 나올 것이고
         // 중복이 없으면 -1이 나오게 될 것이다.
         int idx = userBuyList.indexOf(target);
@@ -190,7 +173,7 @@ class Market {
     }
 }
 
-public class Quiz51 {
+public class Prob51 {
     public static void main(String[] args) {
         Market m = new Market();
 
