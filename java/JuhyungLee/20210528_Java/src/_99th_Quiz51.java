@@ -12,22 +12,21 @@ class Shop {
         buy_list = new ArrayList<String>();
     }
     public void order() {
-//        boolean buy_more = true;
-//        while (buy_more) {
+        boolean buy_more = true;
+        while (buy_more) {
             System.out.print("무엇을 구매하시겠습니까?: ");
             scan = new Scanner(System.in);
             String what_to_buy = scan.nextLine();
             buy_list.add(what_to_buy);
 
-//            System.out.println("추가로 구매하시겠습니까? yes/no");
-//            String yes_or_no = scan.nextLine();
-//            if (yes_or_no == "yes") {
-//                buy_more = true;
-//            } else if (yes_or_no == "no") {
-//                // buy_more = false; // 이 code도 안 되고
-//                // break;             // break; 해도 계속 무한루프..
-//            }
-//        }
+            System.out.println("추가로 구매하시겠습니까? yes/no");
+            String yes_or_no = scan.nextLine();
+            if (yes_or_no.equals("yes")) {
+                buy_more = true;
+            } else if (yes_or_no.equals("no")) {
+                buy_more = false;
+            }
+        }
     }
     public void calculation(){
         if(buy_list.contains("apple")){
