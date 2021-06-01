@@ -17,6 +17,18 @@ public LeeKunHee(String company, String lastName, int money){
                 ", money=" + money +
                 '}';
     }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getMoney() {
+        return money;
+    }
 }
 class LeeJaeYong extends LeeKunHee{
     private int age;
@@ -30,7 +42,7 @@ class LeeJaeYong extends LeeKunHee{
 
     @Override
     public String toString() {
-        return "LeeJaeYong{" +
+        return "LeeJaeYong{" +super.toString()+
                 "age=" + age +
                 ", height=" + height +
                 '}';
