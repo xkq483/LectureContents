@@ -61,7 +61,7 @@ class Market {
 
         do {
             System.out.print("쇼핑을 계속하시겠습니까 ? Y/N ");
-            System.out.print("");
+
 
             String res = scan.nextLine();
 
