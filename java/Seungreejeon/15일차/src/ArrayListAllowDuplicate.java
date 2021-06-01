@@ -43,7 +43,6 @@ class ArrayListCount {
     }
 
     public void cntDuplicate () {
-        // foreach <<<
         for (int num : intLists) {
             // 빼온 값이 10이면
             if (num == FIRST_VALUE) {
