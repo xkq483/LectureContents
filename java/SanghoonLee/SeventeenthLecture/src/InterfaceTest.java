@@ -1,3 +1,8 @@
+// 인터페이스 작성법
+// 1. 일단 interface를 적는다.
+// 2. 인터페이스명(일종의 클래스 같은 것이라고 보면 됨)을 적는다.
+// 3. 인터페이스 내부에는 매서드 프로토타입을 작성한다.
+//    (프로토타입이 뭘까요 ? 매서드의 접근 제한자, 리턴 타입, 매서드 이름, 입력등을 기록한 형태)
 interface Remocon {
     public void turnOn();
     public void turnOff();
@@ -48,6 +53,7 @@ class AbstractTest {
     Remocon rc = new Remocon() {
         @Override
         public void turnOn() {
+            // 여기에 필요한 기능은 필요한 사람이 알아서 만드세요 ~
             System.out.println("나는 RC 자동차용 리모콘이야! RF 송수신기가 지금 활성화되었어!");
         }
 
