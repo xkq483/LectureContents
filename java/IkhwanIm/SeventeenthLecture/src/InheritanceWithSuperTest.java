@@ -10,6 +10,16 @@ class Vehicle {
         this.pressure = pressure;
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "rpm=" + rpm +
+                ", fuel=" + fuel +
+                ", pressure=" + pressure +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
 
 class Airplane extends Vehicle {
@@ -40,6 +50,9 @@ class Airplane extends Vehicle {
 public class InheritanceWithSuperTest {
     public static void main(String[] args) {
         Vehicle v = new Vehicle(10,10,10,"white");
+        System.out.println(v);
+        Airplane ap = new Airplane(20,20,20,"white",20,20,20);
+        System.out.println(ap);
 
     }
 }
