@@ -11,6 +11,10 @@ class Vehicle {
         this.color = color;
     }
 
+    public void vv() {
+
+    }
+
     @Override
     public String toString() {
         return "Vehicle{" +
@@ -32,7 +36,6 @@ class Airplane extends Vehicle {
         // super()는 무엇이 되었든 상속자인 부모를 호출한다.
         // super()만 적혀 있으니 생성자를 호출하게 된다.
         super(rpm, fuel, pressure, color);
-
         this.aileron = aileron;
         this.pitch = pitch;
         this.rudder = rudder;

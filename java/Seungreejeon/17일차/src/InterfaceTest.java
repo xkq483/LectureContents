@@ -50,10 +50,9 @@ class AbstractTest {
     Remocon rc = new Remocon() {
         @Override
         public void turnOn() {
-            // 여기에 필요한 기능은 필요한 사람이 알아서 만드세요 ~
+            // 여기에 필요한 기능 작성
             System.out.println("나는 RC 자동차용 리모콘이야! RF 송수신기가 지금 활성화되었어!");
         }
-
         @Override
         public void turnOff() {
             System.out.println("이제 헤어질 시간이야! RF 송수신기 신호 출력을 차단할게!");
@@ -64,7 +63,6 @@ class AbstractTest {
         public void turnOn() {
             System.out.println("나는 라디오야! 지금부터 주파수 채널 매칭을 시작할게!");
         }
-
         @Override
         public void turnOff() {
             System.out.println("이젠 안녕! 주파수 채널 매칭을 끊을게!");
