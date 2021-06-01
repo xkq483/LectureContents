@@ -78,6 +78,8 @@ class Market {
     }
 
     private void doPayment () {
+        //숙제
+
         // userBuyList, userBuyListStock에
         // 구매 물품과 구매 물량이 기록되어 있음
         // 물건 가격 정보는 marketSellList, marketSellListPrice 를 통해 알 수 있음
