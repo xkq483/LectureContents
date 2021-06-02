@@ -21,7 +21,7 @@ class Market {
     private String[] marketSellList = {"선풍기", "키보드", "마우스", "모니터"};
     private int[] marketSellListPrice = {380000, 80000, 70000, 400000};  //어차피 중재자 역할하는 메소드랑 생성자 빼고 전부 프라이빗설정 되어있다
 
-    private int myMoney=100;  //결제를 위해 수를 대입함
+    private int myMoney=1022220;  //결제를 위해 수를 대입함
 
     private Boolean continueShopping;
     Scanner scan;
@@ -61,6 +61,7 @@ class Market {
 
     private void checkContinueShopping () {
         Boolean isOK = false;
+        scan.nextLine();
 
         do {
             System.out.print("쇼핑을 계속하시겠습니까 ? Y/N");
