@@ -85,17 +85,25 @@ class Market {
     }
 
     private void doPayment () {
-        System.out.println("안녕하세요 결제 진행을 하겠습니다.");
-        System.out.println("결제하실제품들과 그개수들은 다음과같습니다.");
-        System.out.println(userBuyList);
-        System.out.println(userBuyListStock);
+        int length = marketSellList.length;
 
-        for(int i =0; i<userBuyListStock.toArray().length;i++){
-            System.out.println(userBuyList.get(i)+"의총가격은="+MarketPrices.get(i)*userBuyListStock.get(i));
-          PricePay  += userBuyListStock.get(i)*MarketPrices.get(i);
+       // 마켓리스트만큼돌때 내가산 리스트들과 if문을 대조해서 맞으면 이프문이돌아서 내돈에서 내가산 물건의개수만큼 돈이 빠져나간다.
 
+        for (int i = 0; i < length; i++) {
+            for (String element : userBuyList) {
+
+
+                if (marketSellList[i].equals(element)) {
+
+                    mymoney -= marketSellListPrice[i] * userBuyListStock.get(userBuyList.indexOf(element));
+                    System.out.printf("찾은 물품 = %s, 가격 = %d, 수량 = %d\n",
+                            element, marketSellListPrice[i],
+                            userBuyListStock.get(userBuyList.indexOf(element)));
+
+
+                }
+            }
         }
-            System.out.println("내실금액은="+PricePay);
     }
     private void CalcMoney(){
 
