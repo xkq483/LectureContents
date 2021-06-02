@@ -1,15 +1,15 @@
 class Car {
-    private float rpm;
-    private float fuel;
+    private float rpm;           //Car라는 클래스를 만들고 그곳에
+    private float fuel;          //private으로 각각 필요한 정보를 넣는다.
     private float pressure;
     private String color;
 
     public void setRpm (float rpm) {
         this.rpm = rpm;
-    }
+    }     //Getter 와 Setter로
     public float getRpm() {
         return rpm;
-    }
+    }                  //각 정보들을 받고 입력할수 있도록 준비한다.
     public float getFuel() {
         return fuel;
     }
@@ -44,7 +44,7 @@ class SportsCar extends Car {
     public String toString() {
         //super의 경우엔 상속해준 상속자를 직접 호출한다.
         return "SportsCar{" +
-                "rpm=" + super.getRpm()+
+                "rpm=" + super.getRpm()+            //super로 car의 정보들을 상속 받은 모습
                 ", fuel=" + super.getFuel()+
                 ", pressure=" + super.getPressure()+
                 ", color=" + super.getColor()+
@@ -60,9 +60,9 @@ public class CarTest {
         SportsCar sc = new SportsCar();
 
         sc.setRpm(100);
-        sc.setFuel(2.5f);
-        sc.setPressure(1.0f);
-        sc.setColor("Dark Gray");
+        sc.setFuel(2.5f);                 //new로 객체를 생성하고
+        sc.setPressure(1.0f);             //Car의 정보값을 새롭게 값을넣어
+        sc.setColor("Dark Gray");         //호출한 모습
         sc.setBooster(false);
 
         System.out.println(sc);

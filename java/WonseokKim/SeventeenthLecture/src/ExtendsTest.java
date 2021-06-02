@@ -23,19 +23,19 @@ class AA extends A {
 public class ExtendsTest {
     public static void main(String[] args) {
         A a = new A();
-        a.b();
-        System.out.println("A a: " + a.a);
+        a.b();   //A
+        System.out.println("A a: " + a.a);  // 10
 
         AA aa = new AA();
-        aa.b();
-        aa.c();
-        System.out.println("AA aa: " + aa.a);
+        aa.b();   //AA
+        aa.c();   //C
+        System.out.println("AA aa: " + aa.a); //20
 
         // new의 대상은 AA()이며
         // 접근 데이터는 데이터타입 A를 참조해야한다.
         A a1 = new AA();
-        a1.b();
-        System.out.println("A a1: " + a1.a);
+        a1.b();   //AA
+        System.out.println("A a1: " + a1.a);    //10
 
     }
 }
