@@ -160,6 +160,7 @@ class Market{
 
     /*숙제부분*/
     private void doPayment(){
+        /*
         System.out.println("현재 가지고 있는 돈 : "+myMoney+"만원");
         int priceSum=0;
 
@@ -196,6 +197,40 @@ class Market{
         System.out.println("합계 : "+priceSum+" 만원");
         myMoney = moneyCheck(myMoney,priceSum);
 
+         */
+        int length = marketSellList.length;
+
+        //userBuyList는 별도의 연결리스트
+        //marketSellList는 별도의 배열
+        for(int i =0; i<length;i++){
+            for(String element : userBuyList){
+                //해당 i번째 인덱스의 요소 위치에 price를 사용하면 됨을 의미함
+                //우리가 키도르 입력을 통해서 받는 userBuyList는 위의 순서대로 배치되지않는다.
+                //순서가 역순으로 들어갔다고 생각해보자
+                //
+                if(marketSellList[i].equals(element)){
+                    myMoney -= marketSellListPrice[i] * userBuyListStock.get(userBuyList.indexOf(element));
+                    System.out.println("찾은 물품 : "+element+ "가격 : "+marketSellListPrice[i]+" 수량 : "
+                            +userBuyListStock.get(userBuyList.indexOf(element)) );
+
+                    //결제 완료 이후 구매 리스트를 비울 필요가 있음(방법1)
+                    //현재 케이스 에서는 닶을 지워버리면 루프를 도는 중에 지워지기때문에 문제가 발생함
+                    /*
+                    int deleteIdx = userBuyList.indexOf(element);
+                    userBuyListStock.remove(deleteIdx);
+                    userBuyList.remove(deleteIdx);
+                    내부에서 바로 처리하기때문에 동작속도가 더빠름
+                     */
+                }
+            }
+
+        }
+
+        System.out.println("현재 남은돈 : "+myMoney);
+        //방법 2) 결제 완료 이후 구매리스트를 비울수 있음
+        //데이터 리스트가 많을때 내부에서 순회를 또함
+        userBuyListStock.clear();
+        userBuyList.clear();
 
 
     }
