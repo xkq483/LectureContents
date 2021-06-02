@@ -60,11 +60,10 @@ class Market {
     int sum = 0;
 
     private void doPayment () {
-        sum = 0;
         int eachsum = 0;
         for (int i = 0; i < userBuyList.size(); i++) {
             for (int j = 0; j < marketSellList.length; j++) {
-                if (userBuyList.get(i) == marketSellList[j]) {
+                if (userBuyList.get(i).equals(marketSellList[j])) {
                     eachsum = marketSellListPrice[j]*userBuyListStock.get(i);
                     sum += eachsum;
                     System.out.printf("%d. %s : %d\n",i+1,userBuyList.get(i),eachsum);
