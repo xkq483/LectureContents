@@ -99,13 +99,13 @@ class Market {
     private void doPayment () {
         eachPriceSum = 0;
         for(int i = 0; i < userBuyList.size(); i++) {
-                if ( userBuyList.get(i).equals("선풍기")) {
+                if ( userBuyList.get(i).equals(marketSellList[0])) {
                     eachPriceSum += userBuyListStock.get(i) * marketSellListPrice[0];
-                } else if ( userBuyList.get(i).equals("키보드")) {
+                } else if ( userBuyList.get(i).equals(marketSellList[1])) {
                     eachPriceSum += userBuyListStock.get(i) * marketSellListPrice[1];
-                } else if ( userBuyList.get(i).equals("마우스")) {
+                } else if ( userBuyList.get(i).equals(marketSellList[2])) {
                     eachPriceSum += userBuyListStock.get(i) * marketSellListPrice[2];
-                } else if ( userBuyList.get(i).equals("모니터")) {
+                } else if ( userBuyList.get(i).equals(marketSellList[3])) {
                     eachPriceSum += userBuyListStock.get(i) * marketSellListPrice[3];
                 }
             }
