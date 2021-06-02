@@ -3,6 +3,9 @@ interface LampMethod {
     public void lightOff();
 }
 
+// 저번에는 클래스 내부에 인터페이스에 대한 객체를 생성한 반면
+// 이번에는 implements를 사용하여 해당 클래스에서
+// 인터페이스 내부의 미구현 매서드를 구현해줌으로서 동작을 하게 된다.
 class Lamp implements LampMethod {
     @Override
     public void lightOn() {
