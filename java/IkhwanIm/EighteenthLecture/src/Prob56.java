@@ -35,17 +35,22 @@ public class Prob56 {
         System.out.println(map);
 
         System.out.println("카드를 분배합니다.");
+        int temp = 0;
+        int randNum = 0;
+        do {
+            for (int i = 0; i < 4; i++) {
+                String sculpture = pattern[(int) (Math.random() * 3)];
 
-        for (int i = 0; i < 4; i++) {
-            String sculpture = pattern[(int)(Math.random() * 3)];
+                // 중복되는 숫자를 체킹하는 코드가 필요합니다:
+                // 56번에서는 중복체킹하는것을 추가로 처리하여
+                // 57번 문제를 풀어보도록 합시다!
+                randNum = (int) (Math.random() * 10);
+                temp = randNum;
 
-            // 중복되는 숫자를 체킹하는 코드가 필요합니다:
-            // 56번에서는 중복체킹하는것을 추가로 처리하여
-            // 57번 문제를 풀어보도록 합시다!
-            int randNum = (int)(Math.random() * 10);
+                System.out.println("사용자에게 분배된 카드는 = " + sculpture +
+                        " 문양의 " + randNum + " 카드입니다!");
 
-            System.out.println("사용자에게 분배된 카드는 = " + sculpture +
-                    " 문양의 " + randNum + " 카드입니다!");
+            }
+        }while (temp != randNum);
         }
     }
-}
