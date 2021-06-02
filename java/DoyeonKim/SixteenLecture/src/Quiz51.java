@@ -36,6 +36,8 @@ class Market {
         continueShopping = false;
 
         scan = new Scanner(System.in);
+
+        myMoney = 10000000;
     }
 
     // 16일차!
@@ -89,9 +91,39 @@ class Market {
         //구매물품의 인덱스랑 유저구매물품 인덱스가 같으면 재고랑 가격을 곱해서 합산을 만들고 싶었다
         //어떻게 하는지 감이 안잡힌다
         //if문을 넣어줘야하나?
+        int length = marketSellList.length;
 
+        for (int i = 0; i < length; i++) {
+            for (String element : userBuyList) { //(int j = 0; j< length; j++)
+                // 해당 i 번째 인덱스의 요소 위치에 price를 사용하면 됨을 의미함
+                // "선풍기", "키보드", "마우스", "모니터" <<<--- marketSellList의 순서
+                // 우리가 키보드 입력을 통해서 받는 userBuyList는 위의 순서대로 배치되지 않는다.
+                // "모니터", "마우스", "키보드", "선풍기" 순이라 가정해보자!
+                // System.out.println("element = " + element + ", i = " + i);
+
+                if (marketSellList[i].equals(element)) { //marketSellLis는 배열이라서
+                    // myMoney -= marketSellListPrice[i] * (수량)
+
+                    myMoney -= marketSellListPrice[i] * userBuyListStock.get(userBuyList.indexOf(element));
+                    System.out.printf("찾은 물품 = %s, 가격 = %d, 수량 = %d\n",
+                            element, marketSellListPrice[i],
+                            userBuyListStock.get(userBuyList.indexOf(element)));
+
+                    //결제완료 이후 구매 리스트를 비울 필요가 있음
+                    //        현재 케이스에서는 값을 지워버리면 루프를 도는 중에 지워지기 때문에 문제가 발생함!
+                    /*
+                    int deleteIdx = userBuyList.indexOf(element);
+                    userBuyListStock.remove(deleteIdx);
+                    userBuyList.remove(deleteIdx);
+                     */
+                }
+            }
+        }
+        System.out.printf("현재 당신은 %d원을 가지고 있습니다.", myMoney);
+        // 방법 2) 결제 완료 이후 구매 리스트를 비울 필요가 있음
+        userBuyListStock.clear();
+        userBuyList.clear();
     }
-
     private void selectBuyItemStock (String selectItem) {
         Boolean isntErrorAmount = true;
         int amount;
