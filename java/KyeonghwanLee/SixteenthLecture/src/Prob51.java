@@ -106,7 +106,6 @@ class Market {
         System.out.println("=====구매내역=====");
         System.out.println(userBuyList);
         System.out.println(userBuyListStock);
-
         System.out.printf("결제 하실 총 금액은 '%d'원입니다. \n",price);
     }
     private void checkContinuePayment(){
