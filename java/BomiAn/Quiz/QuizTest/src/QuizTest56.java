@@ -1,8 +1,11 @@
 // 강사님이 만들어주신 코드를 보며 HashMap or HashSet 을 이용해서 완성하고 싶었으나
-// 코드에 대한 의도 파악이 잘 안되었습니다.
+// 코드에 대한 의도 파악이 잘 안되었습니다. 아마도 오늘 설명을 한번 더 들으며 이해해야 할 것 같습니다.
 // 만약 저렇게 하면 값을 랜덤으로 뿌릴 수는 있어도 어떻게 값을 판별하지???(승부를 어떻게 가리지)
 // 좋은 아이디어가 안나서 그냥 할 수 있는 방법들로 만들어 봤습니다.
-// 근데 중복제거에서 문제가 생긴 것 같은데 아무리 바꿔봐도 문제가 있어 봐주시면 좋을 것 같습니다.  
+// 근데 중복제거에서 문제가 생긴 것 같은데 아무리 바꿔봐도 문제가 있어 봐주시면 좋을 것 같습니다.
+// (중복이 나오면 오류가 뜸)
+// 또 메소드 cntScores 로 comScore userScore 인자를 받아서 점수를 넣어주려고 했는데 안되고 0으로만 나오는데 왜그러는 걸까요?
+
 
 // 1. arraylist 를 문양 / 수 2개를 만들어서 이용할 것
 // 2. 사용자와 컴퓨터의 arrayList 도 만들어 주자. (4개의 카드를 받을)
@@ -16,8 +19,6 @@
 // -- 서로 다른 문양의 숫자가 연속되게 3개 나옴 == 5점
 // -- 서로 같은 문양이 3개 나옴  == 3점
 // -- 이것도 저것도 아니면 1점
-
-
 // 마지막으로 승부의 결과를 프린트
 
 import java.util.ArrayList;
@@ -42,6 +43,7 @@ class CardGame {
     randPattern = new ArrayList<String>();
     randNumber = new ArrayList<Integer>();
 
+
     isTrue = false;
 
 
@@ -49,10 +51,9 @@ class CardGame {
     }
 
     public void gameStart () {
-        mixCard();
-        cntScore(comScore);
-
-
+        comPlayer();
+        userPlayer();
+        whoWin();
 
     }
 
@@ -101,7 +102,7 @@ class CardGame {
 
     }
 
-    public void cntScore (int scores) {
+    public void cntScore (int scores){
 
         for (int i = 0;i < 2; i++) {
             int num = randNumber.get(i);
@@ -120,7 +121,35 @@ class CardGame {
 
         }
         System.out.println(scores);
+
     }
+
+    private void comPlayer () {
+        System.out.println(" 컴퓨터에게 카드를 분배합니다. ");
+        mixCard();
+        cntScore(comScore);
+        System.out.println(comScore);
+    }
+
+    private void userPlayer () {
+        randPattern.clear();
+        randNumber.clear();
+        System.out.println(" 사용자에게 카드를 분배합니다. ");
+        mixCard();
+        cntScore(userScore);
+        System.out.println(userScore);
+    }
+
+    private void whoWin () {
+        if (comScore > userScore) {
+            System.out.printf("사용자 (%d) vs 컴퓨터 (%d) 로 컴푸터가 이겼습니다. \n", userScore, comScore);
+        } else if (comScore < userScore) {
+            System.out.printf("사용자 (%d) vs 컴퓨터 (%d) 로 사용자가 이겼습니다. \n", userScore, comScore);
+        } else {
+            System.out.println("이번 판은 동점이 나왔습니다. ");
+        }
+    }
+
 
 
 }
