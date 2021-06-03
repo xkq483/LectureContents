@@ -3,6 +3,10 @@ class Car {
     private float fuel;
     private float pressure;
     private String color;
+    private float water;
+    // <<<<<<---- 갑자기 내용이 추가됨 ? (스펙의 변경은 최소화합니다)
+    // 실제로 외주 개발할 때도 주의해야할 사항이 스펙을 계속해서 변경하게되면 프로젝트가 산으로 가게 됩니다.
+    // 우리도 프로젝트 할 때 이러한 사항은 지양하도록 하며 정말 필요하다면 extends를 사용하거나 interface를 붙입시다!
 
     public void setRpm (float rpm) {
         this.rpm = rpm;
@@ -13,9 +17,12 @@ class Car {
     public float getFuel() {
         return fuel;
     }
-    public void setFuel(float fuel) {
-        this.fuel = fuel;
+    /* 지옥은 이렇게 시작됩니다 */
+    public void setFuel(float fuel, float water) {
+        this.fuel = fuel * (1.0f - water);
+        this.water = water;
     }
+    /* 지옥의 시작은 짧고 강력하죠 */
     public float getPressure() {
         return pressure;
     }
@@ -61,7 +68,10 @@ public class CarTest {
         SportsCar sc = new SportsCar();
 
         sc.setRpm(100);
-        sc.setFuel(2.5f);
+        // 대표적인 나비효과의 사례이기도 함
+        // 혼자 할 땐 괜찮아요, 바꾸면 되니까요.
+        // 여러명이서 같이 할 땐 ????? ㄷㄷㄷㄷㄷ ???
+        //sc.setFuel(2.5f);
         sc.setPressure(1.0f);
         sc.setColor("Dark Gray");
         sc.setBooster(false);
