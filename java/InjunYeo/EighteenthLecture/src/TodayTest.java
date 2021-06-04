@@ -11,9 +11,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class Card {
-
-}
 
 
 public class TodayTest {
@@ -26,6 +23,7 @@ public class TodayTest {
         cards.put("Sword",cardNum);
         cards.put("Arrow",cardNum);
         for(Map.Entry<String,int[]>card : cards.entrySet()) {
+
 
 
 
