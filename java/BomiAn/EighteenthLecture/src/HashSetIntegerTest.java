@@ -16,6 +16,6 @@ public class HashSetIntegerTest {
             // 또한 hashSet의 집합(set)의 특성을 가지고 있어 중복을 허용하지 않음
 
 
-            System.out.println(set);
+            System.out.println(set.);
     }
 }
