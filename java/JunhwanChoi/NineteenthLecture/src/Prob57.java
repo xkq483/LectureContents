@@ -266,7 +266,7 @@ class ThreePoker {
     }
 }
 
-public class Quiz57 {
+public class Prob57 {
     public static void main(String[] args) {
         ThreePoker tp = new ThreePoker();
 
