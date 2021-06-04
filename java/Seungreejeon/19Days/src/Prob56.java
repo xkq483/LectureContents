@@ -21,57 +21,57 @@ class ThreePoker {
     final int USER = 1024;
     final int COMPUTER = 2048;
 
-    private Map<String, Map<String, Integer>> map;
-    private Map<String, Integer>[] preparedMap;
-    private String[] pattern = {"spear", "sword", "arrow"};
+    private Map<String, Map<String, Integer>> map; //<문양, preparemap<문양,0~9번> >
+    private Map<String, Integer>[] preparedMap; // map안에 value값에 넣기위한 준비 맵
+    private String[] pattern = {"spear", "sword", "arrow"}; //패턴
 
     private int[][] dupNumArrCheck;
 
     private int[][] usrCard;
     private int[][] comCard;
 
-    public ThreePoker () {
+    public ThreePoker() { //생성자 = 초기화
         map = new HashMap<String, Map<String, Integer>>();
-        preparedMap = new HashMap[PATTERN_MAX];
+        preparedMap = new HashMap[PATTERN_MAX]; //HashMap 배열 수 초기화
 
-        dupNumArrCheck = new int[PATTERN_MAX][CARD_MAX];
+        dupNumArrCheck = new int[PATTERN_MAX][CARD_MAX]; // 중복체크용 더미
 
-        usrCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM];
-        comCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM];
+        usrCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM]; //유저 카드
+        comCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM]; //컴퓨터 카드
 
         for (int i = 0; i < PATTERN_MAX; i++) {
-            preparedMap[i] = new HashMap<String, Integer>();
+            preparedMap[i] = new HashMap<String, Integer>(); //객체생성
 
-            for (int j = 0; j < CARD_MAX; j++) {
+            for (int j = 0; j < CARD_MAX; j++) { //생성된 객체마다 0~9번 카드 초기화
                 preparedMap[i].put(pattern[i] + j, j);
             }
 
-            for (int k = 0; k < DISTRIBUTED_CARD_NUM; k++) {
+            for (int k = 0; k < DISTRIBUTED_CARD_NUM; k++) { //나중에 숫자 0으로인식 못함을 방지
                 usrCard[i][k] = -1;
                 comCard[i][k] = -1;
             }
         }
 
         for (int i = 0; i < PATTERN_MAX; i++) {
-            map.put(pattern[i], preparedMap[i]);
+            map.put(pattern[i], preparedMap[i]); //마지막으로 완성한 prepared맵을 최종 맵에 key,value로 초기화
         }
     }
 
-    public void printMap () {
+    public void printMap() {
         System.out.println(map);
     }
 
-    public static Boolean checkDuplicate (
-            int patternIdx, int randNum, int[][] randCheckArr) {
+    public static Boolean checkDuplicate( //중복체크
+                                          int patternIdx, int randNum, int[][] randCheckArr) {
 
-        if (randCheckArr[patternIdx][randNum] > 0) {
+        if (randCheckArr[patternIdx][randNum] > 0) { //더미배열은 모든배열 = 0, 0이 아니면 중복 -> true
             return true;
         }
 
         return false;
     }
 
-    public void distributeCard (int[][] arr, int identity) {
+    public void distributeCard(int[][] arr, int identity) { //카드 분배
         String sculpture;
         int sculptureIdx;
         int randNum;
@@ -83,14 +83,14 @@ class ThreePoker {
                 // 중복되는 숫자를 체킹하는 코드가 필요합니다:
                 // 56번에서는 중복체킹하는것을 추가로 처리하여
                 // 57번 문제를 풀어보도록 합시다!
-                sculptureIdx = (int) (Math.random() * 3);
-                randNum = (int) (Math.random() * 10);
-            } while (checkDuplicate(sculptureIdx, randNum, dupNumArrCheck));
+                sculptureIdx = (int) (Math.random() * 3); //문양 0~2 spear,sword,arrow 순서
+                randNum = (int) (Math.random() * 10); //랜덤번호
+            } while (checkDuplicate(sculptureIdx, randNum, dupNumArrCheck)); //문양인덱스, 번호, 중복체크용 배열
 
-            sculpture = pattern[sculptureIdx];
+            sculpture = pattern[sculptureIdx];// 인덱스 값 String으로 변환
 
-            dupNumArrCheck[sculptureIdx][randNum]++;
-            arr[sculptureIdx][cnt++] = randNum;
+            dupNumArrCheck[sculptureIdx][randNum]++; // 중복체크 완료 배열에 체크표시 1
+            arr[sculptureIdx][cnt++] = randNum; // -1로 된 배열에 순차적으로 랜덤값 표시
 
             if (identity == USER) {
                 System.out.print("사용자");
@@ -103,7 +103,7 @@ class ThreePoker {
         }
     }
 
-    private Boolean checkTrippleWeapon (int[][] arr, int identity) {
+    private Boolean checkTrippleWeapon(int[][] arr, int identity) {
         // 1. 문양도 일치해야하고
         // 2. 숫자가 연속되어야함
         if (!checkTripplePattern(arr, identity)) {
@@ -121,60 +121,32 @@ class ThreePoker {
     }
 
     /* 아래 두 가지를 완성하면 자동으로 checkTrippleWeapon()은 완성이됩니다. */
-    private Boolean checkTrippleNumber (int[][] arr, int identity) {
+    private Boolean checkTrippleNumber(int[][] arr, int identity) {
         return false;
     }
-    private Boolean checkTrippleHarmonic (int[][] arr, int identity) {
+
+    private Boolean checkTrippleHarmonic(int[][] arr, int identity) {
         return false;
     }
-    private Boolean checkTripplePattern (int[][] arr, int identity) {
-        // 1. 전체를 순회하며 처음 나오는 값을 찾는다.
-        // 2. 처음 나오는 값의 숫자와 패턴을 파악한다.
-        // 3. 같은 패턴이 3개 존재하는지 검사한다.
 
-        // 4. 만약 조건이 달성되지 않는다면 다시 2번째 값으로 위 작업을 반복한다.
-        // 5. 2번째 값에서 판정이 되지 않았다면 다음을 검사할 필요가 없다!
+    private Boolean checkTripplePattern(int[][] arr, int identity) { //문양 체크 3개면 참
 
-        // ex) 창, 검, 활, 검
-        // ex) 창, 검, 검, 검
-        // ex) 활, 창, 활, 활
-        // ex) 활, 창, 검, 활
-        // ex) 창, 활, 창, 창
-        int[] savedRow = new int[DISTRIBUTED_CARD_NUM];
+        int[] savedRow = new int[DISTRIBUTED_CARD_NUM]; //열 중복체크
         int rowCnt = 0;
 
-        int[] savedCol = new int[DISTRIBUTED_CARD_NUM];
+        int[] savedCol = new int[DISTRIBUTED_CARD_NUM]; // 행 중복체크
         int colCnt = 0;
 
-        if (identity == USER) {
+        if (identity == USER) { // 혼동방지용
             System.out.println("사용자 데이터입니다.");
         } else if (identity == COMPUTER) {
             System.out.println("컴퓨터 데이터입니다.");
         }
-
-        // 가만 보니 숫자 0이 들어가서 0 과 0이 같아서 구별이 안되는 문제도 있고
-        // 조건이 0 보다 큰 것으로 잡아놨는데 0이니까 식별 자체를 안하는 문제가 겹쳤었음
-
-        //  [0]  [1]  [2]  [3]
-        // --------------------
-        // | 0 | -1 | -1 | -1 |   [0] spear
-        // --------------------
-        // | -1 | 5 | -1 | -1 |   [1] sword
-        // --------------------
-        // | 2 | -1 | -1 | 1  |   [2] arrow
-        // --------------------
-
-        // savedRow | 0 | 1 | 2 | 2 |
-        // savedCol | 7 | 7 | 0 | 3 |
-
         for (int i = 0; i < PATTERN_MAX; i++) {
-            for (int j = 0; j < DISTRIBUTED_CARD_NUM; j++) {
-                // 주의해야할 것이 arr에 1, 0으로 값이 있다 없다가 아니라
-                // 실제 셋팅된 값 자체가 배치되어 있다!
-                // 그러므로 실제 사용하는 숫자 0이 들어간 경우 문제가 발생할 수 있음
+            for (int j = 0; j < DISTRIBUTED_CARD_NUM; j++) { //패턴마다 0~9번 중복체크 (행값 = 문양 열값 = 숫자) -> 열값으로 스트레이트 검사 가능
                 if (arr[i][j] != -1) {
-                    savedRow[rowCnt++] = i;
-                    savedCol[colCnt++] = j;
+                    savedCol[colCnt++] = i;
+                    savedRow[rowCnt++] = j;
                 }
             }
         }
@@ -182,19 +154,18 @@ class ThreePoker {
         int patternCnt = 0;
         int secondaryPatternCnt = 0;
 
-        // savedRow | 0 | 1 | 2 | 2 |
-        for (int i = 0; i < DISTRIBUTED_CARD_NUM; i++) {
-            if (savedRow[0] == savedRow[i]) {
+        for (int i = 0; i < DISTRIBUTED_CARD_NUM; i++) { //위 for문에서 중복된 행 값으로 카운트
+            if (savedCol[0] == savedCol[i]) {
                 patternCnt++;
             }
-            if (savedRow[1] == savedRow[i]) {
+            if (savedCol[1] == savedCol[i]) {
                 secondaryPatternCnt++;
             }
         }
 
-        System.out.println(pattern[savedRow[0]]);
+        System.out.println(pattern[savedCol[0]]);
         System.out.println("첫 번째 패턴과 일치하는 개수 = " + patternCnt);
-        System.out.println(pattern[savedRow[1]]);
+        System.out.println(pattern[savedCol[1]]);
         System.out.println("두 번째 패턴과 일치하는 개수 = " + secondaryPatternCnt);
 
         if (patternCnt >= 3 || secondaryPatternCnt >= 3) {
@@ -204,6 +175,7 @@ class ThreePoker {
 
         return false;
     }
+
 
     private String checkPattern (int[][] arr, int identity) {
         // 현재 케이스에서 바로 일반화를 적용하기는 어려움
