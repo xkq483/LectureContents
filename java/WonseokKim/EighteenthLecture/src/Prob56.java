@@ -1,9 +1,18 @@
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class Prob56 {
+
+    public static Boolean checkDuplicate (
+            int patternIdx, int randNum, int[][] randCheckArr) {
+
+        if (randCheckArr[patternIdx][randNum] > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         // 숫자 0 ~ 9 까지의 카드가 존재한다.
         // 또한 카드별로 문양이 있고 문양의 종류는 3가지다.
@@ -38,33 +47,32 @@ public class Prob56 {
 
         System.out.println("카드를 분배합니다.");
 
-
+        // * 같은 패턴에서 같은 숫자가 나오면 안됨!
+        // 그렇기 때문에 중복된 숫자가 존재하는지 여부를 체크하는 배열이 필요하다.
+        // 현재 값은 0 ~ 9까지 나오므르 배열의 인덱스를 활용하기에 아주 좋다.
+        int[][] dupNumArrCheck = new int[3][10];
+        String sculpture;
+        int sculptureIdx;
+        int randNum;
 
         for (int i = 0; i < 4; i++) {
-            String sculpture = pattern[(int) (Math.random() * 3)];
+            do {
+                // 중복되는 숫자를 체킹하는 코드가 필요합니다:
+                // 56번에서는 중복체킹하는것을 추가로 처리하여
+                // 57번 문제를 풀어보도록 합시다!
+                sculptureIdx = (int) (Math.random() * 3);
+                randNum = (int) (Math.random() * 10);
+            } while (checkDuplicate(sculptureIdx, randNum, dupNumArrCheck));
 
-            // 중복되는 숫자를 체킹하는 코드가 필요합니다:
-            // 56번에서는 중복체킹하는것을 추가로 처리하여
-            // 57번 문제를 풀어보도록 합시다!
-            int randNum = (int) (Math.random() * 10);
+            sculpture = pattern[sculptureIdx];
 
+            // 앞서서 루프에서 체크되지 않았으니 이제 값을 증가시켜
+            // 여기엔 값이 할당 되었음을 표기한다
+            // (randNum에 해당하는 숫자가 이미 활용 되어 중복이니 더 이상 찾지마!)
+            dupNumArrCheck[sculptureIdx][randNum]++;
 
-            //System.out.println("사용자에게 분배된 카드는 = " + sculpture + " 문양의 " + randNum + " 카드입니다!");
-            //여러가지로 대입해 보려 했는데, 잘 안된다. HashMap으로도 해봤는데, HashMap은 중복 문제 타입에는 쓰기가 애매하였다.
-
-           Set<Integer> duplicate = new HashSet<Integer>();
-           int [] dup = new int[(randNum)];
-           //duplicate.add(randNum);
-            for ( int dup2 : dup) {
-                if (!duplicate.add(dup2)) {
-
-                }
-            }
-                System.out.println("사용자에게 분배된 카드는 = " + sculpture + " 문양의 " + duplicate + " 카드입니다!");
-
-
-            }
-
+            System.out.println("사용자에게 분배된 카드는 = " + sculpture +
+                    " 문양의 " + randNum + " 카드입니다!");
         }
     }
-
+}
