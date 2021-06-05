@@ -21,7 +21,7 @@ class ThreePoker1 {
 
     public ThreePoker1 () {
         map = new HashMap<String, Map<String, Integer>>();//질문!!!이렇게 맵을 감싸는 코드 구조?같은게 잘 이해가 안됩니다
-        preparedMap = new HashMap[PATTERN_MAX]; //문양
+        preparedMap = new HashMap[PATTERN_MAX];
 
         dupNumArrCheck = new int[PATTERN_MAX][CARD_MAX];
 
@@ -50,7 +50,7 @@ class ThreePoker1 {
         System.out.println(map);
     }
 
-    public static Boolean checkDuplicate (
+    public static Boolean checkDuplicate ( //중복 확인
             int patternIdx, int randNum, int[][] randCheckArr) {
 
         if (randCheckArr[patternIdx][randNum] > 0) {
@@ -61,9 +61,9 @@ class ThreePoker1 {
     }
 
     public void distributeCard (int[][] arr, int identity) {
-        String sculpture;
-        int sculptureIdx;
-        int randNum;
+        String sculpture; //문양 글씨
+        int sculptureIdx;//문양 인덱스
+        int randNum; //랜덤값
 
         int cnt = 0;
 
@@ -72,8 +72,8 @@ class ThreePoker1 {
                 // 중복되는 숫자를 체킹하는 코드가 필요합니다:
                 // 56번에서는 중복체킹하는것을 추가로 처리하여
                 // 57번 문제를 풀어보도록 합시다!
-                sculptureIdx = (int) (Math.random() * 3);
-                randNum = (int) (Math.random() * 10);
+                sculptureIdx = (int) (Math.random() * 3); //문양 랜덤 3개 출력
+                randNum = (int) (Math.random() * 10); //랜덤숫자 10개
             } while (checkDuplicate(sculptureIdx, randNum, dupNumArrCheck));
 
             sculpture = pattern[sculptureIdx];
