@@ -44,6 +44,7 @@ public class HashMapTest {
 
         System.out.println(st);
 
+        // preparedMap[1].entrySet()
         for (Map.Entry<Integer, Student> s : st.entrySet()) {
             Integer key = s.getKey();
             Student value = s.getValue();
