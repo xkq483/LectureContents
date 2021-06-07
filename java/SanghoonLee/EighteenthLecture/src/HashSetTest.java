@@ -1,8 +1,9 @@
 import java.util.HashSet;
+import java.util.Set;
 
 public class HashSetTest {
     public static void main(String[] args) {
-        HashSet<String> set = new HashSet<String>();
+        Set<String> set = new HashSet<String>();
 
         set.add("우유");
         set.add("빵");

@@ -23,6 +23,11 @@ public class SequencePerformanceTest {
         PerformanceUtil.performanceCheckStart();
 
         for(int i = START; i <= END; i++) {
+            // Math.sin() 자체가 연산량이 많다.
+            // 그래서 스레드를 활용했을때와 활용하지 않았을때의 차이를 보기에 좋다.
+            // 삼각함수 연산을 도입해서 스레드 없이 순차 처리하였을때
+            // 얼마나 오래걸리는지를 체크해보고
+            // 실제 스레드를 도입했을때 성능이 대폭 상승하는 것을 보면 됩니다.
             sum += (i * (COEFFICIENT * i)) * Math.sin(i * Math.PI / DEG2RAD);
         }
 

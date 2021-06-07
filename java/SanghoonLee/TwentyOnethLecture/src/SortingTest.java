@@ -29,6 +29,7 @@ public class SortingTest {
         fruits.add("banana");
 
         List fruitsList = new ArrayList(fruits);
+        fruitsList.add("ofcourse");
 
         Collections.sort(fruitsList);
 
