@@ -131,15 +131,28 @@ class Market {
             System.out.print("해당 상품의 취소할 갯수를 입력하세요 : ");
             removeNum = sc.nextInt();
             basketStock.set(myBasket.indexOf(myBasket.get(removeMerch - 1)), basketStock.get(removeMerch - 1) - removeNum);
+
+            for(int i=0; i<merchList.length; i++) { //취소된 개수당 금액 다시 계산!
+                if (myBasket.get(removeMerch-1).equals(merchList[i])) {
+                    spentMoney = spentMoney - merchPrice[i] * removeNum;
+                    myMoney = myMoney + merchPrice[i] * removeNum;
+                } //수정 완료!
+            }
         }
-
-
     }
+
     private void doPayment() {
         removeBasket();
         System.out.println("장바구니에 담은 상품을 결제합니다.");
-        for(int i=0; i<myBasket.toArray().length; i++) {
-            System.out.printf("물품명 : %s, 개수 : %d, 금액 : %d\n", myBasket.get(i), basketStock.get(i), merchPrice[i]*basketStock.get(i));
+        for(int i=0; i<merchList.length; i++) {
+
+                for (String element : myBasket) { //이걸 써주는게 키포인트였다.
+
+                    if (merchList[i].equals(element)) {
+                        System.out.printf("물품명 : %s, 개수 : %d, 금액 : %d\n", element, basketStock.get(myBasket.indexOf(element)), merchPrice[i] * basketStock.get(myBasket.indexOf(element))); //수정 완료
+                    }
+                }
+
         }
         System.out.printf("구매 금액의 총 합계 : %d, 거스름돈 : %d", spentMoney, myMoney);
 
