@@ -21,3 +21,6 @@ public class NetworkUrlTest {
         System.out.println("ref = " + myURL.getRef());
     }
 }
+
+// int[] test = { 2400, 5000, 123, 123245, 23542345648, 234923, 23492334, 2349 ...... }
+// 풀이 방식: 1. HashSet, 2. 라이브러리 없이 통으로 만들기, 3. 다른 Collection 사용해서
