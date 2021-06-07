@@ -9,10 +9,8 @@ class Car implements Runnable {
 
     public Car(String name) {
         this.name = name;
-        // Random 클래스로 만든 객체에 nextInt() 매서드를 통해서도 랜덤값을 생성할 수 있다.
         sleepTime = generator.nextInt(3000) + 3000;
     }
-
     // 스레드를 돌릴땐 무조건 이 run() 부분을 구동시키게 되어있다.
     // 매우 중요하니 이 run()을 반드시 기억해두자!
     @Override
@@ -23,15 +21,11 @@ class Car implements Runnable {
         try {
             Thread.sleep(sleepTime);
         } catch (InterruptedException e) {
-            // 정말 에러가 발생했다면 여기로 오게 됩니다.
-            // 물론 Thread.sleep()에서 에러가 발생할 일은 99.999999999999999%로 없습니다.
             System.out.println("출력도 안 될 것이고 에러가 발생할 일이 없습니다!");
         }
-
         System.out.println(name + "이 경주를 완료하였습니다!");
     }
 }
-
 public class ThreadTest {
     public static void main(String[] args) {
         Thread t1 = new Thread(new Car("Ferrari"));
