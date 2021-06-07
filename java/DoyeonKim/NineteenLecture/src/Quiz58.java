@@ -53,7 +53,8 @@ class ThreePoker1 {
     public static Boolean checkDuplicate ( //중복 확인
             int patternIdx, int randNum, int[][] randCheckArr) {
 
-        if (randCheckArr[patternIdx][randNum] > 0) {
+        if (randCheckArr[patternIdx][randNum] > 0) { //이렇게 해서 어떻게 중복을 확인하는건지 이해가 잘 안됩니다
+            //0보다 크면 참이라는 뜻인건가요..?근데 그게 어떻게 중복확인을 할 수 있는지 모르겠습니다
             return true;
         }
 

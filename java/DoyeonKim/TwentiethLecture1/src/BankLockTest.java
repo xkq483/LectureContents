@@ -1,7 +1,7 @@
 public class BankLockTest {
-    public static void main(String[] args) throws  InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         Counter counter = new Counter();
-        System.out.println("I'm");
+        System.out.println("First count: " + counter.getCount());
 
         Thread adder = new Thread(new Worker(counter, true, 1000));
         adder.start();
@@ -12,7 +12,6 @@ public class BankLockTest {
         adder.join();
         subtracter.join();
 
-        System.out.println("");
-
+        System.out.println("Final count: " + counter.getCount());
     }
 }

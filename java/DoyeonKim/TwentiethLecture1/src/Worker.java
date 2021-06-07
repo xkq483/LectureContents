@@ -13,12 +13,12 @@ public class Worker implements Runnable {
     public void run() {
         for (int i = 0; i < this.count; i++) {
             if (increment) {
-                    this.counter.increment();
-                    System.out.println("I'm increment");
-             } else {
-                    this.counter.decrement();
-                    System.out.println("I'm decrement");
-                }
+                this.counter.increment();
+                System.out.println("I'm increment");
+            } else {
+                this.counter.decrement();
+                System.out.println("I'm decrement");
             }
         }
     }
+}
