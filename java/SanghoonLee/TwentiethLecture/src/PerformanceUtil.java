@@ -3,10 +3,12 @@ public class PerformanceUtil {
     public static long estimatedTime;
 
     public static void performanceCheckStart() {
+        // 현재 시간을 밀리초 단위로 구해서 startTime에 저장
         startTime = System.currentTimeMillis();
     }
 
     public static void performanceCheckEnd() {
+        // 현재 시간을 밀리초 단위로 구하고 startTime 을 뺌
         estimatedTime = System.currentTimeMillis() - startTime;
     }
 

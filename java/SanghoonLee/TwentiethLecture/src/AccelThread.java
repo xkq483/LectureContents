@@ -18,6 +18,9 @@ public class AccelThread extends OperationAccelerator implements Runnable {
         threadId = id;
     }
 
+    // 이 연산을 동기화해주세요.
+    // synchronized 내에서 너무 복잡한 연산을 하면 안됩니다.
+    // 데이터의 무결성을 보장해줄 수 없어요.
     public synchronized void addAll(double localSum) {
         totalSum += localSum;
     }
