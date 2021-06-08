@@ -27,8 +27,9 @@ class ThreadManager {
         }
     }
 
-    public void calcEachBigInteger () {
+    public void calcEachBigInteger () throws InterruptedException {
         calcEachBigIntegerStart();
+        calcEachBigIntegerJoin();
     }
 
     public void calcEachBigIntegerStart () {
@@ -75,6 +76,7 @@ class DistributedThread implements Runnable {
     @Override
     public void run() {
 
+        // compareTo의 결과가 작으면 -1, 같으면 0, 크면 1
         for (BigInteger i = start; i.compareTo(end) == -1; i = i.add(ONE)) {
             /* DEBUG 메시지
             System.out.println("threadIdx: " + threadIdx +
@@ -105,7 +107,7 @@ class DistributedThread implements Runnable {
 }
 
 public class Prob61 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ThreadManager tm = new ThreadManager();
 
         tm.calcEachBigInteger();
