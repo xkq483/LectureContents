@@ -135,6 +135,36 @@ class ThreePoker {
         return false;
     }
 
+    private void printArr (int[] arr, int len) {
+        for (int i = 0; i < len; i++) {
+            System.out.printf("%3d", arr[i]);
+        }
+        System.out.println();
+    }
+
+    private void insertionSort (int[] num, int[] pattern, int len) {
+        int i, j, valueKey, patternKey;
+
+        System.out.println("length = " + len);
+
+        for (i = 1; i < len; i++) {
+            valueKey = num[i];
+            patternKey = pattern[i];
+
+            System.out.println("i = " + i);
+
+            for (j = i - 1; (j != -1) && (num[j] > valueKey); j--) {
+                num[j + 1] = num[j];
+                pattern[j + 1] = pattern[j];
+
+                System.out.println("j = " + j);
+            }
+
+            num[j + 1] = valueKey;
+            pattern[j + 1] = patternKey;
+        }
+    }
+
     private Boolean checkHarmonic (Map<Integer, Map<Integer, Integer>> map, int identity) {
 
         int[] checkContinuousNumArr = new int[DISTRIBUTED_CARD_NUM];
@@ -160,17 +190,92 @@ class ThreePoker {
         // 2. 추출한 숫자가 패턴의 Harmonic을 구성해야함
         //    위 패턴에서 밸류의 밸류값이 0, 1, 2인지 체크한다.
 
-        /*
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            Integer key = entry.getKey();
-            Integer value = entry.getValue();
+        // * 키 포인트
+        // Map의 경우엔 키가 중복될 수 없다라는 불변의 진리를 가짐
+        for (Map.Entry<Integer, Map<Integer, Integer>> outerEntry : map.entrySet()) {
+            Integer outerKey = outerEntry.getKey();
+            Map<Integer, Integer> outerValue = outerEntry.getValue();
 
-            checkContinuousNumArr[cardCnt++] = key;
-            checkPatternArr[patternCnt++] = value;
+            System.out.println("Double Map Foreach OuterKey: " + outerKey);
+            System.out.println("Double Map Foreach OuterValue: " + outerValue);
+
+            for (Map.Entry<Integer, Integer> innerEntry : outerValue.entrySet()){
+                checkContinuousNumArr[cardCnt++] = innerEntry.getKey();
+                checkPatternArr[patternCnt++] = innerEntry.getValue();
+            }
         }
-         */
 
-        System.out.println("Harmonic 검사: " + map);
+        printArr(checkContinuousNumArr, DISTRIBUTED_CARD_NUM);
+        printArr(checkPatternArr, DISTRIBUTED_CARD_NUM);
+
+        insertionSort(checkContinuousNumArr, checkPatternArr, DISTRIBUTED_CARD_NUM);
+
+        System.out.println("After Insertion Sort(삽입 정렬)");
+
+        printArr(checkContinuousNumArr, DISTRIBUTED_CARD_NUM);
+        printArr(checkPatternArr, DISTRIBUTED_CARD_NUM);
+
+        int contCnt = 0;
+
+        // 3 4 5 7
+        // 4 6 7 8
+        // 3 5 7 9
+        // 3 4 8 9
+        int[] firstCheckArr = new int[PATTERN_MAX];
+        int[] secondCheckArr = new int[PATTERN_MAX];
+
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            firstCheckArr[i] = checkContinuousNumArr[i];
+            secondCheckArr[i] = checkContinuousNumArr[i + 1];
+        }
+
+        int first = firstCheckArr[0];
+        int second = secondCheckArr[0];
+
+        Boolean isFirst = false, isSecond = false;
+
+        if ((firstCheckArr[1] == (first + 1)) && (firstCheckArr[2] == (first + 2))) {
+            System.out.println("시작위치에서 연속된 숫자가 나타납니다.");
+            isFirst = true;
+        }
+
+        if ((secondCheckArr[1] == (second + 1)) && (secondCheckArr[2] == (second + 2))) {
+            System.out.println("두번째 위치에서 연속된 숫자가 나타납니다.");
+            isSecond = true;
+        }
+
+        if (!isFirst && !isSecond) {
+            return false;
+        }
+
+        // 여기까지 연속된 숫자를 잡아냈음
+        // 어차피 연속된 위치와 패턴은 같은 자리에 있으므로 검사해야하는 위치는
+        // if문이 어디서 시작되었는지의 여부로 결정됨
+        // Harmonic 패턴 검사
+        Boolean isHarmonic = false;
+
+        int[] harmonicCheckArr = new int[PATTERN_MAX];
+
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            harmonicCheckArr[checkPatternArr[i]]++;
+        }
+
+        if (harmonicCheckArr[0] != 0 && harmonicCheckArr[1] != 0 && harmonicCheckArr[2] != 0) {
+            return true;
+        }
+
+        // 각각의 밸류값과 키값을 뽑아낸 상태에서 생각해야할 부분
+        // 1. 키   - 6  3  2  3
+        //    밸류 - 0  1  1  2
+        // 정렬 이후
+        //    키   - 2  3  3  6
+        //    밸류 - 0  1  1  2
+        // 위와 같은 문제를 어떻게 해결해야하는지에 대한 고민이 필요함
+        // 실제 배열의 크기가 작으므로 Insertion Sort를 활용하기에 아주 좋음
+        // 만약 배열의 크기가 크다면 Quick Sort 혹은 Radix Sort를 사용하는 것이 좋음
+
+
+        //System.out.println("Harmonic 검사: " + map);
 
 
         /*
@@ -195,6 +300,7 @@ class ThreePoker {
         
         // 두개를 모두 만족하는 경우에만 true
         // ------------------ 모든 패턴이 조합되는 케이스 시작 ------------------
+        /*
         int[] checkContinuousNumArr = new int[DISTRIBUTED_CARD_NUM];
         int[] checkPatternArr = new int[PATTERN_MAX];
         Boolean isHarmonicPattern = false;
@@ -232,6 +338,7 @@ class ThreePoker {
         }
 
         System.out.println("isHarmonicPattern = " + isHarmonicPattern);
+         */
         // ------------------ 모든 패턴이 조합되는 케이스 끝 ------------------
 
         // ------------------ 서로 연속된 숫자 처리 시작 ------------------
@@ -292,9 +399,7 @@ class ThreePoker {
         }
 
         if (checkHarmonic(orderMap, identity)) {
-
-        } else {
-            return false;
+            return true;
         }
 
         /*
@@ -307,7 +412,7 @@ class ThreePoker {
         }
          */
 
-        System.out.println(cardsMap);
+        //System.out.println(cardsMap);
         // ------------------ 서로 연속된 숫자 처리 끝 ------------------
 
         return false;
