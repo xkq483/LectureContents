@@ -53,7 +53,8 @@ class DistributedThread implements Runnable {
 
     static final BigInteger ONE = new BigInteger("1");
 
-    BigInteger sum;
+    BigInteger localSum;
+    static BigInteger totalSum;
 
     public DistributedThread (BigInteger start, BigInteger end, int threadIdx, int option) {
         this.start = start;
@@ -63,7 +64,12 @@ class DistributedThread implements Runnable {
         this.threadIdx = threadIdx;
         this.option = option;
 
-        sum = BigInteger.ZERO;
+        localSum = BigInteger.ZERO;
+        totalSum = BigInteger.ZERO;
+    }
+
+    private synchronized void addAll () {
+        totalSum = totalSum.add(localSum);
     }
 
     @Override
@@ -86,11 +92,15 @@ class DistributedThread implements Runnable {
                 System.out.println("threadIdx: " + threadIdx +
                         ", option: " + option +
                         ", 내가 찾는 숫자는: " + i); */
-                sum = sum.add(i);
+                localSum = localSum.add(i);
 
-                System.out.println("threadIdx: " + threadIdx + ", sum = " + sum);
+                // System.out.println("threadIdx: " + threadIdx + ", sum = " + sum);
             }
         }
+
+        addAll();
+
+        System.out.println("totalSum = " + totalSum);
     }
 }
 
