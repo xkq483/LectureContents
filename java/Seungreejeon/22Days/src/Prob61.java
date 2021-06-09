@@ -64,8 +64,8 @@ class DistributedThread implements Runnable {
 
     }
 
-    private synchronized void addAll () { //메서드에 synchronized를 사용해 함수자체에 LOCK을 건다. (this)를 확실하게 해야한다.
-        totalSum = totalSum.add(localSum); //여기서 totalsum이 전역변수가 아니라면 메서드 내부에서 락이걸려 값이 내부에서만 돌게된다.
+    private synchronized void addAll () {
+        totalSum = totalSum.add(localSum);
     }
 
     @Override
