@@ -96,6 +96,9 @@ class DistributedThread implements Runnable {
     public void run() {
 
         // compareTo의 결과가 작으면 -1, 0은 같으면, 1은 크면이라는 의미
+        //++ i < end ?
+        //++ i는 1~30까지 출력된다. 즉 start는 01
+        //++ end는 31이다.
         for (BigInteger i = start; i.compareTo(end) == -1; i = i.add(ONE)) {
             /* DEBUG 메시지
             System.out.println("threadIdx: " + threadIdx +
@@ -108,8 +111,9 @@ class DistributedThread implements Runnable {
             //++ new BigInteger(String.valueOf(option)))  맵핑? 나머지연산값 구하기.
             //++ compareTo(BigInteger.ZERO) 결과값(나머지연산값)을 0과 비교한다
             //++ ) == 0   이게 0이냐?
-            System.out.println("s" + start);
-            System.out.println("e" + i.compareTo(end));
+            System.out.println("i" + i);
+            //System.out.println("s" + start);
+            //System.out.println("e" + end);
             if (
                     (i.mod(new BigInteger(String.valueOf(option))).
                             compareTo(BigInteger.ZERO)
