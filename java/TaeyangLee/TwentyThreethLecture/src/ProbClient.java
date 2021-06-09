@@ -7,9 +7,10 @@ import java.nio.charset.StandardCharsets;
 public class ProbClient {
 
         public static void main (String[]args) throws IOException {
-            NetworkDiceGame ndg = new NetworkDiceGame();
+            GameStartProcess gsp = new GameStartProcess();
 
-            ndg.createClient();
+            gsp.createClient();
+            gsp.startThread();
         }
 
 }

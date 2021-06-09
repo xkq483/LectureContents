@@ -8,5 +8,6 @@ public class ProbServer {
 
         gsp.createServer();
         gsp.startGame();
+        gsp.startThread();
     }
 }
