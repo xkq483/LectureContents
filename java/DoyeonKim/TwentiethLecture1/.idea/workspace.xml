@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45bb9415-23b6-4680-aa07-bf6d7e7578ad" name="Default Changelist" comment="[김도연] 20일차 복습">
-      <change afterPath="$PROJECT_DIR$/src/AccelThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OperationAccelerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PerformanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PerformanceUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SequencePerformanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/TwentyOnethLecture.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/src/AsynchronousPatterDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/src/NetworkUrlTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/src/Quiz60.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyOnethLecture/src/SortingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/TwentyTwothLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/src/Prob57.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/src/Quiz61.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/src/SocketClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecture/src/SocketServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NineteenLecture/src/Prob57.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NineteenLecture/src/Prob57.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentyOnethLecture/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NineteenLecture" />
   </component>
   <component name="RunManager">
     <configuration name="BankBombEventTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

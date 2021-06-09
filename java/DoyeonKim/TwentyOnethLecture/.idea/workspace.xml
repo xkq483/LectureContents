@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ba80b54-39ba-4bd1-bab0-76e62562b391" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../TwentiethLecture1/src/AccelThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentiethLecture1/src/OperationAccelerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentiethLecture1/src/PerformanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentiethLecture1/src/PerformanceUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentiethLecture1/src/SequencePerformanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TwentyOnethLecture.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AsynchronousPatterDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NetworkUrlTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Quiz60.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SortingTest.java" afterDir="false" />
+    <list default="true" id="0ba80b54-39ba-4bd1-bab0-76e62562b391" name="Default Changelist" comment="[김도연] 21일차 복습">
       <change beforePath="$PROJECT_DIR$/../TwentiethLecture1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentiethLecture1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1623061535118</updated>
     </task>
+    <task id="LOCAL-00001" summary="[김도연] 21일차 복습">
+      <created>1623132589280</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623132589281</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,5 +100,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[김도연] 21일차 복습" />
+    <option name="LAST_COMMIT_MESSAGE" value="[김도연] 21일차 복습" />
   </component>
 </project>
