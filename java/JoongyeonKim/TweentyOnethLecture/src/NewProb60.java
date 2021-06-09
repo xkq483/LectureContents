@@ -3,7 +3,7 @@
 //각각의 데이터들이 몇 개씩 중복 되었는지 프로그래밍 해보도록 하자!
 //그리고 이 정보들을 정렬해보자
 
-
+//배열을 사용하여 풀어낸 문제
 import java.util.Arrays;
 
 public class NewProb60 {
