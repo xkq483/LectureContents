@@ -6,7 +6,7 @@ class Student{
     String name;
     String major;}
 
-public class Quiz0517 {
+public class Quiz0517Prob28 {
     public static void main(String[] args) {
 
 // 28. 1, 2, 4, 8, 16, 32, 64, 128, 256 ... n을 입력했을 때 n번째 값을 구하도록 배열을 사용하여 만들기
