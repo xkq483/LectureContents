@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Homework0514 {
+public class Homework0514Prob27 {
     public static void main(String[] args) {
 // 27.  1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...   (피보나치수열)
 // 위의 숫자배치에서 사용자가 n을 입력하면 n번째 값을 구하도록 프로그래밍 해보기
