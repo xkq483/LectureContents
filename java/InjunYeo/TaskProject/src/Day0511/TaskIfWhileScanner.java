@@ -8,14 +8,13 @@ public class TaskIfWhileScanner {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean t = true;
-        while(t){
-            System.out.print("숫자를 입력하세요");
-            int num = scanner.nextInt();
-            if(num ==0){
-                t=false;
-            }
-            else if(num%2 == 0){
+        System.out.print("숫자를 입력하세요 : ");
+        int num = scanner.nextInt();
+
+        while(num != 0){
+
+
+             if(num%2 == 0){
                 System.out.println("짝수입니다");
             }
 
@@ -23,6 +22,8 @@ public class TaskIfWhileScanner {
                 System.out.println("홀수입니다");
             }
 
+            System.out.print("숫자를 입력하세요");
+            num = scanner.nextInt();
 
 
 

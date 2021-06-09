@@ -36,3 +36,7 @@ public class IfTestWithInputEnhance {
         }
     }
 }
+
+//print (단순히 출력만함 [개행]엔터X)
+//println (출력/개행도 함)
+//printf (d%, f% 와 같은 기능들을 쓸 수 있음)
