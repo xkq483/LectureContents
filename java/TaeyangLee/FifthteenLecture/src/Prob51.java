@@ -34,7 +34,7 @@ class Shopping {
         for (int i = 0; i < LENGTH; i++) {
             System.out.println(i + 1 + "번" + " " + obLists.get(i)+ " 가격 : "+priceLists.get(i));
         }
-        System.out.println("0번을 누르시면 구매종료! 더 구매하시려면 9번을, 구매한 목록을 보고싶으시면 7번을 입력해주세요 : ");
+        System.out.println("더 구매하시려면 7번을, 구매한 목록을 보고싶으시면 8번, 결제는 9번을 입력해주세요 : ");
 
     }
 
@@ -45,46 +45,32 @@ class Shopping {
         System.out.printf("숫자를 입력해주세요 :");
         int num = sc.nextInt();
 
-
-        if(num == 0){
-
-
-
-
-        }else if(num == 1){
+        if(num == 1){
             System.out.println("제육덮밥을 구매하셨습니다!");
             buyLists.add("제육덮밥");
-            System.out.println(buyLists);
-
-
             buyItem();
         }else if(num == 2){
             System.out.println("김치볶을밥을 구매하셨습니다!");
             buyLists.add("김치볶음밥");
-            System.out.println(buyLists);
-
-
             buyItem();
         }else if(num == 3){
             System.out.println("라면을 구매하셨습니다!");
             buyLists.add("라면");
-            System.out.println(buyLists);
-
             buyItem();
         }else if(num == 4){
             System.out.println("돈까스을 구매하셨습니다!");
             buyLists.add("돈까스");
-            System.out.println(buyLists);
-
             buyItem();
         }else if(num == 7) {
-
+            System.out.println("구매한 목록 ----------------- ");
+            System.out.println(buyLists);
             buyItem();
-
-        }else if(num == 9){
-            System.out.println("구매를 더 진행합니다. ");
-            buyItem();
-
+        }else if(num == 8) {
+        System.out.println("구매를 더 진행합니다. ");
+        buyItem();
+    }
+        else if(num == 9){
+            printPrice();
         }
 
 
@@ -137,7 +123,7 @@ class Shopping {
             sp.showList();
             sp.buyItem();
             sp.calcMenu();
-            sp.printPrice();
+
 
 
         }

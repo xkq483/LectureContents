@@ -51,6 +51,8 @@ public class CanWeClone {
         for (int i = 0; i < cloneArr.length; i++) {
             System.out.printf("cloneArr[%d] = %d\n", i, cloneArr[i]);
         }
+
+
         System.out.println("--------------절취선--------------");
 
         t.changeArr();

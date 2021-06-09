@@ -8,9 +8,7 @@
 // 또한 연봉 인상률은 1% ~ 20% 사이의 랜덤값을 가지게 한다.
 // 10 년후의 각 직원들의 연봉을 출력하도록 프로그래밍해보자!
 // 또한 연별로 평균 연봉값을 계산해보도록 한다.
-
 import java.util.Scanner;
-
 // 클래스 배열을 사용하므로
 // 1. 직원 정보에는 이름과 자신의 페이가 기록됨
 //    여기서 페이는 배열로 작성하여 연별값을 얻을 수 있어야함
@@ -22,23 +20,18 @@ import java.util.Scanner;
 // 6. 또 몇명을 입력할 것인지에 대한 정보가 추가로 필요함
 class Employee {
     final float PERCENT = 0.01f;
-
     String name;
-    int[] pay;
+    int[] pay; // 연봉을 배열로
     float[] incRate;
-
     int curYear;
 
     public Employee (String name, int year) {
         this.name = name;
-        curYear = 0;
-
+        curYear = 0; // current Year
         pay = new int[year];
-        incRate = new float[year];
-
+        incRate = new float[year]; // 실제로 이 class에서는 사용안됨.
         pay[0] = (int)(Math.random() * 1101 + 2400);
     }
-
     // Convention(규약)
     // 나중에 팀 프로젝트 할 때도 팀간에 컨벤션 설정이 중요
     // 전부 다 가져오는 것은 표기를 어떻게 하자
@@ -48,8 +41,9 @@ class Employee {
     // calcYearPay : pay 변수의 속성 year에 해당하는 전체값을 모두 처리
     // 이 규약은 만들기 나름이고 팀 프로젝트를 하는 경우엔 반드시 필요함
     // (왜냐하면 내가 만든 매서드를 다른 사람이 사용할 수도 있기 때문)
-    public void calcYearPay () {
+    public void calcYearPay () { //
         for (int i = curYear + 1; i < pay.length; i++) {
+            // pay[0]은 초기화 해두었기 때문에 curYear+1부터 시작
             pay[i] = pay[i - 1] + (int)(pay[i - 1] * getRandomIncRate() * PERCENT);
         }
     }
@@ -66,7 +60,6 @@ class Employee {
     public float getRandomIncRate () {
         return (float)(Math.random() * 20 + 1);
     }
-
     public int[] getPay() {
         return pay;
     }
@@ -77,7 +70,6 @@ class Employee {
 
 public class _3rd_Static_Quiz43Enhance{
     // static은 정적 변수로 메모리 레이아웃으로 치면 data 섹션에 잡힘
-
     // --------------
     // | Stack      |
     // --------------
@@ -87,7 +79,6 @@ public class _3rd_Static_Quiz43Enhance{
     // --------------
     // | Text(Code) |
     // --------------
-
     // 그렇기 때문에 static 으로 선언된 녀석들은 new가 없어도 사용이 가능한 것임
     // 대표적으로 ? main() 매서드가 new 없이 사용했었고 static이 붙어있음
     static final Scanner scan = new Scanner(System.in);
@@ -96,53 +87,47 @@ public class _3rd_Static_Quiz43Enhance{
         System.out.print("학생 이름을 입력하세요: ");
         return scan.nextLine();
     }
-    public static int inputYear () {
+    public static int inputYear () { // 실제 사용은 안 함
         Boolean isTrue = false;
         int num;
-
         do {
             System.out.print("몇 년치를 계산할까요 ? ");
             // return scan.nextInt();
             // 예외 상황으로 인해
             num = scan.nextInt();
-
             if (num <= 0) {
                 System.out.println("0 보다 큰 숫자를 입력해주세요!");
                 isTrue = true;
             }
         } while (isTrue);
-
         return num;
     }
-    public static float[] calcEmployeeMean(Employee[] emp) {
-        int[] pay;
-        int length = emp[0].getPay().length;
+    public static float[] calcEmployeeMean(Employee[] class_array) {
+        // Employee[] type을 인자로 받는다.
+        // 연도별 평균을 구하는 method.
+        int length = class_array[0].getPay().length; // 연봉을 배열로 만들었던 pay[]의 length
         float mean[] = new float[length];
-
-        // 몇 년간
         for (int i = 0; i < length; i++) {
             float sum = 0;
-
             // 사람 수
-            for (int j = 0; j < emp.length; j++) {
-                // j 번째 사람의 i 년차 연봉
-                sum += emp[j].getYearPay(i);
+            for (int j = 0; j < class_array.length; j++) {
+                // j 번째 사람의 i년차 연봉
+                sum += class_array[j].getYearPay(i);
             }
-
-            mean[i] = sum / (float)emp.length;
+            mean[i] = sum / (float)class_array.length;
         }
-
         return mean;
     }
     // psvm
     public static void main(String[] args) {
-        final int YEAR = 10;
+        final int YEAR = 10; //연봉 10년치를 구할 예정
 
         System.out.print("몇 명의 학생 정보를 입력할까요 ? ");
         int studentNum = scan.nextInt();
-        scan.nextLine();
+        scan.nextLine(); // java nextLine bug 버퍼 빼기용
 
         Employee[] emp = new Employee[studentNum];
+        // 입력한 studentNum만큼 index를 갖는 Employee[] type의 배열 emp
 
         // static 매서드의 대표 예
         // int number = (int)Math.pow(2, 2);
@@ -160,13 +145,13 @@ public class _3rd_Static_Quiz43Enhance{
         // 만약 예를 들어서 나중에 주식 관련 무언가를 만든다 가정을 한다면
         // Trade.inputName() 이런식으로 작성을 할 수도 있다.
 
+        // for문 돌려서 emp생성자 + emp의 method들 호출
         for (int i = 0; i < studentNum; i++) {
             emp[i] = new Employee(inputName(), YEAR);
             /*
             emp[i] = new Employee(inputName(), inputYear());
             scan.nextLine();
              */
-
             emp[i].calcYearPay();
             emp[i].printPay();
         }

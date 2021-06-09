@@ -17,18 +17,24 @@ public class ArrayListTest {
         System.out.println("복제 이후 ");
 
         ArrayList<String> clone = (ArrayList<String>) fruitsList.clone();
+
         for (int i = 0; i < 4; i++) {
             System.out.printf("get(%d) = %s\n", i, clone.get(i));
         }
         System.out.println("제거 이후 ");
         fruitsList.remove("Grape");
 
-        for (int i = 0; i < 4; i++) {
-            System.out.printf("get(%d) = %s\n", i, clone.get(i));
-        }
+
+        //원본
         for (int i = 0; i < 3; i++) {
             System.out.printf("get(%d) = %s\n", i, fruitsList.get(i));
         }
+        System.out.println("복제 이후 ");
+        //사본
+            for (int i = 0; i < 4; i++) {
+                System.out.printf("get(%d) = %s\n", i, clone.get(i));
+            }
+
         // 배열을 통째로 비움
         fruitsList.clear();
         System.out.printf("after get : %s\n", fruitsList);
@@ -56,8 +62,8 @@ public class ArrayListTest {
         //contains 또한 IndexOf와 유사하게 사용이 가능하다 true or false 값을 반환
         System.out.println("포도 " + clone.contains("Grape"));
         System.out.println("딸기 " + clone.contains("Strawberry"));
-        //존재하지 않는 것은 -1이 나옴(오류)
-        System.out.println("드립을 치고 싶은데 " + clone.contains("드립"));
+
+        System.out.println("드립 " + clone.contains("드립"));
 
         //contains()는 참 혹은 것짓으로 결과가 나온다.
     }

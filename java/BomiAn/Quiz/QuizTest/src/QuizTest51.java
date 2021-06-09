@@ -59,12 +59,10 @@ class ShopTest2 {
     }
 
     public void startShop() {
-        System.out.println("현재 판매중인 상품입니다. ");
+        System.out.println("현재 판매중인 상품입니다. 상품을 한번에 100개 이상 주문하실 수 없습니다. ");
         System.out.println(shopList);
         do {
             inputWishItem();
-            checkPrice();
-            inputAmount();
             printResult();
             canWeShop();
         } while (isTrue);
@@ -73,19 +71,37 @@ class ShopTest2 {
     }
 
     private void inputWishItem() {
+        Boolean isWish = true;
+        do {
+            if (shopList.indexOf(item) != 1) {
+                System.out.print("구매할 상품을 입력하세요 : ");
+                item = scan.nextLine();
 
-        System.out.print("구매할 상품을 입력하세요 : ");
-        item = scan.nextLine();
+            }
 
+            if (shopList.indexOf(item) == -1) {
+                System.out.println("입력하신 상품은 현재 판매하지 않습니다. 다시 입력하세요!");
+                continue;
+            }
+            checkPrice();
+            inputAmount(item);
+            System.out.println(wishList);
+            System.out.println(cntItemList);
+            isWish = false;
+        } while (isWish);
 
-        if (shopList.indexOf(item) != -1) {
-            wishList.add(item);
-
-        } else if (shopList.indexOf(item) == -1) {
-            System.out.println("입력하신 상품은 현재 판매하지 않습니다. 다시 입력하세요!");
-            inputWishItem();
-        }
     }
+
+    private void createNonDuplicateBuyList(String target, int amount) {
+        int idx = wishList.indexOf(target);
+
+        if (idx == -1) {
+            wishList.add(target);
+            cntItemList.add(amount);
+        } else {
+            cntItemList.set(idx, cntItemList.get(idx) + amount);
+        }
+    } 
 
 
 
@@ -95,38 +111,58 @@ class ShopTest2 {
 
     }
 
-    private void inputAmount() {
-        System.out.print("구매하실 수량을 입력하세요 : ");
-        getNum = scan.nextInt();
-        cntItemList.add(getNum);
+    private void inputAmount(String item) {
+        Boolean isAmount = true;
+        
+        do {
+
+            System.out.print("구매하실 상품의 수량을 입력하세요 : ");
+             getNum = scan.nextInt();
+
+             if (getNum <= 0) {
+                 System.out.println("잘못된 수량이니 다시 입력하세요. ");
+                 continue;
+             } else if (getNum < 100) {
+                 isAmount = false;
+             } else {
+                System.out.println("잘못된 값이니 다시 입력하세요. ");
+             }  continue;
+
+
+        } while (isAmount);
+
+        createNonDuplicateBuyList(item, getNum);
     }
+
+
 
     private void printResult() {
         totalPrice += priceList.get(priceNum) * getNum;
-        System.out.println("장바구니 목록 : " + wishList);
-       System.out.println("구매 수량 : " + cntItemList);
        System.out.println("합계 : " + totalPrice);
-
-
     }
 
     private void canWeShop() {
         char select;
-        System.out.print("쇼핑을 계속 하시겠습니까 ? (Y/N) : ");
-        select = scan.next().charAt(0);
-        if(select == 'n' || select == 'N') {
-            removeItem();
-            isTrue = false;
-        } else if (select == 'Y' || select == 'y'){
-            isTrue = true;
-                 scan.nextLine();
+        Boolean isContinue = false;
 
-        } else if (select != 'y' && select !='Y' && select != 'n' && select != 'N') {
-            System.out.println("잘못 입력하셨습니다. ");
-            canWeShop();
-        }
+        do {
+            System.out.print("쇼핑을 계속 하시겠습니까 ? (Y/N) : ");
+            select = scan.next().charAt(0);
 
-        }
+            if (select == 'n' || select == 'N') {
+                removeItem();
+                isContinue = false;
+                isTrue = false;
+            } else if (select == 'y' || select == 'Y') {
+                isTrue = true;
+                isContinue = false;
+                scan.nextLine();
+            } else {
+               System.out.println("잘못 입력하셨습니다. ");
+               isContinue = true;
+            }
+        } while (isContinue);
+    }
 
         private void removeItem() {
 
