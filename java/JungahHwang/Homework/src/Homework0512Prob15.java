@@ -1,5 +1,5 @@
 
-public class Homework0512 {
+public class Homework0512Prob15 {
     public static void main(String[] args) {
         //15. 1-100까지 숫자중 4의 배수만 출력하기
         for (int i =4; i <=100; i +=4) {
