@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fdd5589c-322e-48b9-b5b7-5a9b9aef2e5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Test/src/Test02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/Test03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bucksp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bucksp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bucksp/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bucksp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bucksp/bucksp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bucksp/src/buksp0506.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/day06.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/src/BitShiftQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/src/ChallengeShortCutExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/src/SwitchStringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/src/SwitchTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day06/src/SwitchTest01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework01/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework01/src/HomeWork0501.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/ArrayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/AveragewithForTest04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/ChallengeShortCutExampple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/ContinueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/DiceTest04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/Num25.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/RandomTest04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/SELfstudy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/ShiftTest05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/SwhitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/TestSever05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../study/src/TrickTest03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Test/src/Test01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/src/Test01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bucksp/src/buksp0502.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bucksp/src/buksp0502.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework01/src/HomeWorkProb1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework01/src/HomeWorkProb104.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework01/src/HomeWorkProb2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework01/src/HomeWorkProb204.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework01/src/HomeWorkProb3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework01/src/HomeWorkProb304.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/PrintTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/PrintTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/ForTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/ForTest04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/InfinityLoopWithForTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/InfinityLoopWithForTest04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/InputScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/InputScanner03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/InputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/InputTest03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/MunZangType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/MunZangType03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/RelationshipOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/RelationshipOperationTest03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/TrickTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/WhileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/WhileTest03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/src/ifTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../study/src/ifTest03.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1sKuhCHSlpeQ1XWbrSnsAoawzzC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdd5589c-322e-48b9-b5b7-5a9b9aef2e5a" name="Default Changelist" comment="" />
+      <created>1620633720771</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620633720771</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
