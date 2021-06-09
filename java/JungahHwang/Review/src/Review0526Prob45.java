@@ -137,7 +137,7 @@ class DiceDeathGame {
     }
 }
 
-public class Review0526 {
+public class Review0526Prob45 {
     public static void main(String[] args) {
         DiceDeathGame ddg = new DiceDeathGame();
 
