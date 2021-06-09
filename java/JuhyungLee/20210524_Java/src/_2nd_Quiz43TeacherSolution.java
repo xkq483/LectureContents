@@ -8,18 +8,18 @@ class SalaryTest2 {
         this.name = name;
         salary = (int)(Math.random() * 1101 + 2400);
     }
-    // 편의성 제공 (하지만 확장성 Down)
-    public void calcRandomSalary (int year) {
+    // 아래 method는 편의성 up (하지만 확장성 Down)
+    public void calcRandomSalary (int year) { // method는 사용 안 했음.
         float incRate;
 
         for (int i = 0; i < year; i++) {
             incRate = (int)(Math.random() * 20 + 1);
             // 원가 + 증액분
             salary = (int)(salary + salary * incRate * PERCENT);
-            // System.out.printf("%s의 %d년차 연봉은 = %d이며 올해 인상률 = %f\n", name, i + 1, salary, incRate);
+            System.out.printf("%s의 %d년차 연봉은 = %d이며 올해 인상률 = %f\n", name, i + 1, salary, incRate);
         }
     }
-    // 편의성 Down (그러나 확장성 Up)
+    // 아래 constructor는 편의성 Down (그러나 확장성 Up)
     public void calcRandomSalary () {
         float incRate = (int)(Math.random() * 20 + 1);
 
@@ -54,43 +54,28 @@ public class _2nd_Quiz43TeacherSolution {
                 "강한별", "강한빛", "강경수", "임종수", "백종수",
                 "최빛나", "최창수", "박창수", "김창수", "김명수"
         };
-
         int nameLen = nameArr.length;
         SalaryTest2[] st = new SalaryTest2[nameLen];
-        // int[] arr = new int[len];
 
         for (int i = 0; i < nameLen; i++) {
-            st[i] = new SalaryTest2(nameArr[i]);
+            st[i] = new SalaryTest2(nameArr[i]); // st[0]/st[1]..의 생성자들 만들어짐.
         }
 
-        // 10년치 처리를 하려면 또 한 번 루프로 감싸야함
-        // 필요하다면 생성자쪽에서 몇 년치 계산할지 입력을 주는것도 좋은 방법이고
-        // 이것도 여의치가 않다면 Setter를 활용해서 10년치 처리임을 설정하도록 하는것도 좋은 방법이 될 수 있다.
+        // 10년차까지 처리를 하려면 또 한 번 for를 이용해서 루프.
+        // 필요하다면 생성자쪽에서 몇 년치 계산할지 입력을 주는것도 좋은 방법.
+        // 이것도 여의치가 않다면 Setter를 활용해서 10년차까지 처리하도록 설정하는 것도 좋은 방법.
         for (int i = 0; i < 10; i++) {
-
             float sum = 0;
-
-            // 현재 이건 10명분에 대한 1년치 처리만했음
+            // 아래는 10명 각각에 대한 1년차씩 계산하는 for문
             for (int j = 0; j < nameLen; j++) {
-                // st[i].calcRandomSalary();
-                // sum += st[i].getSalary();
-                // st[i].printRandomSalary();
-
-                // 왜 1년치인가요 ?
                 st[j].calcRandomSalary();
                 sum += st[j].getSalary();
                 st[j].printRandomSalary();
             }
-
             System.out.println("올해 평균 연봉 = " + (sum / 10.f));
-
         }
-
-        // summary:
-        // 결국 10년동안 각 해의 평균 연봉을 계산하여 출력함
     }
 }
-
 /* 생성자에서 하는 일들은 아래와 같은 형태를 만드는 것
 int num = 3;
 int arr[] = { 2, 3, 4 };

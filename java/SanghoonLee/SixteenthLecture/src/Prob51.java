@@ -36,6 +36,8 @@ class Market {
         continueShopping = false;
 
         scan = new Scanner(System.in);
+
+        myMoney = 10000000;
     }
 
     // 16일차!
@@ -58,8 +60,10 @@ class Market {
     private void checkContinueShopping () {
         Boolean isOK = false;
 
+        scan.nextLine();
+
         do {
-            System.out.print("쇼핑을 계속하시겠습니까 ? Y/N");
+            System.out.print("쇼핑을 계속하시겠습니까 ? (Y/N) ");
 
             String res = scan.nextLine();
 
@@ -84,6 +88,40 @@ class Market {
         // marketSellList, marketSellListPrice를 활용하여 가격 정보를 획득하여
         // 전부 합산 얼마가 나오는지 계산하도록 한다.
         // 그리고 지갑에다가 적용한다.(지갑 설정기능이 빠져있음 현재)
+        int length = marketSellList.length;
+
+        // userBuyList는 별도의 연결리스트
+        // marketSellList는 별도의 배열
+        for (int i = 0; i < length; i++) {
+            for (String element : userBuyList) {
+                // 해당 i 번째 인덱스의 요소 위치에 price를 사용하면 됨을 의미함
+                // "선풍기", "키보드", "마우스", "모니터" <<<--- marketSellList의 순서
+                // 우리가 키보드 입력을 통해서 받는 userBuyList는 위의 순서대로 배치되지 않는다.
+                // "모니터", "마우스", "키보드", "선풍기" 순이라 가정해보자!
+                // System.out.println("element = " + element + ", i = " + i);
+
+                if (marketSellList[i].equals(element)) {
+                    // myMoney -= marketSellListPrice[i] * (수량)
+                    myMoney -= marketSellListPrice[i] * userBuyListStock.get(userBuyList.indexOf(element));
+                    System.out.printf("찾은 물품 = %s, 가격 = %d, 수량 = %d\n",
+                            element, marketSellListPrice[i],
+                            userBuyListStock.get(userBuyList.indexOf(element)));
+
+                    // 방법 1) 결제 완료 이후 구매 리스트를 비울 필요가 있음
+                    //        현재 케이스에서는 값을 지워버리면 루프를 도는 중에 지워지기 때문에 문제가 발생함!
+                    /*
+                    int deleteIdx = userBuyList.indexOf(element);
+                    userBuyListStock.remove(deleteIdx);
+                    userBuyList.remove(deleteIdx);
+                     */
+                }
+            }
+        }
+
+        System.out.printf("현재 당신은 %d 원을 가지고 있습니다.\n", myMoney);
+        // 방법 2) 결제 완료 이후 구매 리스트를 비울 필요가 있음
+        userBuyListStock.clear();
+        userBuyList.clear();
     }
 
     private void selectBuyItemStock (String selectItem) {

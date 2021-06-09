@@ -39,6 +39,7 @@ class ArrayListCount {
         // 위와 같이 취급하겠다는 전략
         for (int i = 0; i < RAND_RANGE; i++) {
             duplicateLists.add(0);
+            //duplicateLists에 0값을 맨 마지막에 추가함
         }
     }
 
