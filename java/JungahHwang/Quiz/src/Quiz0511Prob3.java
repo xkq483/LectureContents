@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Quiz0511 {
+public class Quiz0511Prob3 {
         public static void main(String[] args) {
 
             //3. 숫자 3이 짝수인지 홀수인지 판별하는 코드 만들기
@@ -45,8 +45,8 @@ public class Quiz0511 {
             int loop = scan.nextInt();
             int i = 1;
             while (i <= loop) {
-                if (i % 3 == 0) { System.out.println("1부터 " + loop + " 까지 3의 배수를 출력합니다: " + i);
-                    i++; } }
+                if (i % 3 == 0) { System.out.println("1부터 " + loop + " 까지 3의 배수를 출력합니다: " + i); }
+                i++;}
 
 
             //8. 0을 입력하기 전까지 입력하는 값이 짝수인지 홀수인지 지속적으로 판별하기
