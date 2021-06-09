@@ -16,10 +16,12 @@ public class ThirdLecture_Quiz3 {
         System.out.print("n은 짝수인가? 홀수인가? n을 기입하시오: ");
         a = scan.nextInt();
 
-        if(a % 2 ==0){
-            System.out.println(a + "는 짝수");
-        } else {
+        if(a == 0){
+            break;
+        } else if(a % 2 != 0) {
             System.out.println(a + "는 홀수");
+        } else if(a % 2 == 0){
+            System.out.println(a + "는 짝수");
         }
 
         }

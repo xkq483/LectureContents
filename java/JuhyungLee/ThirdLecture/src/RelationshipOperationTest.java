@@ -23,7 +23,7 @@ public class RelationshipOperationTest {
         // 어떤 상황이던 어떤 조건이던 무조건 그 반대의 역할을 수행함
         // 부정의 부정은 긍정, 긍정의 부정은 부정
         if (!(num4 % num1 == 0) || (num4 % num2 == 0)) {
-            System.out.printf("%d는 %의 배수 혹은 %d의 배수이다.\n", num4, num1, num2);
+            System.out.printf("%d는 %d의 배수 혹은 %d의 배수이다.\n", num4, num1, num2);
         } else {
             System.out.println("안되넹");
         }
