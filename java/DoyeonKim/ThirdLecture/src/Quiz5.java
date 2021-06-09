@@ -16,17 +16,19 @@ public class Quiz5 {
 
              */
 
-            /*
+
             int A = 3 , B = 5;
             System.out.println("A="+ A);
             System.out.println("B="+ B);
             A += B;
             //A = A + B
             //A + B 결과를 A에 대입하세요.
+            //8을 A에 대입
 
             System.out.println("A = " + A);
+            System.out.println("B = " + B);
 
-             */
+
         }
     }
 }

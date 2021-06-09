@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class homework01 {
     public static void main(String[] args)
     {
@@ -12,5 +14,11 @@ public class homework01 {
 
         System.out.printf("%.10f + %.10f=%.10f\n",c,d,c+d);
         System.out.printf("%.3f-%.3f=%.3f",c,d,c-d);
+
+        Scanner hello = new Scanner(System.in);
+        System.out.println("숫자를 입력하여주세요.");
+
+        int  i = hello.nextInt();
+
     }
 }

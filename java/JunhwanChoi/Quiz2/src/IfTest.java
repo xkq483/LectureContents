@@ -5,7 +5,7 @@ public class IfTest {
 
         int num=3;
 
-        if(num/3==1)
+        if(num%2==1)
         {
             System.out.println("홀수입니다.");
         }

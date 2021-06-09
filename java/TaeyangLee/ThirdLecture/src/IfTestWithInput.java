@@ -3,6 +3,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.SchemaNamespaceSupport;
 import java.util.Scanner;
 
 public class IfTestWithInput {
+    //두개의 숫자를 입력받아 비교연산자 사용하여 대소비교
     public static void main(String[] args) {
         System.out.println("두 개의 숫자를 입력 받아 비교해봅니다 .");
         Scanner sc = new Scanner(System.in);
