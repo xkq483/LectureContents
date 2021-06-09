@@ -7,7 +7,7 @@ public class SocketClientTest {
         // 사설망이라 컴퓨터 털릴일 없으니 걱정 no!
         String hostname = "192.168.219.101";
         int port = 33333;
-        //공인ip와 port넘버  2가지가 제일 중요하다!!!
+        //공인ip와 port number  2가지가 제일 중요하다!!!
 
         for (int i = 0; i < 10; i++) {
             try {
