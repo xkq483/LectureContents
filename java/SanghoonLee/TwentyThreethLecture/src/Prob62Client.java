@@ -2,8 +2,9 @@ import java.io.IOException;
 
 public class Prob62Client {
     public static void main(String[] args) throws IOException {
-        NetworkDiceGame ndg = new NetworkDiceGame();
+        GameStartProcess gsp = new GameStartProcess();
 
-        ndg.createClient();
+        gsp.createClient();
+        gsp.startThread();
     }
 }
