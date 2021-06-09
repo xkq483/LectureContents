@@ -16,5 +16,13 @@
 8. nodejs 일부 패키지에 C/C++ 기능이 필요한 것들이 있음
    묻지도 따지지도 말고 그냥 필요하면 다 설치하라고 체크하고 Next
 9. Install
+10. 설치가 꽤 오래 걸릴 수도 있으니 커피나 한 잔 하면 좋다.
+11. node -v 로 nodejs 설치 여부를 체크한다.
+12. npm --version 으로 npm 설치 여부를 체크한다.
+```
 
+### Vue.js 설치
+
+```make
+1. npm install -g @vue/cli
 ```
