@@ -1,5 +1,4 @@
 // 35. 34번 문제에서 무승부도 표현되게 만들기 --------------------------------------------------
-
 import java.util.Scanner;
 
 class Dice2 {
@@ -59,7 +58,7 @@ class Dice2 {
 
     }
 }
-public class Quiz0518Dice2 {
+public class Quiz0518Prob35 {
     public static void main(String[] args) {
         Dice2 d = new Dice2();
 

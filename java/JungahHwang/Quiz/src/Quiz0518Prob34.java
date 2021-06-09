@@ -19,11 +19,10 @@ class Dice {
             System.out.println("무승부입니다");
             return false;
         }
-
         // 무승부 일때도 졌다고 표현함
     }
 }
-public class Quiz0518Dice1 {
+public class Quiz0518Prob34 {
     public static void main(String[] args) {
         Dice d = new Dice();
 
