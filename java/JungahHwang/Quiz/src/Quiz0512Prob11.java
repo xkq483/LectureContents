@@ -1,5 +1,5 @@
 
-public class Quiz0512 {
+public class Quiz0512Prob11 {
     public static void main(String[] args) {
         //11. 1-10까지 출력하는 프로그램 만들기
 
@@ -8,8 +8,8 @@ public class Quiz0512 {
 
         //------------------------------------------------
         for(int i=1; i<=10 ;i++)
-        {System.out.printf("%3d", i);
-            //%3d는 3칸 띄우기(숫쟈 10은 2칸을 차지하므로 3칸을 띄어야 함)
+        {System.out.printf("%-3d", i);
+            //%3d는 3칸 띄우기(숫자 10은 2칸을 차지하므로 3칸을 띄어야 함)
         if(i % 5 ==0){ System.out.println();
             //i값이 5로 나눠 떨어지면 엔터(println() 아무것도 입력하지 않음) 적용
         }}
