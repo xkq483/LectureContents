@@ -6,7 +6,7 @@ class Dog{
     int age;
     String food;}
 
-public class Homework0517Dog {
+public class Homework0517Prob32 {
     public static void main(String[] args) {
         Dog d = new Dog();
         Scanner scan = new Scanner(System.in);

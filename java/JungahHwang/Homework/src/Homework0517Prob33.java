@@ -23,7 +23,7 @@ class Cat{
     }
 }
 
-public class Homework0517Cat {
+public class Homework0517Prob33 {
     public static void main(String[] args) {
 
         Cat c = new Cat();
