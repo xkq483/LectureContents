@@ -25,4 +25,6 @@
 
 ```make
 1. npm install -g @vue/cli
+2. 오류나면 npm audit fix
+3. MAC에선 권한(permission) 없다고 하면 관리자 모드로 sudo 줘서 실행한다.
 ```
