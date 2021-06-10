@@ -14,7 +14,7 @@ public class NetworkDiceGame {
     ServerSocket servSock;
     Socket sock;
 
-    final String SERVER_IP = "192.168.30.141";
+    final String SERVER_IP = "172.30.1.49";
     final int PORT = 33333;
 
     public NetworkDiceGame () {
@@ -34,7 +34,6 @@ public class NetworkDiceGame {
 }
 
 class GameResultThread extends NetworkDiceGame implements Runnable {
-
     @Override
     public void run() {
         while (true) {
@@ -47,12 +46,10 @@ class GameResultThread extends NetworkDiceGame implements Runnable {
                     System.out.println("무승부");
                 }
             }
-
             targetDice = 0;
         }
     }
 }
-
 class GameSendThread implements Runnable {
 
     int dice;
@@ -61,10 +58,8 @@ class GameSendThread implements Runnable {
 
     public GameSendThread (Socket sock, int dice) {
         scan = new Scanner(System.in);
-
         this.dice = dice;
         this.sock = sock;
-
         System.out.println("sock: " + sock);
     }
 
@@ -102,14 +97,12 @@ class GameSendThread implements Runnable {
 class GameRecvThread implements Runnable {
     int targetDice;
     int myDice;
-
     Socket sock;
 
     public GameRecvThread (Socket sock, int myDice) {
         this.sock = sock;
         this.myDice = myDice;
     }
-
     @Override
     public void run() {
         InputStream in;
@@ -152,11 +145,6 @@ class GameStartProcess extends NetworkDiceGame {
         sock = servSock.accept();
         System.out.println("[" + sock.getInetAddress() + "] client connected");
     }
-
-    // public void startClientThread () {
-    //     new GameSendClientThread();
-    //     new GameRecvClientThread();
-    // }
 
     // public void startServerThread
     public void startThread () {
