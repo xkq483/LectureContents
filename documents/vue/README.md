@@ -28,3 +28,42 @@
 2. 오류나면 npm audit fix
 3. MAC에선 권한(permission) 없다고 하면 관리자 모드로 sudo 줘서 실행한다.
 ```
+
+### vue 프로젝트 생성
+
+```make
+1. 적당한 위치를 잡는다(HTML/CSS, JavaScript에선 javascript 폴더로 잡음)
+2. vue create frontend
+   frontend라는 이름으로 프로젝트가 만들어짐
+3.  옵션 설정을 해야함
+
+? Please pick a preset:
+  Default ([Vue 2] babel, eslint)
+  Default (Vue 3) ([Vue 3] babel, eslint)
+> Manually select features
+
+? Check the features needed for your project:
+ (*) Choose Vue version
+ (*) Babel
+ ( ) TypeScript
+ ( ) Progressive Web App (PWA) Support
+ (*) Router
+>(*) Vuex
+ ( ) CSS Pre-processors
+ (*) Linter / Formatter
+ ( ) Unit Testing
+ ( ) E2E Testing
+ 
+? Choose a version of Vue.js that you want to start the project with 3.x
+
+? Use history mode for router? (Requires proper server setup for index fallback in production) Yes
+
+? Pick a linter / formatter config: (Use arrow keys)
+> ESLint with error prevention only
+  ESLint + Airbnb config
+  ESLint + Standard config
+  ESLint + Prettier
+  
+  
+
+```
