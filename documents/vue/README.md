@@ -64,6 +64,16 @@
   ESLint + Standard config
   ESLint + Prettier
   
-  
+? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+>(*) Lint on save
+ ( ) Lint and fix on commit
+ 
+? Where do you prefer placing config for Babel, ESLint, etc.?
+  In dedicated config files
+> In package.json
+
+? 다음 질문엔 그냥 앤터치면 된다.
+
+그럼 뭔가 프로젝트 설정하기 위해 많은 작업이 일어난다.
 
 ```
