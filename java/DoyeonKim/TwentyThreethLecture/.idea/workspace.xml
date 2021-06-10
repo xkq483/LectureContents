@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="529329de-7a2d-478a-8a14-b9c86ae0530d" name="Default Changelist" comment="[김도연] 22일차 복습">
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/TwentyThreethLecture.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/NetworkDiceGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/Prob62Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/Prob62Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/SocketClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/SocketServerTest.java" afterDir="false" />
+    <list default="true" id="cf2fae91-5bb4-4919-8b88-ac85912e5d18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TwentyThreethLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NetworkDiceGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Prob62Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Prob62Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SocketClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SocketServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../LectureContents" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../TwentiethLecture1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentiethLecture1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,31 +31,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1teepYc7HoB3fZL9ddAgBiBnikV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1thThRqsWhc5KLb3Jnf7xEayzPv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java_work\LectureContents\java\DoyeonKim\TwentyThreethLecture\src" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.SocketClientTest">
+    <configuration name="Prob62Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Prob62Client" />
+      <module name="TwentyThreethLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Prob62Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Prob62Server" />
+      <module name="TwentyThreethLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SocketClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketClientTest" />
-      <module name="TwentyTwothLecture" />
+      <module name="TwentyThreethLecture" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="SocketServerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SocketServerTest" />
-      <module name="TwentyTwothLecture" />
+      <module name="TwentyThreethLecture" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -63,26 +81,20 @@
       <list>
         <item itemvalue="Application.SocketClientTest" />
         <item itemvalue="Application.SocketServerTest" />
+        <item itemvalue="Application.Prob62Client" />
+        <item itemvalue="Application.Prob62Server" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="529329de-7a2d-478a-8a14-b9c86ae0530d" name="Default Changelist" comment="" />
-      <created>1623134169872</created>
+      <changelist id="cf2fae91-5bb4-4919-8b88-ac85912e5d18" name="Default Changelist" comment="" />
+      <created>1623220444643</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623134169872</updated>
+      <updated>1623220444643</updated>
     </task>
-    <task id="LOCAL-00001" summary="[김도연] 22일차 복습">
-      <created>1623218693240</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1623218693240</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,10 +108,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[김도연] 22일차 복습" />
-    <option name="LAST_COMMIT_MESSAGE" value="[김도연] 22일차 복습" />
   </component>
 </project>
