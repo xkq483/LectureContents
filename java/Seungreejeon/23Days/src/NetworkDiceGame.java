@@ -14,7 +14,7 @@ public class NetworkDiceGame {
     ServerSocket servSock;
     Socket sock;
 
-    final String SERVER_IP = "192.168.30.141";
+    final String SERVER_IP = "192.168.1.14";
     final int PORT = 33333;
 
     public NetworkDiceGame () {
@@ -69,7 +69,7 @@ class GameSendThread implements Runnable {
     }
 
     @Override
-    public void run() {
+    public void run() { //사실상 오가는 값은 주사위 값이다. writer.println은 하나
 
         OutputStream out = null;
         PrintWriter writer;
@@ -88,7 +88,7 @@ class GameSendThread implements Runnable {
                 try {
                     out = sock.getOutputStream();
                     writer = new PrintWriter(out, true);
-                    writer.println(ServerCriticalSection.currentMyDice);
+                    writer.println(ServerCriticalSection.currentMyDice); //target Dice reader.Line으로 받게되는값
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

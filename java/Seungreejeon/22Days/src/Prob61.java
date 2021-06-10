@@ -52,10 +52,8 @@ class DistributedThread implements Runnable {
     static BigInteger totalSum;
 
     public DistributedThread (BigInteger start, BigInteger end, int threadIdx, int option) {
-
         this.start = start;
         this.end = new BigInteger("10").add(BigInteger.ONE);
-
         this.threadIdx = threadIdx;
         this.option = option;
 
