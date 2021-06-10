@@ -81,5 +81,5 @@
 
 ```make
 cd frontend
-npm start
+npm run serve
 ```
