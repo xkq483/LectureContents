@@ -24,6 +24,7 @@ public class SyncBlock2 {
         }).start();
         System.out.println("Test end");
     }
+
     // this에 걸려버리면 자체 LOCK이 풀릴때까지 대기해야한다.
     // 정작 LOCK이 필요한건 같은 hasmap을 동시에 접근하는경우 putAB와 getA 또 putCD getC가 각각 LOCK 이걸려야 효율적이다.
     public void putAB(String key, String value) {
