@@ -32,4 +32,5 @@ server:
   
 13. src/main/java/com.example.demo 폴더의 DemoApplication을 실행한다.
 14. 콘솔창에 포트 번호 7777로 서버가 구동된다는 것이 나오면 OK!
+15. build.gradle 폴더에 sourceCompatibility = '8' 부분을 버전에 맞춰서 작성한다.
 ```
