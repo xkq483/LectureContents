@@ -34,6 +34,12 @@ public class Review23_2 {
             } catch (IOException e) {
                 System.out.println("I/O Error: " + e.getMessage());
             }
+
+            //java.net.BindException : Address already in use : bind
+            //1. cmd 실행
+            //2. netstat -ano 명령어 입력 > 현재 떠 있는 process들의 정보를 보여줌
+            //3. 아래 사진의 빨간색 부분 (:port) 에 :8080 이라고 되어 있는 부분을 찾고, 있다면 그 PID를 찾아냄
+            //4. taskkill /f /pid 프로세스ID 명령어 실행
         }
     }
 }
