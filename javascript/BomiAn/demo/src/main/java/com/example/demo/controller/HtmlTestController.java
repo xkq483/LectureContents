@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.utility.Test;
+import com.example.demo.utility.network.Client;
+import com.example.demo.utility.network.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,5 +24,43 @@ public class HtmlTestController {
         log.info("firstIndex() 실행");
 
         return "htmlHi";
+    }
+
+    @GetMapping("/comparatorTest")
+    public String comparatorTest () {
+        log.info("comparatorTest()");
+
+        Test test = new Test();
+        test.doTest();
+
+        return "test";
+    }
+
+    @GetMapping("/serverOn")
+    public String startServer () {
+        log.info("startServer()");
+
+        Server server = new Server();
+        server.waitForClientTest();
+
+        return "test";
+    }
+
+    @GetMapping("/clientOn")
+    public String startClient () {
+        log.info("startClient()");
+
+        Client client = new Client();
+        client.connectToServerTest();
+
+        return "test";
+    }
+
+
+    @GetMapping("/fail")
+    public String secondIndex () {
+        log.info("secondIndex() 실행");
+        System.out.println("이게 fail 이다~!");
+        return "failure";
     }
 }
