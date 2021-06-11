@@ -55,4 +55,11 @@ public class FirstController {
         return "first/tableTest3.html";
     }
 
+    @GetMapping("/Prob64")
+    public String doProb64(){
+        log.info("doProb64()");
+
+        return "first/Prob64.html";
+    }
+
 }
