@@ -1,3 +1,4 @@
+
 // 같은 문양의 숫자가 연속되게 3개 나오는 경우(예 9 8 7) > 서로 다른 문양의 같은 숫자
 // 서로 다른 문양의 같은 숫자                         > 서로 다른 문양의 숫자가 연속되게 3개 나옴
 // 서로 다른 문양의 숫자가 연속되게 3개 나옴            > 서로 같은 문양이 3개 나옴
@@ -9,9 +10,10 @@
 // 활 > 창
 // 또한 창 987 vs 창 654는 큰 숫자로 구성된 쪽이 이겨야한다.
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-//가이드 코드 기반으로 2개의 매서드 작성 완료해보기
+
 // 컴퓨터와 사용자가 있음
 class ThreePoker {
     final int PATTERN_MAX = 3;
@@ -25,7 +27,7 @@ class ThreePoker {
     private Map<String, Integer>[] preparedMap;
     private String[] pattern = {"spear", "sword", "arrow"};
 
-    private int[][] dupNumArrCheck;  //[0][0]~[2][9]까지 배열을 나타냄(분배되는 카드를 나타내는 변수)
+    private int[][] dupNumArrCheck;
 
     private int[][] usrCard;
     private int[][] comCard;
@@ -34,9 +36,9 @@ class ThreePoker {
         map = new HashMap<String, Map<String, Integer>>();
         preparedMap = new HashMap[PATTERN_MAX];
 
-        dupNumArrCheck = new int[PATTERN_MAX][CARD_MAX]; //[0][0]~[2][9]까지 배열을 나타냄(세가지 문양의 10가지 수가 적힌 카드의 배열)
+        dupNumArrCheck = new int[PATTERN_MAX][CARD_MAX];
 
-        usrCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM];//[0][0]~[2][3]까지(분배되는 카드를 나타내는 배열)
+        usrCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM];
         comCard = new int[PATTERN_MAX][DISTRIBUTED_CARD_NUM];
 
         for (int i = 0; i < PATTERN_MAX; i++) {
@@ -64,14 +66,14 @@ class ThreePoker {
     public static Boolean checkDuplicate (
             int patternIdx, int randNum, int[][] randCheckArr) {
 
-        if (randCheckArr[patternIdx][randNum] > 0) {  //중복체크
+        if (randCheckArr[patternIdx][randNum] > 0) {
             return true;
         }
 
         return false;
     }
 
-    public void distributeCard (int[][] arr, int identity) {  //컴퓨터와 사용자에게 카드를 나눠주는 메소드
+    public void distributeCard (int[][] arr, int identity) {
         String sculpture;
         int sculptureIdx;
         int randNum;
@@ -80,12 +82,26 @@ class ThreePoker {
 
         for (int i = 0; i < 4; i++) {
             do {
+                // 중복되는 숫자를 체킹하는 코드가 필요합니다:
+                // 56번에서는 중복체킹하는것을 추가로 처리하여
+                // 57번 문제를 풀어보도록 합시다!
                 sculptureIdx = (int) (Math.random() * 3);
                 randNum = (int) (Math.random() * 10);
             } while (checkDuplicate(sculptureIdx, randNum, dupNumArrCheck));
 
             sculpture = pattern[sculptureIdx];
 
+            // 머리속으로만 풀려고 하면 안풀립니다.
+            // 그럴땐 배열의 그림을 그려서 값이 어떻게 바뀌는지 보면 좋습니다.
+
+            //  [0] [1] [2] [3] [4] [5] [6] [7] [8] [9]
+            // -----------------------------------------
+            // | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |    [0]
+            // -----------------------------------------
+            // | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |    [1]
+            // -----------------------------------------
+            // | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |    [2]
+            // -----------------------------------------
             dupNumArrCheck[sculptureIdx][randNum]++;
             arr[sculptureIdx][cnt++] = randNum;
 
@@ -107,9 +123,7 @@ class ThreePoker {
             return false;
         }
 
-        // 1번이 검사 완료되었으므로 2번만 검사하면 된다.
-        // 이 부분은 연속된 숫자를 검사하는 부분으로
-        // checkTripplePattern() 부분을 작업하면 결과를 바로 얻을 수 있음
+        // 규칙이 꼬였기 때문에 연속된 숫자 검사하는 루틴이 필요함
         if (!checkTrippleHarmonic(arr, identity)) {
             return false;
         }
@@ -119,47 +133,177 @@ class ThreePoker {
 
     /* 아래 두 가지를 완성하면 자동으로 checkTrippleWeapon()은 완성이됩니다. */
     private Boolean checkTrippleNumber (int[][] arr, int identity) {
-        //서로 다른 문양의 같은 숫자3개
-        // 2. 처음 나오는 값의 숫자와 패턴을 파악한다.
-        // 3. 문양이 다른지 확인 같은 숫자가 3개 있는지 확인 &&연산자를 사용해야하나?
-        int[] savedRow = new int[DISTRIBUTED_CARD_NUM];
-        int rowCnt = 0;
+        return false;
+    }
 
-        int[] savedCol = new int[DISTRIBUTED_CARD_NUM];
-        int colCnt = 0;
+    private Boolean checkHarmonic (Map<Integer, Map<Integer, Integer>> map, int identity) {
 
-        for (int i = 0; i < PATTERN_MAX; i++) {
-            for (int j = 0; j < DISTRIBUTED_CARD_NUM; j++) {
-                // 주의해야할 것이 arr에 1, 0으로 값이 있다 없다가 아니라
-                // 실제 셋팅된 값 자체가 배치되어 있다!
-                // 그러므로 실제 사용하는 숫자 0이 들어간 경우 문제가 발생할 수 있음
-                if (arr[i][j] != -1) {
-                    savedRow[rowCnt++] = i;
-                    savedCol[colCnt++] = j;
-                }
-            }
-        }
+        int[] checkContinuousNumArr = new int[DISTRIBUTED_CARD_NUM];
+        int[] checkPatternArr = new int[DISTRIBUTED_CARD_NUM];
+
         int patternCnt = 0;
-        int secondaryPatternCnt = 0;
+        int cardCnt = 0;
 
-        // savedRow | 0 | 1 | 2 | 2 |
-        for (int i = 0; i < DISTRIBUTED_CARD_NUM; i++) {
-            if (savedCol[0] == savedCol[i]) {
+        /* 키를 기준으로 정렬하기 */
+        // Object[] mapKey = map.keySet().toArray();
+        //Arrays.sort(mapKey);
+
+        // 출력 데이터 형식
+        // {0= {5=0}, 1= {5=1}, 2= {7=2}, 3= {4=2} }
+        // {순서 = {나온숫자 = 패턴인덱스}}
+
+        // 1. 같은 숫자가 발견되면 다음 두 개에서 연속된 숫자가 나타나야함
+        //    이를 기반으로 맵 엔트리를 추출함
+        //    ex) {0={5=0}, 1={5=2}, 2={6=1}, 3={7=2}}
+        //    위 케이스의 경우 추출된 값은 아래와 같게 만든다.
+        //    0={5=0}, 2={6=1}, 3={7=2}}
+        //    결국 밸류의 키값을 체크해야 한다.
+        // 2. 추출한 숫자가 패턴의 Harmonic을 구성해야함
+        //    위 패턴에서 밸류의 밸류값이 0, 1, 2인지 체크한다.
+
+        /*
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            Integer key = entry.getKey();
+            Integer value = entry.getValue();
+            checkContinuousNumArr[cardCnt++] = key;
+            checkPatternArr[patternCnt++] = value;
+        }
+         */
+
+        System.out.println("Harmonic 검사: " + map);
+
+
+        /*
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            if (checkPatternArr[i] > 0) {
                 patternCnt++;
             }
-            if (savedCol[1] == savedCol[i]) {
-                secondaryPatternCnt++;
-            }
         }
-
-        if (patternCnt >= 3 || secondaryPatternCnt >= 3) {
-            System.out.println("동일한 숫자 3개 이상 검출되었습니다!");
+        if (patternCnt == 3) {
             return true;
         }
+         */
 
         return false;
     }
+    /* 서로 다른 문양의 숫자가 연속되게 3개 나옴 */
     private Boolean checkTrippleHarmonic (int[][] arr, int identity) {
+        // 1. 먼저 제각기 다른 문양들이 배치되어 있는지 검사한다.
+        //    제각기 다른 문양이 아닌 경우에도 즉결 처분(false)
+        // 2. 서로 연속된 숫자가 아니라면 바로 false 처리
+
+        // 두개를 모두 만족하는 경우에만 true
+        // ------------------ 모든 패턴이 조합되는 케이스 시작 ------------------
+        int[] checkContinuousNumArr = new int[DISTRIBUTED_CARD_NUM];
+        int[] checkPatternArr = new int[PATTERN_MAX];
+        Boolean isHarmonicPattern = false;
+        int patternCnt = 0;
+        int cardCnt = 0;
+
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            for (int j = 0; j < DISTRIBUTED_CARD_NUM; j++) {
+                // 같은 패턴인 경우는 훨씬 쉬웠지만
+                // 서로 다른 패턴을 찾아야 하는 경우는
+                // 각각의 패턴을 채웠는지 여부를 체크해야할 것이다.
+                if (arr[i][j] != -1) {
+                    checkPatternArr[i]++;
+                    checkContinuousNumArr[cardCnt++] = arr[i][j];
+                }
+            }
+
+            System.out.printf("checkPatternArr[%d] = %d\n", i, checkPatternArr[i]);
+        }
+
+        for (int i = 0; i < DISTRIBUTED_CARD_NUM; i++) {
+            System.out.printf("checkContinuousNumArr[%d] = %d\n", i, checkContinuousNumArr[i]);
+        }
+
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            if (checkPatternArr[i] > 0) {
+                patternCnt++;
+            }
+        }
+
+        if (patternCnt == 3) {
+            isHarmonicPattern = true;
+        } else {
+            return false;
+        }
+
+        System.out.println("isHarmonicPattern = " + isHarmonicPattern);
+        // ------------------ 모든 패턴이 조합되는 케이스 끝 ------------------
+
+        // ------------------ 서로 연속된 숫자 처리 시작 ------------------
+        /*
+        checkPatternArr[0] = 2 - 창
+        checkPatternArr[1] = 1 - 검
+        checkPatternArr[2] = 1 - 활     1  2
+        checkContinuousNumArr[0] = 7 - 활 창
+        checkContinuousNumArr[1] = 2 - 검 활
+        checkContinuousNumArr[2] = 0 - 창 검
+        checkContinuousNumArr[3] = 1 - 창 창
+                                (나온값, 패턴인덱스)
+        1) HashMap(키, 값) ===> (7, 2), (2, 1), (0, 0), (1, 0)
+        2)                ===> (7, 0), (2, 2), (0, 1), (1, 0)
+                               이와 같은 구성시 문양이 다른것과 관계 없이
+                               같은 숫자가 배치되면 마지막 혹은 큰 값이 덮어써지게 되는 문제가 발생함
+        checkPatternArr[0] = 2
+        checkPatternArr[1] = 1
+        checkPatternArr[2] = 1         1
+        checkContinuousNumArr[0] = 9 - 창
+        checkContinuousNumArr[1] = 1 - 검
+        checkContinuousNumArr[2] = 7 - 검
+        checkContinuousNumArr[3] = 9 - 활
+        1) HashMap(키, 값) ===> (9, 0), (1, 1), (7, 1), (9, 2)
+                          ===> (9, 2), (1, 1), (7, 1) <<<==== 이 부분이 문제가 되고 있음
+                          만약 문양을 키값으로 잡는다고 하더라도 같은 문제가 반복될 것이다.
+                          그러므로 맵을 이중으로 사용해서 문제를 회피하도록 한다.
+        sol) 솔루션 ===> HashMap(키, (키, 밸류))
+             (0, (9, 0)), (1, (1, 1)), (2, (7, 1)), (3, (9, 2))
+         */
+        Map<Integer, Map<Integer, Integer>> orderMap =
+                new HashMap<Integer, Map<Integer, Integer>>();
+        Map<Integer, Integer> cardsMap[] = new HashMap[DISTRIBUTED_CARD_NUM];
+
+        for (int i = 0; i < DISTRIBUTED_CARD_NUM; i++) {
+            cardsMap[i] = new HashMap<Integer, Integer>();
+        }
+
+        int orderCnt = 0;
+        int cardsCnt = 0;
+
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            for (int j = 0; j < DISTRIBUTED_CARD_NUM; j++) {
+                if (arr[i][j] != -1) {
+                    cardsMap[cardsCnt].put(arr[i][j], i);
+                    orderMap.put(orderCnt++, cardsMap[cardsCnt++]);
+
+                    // 일단 이 시점에서 위의 맵 데이터들은 완성이 됨
+                    // 다음으로 해야할 일은 무엇인지 기록해보자면
+                    // 1. 키값들(실제 숫자)을 확인해야함
+                    // 2. 밸류값들(패턴 문양 인덱스)를 확인해야함
+                }
+            }
+        }
+
+        if (checkHarmonic(orderMap, identity)) {
+
+        } else {
+            return false;
+        }
+
+        /*
+        cardCnt = 0;
+        for (Map.Entry<Integer, Integer> cardEntry : cardsMap.entrySet()) {
+            Integer key = cardEntry.getKey();
+            Integer value = cardEntry.getValue();
+            System.out.println("key = " + key + ", value = " + value);
+        }
+         */
+
+        System.out.println(cardsMap);
+        // ------------------ 서로 연속된 숫자 처리 끝 ------------------
+
         return false;
     }
     private Boolean checkTripplePattern (int[][] arr, int identity) {
@@ -262,7 +406,7 @@ class ThreePoker {
     // 3. 서로 다른 문양 + 연속된 숫자 3개  - 트리플 하모닉(TrippleHarmonic)
     // 4. 서로 같은 문양                  - 트리플 패턴(TripplePattern)
     // 5. 아무것도 아님                   - 꽝(Bang)
-    public void checkWinner () {  //승패 확인
+    public void checkWinner () {
         // 1. String 값으로 각각의 패를 가져오도록 한다.
         String usr = checkPattern(usrCard, USER);
         String com = checkPattern(comCard, COMPUTER);
@@ -275,17 +419,17 @@ class ThreePoker {
         Boolean wantContinue = false;
 
         do {
-            distributeCard(usrCard, USER); //사용자에게 분배된 카드들 출력
+            distributeCard(usrCard, USER);
             System.out.println("------------------절취선------------------");
-            distributeCard(comCard, COMPUTER); //컴퓨터에게 분배된 카드들 출력
-            printArr(usrCard, USER); //밑에있는 printArr메소드를 출력
+            distributeCard(comCard, COMPUTER);
+            printArr(usrCard, USER);
             System.out.println("------------------절취선------------------");
-            printArr(comCard, COMPUTER);//밑에있는 printArr메소드를 출력
+            printArr(comCard, COMPUTER);
             checkWinner();
         } while (wantContinue);
     }
 
-    public void printArr (int[][] distArr, int identity) { //사용자와 컴퓨터에게 카드가 올바르게 나눠졌는지 확인하는 코드
+    public void printArr (int[][] distArr, int identity) {
         if (identity == USER) {
             System.out.println("사용자");
         } else if (identity == COMPUTER) {
