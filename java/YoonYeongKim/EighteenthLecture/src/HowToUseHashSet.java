@@ -1,0 +1,20 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class HowToUseHashSet {
+    public static void main(String[] args) {
+        Set<String> s = new HashSet<String>();
+
+        String[] sample = {"안녕", "하이", "헬로", "안녕", "안녕"};
+
+        // 집합의 특성: 중복 허용 x
+        for (String str : sample) {
+            if (!s.add(str)) { // (s.add(str)이 참)을 부정(!) = 거짓
+                System.out.println("중복되었습니다: " + str);
+            }
+        }
+
+        // size()는 원소의 개수
+        System.out.println(s.size() + " 중복을 제외한 단어: " + s);
+    }
+}

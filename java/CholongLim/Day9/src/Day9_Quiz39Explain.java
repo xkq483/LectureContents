@@ -3,8 +3,8 @@ class DiceGame2 {
     private int userDice;
 
     public DiceGame2 () {
-        int comDice = getRandDice();
-        int userDice = getRandDice();
+        comDice = getRandDice();
+        userDice = getRandDice();
     }
     private int getRandDice () {
         return (int)(Math.random() * 6 + 1);
