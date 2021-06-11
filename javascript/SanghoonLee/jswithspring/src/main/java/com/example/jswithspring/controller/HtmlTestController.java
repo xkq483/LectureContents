@@ -1,6 +1,8 @@
 package com.example.jswithspring.controller;
 
 import com.example.jswithspring.utility.Test;
+import com.example.jswithspring.utility.network.Client;
+import com.example.jswithspring.utility.network.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +32,26 @@ public class HtmlTestController {
 
         Test test = new Test();
         test.doTest();
+
+        return "test";
+    }
+
+    @GetMapping("/serverOn")
+    public String startServer () {
+        log.info("startServer()");
+
+        Server server = new Server();
+        server.waitForClientTest();
+
+        return "test";
+    }
+
+    @GetMapping("/clientOn")
+    public String startClient () {
+        log.info("startClient()");
+
+        Client client = new Client();
+        client.connectToServerTest();
 
         return "test";
     }
