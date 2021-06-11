@@ -1,5 +1,6 @@
 package com.example.jswithspring.controller;
 
+import com.example.jswithspring.utility.Test;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,5 +22,15 @@ public class HtmlTestController {
         log.info("firstIndex() 실행");
 
         return "htmlHi";
+    }
+
+    @GetMapping("/comparatorTest")
+    public String comparatorTest () {
+        log.info("comparatorTest()");
+
+        Test test = new Test();
+        test.doTest();
+
+        return "test";
     }
 }

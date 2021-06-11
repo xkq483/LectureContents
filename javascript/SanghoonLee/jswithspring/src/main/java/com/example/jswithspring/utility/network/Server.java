@@ -1,11 +1,12 @@
+package com.example.jswithspring.utility.network;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
 
-// Check!
-public class SocketServerTest {
-    public static void main(String[] args) {
+public class Server {
+    public void waitForClientTest () {
         int port = Integer.parseInt("33333");
 
         try {
