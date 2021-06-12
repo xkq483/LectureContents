@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1da0aec1-2d61-480a-8c01-caa081b2a676" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/DoyeonKim.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jswithspring.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/controlr/Html.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentiethLecture1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentiethLecture1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../test/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/controller/HtmlTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/controller/firstController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/static/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/fail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/font.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/image.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/mark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/htmlHi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
