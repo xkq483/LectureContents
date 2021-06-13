@@ -49,4 +49,10 @@ public class FirstController {
 
         return "first/tableTest2";
     }
+    @GetMapping("/resume")
+    public String doresume () {
+        log.info("doresume()");
+
+        return "first/resume";
+    }
 }
