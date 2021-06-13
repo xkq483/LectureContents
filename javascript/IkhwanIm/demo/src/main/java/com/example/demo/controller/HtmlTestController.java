@@ -17,11 +17,11 @@ public class HtmlTestController {
 
     // 실제 웹상에서 URL 요청할 때는 자주 사용하는 두 가지 방식이 있다.
     // Get, Post 방식인데 우선 일반적인 URL 입력은 Get으로 파악하면 되겠다.
-    // 현재 우리의 ip:portk 주소의 Home을 의미한다.
+    // 현재 우리의 ip:port 주소의 Home을 의미한다.
 
-    // Controller가 사용자의 'ip:port/' 형식의 요청을 입력 받았을때 동작할 내용 정의
+    // Controller가 사용자의 'ip:port/' 형식의 요청을 하였을때 동작할 내용 정의
     @GetMapping("/")
-    public String firstIndex() {
+    public String firstIndex () {
         // 위에 Logger 사용하는 방식은 Lombok이 없을 경우 사용함
         // 그래서 이클립스에서는 상당히 불편하게 구성해야하는데 비해
         // 여기서는 맨 위쪽의 @Slf4j 를 추가함으로써
@@ -33,8 +33,15 @@ public class HtmlTestController {
         return "htmlHi";
     }
 
+    @GetMapping("/fail")
+    public String doFail () {
+        log.info("doFail()");
+
+        return "fail";
+    }
+
     @GetMapping("/comparatorTest")
-    public String comparatorTest() {
+    public String comparatorTest () {
         log.info("comparatorTest()");
 
         Test test = new Test();
@@ -44,7 +51,7 @@ public class HtmlTestController {
     }
 
     @GetMapping("/serverOn")
-    public String startServer() {
+    public String startServer () {
         log.info("startServer()");
 
         Server server = new Server();
@@ -54,7 +61,7 @@ public class HtmlTestController {
     }
 
     @GetMapping("/clientOn")
-    public String startClient() {
+    public String startClient () {
         log.info("startClient()");
 
         Client client = new Client();
@@ -62,22 +69,4 @@ public class HtmlTestController {
 
         return "test";
     }
-
-    @GetMapping("/fail")
-    public String doFail() {
-        log.info("doFail()");
-
-        Client client = new Client();
-        client.connectToServerTest();
-
-        return "fail";
-    }
-    @GetMapping("/htmlList")
-    public String doHtmlList (){
-        log.info("doHtmlList()");
-
-        return "learnTag/list.html";
-    }
-
-
 }

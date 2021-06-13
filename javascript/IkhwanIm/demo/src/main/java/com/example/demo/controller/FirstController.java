@@ -8,23 +8,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FirstController {
 
+    @GetMapping("/htmlList")
+    public String doHtmlList () {
+        log.info("doHtmlList()");
+
+        return "first/list";
+    }
 
     @GetMapping("/imageTest")
-    public String doImageTest (){
+    public String doImageTest () {
         log.info("doImageTest()");
 
-        return "first/image.html";
+        return "first/image";
     }
 
     @GetMapping("/fontTest")
-    public String doFontTest() {
+    public String doFontTest () {
         log.info("doFontTest()");
 
-        return "first/font.html";
+        return "first/font";
     }
 
     @GetMapping("/markTest")
-    public String doMarkTest() {
+    public String doMarkTest () {
         log.info("doMarkTest()");
 
         return "first/mark";
@@ -43,11 +49,10 @@ public class FirstController {
 
         return "first/tableTest2";
     }
+    @GetMapping("/resumeTest")
+    public String resumeTest () {
+        log.info("resumeTest()");
 
-    @GetMapping("/thirdTableTest")
-    public String thirdTableTest () {
-        log.info("thirdTableTest()");
-
-        return "first/tableTest3";
+        return "first/resume1";
     }
 }

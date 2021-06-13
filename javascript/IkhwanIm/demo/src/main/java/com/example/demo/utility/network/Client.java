@@ -6,7 +6,7 @@ import java.net.UnknownHostException;
 
 public class Client {
     public void connectToServerTest() {
-        String hostname = "192.168.30.141";
+        String hostname = "172.30.1.38";
         int port = 33333;
 
         for (int i = 0; i < 10; i++) {
