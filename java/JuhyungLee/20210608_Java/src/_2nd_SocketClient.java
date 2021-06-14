@@ -12,10 +12,10 @@ public class _2nd_SocketClient {
             try {
                 Socket sock = new Socket(hostname, port);
                 OutputStream out = sock.getOutputStream();
-
+                PrintWriter writer = new PrintWriter(out, true);
                 String str = "Hello Network Programming";
-
-                out.write(str.getBytes());
+                //    out.write(str.getBytes());
+                writer.println(str);
 
                 InputStream in = sock.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
