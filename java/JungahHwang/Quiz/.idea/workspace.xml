@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b064bd2b-a926-4781-b941-eb9093131f47" name="Default Changelist" comment="[황정아] (210609) 23일차 퀴즈 복습">
-      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/java/com/example/demo/controller/Controller0610.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/java/com/example/demo/controller/Controller0611.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/resources/templates/Review0610/htmlHi.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/resources/templates/Review0611/fail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/resources/templates/Review0611/image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/resources/templates/Review0611/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javascript/JungahHwang/demo/src/main/resources/templates/Homework0611/resume.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
