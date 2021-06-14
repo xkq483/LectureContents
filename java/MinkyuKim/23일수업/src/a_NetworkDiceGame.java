@@ -169,7 +169,6 @@ class GameStartProcess extends a_NetworkDiceGame {
         receiver.start();
     }
 
-
     public String aaaa ( ) {
         return "";
     }
