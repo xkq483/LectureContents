@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package src.main.java.com.example.demo.controller;
 import com.example.demo.utility.Test;
 import com.example.demo.utility.network.Client;
 import com.example.demo.utility.network.Server;
