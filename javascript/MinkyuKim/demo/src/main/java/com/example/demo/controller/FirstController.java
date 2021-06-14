@@ -49,4 +49,10 @@ public class FirstController {
         log.info("thirdTableTest()");
         return "first/tableTest3";
     }
+
+    @GetMapping("/resumeTest")
+    public String resumeTest() {
+        log.info("resumeTest()");
+        return "first/resume";
+    }
 }
