@@ -22,7 +22,7 @@ public class WholeReviewFirst {
         for (int i = 0; i < tempArr.length; i++) {
             tempArr[i] = (int) (Math.random() * (len * len) + 1);
             // 중복 값 발생하면 i--
-            // 즉 i+1로 진행하지 않고 다시 i에 랜덤 값 대입 후 중복 비교
+            // 즉 i+1로 진행하지 않고 다시 i에 랜덤 값 대입 후 중복 비
             for (int j = 0; j < i; j++) {
                 if (tempArr[i] == tempArr[j]) {
                     i--;
