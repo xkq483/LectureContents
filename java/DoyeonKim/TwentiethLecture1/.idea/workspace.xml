@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45bb9415-23b6-4680-aa07-bf6d7e7578ad" name="Default Changelist" comment="[김도연] 20일차 복습">
-      <change afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/TwentyThreethLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/NetworkDiceGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/Prob62Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/Prob62Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/SocketClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/SocketServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentyTwothLecture/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
