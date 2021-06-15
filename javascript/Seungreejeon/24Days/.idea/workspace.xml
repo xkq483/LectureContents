@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44b0a3f3-8361-414e-aa0c-e514029ec8a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/SecondController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/golang.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/aTagTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/divTest1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/divTest2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/divTest3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/formTest1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/heightWidth.Test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/image.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/mark.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/mark.html" afterDir="false" />
-    </list>
+    <list default="true" id="44b0a3f3-8361-414e-aa0c-e514029ec8a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
