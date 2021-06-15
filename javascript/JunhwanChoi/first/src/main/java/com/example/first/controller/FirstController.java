@@ -46,8 +46,7 @@ public class FirstController {
     }
     @GetMapping("/secondTableTest")
     public String doSecondTableTest()
-    {
-        log.info(("doSecondTableTest()"));
+    {        log.info(("doSecondTableTest()"));
         return "first/tableTest2";
     }
 
