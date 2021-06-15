@@ -65,4 +65,13 @@ public class FirstController {
         return "first/tableTest3";
     }
 
+    @GetMapping("/Quiz64")
+    public String quiz64Index () {
+        //
+
+        log.info("quiz64Index() 실행");
+
+        return "first/Quiz64";
+    }
+
 }
