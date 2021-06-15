@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1da0aec1-2d61-480a-8c01-caa081b2a676" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/controller/HtmlTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/controller/firstController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/static/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/fail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/font.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/mark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/htmlHi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
