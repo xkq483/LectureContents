@@ -1,17 +1,20 @@
-public class _99th_Practice {
-    public static void main(String[] args) {
-        for (char ch = 'A'; ch < 'Z'; ch++) {
-            System.out.print(ch);
-            if (ch == 'O') {
-                System.out.println();
-            }
-        }
-        System.out.println();
-        for (char k = 'ㄱ'; k < 'ㅎ'; k++) {
-            System.out.print(k);
-            if (k == 'ㄾ') {
-                System.out.println();
-            }
-        }
-    }
-}
+//import java.util.ArrayList;
+//
+//class Person{
+//    private String player[];
+//}
+//
+//public class _99th_Practice {
+//    public static void main(String[] args) {
+//
+//        String Person[] = new String[3];
+//
+//        Person[] pArr = new Person[3];
+//
+//        for(int i = 0; i <= pArr.length; i++){
+//            System.out.println(pArr[i].getName());
+//        }
+//    }
+//}
+//
+//// fiw close 해줘야됨
