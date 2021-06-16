@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 class student{
 int age;
@@ -26,6 +27,14 @@ public class HashMapTest {
         st.put(4, new student(23,"최피자"));
         st.put(6, new student(54,"한버거"));
         System.out.println(st);
+
+        Set keyset = st.keySet();
+        System.out.println(keyset);
+
+        Set entry = st.entrySet();
+        System.out.println(entry);
+
+
 
 
 
