@@ -35,4 +35,11 @@ public class ThirdController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/fieldsetLoginTest")
+    public String fieldsetLoginTest () {
+        log.info("fieldsetLoginTest()");
+
+        return "/third/fieldsetLogin";
+    }
 }
