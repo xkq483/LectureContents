@@ -41,6 +41,6 @@ public class Secondcontroller {
     public  String memberRegister(){
         log.info("memberRegister()");
 
-        return "redirect:/";
+        return "redirect:/heighWidthTest";
     }
 }
