@@ -38,7 +38,16 @@ C/C++ Native 라이브러리와 python 등등의 설치가 올바르게 되어 �
 12) 어떤 내용들이 진행되는지 간략한 요약을 보여주는데 Execute를 누른다.
 13) 설치가 완료되면 Finish를 누른다.
 14) Next를 누른다.
-
+15) Bootstrap 부분에 문제가 생기므로 차후 수동 설정으로 진행 -> Finish 클릭
+16) Next
+17) root 계정 비밀번호 넣으란 자리에 설정한 비번 설정해서
+    Connection Succeeded가 나와야 함
+    나오면 Next
+18) Execute 클릭
+19) Finish
+20) Next
+21) Finish
+22) Workbench와 Shell 올라오면 성공!
 ```
 
 ## How to install MySQL on Linux & Unix(MAC)
