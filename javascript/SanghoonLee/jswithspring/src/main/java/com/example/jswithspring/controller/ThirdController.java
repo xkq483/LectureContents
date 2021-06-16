@@ -14,4 +14,25 @@ public class ThirdController {
 
         return "/third/checkbox";
     }
+
+    @GetMapping("/radioTest")
+    public String radioTest () {
+        log.info("radioTest()");
+
+        return "/third/radio";
+    }
+
+    @GetMapping("/formRadioTest")
+    public String formRadioTest () {
+        log.info("formRadioTest()");
+
+        return "/third/formRadio";
+    }
+
+    @GetMapping("/test")
+    public String test () {
+        log.info("test()");
+
+        return "redirect:/";
+    }
 }
