@@ -5,6 +5,21 @@
 ```make
 기존 Vue 설치시 작업했던 node.js 설정에서 설치했던
 C/C++ Native 라이브러리와 python 등등의 설치가 올바르게 되어 있어야함
+
+만약 nodejs 설치시 C/C++ Native 설정을 하지 못한 경우
+포맷하지 않는 이상 다시 설정할 수 없을 수도 있다.
+혹은 레지스트리 설정을 다 까뒤집어야해서 포맷이 차라리 속 편할 수 있는데
+우선 아래 사이트에서 호환 라이브러리를 다운받아 설치한다.
+```
+
+https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0
+
+```make
+임시방편일 뿐이므로 향후 다른 문제가 발생할 수 있고
+시간이 있을때 미리 포맷하고 다시 설정을 해두는 것이 좋을 수 있다.
+추가적으로 Python 3.9 버전도 수동으로 설치하도록 한다.
+이 부분도 nodejs 설치시 자동으로 설치하므로
+만약 포맷하고 다시 하는 사람이라면 수동으로 할 필요는 없다.
 ```
 
 ## How to install MySQL on Windows
