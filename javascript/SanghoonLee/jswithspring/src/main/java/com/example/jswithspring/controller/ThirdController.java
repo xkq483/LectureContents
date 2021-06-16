@@ -42,4 +42,32 @@ public class ThirdController {
 
         return "/third/fieldsetLogin";
     }
+
+    @GetMapping("/numberRangeTest")
+    public String numberRangeTest () {
+        log.info("numberRangeTest()");
+
+        return "/third/numberRange";
+    }
+
+    @GetMapping("/buttonTest")
+    public String buttonTest () {
+        log.info("buttonTest()");
+
+        return "/third/button";
+    }
+
+    @GetMapping("/selectTest")
+    public String selectTest () {
+        log.info("selectTest()");
+
+        return "/third/select";
+    }
+
+    @GetMapping("/optgroupTest")
+    public String optgroupTest () {
+        log.info("optgroupTest()");
+
+        return "/third/optgroup";
+    }
 }
