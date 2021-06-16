@@ -51,6 +51,7 @@ public class SecondController {
         return "/second/formTest1";
     }
 
+    // 데이터 전송 포맷은 ? >>> json <<<
     @PostMapping("/memberRegister")
     public String memberRegister () {
         log.info("memberRegister()");
