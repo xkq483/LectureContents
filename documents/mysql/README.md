@@ -63,6 +63,11 @@ https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-download
 20) Next
 21) Finish
 22) Workbench와 Shell 올라오면 성공!
+23) \quit 으로 mysqldsh를 종료하고 workbench도 끈다.
+24) 시작에서 MySQL 8.0 Command Line Client - Unicode를 사용하도록 한다.
+25) 설정한 비밀번호를 입력하면 mysql> 쉘이 뜬다.
+26) 내부에서 show databases;
+27) select version(); 등이 잘 동작하면 모든것이 clear한 상태!
 ```
 
 ## How to install MySQL on Linux & Unix(MAC)
