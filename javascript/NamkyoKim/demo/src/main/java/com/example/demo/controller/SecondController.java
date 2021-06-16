@@ -61,4 +61,10 @@ public class SecondController {
         // redirect: 의 경우 특정한 URL 맵핑을 강제할 수 있다.
         return "redirect:/divTest1";
     }
+    @GetMapping("/testTest")
+    public String testTest(){
+        log.info("testTest");
+
+        return "/second/testTest";
+    }
 }
