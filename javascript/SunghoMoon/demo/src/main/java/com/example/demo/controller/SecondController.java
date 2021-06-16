@@ -55,9 +55,10 @@ public class SecondController {
         return "/second/formTest1";
     }
     @PostMapping("/memberRegister")
-    public String memberRegister() {
+    public String memberRegister () {
         log.info("memberRegister()");
 
+        // redirect: 의 경우 특정한 URL 위치로 URL 맵핑을 강제할 수 있다.
         return "redirect:/";
     }
 }
