@@ -76,6 +76,14 @@ https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-download
 sudo apt-get install mysql
 ```
 
+아래와 같은 에러 발생시!  
+
+```make
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+```
+
+mysql_secure_installation <<<  
+
 ## How to install MySQL on Unix(MAC)
 
 ```make
