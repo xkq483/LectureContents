@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    ul {
+        list-style: 20px;
+      }
+      li {
+        margin: 20px;
+      }
+    </style>
+</head>
+<body>
+    <form action="/test">
+      <h3>연령대는?</h3>
+        <ul>
+      <li><input type="radio" name="ages" id="teen" value="10대">
+      <label for="teen">10대입니다.</label></li>
+            <li><input type="radio" name="ages" id="twenty" value="20대">
+      <label for="twenty">20대입니다.</label></li>
+            <li><input type="radio" name="ages" id="thirty" value="30대">
+      <label for="thirty">30대입니다.</label></li>
+            <li><input type="radio" name="ages" id="fourty" value="40대">
+      <label for="fourty">40대입니다.</label></li>
+      <input type="submit">
+        <!-- submit은 제출 버튼을 생성 -->
+      <!-- name은 호출용 key, value는 해당 값이라고 볼 수 있다. -->
+        </ul>
+    </form>
+
+</body>
+</html>
