@@ -59,5 +59,17 @@ create table board(
    primary key(board_no)
 );
 
-use
+use를 통해 어떤 DB(스키마)를 사용할지 지정함[앞서 만든게 non_jpa_db임
+create table을 통해 테이블을 생성할 수 있음
+현재 table 이름은 board 에 해당함
+테이블 내부에는 column(열)이 구성됨
+첫 번째 열로 board_no라는 이름이 왔고
+int not null auto_increment로 0이 되어선 안되며 숫자값이고 자동으로 1씩 증가함을 의미함
+두 번째 열로 title이라는 이름이 왔고
+varchar(200)으로 문자 200개를 받으며 not null을 통해 null이 되면 안된다고 한다.
+세 번째 열로 content는 text로 상당히 많은 수의 문자열을 커버할 수 있고 null 이어도 된다고 한다.
+네 번째는 writer 로 varchar(50)에 not null 이다.
+다섯 번째는 reg_date이며 timestamp로 시간을 표현한다.
+default 를 통해 기본값을 지정하는데 now() 이므로 현재 시간을 뜻한다.
+primary key(board_no)를 통해 이 테이블의 고유한 정보를 board_no가 관리함을 명시해준다.
 ```
