@@ -9,6 +9,7 @@ import java.util.Date;
 @Setter
 public class Board {
     private int boardNo;
+    // th:field로 맵핑됨
     private String title;
     private String content;
     private String writer;
