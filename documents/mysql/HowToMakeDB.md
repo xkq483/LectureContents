@@ -45,3 +45,19 @@ flush privileges;
 ```make
 show grants for 'khweb'@'localhost';
 ```
+
+9. 이제 실제 테이블을 만들어보자!
+
+```make
+use non_jpa_db;
+create table board(
+   board_no int not null auto_increment,
+   title varchar(200) not null,
+   content text null,
+   writer varchar(50) not null,
+   reg_date timestamp not null default now(),
+   primary key(board_no)
+);
+
+use
+```
