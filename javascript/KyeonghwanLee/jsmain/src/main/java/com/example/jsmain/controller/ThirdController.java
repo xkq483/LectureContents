@@ -27,10 +27,10 @@ public class ThirdController {
         return  "/third/formRadio";
     }
     @GetMapping("/test")
-    public String test (){
+    public String test () {
         log.info("test()");
 
-        return  "redirect:/";
+        return "redirect:/";
     }
     @GetMapping("/fieldsetLoginTest")
     public String fieldsetLoginTest (){
