@@ -49,7 +49,7 @@ public class SecondController {
 
         return "/second/formTest1";
     }
-
+    // post 전송 포맷은? jason
     @PostMapping("/memberRegister")
     public String memberRegister () {
         log.info("memberRegister()");
