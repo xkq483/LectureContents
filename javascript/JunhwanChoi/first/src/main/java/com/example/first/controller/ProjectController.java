@@ -6,14 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
-public class HomeworkController {
-
-    @GetMapping("/resume")
-    public String doResume()
+public class ProjectController {
+    @GetMapping("/project1")
+    public String doProject()
     {
-        log.info("Resume이 실행됨.");
-        return "homework/resume";
+        log.info("doProject 실행됨.");
+        return "project1/project1";
     }
-
-
 }
