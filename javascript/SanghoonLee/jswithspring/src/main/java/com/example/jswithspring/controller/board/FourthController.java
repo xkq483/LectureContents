@@ -26,14 +26,21 @@ public class FourthController {
         return "/board/fourth/register";
     }
 
+    // MVC(Model View Controller) Pattern
+    // Model: 다루는 데이터
+    // View: 눈에 보이는 화면
+    // Controller: URL 제어
     @PostMapping("/register")
-    public void postRegister (Board board, Model model) {
+    public String postRegister (Board board, Model model) {
         log.info("postRegister()");
 
+        log.info("Board: " + board);
         //service.register(board);
 
-        //model.addAttribute("msg", "등록이 완료되었습니다!");
+        // msg 라는 속성값에 "등록이 완료되었습니다!"을 맵핑함
+        // key: msg, value: "등록이 완료되었습니다!" 라고 생각하면 편함
+        model.addAttribute("msg", "등록이 완료되었습니다!");
 
-        //return "/board/fourth/success";
+        return "/board/fourth/success";
     }
 }
