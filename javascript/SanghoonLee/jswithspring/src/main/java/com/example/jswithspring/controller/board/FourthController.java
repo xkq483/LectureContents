@@ -21,19 +21,19 @@ public class FourthController {
     // 즉 board 객체의 정보를 획득할 수 있음을 의미한다.
     @GetMapping("/register")
     public String getRegister (Board board, Model model) {
-        log.info("getRegister");
+        log.info("getRegister()");
 
         return "/board/fourth/register";
     }
 
     @PostMapping("/register")
-    public String postRegister (Board board, Model model) {
+    public void postRegister (Board board, Model model) {
         log.info("postRegister()");
 
         //service.register(board);
 
-        model.addAttribute("msg", "등록이 완료되었습니다!");
+        //model.addAttribute("msg", "등록이 완료되었습니다!");
 
-        return "/board/fourth/success";
+        //return "/board/fourth/success";
     }
 }
