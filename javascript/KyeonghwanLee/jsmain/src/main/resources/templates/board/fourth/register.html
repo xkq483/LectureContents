@@ -15,6 +15,7 @@
         // form 태그에 id="board"에 해당하는 객체를 얻어옴
         var formObj = $("#board");
 
+
         // id="btnRegister"를 클릭했을때
         $("#btnRegister").on("click", function() {
             // URL register로 보낸다.
@@ -23,6 +24,10 @@
             formObj.attr("method", "post");
             formObj.submit();
         });
+
+        $("#btnList").on("click", function(){
+            self.location = "lists";
+         });
     });
 </script>
 

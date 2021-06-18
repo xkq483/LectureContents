@@ -11,8 +11,10 @@ import java.util.Date;
 @ToString
 public class Board {
     private int boardNo;
-    private  String title;
-    private  String content;
-    private  String writer;
+    // th:field로 맵핑됨
+    private String title;
+    // 수정
+    private String content;
+    private String writer;
     private Date regDate;
 }

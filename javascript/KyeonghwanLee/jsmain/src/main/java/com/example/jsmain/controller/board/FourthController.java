@@ -18,7 +18,7 @@ public class FourthController {
     private BoardService service;
 
     // thymeleaf에서는 아래와 같이 특정한 객체를 입력으로 받으면
-    // HTML에서 th:object와 같은 키워드를 통해 정보를 획득할 수 있다.
+    // HTML에서 th:object와 같은 키워드를 통해 정보를 획득할  수 있다.
     // 즉 board 객체의 정보를 획득할 수 있음을 의미한다.
     @GetMapping("/register")
     public String getRegister (Board board, Model model) {
