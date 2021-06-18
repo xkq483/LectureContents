@@ -1,4 +1,4 @@
-package controller;
+package com.example.jswithspring.controller;
 
 import lombok.extern.apachecommons.CommonsLog;
 import lombok.extern.slf4j.Slf4j;

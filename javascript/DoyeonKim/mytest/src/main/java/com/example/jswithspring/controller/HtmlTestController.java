@@ -1,8 +1,8 @@
-package controller;
+package com.example.jswithspring.controller;
 
+import com.example.jswithspring.utility.Client1;
+import com.example.jswithspring.utility.Server2;
 import lombok.extern.slf4j.Slf4j;
-import utility.network.Client1;
-import utility.network.Server2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -35,8 +35,6 @@ public class HtmlTestController {
     public String comparatorTest () {
         log.info("comparatorTest()");
 
-        Test test = new Test();
-        test.doTest();
 
         return "test";
     }
