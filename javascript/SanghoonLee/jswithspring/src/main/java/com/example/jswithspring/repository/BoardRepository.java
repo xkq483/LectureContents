@@ -1,6 +1,7 @@
 package com.example.jswithspring.repository;
 
 import com.example.jswithspring.entity.Board;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Repository
@@ -38,6 +40,7 @@ public class BoardRepository {
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음
                 // 여러 열들을 얻어와서 행으로 맵핑하는 작업을 수행함
                 new RowMapper<Board>() {
+                    @SneakyThrows
                     @Override
                     public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Board board = new Board();
@@ -49,7 +52,16 @@ public class BoardRepository {
                         board.setContent(rs.getString("content"));
                         board.setWriter(rs.getString("writer"));
                         // rs.getDate()는 DB에 있는 날자 정보를 얻어옴
-                        board.setRegDate(rs.getDate("reg_date"));
+                        // board.setRegDate(rs.getDate("reg_date"));
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+
+                        board.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
+
+                        //System.out.println("rs.getDate(): " + rs.getTimestamp("reg_date"));
+                        //System.out.println("rs.getDate(): " + rs.getDate("reg_date"));
+                        //System.out.println("rs.getTime(): " + rs.getTime("reg_date"));
 
                         return board;
                     }
