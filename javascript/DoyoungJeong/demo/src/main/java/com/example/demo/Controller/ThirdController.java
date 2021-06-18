@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
 @Controller
@@ -29,12 +30,14 @@ public class ThirdController {
         return "third/formRadio";
     }
 
-    @GetMapping("/test")
+    @PostMapping("/test")
     public String test() {
         log.info("test()");
 
         return "redirect:/fontTest";
     }
+    //GetMapping을 쓰면 입력값이 도메인 주소 뒤에 노출되지만
+    //PostMapping은 패킷안에 숨겨져 전송되어 보안에 유리하다.
 
     @GetMapping("/fieldsetLogInTest")
     public String fieldsetLogInTest() {

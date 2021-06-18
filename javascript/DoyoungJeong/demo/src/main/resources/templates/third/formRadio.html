@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <form action="/test">
+    <form action="/test" method="post">
       <h3>연령대는?</h3>
         <ul>
       <li><input type="radio" name="ages" id="teen" value="10대">
@@ -27,6 +27,10 @@
       <input type="submit">
         <!-- submit은 제출 버튼을 생성 -->
       <!-- name은 호출용 key, value는 해당 값이라고 볼 수 있다. -->
+      <!-- 또한 name은 action에 해당하는 test페이지로 전달하는 인자로 사용된다!
+      value를 서버로 전달하기 위해 필요한 속성이라고 할 수 있다 -->
+
+      <!-- id는 중복으로서 사용이 불가하다. 각 하나씩의 값만 가질 수 있다.-->
         </ul>
     </form>
 
