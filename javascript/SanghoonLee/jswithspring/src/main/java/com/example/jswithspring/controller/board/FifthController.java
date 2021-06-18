@@ -15,10 +15,10 @@ public class FifthController {
     private BoardService service;
 
     @GetMapping("/lists")
-    public String getLists (Model model) {
+    public String getLists (Model model) throws Exception {
         log.info("getLists()");
 
-        //model.addAttribute("lists", service.list());
+        model.addAttribute("lists", service.list());
 
         return "/board/fifth/lists";
     }
