@@ -1,9 +1,9 @@
-package com.example.demo.repository;
+package com.example.memberShipTest.repository;
 
-        import com.example.demo.eutity.Homework;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.jdbc.core.JdbcTemplate;
-        import org.springframework.stereotype.Repository;
+import com.example.memberShipTest.eutity.Homework;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public class HomeworkRepository {

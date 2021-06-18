@@ -1,6 +1,5 @@
-package com.example.demo.service;
-
-import com.example.demo.eutity.Homework;
+package com.example.memberShipTest.service;
+import com.example.memberShipTest.eutity.Homework;
 
 public interface HomeworkService {
 

@@ -1,4 +1,4 @@
-package com.example.demo.eutity;
+package com.example.memberShipTest.eutity;
 
 import lombok.Getter;
 import lombok.Setter;

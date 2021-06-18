@@ -1,7 +1,7 @@
-package com.example.demo.controller.homework;
+package com.example.memberShipTest.controller.homework;
 
-import com.example.demo.eutity.Homework;
-import com.example.demo.service.HomeworkService;
+import com.example.memberShipTest.eutity.Homework;
+import com.example.memberShipTest.service.HomeworkService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

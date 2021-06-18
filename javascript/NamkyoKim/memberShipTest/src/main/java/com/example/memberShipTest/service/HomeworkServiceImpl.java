@@ -1,7 +1,8 @@
-package com.example.demo.service;
+package com.example.memberShipTest.service;
 
-import com.example.demo.eutity.Homework;
-import com.example.demo.repository.HomeworkRepository;
+
+import com.example.memberShipTest.eutity.Homework;
+import com.example.memberShipTest.repository.HomeworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
