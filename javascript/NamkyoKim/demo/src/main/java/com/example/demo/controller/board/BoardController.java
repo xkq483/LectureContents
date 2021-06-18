@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
 @Controller
-public class FourthController {
+public class BoardController {
 
     // 스프링이 자동으로 객체를 찾을 수 있게 서포트함
     @Autowired
@@ -45,5 +45,13 @@ public class FourthController {
         model.addAttribute("msg", "등록이 완료되었습니다!");
 
         return "/board/fourth/success";
+    }
+    @GetMapping("/lists")
+    public String getLists(Model model) throws Exception{
+        log.info("getLists()");
+
+       model.addAttribute("lists", service.list());
+
+        return "/board/fifth/lists";
     }
 }
