@@ -19,4 +19,5 @@ public class SignUp {
     private int birthDay;
     private String comment;
     private Date regDate;
+    //ssss
 }
