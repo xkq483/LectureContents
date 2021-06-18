@@ -19,4 +19,5 @@ public class Board {
     private Date regDate;
 
 
+
 }

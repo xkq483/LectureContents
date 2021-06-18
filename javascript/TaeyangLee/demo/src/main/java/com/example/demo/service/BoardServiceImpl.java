@@ -5,6 +5,8 @@ import com.example.demo.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BoardServiceImpl implements BoardService {
 
@@ -16,6 +18,8 @@ public class BoardServiceImpl implements BoardService {
         repository.create(board);
     }
 
-
-
+    @Override
+    public List<Board> list() throws Exception {
+        return repository.list();
+    }
 }
