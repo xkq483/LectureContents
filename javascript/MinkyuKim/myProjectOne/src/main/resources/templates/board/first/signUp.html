@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 아래 파트는 Run-Time에 작동하므로 오류에 좀 더 민감할 필요가 있음(발견하기 쉽지 않음) -->
+<script>
+    $(document).ready(function() {
+        var formObj = $("#signUpBoard");
+
+        // id="btnSignUp"를 클릭했을때
+        $("#btnSignUp").on("click", function() {
+            // URL signUp 보낸다.
+            formObj.attr("action", "signUp");
+            // PostMapping
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+    });
+</script>
+
+<body>
+<h1>회원가입</h1>
+
+<!-- form id="board"객체를 formObj에 대입한다.-->
+<form id="signUpBoard" th:action="@{signUp}" th:object="${signUpBoard}" method="post">
+    <table>
+        <tr>
+            <td>아이디</td>
+            <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴. 즉 제목칸에 적으면 Board의 title로 맵핑이된다는 의미.-->
+            <td><input type="text" name="id" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="text" name="pw" th:field="*{pw}"></td>
+        </tr>
+
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td><input type="number" name="phoneNumber" th:field="*{phoneNumber}"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="text" name="em" th:field="*{em}"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" name="address" th:field="*{address}"></td>
+        </tr>
+
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnSignUp">회원가입</button>
+   <button type="submit" id="btnCancelSignUp">취소</button>
+</div>
+
+</body>
+</html>
