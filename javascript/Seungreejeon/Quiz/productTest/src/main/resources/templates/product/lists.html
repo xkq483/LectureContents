@@ -20,6 +20,8 @@
       현재 등록된 상품이 없습니다!
     </td>
   </tr>
+  <!--Controller 쪽에서 넘어온 product 속성에 맵핑된 정보들을 하나씩 꺼내서 productElem에 배치함 JAVA로 치면 foreach와 동일한 역할-->
+
   <tr th:each="productElem : ${product}">
     <td align="center" th:text="${productElem.productNo}"></td>
     <td align="left" th:href="@{|read?productNo=${productElem.productNo}|}" th:text="${productElem.name}"></td>
