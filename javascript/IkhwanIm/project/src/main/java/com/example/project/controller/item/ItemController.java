@@ -17,21 +17,28 @@ public class ItemController {
     private ItemService service;
 
     @GetMapping("/registerItem")
-    public String getRegister (Item item, Model model) {
+    public String getRegisterItem (Item item, Model model) {
         log.info("getRegisterItem()");
 
         return "/item/register";
     }
 
     @PostMapping("/registerItem")
-    public String itemRegister (Item item, Model model) throws Exception {
-        log.info("ItemRegister()");
+    public String postRegisterItem (Item item, Model model) throws Exception {
+        log.info("postRegisterItem()");
         log.info("Item: " + item);
 
-        service.register(item);
+        service.registerItem(item);
 
         model.addAttribute("msg","등록이 완료되었습니다!");
 
         return "/item/success";
+    }
+    @GetMapping("/list")
+    public String getList (Model model) throws Exception {
+        log.info("getList(): " + service.list());
+        model.addAttribute("list", service.list());
+
+        return "/item/list";
     }
 }

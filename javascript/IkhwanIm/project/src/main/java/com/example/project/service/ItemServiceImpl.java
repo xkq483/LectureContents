@@ -13,7 +13,7 @@ public class ItemServiceImpl implements ItemService{
     private ItemRepository repository;
 
     @Override
-    public void register(Item item) throws Exception {
+    public void registerItem(Item item) throws Exception {
         repository.create(item);
 
     }

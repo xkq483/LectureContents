@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface ItemService {
-    public void register(Item item) throws Exception;
+    public void registerItem(Item item) throws Exception;
 
     public List<Item> list() throws Exception;
 }

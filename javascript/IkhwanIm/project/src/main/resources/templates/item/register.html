@@ -12,13 +12,13 @@
 <script>
     // document는 현재 웹 상에 떠 있는 페이지 자체를 의미한다고 보면 됨
     $(document).ready(function() {
-        // form 태그에 id="board"에 해당하는 객체를 얻어옴
-        var formObj = $("#board");
+        // form 태그에 id="item"에 해당하는 객체를 얻어옴
+        var formObj = $("#item");
 
         // id="btnRegister"를 클릭했을때
         $("#btnRegister").on("click", function() {
             // URL register로 보낸다.
-            formObj.attr("action", "register");
+            formObj.attr("action", "registerItem");
             // PostMapping
             formObj.attr("method", "post");
             formObj.submit();
@@ -26,7 +26,7 @@
 
         $("#btnList").on("click", function() {
             // 마찬가지로 URL입니다.
-            self.location = "lists";
+            self.location = "list";
         });
     });
 </script>
@@ -64,8 +64,10 @@
     </table>
   </form>
   <div>
-    <button style="background-color: orange; border-color: orange; color: white"
-            type="submit" id="btnRegister">회원가입하기</button>
+    <button style="background-color: pink; border-color: pink; color: white"
+            type="submit" id="btnRegister">상품 등록하기</button>
+    <button style="background-color: pink; border-color: pink; color: white"
+            type="submit" id="btnList">상품 목록보기</button>
   </div>
 </center>
 </body>

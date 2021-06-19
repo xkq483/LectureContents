@@ -37,7 +37,7 @@ public class ItemRepository {
                     public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Item item = new Item();
 
-                        item.setName(rs.getString("item_no"));
+                        item.setItemNo(rs.getInt("item_no"));
                         item.setName(rs.getString("name"));
                         item.setPrice(rs.getInt("price"));
                         item.setSeller(rs.getString("seller"));

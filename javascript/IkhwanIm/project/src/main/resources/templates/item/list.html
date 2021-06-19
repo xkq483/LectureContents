@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>쇼핑</h2>
-<a href="/register">상품등록</a>
+<a href="/registerItem">상품 등록</a>
 <table border="1">
   <tr>
     <th align="center" width="100">상품번호</th>
@@ -16,7 +16,7 @@
     <th align="center" width="200">등록일자</th>
   </tr>
   <!-- lists.isEmpty()는 Thymeleaf 전용 검사 매서드 -->
-  <tr th:if="${#lists.isEmpty(lists)}">
+  <tr th:if="${#lists.isEmpty(list)}">
     <td colspan="5">
       현재 등록된 상품이 없습니다!
     </td>
