@@ -20,9 +20,7 @@ public class BoardRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void create(Board board) throws Exception {
-        // insert into board: DB에 있는 board 테이블에 값을 집어넣겠다.
-        // (title, content, writer): board 테이블 내에 있는 컬럼들임
-        // values (?, ?, ?): 뭔가 값을 넣을것인데 아직 미정이란 뜻
+
         String query = "insert into board (title, content, writer) values (?, ?, ?)";
 
         // jdbcTemplate.update(): 이것을 통해 실제 DB상의 값을 갱신함
