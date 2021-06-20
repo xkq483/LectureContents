@@ -11,9 +11,11 @@ import java.util.Date;
 @Setter
 public class Board {
 
-    private int BoardNO;
+    private int BoardNo;
     private String title;
     private String content;
     private String writer;
     private Date regDate;
+
+
 }
