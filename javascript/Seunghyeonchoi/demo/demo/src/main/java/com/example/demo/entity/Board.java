@@ -11,7 +11,7 @@ import java.util.Date;
 @ToString
 public class Board {
     private int boardNo;
-    //th:field로 매핑된다
+    // th:field로 맵핑됨
     private String title;
     private String content;
     private String writer;
