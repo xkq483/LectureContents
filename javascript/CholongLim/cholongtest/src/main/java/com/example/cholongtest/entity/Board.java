@@ -4,18 +4,20 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Getter
 @Setter
 @ToString
 public class Board {
     private int boardNo;
+    // th:field로 맵핑됨
     private String title;
     private String content;
     private String writer;
-    private Data regData;
-
-
-
+    private Date regDate;
 }
+
+
+
+

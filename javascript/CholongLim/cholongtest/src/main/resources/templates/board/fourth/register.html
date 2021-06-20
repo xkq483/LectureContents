@@ -19,10 +19,16 @@
         $("#btnRegister").on("click", function() {
         // URL register로 보낸다.
         formObj.attr("action","register");
+        // PostMapping
         formObj.attr("method","post");
         formObj.submit();
         });
+
+        $("#btnList").on("click",function() {
+        self.location = "lists";
+        });
     });
+
 </script>
 <!-- @url 맵핑/  $단순히 값만 가져옴-단방향 / * 양방향 -->
 <body>
