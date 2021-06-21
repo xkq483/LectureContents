@@ -71,7 +71,6 @@ public class SixthController {
                 "\ntitle: " + movie2Obj.getString("title") +
                 ", draft: " + movie2Obj.getBoolean("draft") +
                 ", star: " + movie2Obj.getInt("star"));
-
         return jsonString;
     }
 
