@@ -1,6 +1,7 @@
 package com.example.demo.controller.board;
 
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +36,7 @@ public class SixthController {
         Boolean draft = jObj.getBoolean("draft");
         Integer star = jObj.getInt("star");
 
-        log.info("title: " + title + ", draft: " + draft + ", star: " + star);
+        log.info("title:"+title+",draft:"+draft+",star:"+star);
 
         return jsonString;
     }
@@ -50,12 +51,74 @@ public class SixthController {
                     "\"star\": 5" +
                     "}, " +
                 "\"movie2\": {" +
-                    "\"title\": \"code monkey\",  " +
-                    "\"draft\": false,  " +
-                    "\"star\": 5" +
-                    "}, " +
+                        "\"title\": \"code monkey\",  " +
+                        "\"draft\": false,  " +
+                        "\"star\": 5" +
+                    "} " +
                 "}";
 
+        // json 내에 Object 형식이 구성된 경우의 파싱
+        JSONObject jObj = new JSONObject(jsonString);
+
+        JSONObject mvie1Obj = jObj.getJSONObject("movie1");
+
+        log.info("movie1: " + mvie1Obj.toString() +
+                "\ntitle: " + mvie1Obj.getString("title") +
+                ", draft: " + mvie1Obj.getBoolean("draft") +
+                ", star: " + mvie1Obj.getInt("star"));
+
+        JSONObject mvie2Obj = jObj.getJSONObject("movie2");
+
+        log.info("movie2: " + mvie2Obj.toString() +
+                "\ntitle: " + mvie2Obj.getString("title") +
+                ", draft: " + mvie2Obj.getBoolean("draft") +
+                ", star: " + mvie2Obj.getInt("star"));
+
+        return jsonString;
+    }
+    // 현재 시점까지의 json 처리는
+    // 향후 Vue에서 AXIOS라는 것을 사용하며 모두 처리가 될 것임
+    // 한 가지 차이가 있다면 나중에 python과 연동할 때
+    // Spring의 Requester를 통해서
+    // Spring 자체가 Client가 되어 Python Server에 요청을 넣어야함
+    // 그 시점에서는 Spring이 직접 JSON을 처리할 필요가 있음
+    @GetMapping("/jsonArrayTest")
+    public String getJsonPowerTest(){
+
+        String jsonString = "{" +
+                "\"movies\": [" +
+                    "{" +
+                        "\"title\": \"hihi\",  " +
+                        "\"draft\": false,  " +
+                        "\"star\": 5" +
+                    "}, " +
+                    "{" +
+                        "\"title\": \"code monkey\",  " +
+                        "\"draft\": false,  " +
+                        "\"star\": 5" +
+                    "}, " +
+                    "{" +
+                                "\"title\": \"monkey magic\",  " +
+                                "\"draft\": false,  " +
+                                "\"star\": 4.7" +
+                       "}" +
+                    "]" +
+                "}";
+
+        // JSON 배열 파싱
+        JSONObject jObj = new JSONObject(jsonString);
+        JSONArray jArr = jObj.getJSONArray("movies");
+
+        // 루프를 돌며 JSON 배열의 모든 정보를 출력함
+        for(int i = 0; i < jArr.length(); i++){
+            JSONObject obj = jArr.getJSONObject(i);
+
+            String title = obj.getString("title");
+            Boolean draft = obj.getBoolean("draft");
+            Float star = obj.getFloat("star");
+
+            log.info("title: " + title + ", draft: " + draft + ", star: " + star);
+        }
         return jsonString;
     }
 }
