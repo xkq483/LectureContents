@@ -24,6 +24,11 @@
       formObj.attr("method", "post");
       formObj.submit();
     });
+
+    $("#btnList").on("click", function() {
+      // URL 호출
+      self.location = "lists";
+    });
   });
 </script>
 

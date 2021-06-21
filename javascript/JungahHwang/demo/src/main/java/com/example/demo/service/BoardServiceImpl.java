@@ -5,6 +5,8 @@ import com.example.demo.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 // Service: 여기서 register가 여러 방식으로 동작할 수 있음을 명시
 //          또한 Controller의 Autowired에 자동으로 연결되도록 서포트
 @Service
@@ -16,6 +18,10 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void register(Board board) throws Exception{
         repository.create(board);
+    }
+    @Override
+    public List<Board> list() throws Exception {
+        return repository.list();
     }
 }
 
