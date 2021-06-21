@@ -74,6 +74,12 @@ public class SixthController {
         return jsonString;
     }
 
+    // 현재 시점까지의 json 처리는
+    // 향후 Vue에서 AXIOS라는 것을 사용하며 모두 처리가 될 것임
+    // 한 가지 차이가 있다면 나중에 python과 연동할 때
+    // Spring의 Requester를 통해서
+    // Spring 자체가 Client가 되어 Python Server에 요청을 넣어야함
+    // 그 시점에서는 Spring이 직접 JSON을 처리할 필요가 있음
     @GetMapping("/jsonArrayTest")
     public String getJsonPowerTest () {
         String jsonString = "{" +
