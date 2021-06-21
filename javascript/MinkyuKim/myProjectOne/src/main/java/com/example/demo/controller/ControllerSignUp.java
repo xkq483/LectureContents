@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.SignUpBoard;
-import com.example.demo.service.BoardService;
+import com.example.demo.entity.PurchasingSignUp;
+import com.example.demo.service.PurchasingSignUpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,27 +14,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ControllerSignUp {
 
     @Autowired
-    private BoardService service;
+    private PurchasingSignUpService purchasingSignUpService;
 
     @GetMapping("/signUp")
-    public String getSignup (SignUpBoard signUpBoard, Model model) {
-        log.info("getSignup()");
+    public String getSignUp (PurchasingSignUp purchasingSignUp, Model modelSignUp) {
+        log.info("getSignUp()");
 
-        return "/board/first/signUp";
+        return "/board/signUp/signUp";
     }
 
     @PostMapping("/signUp")
-    public String postSignup (SignUpBoard signUpBoard, Model model) throws Exception {
+    public String postSignUp (PurchasingSignUp purchasingSignUp, Model modelSignUp) throws Exception {
         log.info("postSignUp()");
 
-        log.info("signUpBoard: " + signUpBoard);
+        log.info("PurchasingSignUp: " + purchasingSignUp);
 
-        service.signUp(signUpBoard);
+        purchasingSignUpService.signUp(purchasingSignUp);
 
         // msg 라는 속성값에 "등록이 완료되었습니다!"을 맵핑함
         // key: msg, value: "등록이 완료되었습니다!" 라고 생각하면 편함
-        model.addAttribute("msg", "회원등록이 완료되었습니다!");
+        modelSignUp.addAttribute("signUpMSG", "회원가입이 완료되었습니다!");
 
-        return "/board/fourth/signUpComplete";
+        return "/board/signUp/signUpComplete";
     }
 }
