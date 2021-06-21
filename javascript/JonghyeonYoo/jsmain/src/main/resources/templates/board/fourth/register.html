@@ -23,6 +23,11 @@
             formObj.attr("method", "post");
             formObj.submit();
         });
+
+        $("#btnList").on("click", function() {
+        // 마찬가지로 URL입니다. (게시글 목록으로 가는 기능)
+        self.location = "lists";
+        });
     });
 </script>
 
