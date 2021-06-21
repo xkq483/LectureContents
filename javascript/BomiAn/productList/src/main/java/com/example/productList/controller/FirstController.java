@@ -22,18 +22,24 @@ public class FirstController {
         return "/product/register";
     }
 
-    @PostMapping("/register")
-    public String postRegister (Board board, Model model) throws Exception {
+    @PostMapping("/shopRegister")
+    public String postShopRegister (Product product, Model model) throws Exception {
         log.info("postRegister()");
-        log.info("Board: " + board);
+        log.info("Product: " + product);
 
-        service.register(board);
+        service.register(product);
 
-        // msg 라는 속성값에 "등록이 완료되었습니다!"을 맵핑함
-        // key: msg, value: "등록이 완료되었습니다!" 라고 생각하면 편함
-        model.addAttribute("msg", "등록이 완료되었습니다!");
+        model.addAttribute("msg", "상품 등록이 완료되었습니다!");
 
-        return "/board/fourth/success";
+        return "/product/success";
+    }
+    @GetMapping("/shopLists")
+    public String getLists (Model model) throws Exception {
+        log.info("getLists(): " + service.list());
+
+        model.addAttribute("shopLists", service.list());
+
+        return "/product/shopLists";
     }
 }
 
