@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.SoloProject.repository;
 
-import com.example.demo.entity.Board;
+import com.example.SoloProject.entity.Board;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -58,10 +58,6 @@ public class BoardRepository {
 
 
                         board.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
-
-                        //System.out.println("rs.getDate(): " + rs.getTimestamp("reg_date"));
-                        //System.out.println("rs.getDate(): " + rs.getDate("reg_date"));
-                        //System.out.println("rs.getTime(): " + rs.getTime("reg_date"));
 
                         return board;
                     }

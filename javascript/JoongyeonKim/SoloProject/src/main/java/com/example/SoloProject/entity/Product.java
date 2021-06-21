@@ -2,16 +2,18 @@ package com.example.SoloProject.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Date;
 
 @Getter
 @Setter
-public class Project {
-    private int soloprojectNo;
-    // th:field로 맵핑됨
-    private String title;
-    private String content;
+@ToString
+public class Product {
+    private int productNo;
+    private String name;
+    private int price;
+    private String description;
     private String writer;
     private Date regDate;
 }

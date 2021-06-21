@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.SoloProject.service;
 
-import com.example.demo.entity.Board;
-import com.example.demo.repository.BoardRepository;
+import com.example.SoloProject.entity.Board;
+import com.example.SoloProject.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ public class BoardServiceImpl implements BoardService {
     private BoardRepository repository;
 
     @Override
-    public void register(Board board) throws Exception{
+    public void boardregister(Board board) throws Exception{
         repository.create(board);
     }
 
