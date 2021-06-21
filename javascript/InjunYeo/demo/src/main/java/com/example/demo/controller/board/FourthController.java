@@ -1,7 +1,7 @@
 package com.example.demo.controller.board;
 
 import com.example.demo.entity.Board;
-import com.example.demo.service.Boardservice;
+import com.example.demo.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ public class FourthController {
 
     //스프링이 자동으로 객체를 찾을 수 있게 서포트 함;
     @Autowired
-    private Boardservice service;
+    private BoardService service;
 
 
     //thymeleaf 에서는 아래와 같이 특정한객체를 입력으로 받으면
@@ -30,7 +30,7 @@ public class FourthController {
 
     // MVC(Model View Controller) Pattern
     // Model: 다루는 데이터
-    // View: 눈에 보이는 화면
+    // View: 눈에 보이는 화면.in
     // Controller: URL 제어
 
     @PostMapping("/register")

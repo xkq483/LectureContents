@@ -21,6 +21,11 @@
             formObj.attr("method","post");
             formObj.submit();
             });
+
+            $("#btnList").on("click",function() {
+            //마찬가지로 URL
+                self.location = "lists";
+                });
     });
 
 </script>
@@ -34,7 +39,7 @@
 
         th:object는 Board객체를 전달받기 위한 목적으로 사용
         객체를 전달 받을 경우엔 $를 사용한다.
-        th:action="@{register}" 이건 -->
+        -->
 
     <form id="board" th:action="@{register}" th:object="${board}" method="post">
         <table>

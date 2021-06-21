@@ -13,8 +13,8 @@ public class UserAccountRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void create(UserAccount userAccount) throws Exception{
-        String query = "insert into useraccount (name,id,password,email) values (?,?,?,?)";
+        String query = "insert into useraccount (name,id,password,emali) values (?,?,?,?)";
 
-        jdbcTemplate.update(query,userAccount.getName(),userAccount.getId(),userAccount.getPassword(),userAccount.getEmail());
+        jdbcTemplate.update(query,userAccount.getName(),userAccount.getId(),userAccount.getPassword(),userAccount.getEmali());
     }
 }

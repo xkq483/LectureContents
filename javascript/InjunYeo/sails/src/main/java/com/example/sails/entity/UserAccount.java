@@ -16,6 +16,6 @@ public class UserAccount {
     private String name;
     private String id;
     private String password;
-    private String email;
+    private String emali;
     private Date regDate;
 }
