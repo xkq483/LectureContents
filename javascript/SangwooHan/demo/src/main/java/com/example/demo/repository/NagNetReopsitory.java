@@ -11,7 +11,7 @@ public class NagNetReopsitory {
     private JdbcTemplate jdbcTemplate2;
 
     public void creates(NagetloningTest nagetloningtest) throws Exception{
-        String query = "insert into NagNetTest (id, address, pw) values (?,?,?)";
+        String query = "insert into NagNetTest (id, address, password) values (?,?,?)";
         jdbcTemplate2.update(query,nagetloningtest.getId(), nagetloningtest.getAddress(), nagetloningtest.getPw());
     }
 }
