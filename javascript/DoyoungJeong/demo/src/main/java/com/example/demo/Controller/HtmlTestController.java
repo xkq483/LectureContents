@@ -14,7 +14,7 @@ public class HtmlTestController {
     public String firstIndex() {
         log.info("firstIndex() 실행");
 
-        return "htmlHi";
+        return "first/htmlHi";
     }
 
     @GetMapping("/fontTest")
