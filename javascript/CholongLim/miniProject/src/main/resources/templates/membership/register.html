@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h3 {
+            text-align:center;
+    }
+    body {
+            line-height: 40px;
+    }
+    fieldset {
+            width: 400px;
+            margin: auto;
+    }
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#membership");
+
+        $("#btnRegister").on("click", function() {
+        formObj.attr("action","memRegister");
+        formObj.attr("method","post");
+        formObj.submit();
+        });
+    });
+</script>
+<body>
+<br><center>
+<fieldset>
+    <img src="logo2.png" width="150" height="150">
+    <form id="membership" th:action="@{memRegister}" th:object="${membership}" method="post">
+    <table>
+
+        <ul>
+            <label for="name">이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="name" name="memName" th:field="*{memName}">
+        </ul>
+
+        <ul>
+            <label for="id">아이디&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="id" name="memID" th:field="*{memID}">
+
+        </ul>
+        <ul>
+            <label for="password">비밀번호</label>
+            <input type="text" id="password" name="memPassword" th:field="*{memPassword}">
+        </ul>
+        <ul>
+            <label for="phone">휴대전화</label>
+            <input type="text" id="phone" name="phoneNum" th:field="*{phoneNum}">
+        </ul>
+        <ul>
+            <label for="birth">생년월일</label>
+            <input type="text" id="birth" name="memBirth" th:field="*{memBirth}">
+        </ul>
+    </table>
+    </form>
+</fieldset>
+</center>
+<div>
+    <br>
+    <center>
+        <button type="submit" id="btnRegister">회원가입</button>
+    </center>
+</div>
+
+</body>
+</html>
