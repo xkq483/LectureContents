@@ -1,4 +1,4 @@
-package utility.network;
+package com.example.jswithspring.utility;
 
 import lombok.extern.slf4j.Slf4j;
 
