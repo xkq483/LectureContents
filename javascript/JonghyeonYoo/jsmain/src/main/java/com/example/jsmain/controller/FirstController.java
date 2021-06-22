@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FirstController {
     //...
-    @GetMapping ("/list")
+    @GetMapping("/list")
     public String doHtmlList() {
         log.info("doHtmlList()");
         return "first/list";
@@ -27,6 +27,7 @@ public class FirstController {
 
         return "first/font";
     }
+
     @GetMapping("/markTest")
     public String doMarkTest() {
         log.info("doMarkTest()");
@@ -40,12 +41,14 @@ public class FirstController {
 
         return "first/tableTest1";
     }
+
     @GetMapping("/secondTableTest2")
     public String secondTableTest2() {
         log.info("secondTableTest2()");
 
         return "first/tableTest2";
     }
+
     @GetMapping("/thirdTableTest3")
     public String thirdTableTest3() {
         log.info("thirdTableTest3()");
