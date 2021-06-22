@@ -19,6 +19,11 @@ public class SeventhController {
     public String getRead (int boardNo, Model model) throws Exception {
         log.info("read");
 
+        // read가 리턴하는 결과는 무엇인가 ? Board 객체(Board 클래스의 메모리 적재 상태)
+        // 클래스는 앞대가리 및 이니셜이 대문자
+        // 클래스가 아닌 일반 변수들(객체 포함)
+        // 앞대가리가 소문자고 이니셜은 대문자임 <<<<----
+        // SignUp ---> signUp O    (SignUp x) <<<--- 인식 못함
         model.addAttribute(service.read(boardNo));
 
         return "board/seventh/read";
