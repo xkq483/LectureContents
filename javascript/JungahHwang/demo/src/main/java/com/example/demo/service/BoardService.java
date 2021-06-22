@@ -9,4 +9,23 @@ public interface BoardService {
 
     // DB안의 Board에 있는 list 정보를 가지고 온다.
     public List<Board> list() throws Exception;
+
+    public Board read(Integer boardNo) throws Exception;
+
+    public void remove(Integer boardNo) throws Exception;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
