@@ -16,7 +16,7 @@ public class PurchasingSignUpServiceImpl implements PurchasingSignUpService {
 
     @Override
     public void signUp(PurchasingSignUp purchasingSignUp) throws Exception {
-        signUpRepository.create(purchasingSignUp);
+        signUpRepository.purchasingSignUpCreate(purchasingSignUp);
 
     }
 }

@@ -12,7 +12,7 @@ public class PurchasingSignUpRepository {
     private JdbcTemplate signUpJdbcTemplate;
 
 
-    public void create(PurchasingSignUp purchasingSignUp) throws Exception {
+    public void purchasingSignUpCreate(PurchasingSignUp purchasingSignUp) throws Exception {
 
         String SignUpQuery = "insert into purchasingMemeberSignUp (id, pw, name, dateOfBirth, gender, phoneNumber, email, address, interest) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 

@@ -11,15 +11,14 @@
 
 
 <script>
-    // document는 현재 웹 상에 떠 있는 페이지 자체를 의미한다고 보면 됨
+
     $(document).ready(function() {
-        // form 태그에 id="board"에 해당하는 객체를 얻어옴
         var formObj = $("#drawingPurchase");
 
 
         $("#btnPurchaseBoard").on("click", function() {
-            // URL drawingPurchase 보낸다.
-            formObj.attr("action", "drawingPurchase");
+            // URL artworkPurchase 보낸다.
+            formObj.attr("action", "artworkPurchase");
             // PostMapping
             formObj.attr("method", "post");
             formObj.submit();
@@ -33,7 +32,7 @@
 </script>
 
 <body>
-    <formd id="drawingPurchase" th:action="@{drawingPurchase}" th:object="${drawingPurchaseBoard}" method="post">
+    <formd id="artworkPurchase" th:action="@{artworkPurchase}" th:object="${artworkPurchaseBoard}" method="post">
         <table>
             <tr>
                 <td>제목</td>

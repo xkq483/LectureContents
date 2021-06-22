@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @ToString
 
-public class DrawingPurchaseBoard {
+public class ArtworkPurchaseBoard {
 
     private int product_no;
     private int salePrice;
