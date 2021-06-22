@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 @Slf4j
-public class Client1 {
+public class Client {
     public void connectToServerTest () {
         String hostname = "192.168.30.141";
         int port = 33333;

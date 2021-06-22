@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.Date;
 
 @Slf4j
-public class Server2 {
+public class Server {
     public void waitForClientTest () {
         int port = Integer.parseInt("33333");
 

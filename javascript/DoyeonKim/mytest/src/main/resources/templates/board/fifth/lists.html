@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>게시판 목록 보기</h2>
+        <a href="/board/fourth/register.html">글쓰기</a>
+        <table border="1">
+            <tr>
+                <th align="center" width="80">번호</th>
+                <th align="center" width="320">제목</th>
+                <th align="center" width="120">작성자</th>
+                <th align="center" width="200">등록일자</th>
+            </tr>
+            <tr th:if="${#lists.isEmpty(lists)}"></tr>
+                <td colspan="4">
+                    현재 등록된 게시물이 없습니다!
+                </td>
+            <tr th:each="board : ${lists}">
+                <td align="center" th:text="${board.boarNo">
+                <td align="left" th:gref="@{|lead?boardNo=${board.boardNo|}" th:text="${board.title"></td>
+                <td align="right" th:text="${board.writer">
+                <td align="center" th:text="${#date.fomat(board.regDate, 'yyyy-MM--dd">
+            </tr>
+        </table>
+</body>
+</html>
