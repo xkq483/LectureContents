@@ -1,6 +1,6 @@
-package com.example.practice1.repository;
+package com.example.practice2.repository;
 
-import com.example.practice1.entity.Product;
+import com.example.practice2.entity.Product;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,12 +20,12 @@ public class ProductRepository {
 
     public void create(Product product) throws Exception{
 
-        String query = "insert into product (productName , productInfo, productPrice) values(?,?,?)";
-
+        String query ="insert into product (productName,productInfo,productPrice) values(?,?,?)";
         jdbcTemplate.update(query,product.getProductName(),product.getProductInfo(),product.getProductPrice());
 
     }
-    public List<Product> list() throws Exception {
+
+    public List<Product> lists() throws Exception{
 
         List<Product> results = jdbcTemplate.query(
                 "select product_no,productName,productInfo,productPrice,reg_date from product " +
@@ -48,8 +48,6 @@ public class ProductRepository {
                     }
                 }
         );
-
-        return results;
+    return results;
     }
-
 }

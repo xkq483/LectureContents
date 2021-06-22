@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<h2>게시판 목록 보기</h2>
 <a href="/register">글쓰기</a>
 <table border="1">
     <tr>
@@ -16,7 +15,7 @@
     </tr>
     <!-- lists.isEmpty()는 Thymeleaf 전용 검사 메서드-->
     <tr th:if="${#lists.isEmpty(lists)}">
-        <td colspan="5">
+        <td colspan="4">
             현재 등록된 게시물이 없습니다!
         </td>
     </tr>
