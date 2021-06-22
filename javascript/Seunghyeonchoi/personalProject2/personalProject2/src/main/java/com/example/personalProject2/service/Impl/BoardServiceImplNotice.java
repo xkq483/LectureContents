@@ -1,5 +1,6 @@
 package com.example.personalProject2.service.Impl;
 
+import com.example.personalProject2.entity.BoardFree;
 import com.example.personalProject2.entity.BoardNotice;
 import com.example.personalProject2.repository.BoardRepositoryNotice;
 import com.example.personalProject2.service.BoardServiceNotice;
@@ -14,15 +15,24 @@ import java.util.List;
 public class BoardServiceImplNotice  implements BoardServiceNotice {
 
     @Autowired
-    private BoardRepositoryNotice repositoryNotice;
+    private BoardRepositoryNotice repository;
 
     @Override
-    public void registerNotice(BoardNotice boardNotice) throws Exception  {
-        repositoryNotice.create(boardNotice);
+    public void registerNotice(BoardNotice board) throws Exception  {
+        repository.create(board);
     }
     @Override
     public List<BoardNotice> listNotice() throws Exception {
-        return repositoryNotice.listNotice();
+        return repository.listNotice();
+    }
+
+    @Override
+    public BoardNotice read(Integer boardNo) throws Exception {
+        return repository.read(boardNo);
+    }
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
     }
 
 

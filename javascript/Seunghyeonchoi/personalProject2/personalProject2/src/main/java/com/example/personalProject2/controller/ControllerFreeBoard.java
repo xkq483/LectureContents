@@ -19,31 +19,53 @@ public class ControllerFreeBoard {
     private BoardServiceFree serviceFree;
     @GetMapping("/registerFree")
 
-    public String getRegisterFree (BoardFree boardFree, Model modelFree)    {
+    public String getRegisterFree (BoardFree board, Model model)    {
         log.info("getRegisterFree()");
 
         return "/board/register/registerFree";
     }
     @PostMapping("/registerFree")
-    public String postRegisterFree (BoardFree boardFree, Model modelFree) throws Exception  {
+    public String postRegisterFree (BoardFree board, Model model) throws Exception  {
         log.info("postRegisterFree()");
-        log.info("BoardFree: " + boardFree);
+        log.info("BoardFree: " + board);
 
-        serviceFree.registerFree(boardFree);
+        serviceFree.registerFree(board);
 
-        modelFree.addAttribute("msg", "게시물 등록이 완료되었습니다");
+        model.addAttribute("msg", "게시물 등록이 완료되었습니다");
 
         return "/board/success/success";
     }
     @GetMapping("/listsFree")
-    public String getListsFree (Model modelFree) throws Exception   {
+    public String getListsFree (Model model) throws Exception   {
         log.info("getListsFree()");
 
-        modelFree.addAttribute("listsFree", serviceFree.listFree());
+        model.addAttribute("listsFree", serviceFree.listFree());
 
         return "/board/lists/listsFree";
     }
 
+    //아래 int boardNoFree는 엔티티
+    @GetMapping("/readFree")
+    public String getRead (int boardNoFree, Model model) throws Exception {
+        log.info("readFree()");
 
+        model.addAttribute(serviceFree.read(boardNoFree));
+
+        return "board/read/readFree";
+    }
+
+    // 글을 지워도 boardNo가 올라가야만 하는 이유가 무엇인가?
+    // 배열 100개에서 중간의 값을 지우는 경우
+    //
+    @PostMapping("/removeFree")
+    public String remove (int boardNoFree, Model model) throws Exception {
+        log.info("removeFree()");
+
+        serviceFree.remove(boardNoFree);
+
+        model.addAttribute("msg", "삭제가 완료되었습니다!");
+
+        return "board/success/success";
+    }
 
 }

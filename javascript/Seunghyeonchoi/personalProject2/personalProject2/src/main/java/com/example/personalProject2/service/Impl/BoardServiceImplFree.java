@@ -14,15 +14,24 @@ import java.util.List;
 public class BoardServiceImplFree  implements BoardServiceFree {
 
     @Autowired
-    private BoardRepositoryFree repositoryFree;
+    private BoardRepositoryFree repository;
 
     @Override
-    public void registerFree(BoardFree boardFree) throws Exception  {
-        repositoryFree.create(boardFree);
+    public void registerFree(BoardFree board) throws Exception  {
+        repository.create(board);
     }
     @Override
     public List<BoardFree> listFree() throws Exception {
-        return repositoryFree.listFree();
+        return repository.listFree();
+    }
+
+    @Override
+    public BoardFree read(Integer boardNo) throws Exception {
+        return repository.read(boardNo);
+    }
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
     }
 
 
