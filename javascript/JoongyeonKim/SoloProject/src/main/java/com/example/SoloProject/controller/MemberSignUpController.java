@@ -77,7 +77,7 @@ public class MemberSignUpController {
     private ProductService productservice;
 
     @GetMapping("/productregister")
-    public String getProduct (Model model) throws Exception {
+    public String getProduct (Product product, Model model) throws Exception {
         log.info("getProduct(): " + productservice.productlist());
 
         model.addAttribute("productlists", productservice.productlist());

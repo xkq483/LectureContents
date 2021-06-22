@@ -1,6 +1,6 @@
-package com.example.SoloProject.repository;
+package com.example.demo.repository;
 
-import com.example.SoloProject.entity.Product;
+import com.example.demo.entity.Product;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
