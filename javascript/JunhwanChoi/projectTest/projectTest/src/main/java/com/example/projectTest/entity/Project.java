@@ -12,11 +12,16 @@ import java.util.Date;
 @ToString
 public class Project {
 
-    private int projectNo;
+    private String username;
+    private int birth;
+    private String id;
+    private String password;
+    private Date regDate;
+
+   /* private int projectNo;
     private String name;
     private int price;
     private String description;
     private Date regDate;
-
+*/
 }
-

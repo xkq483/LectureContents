@@ -19,25 +19,25 @@ public class ProjectRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void create(Project project) {
-        String query = "insert into project (name, price, description) values (?, ?, ?)";
+        String query = "insert into project (username, birth, id, password) values (?, ?, ?, ?)";
 
-        jdbcTemplate.update(query, project.getName(), project.getPrice(), project.getDescription());
+        jdbcTemplate.update(query, project.getUsername(), project.getBirth(), project.getId(),project.getPassword());
     }
 
     public List<Project> list() throws Exception {
         List<Project> results = jdbcTemplate.query(
-                "select project_no, name, price, description, reg_date from project " +
-                        "where project_no > 0 order by project_no desc",
+                "select username, birth, id, password, reg_date from project "/* +
+                        "where project_no > 0 order by project_no desc"*/,
                 new RowMapper<Project>() {
                     @SneakyThrows
                     @Override
                     public Project mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Project project = new Project();
 
-                        project.setProjectNo(rs.getInt("project_no"));
-                        project.setName(rs.getString("name"));
-                        project.setPrice(rs.getInt("price"));
-                        project.setDescription(rs.getString("description"));
+                        project.setUsername(rs.getString("username"));
+                        project.setBirth(rs.getInt("birth"));
+                        project.setId(rs.getString("id"));
+                        project.setPassword(rs.getString("password"));
 
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         project.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));

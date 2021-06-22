@@ -54,14 +54,14 @@ public class ProjectController {
     public String getnewsPage() {
         log.info("getnewsPage()");
 
-        return "/static/news";
+        return "/project/news";
     }
 
     @GetMapping("/reservation")
     public String getrsvPage() {
         log.info("getrevPage()");
 
-        return "/static/reservation";
+        return "/project/reservation";
     }
 
 }
