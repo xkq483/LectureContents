@@ -30,9 +30,9 @@ public class ControllerNoticeBoard {
 
         serviceNotice.registerNotice(boardNotice);
 
-        modelNotice.addAttribute("msgNotice", "공지 등록이 완료되었습니다");
+        modelNotice.addAttribute("msg", "공지 등록이 완료되었습니다");
 
-        return "/board/success/successNotice";
+        return "/board/success/success";
     }
     @GetMapping("/listsNotice")
     public String getListsNotice (Model modelNotice) throws Exception   {

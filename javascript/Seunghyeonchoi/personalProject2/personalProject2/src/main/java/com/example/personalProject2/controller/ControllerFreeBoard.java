@@ -31,9 +31,9 @@ public class ControllerFreeBoard {
 
         serviceFree.registerFree(boardFree);
 
-        modelFree.addAttribute("msgFree", "게시물 등록이 완료되었습니다");
+        modelFree.addAttribute("msg", "게시물 등록이 완료되었습니다");
 
-        return "/board/success/successFree";
+        return "/board/success/success";
     }
     @GetMapping("/listsFree")
     public String getListsFree (Model modelFree) throws Exception   {
@@ -43,5 +43,7 @@ public class ControllerFreeBoard {
 
         return "/board/lists/listsFree";
     }
+
+
 
 }

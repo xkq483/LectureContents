@@ -1,7 +1,8 @@
-package com.example.personalProject2.service;
+package com.example.personalProject2.service.Impl;
 
 import com.example.personalProject2.entity.Member;
 import com.example.personalProject2.repository.SignUpRepository;
+import com.example.personalProject2.service.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

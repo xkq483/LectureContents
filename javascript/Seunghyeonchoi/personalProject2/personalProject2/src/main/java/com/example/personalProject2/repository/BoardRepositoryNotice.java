@@ -16,17 +16,17 @@ import java.util.List;
 public class BoardRepositoryNotice {
 
     @Autowired
-    private JdbcTemplate jdbcTemplateNotice;
+    private JdbcTemplate jdbcTemplate;
 
     //메서드 앞에 throws Exception 이라고 붙이고 throw new Exception 구문에서 강제로 예외처리를 발생시킵니다.
     public void create(BoardNotice boardnotice) throws Exception  {
         String queryNotice = "insert into boardnotice (titlenotice, contentnotice, writernotice) values (?, ?, ?)";
 
-        jdbcTemplateNotice.update(queryNotice, boardnotice.getTitleNotice(), boardnotice.getContentNotice(),
+        jdbcTemplate.update(queryNotice, boardnotice.getTitleNotice(), boardnotice.getContentNotice(),
                 boardnotice.getWriterNotice());
     }
     public List<BoardNotice> listNotice() throws Exception {
-         List<BoardNotice> results = jdbcTemplateNotice.query(
+         List<BoardNotice> results = jdbcTemplate.query(
                  "select board_no_notice, titlenotice, contentnotice, writernotice, reg_date_notice from boardnotice " +
                         "where board_no_notice > 0 order by board_no_notice desc",
 

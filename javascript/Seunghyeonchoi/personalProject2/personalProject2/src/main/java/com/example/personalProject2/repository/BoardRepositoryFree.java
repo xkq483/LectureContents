@@ -16,17 +16,17 @@ import java.util.List;
 public class BoardRepositoryFree {
 
     @Autowired
-    private JdbcTemplate jdbcTemplateFree;
+    private JdbcTemplate jdbcTemplate;
 
     //메서드 앞에 throws Exception 이라고 붙이고 throw new Exception 구문에서 강제로 예외처리를 발생시킵니다.
     public void create(BoardFree boardfree) throws Exception  {
         String queryFree = "insert into boardfree (titlefree, contentfree, writerfree) values (?, ?, ?)";
 
-        jdbcTemplateFree.update(queryFree, boardfree.getTitleFree(), boardfree.getContentFree(),
+        jdbcTemplate.update(queryFree, boardfree.getTitleFree(), boardfree.getContentFree(),
                 boardfree.getWriterFree());
     }
     public List<BoardFree> listFree() throws Exception {
-        List<BoardFree> results = jdbcTemplateFree.query(
+        List<BoardFree> results = jdbcTemplate.query(
                 "select board_no_free, titlefree, contentfree, writerfree, reg_date from boardfree " +
                         "where board_no_free > 0 order by board_no_free desc",
 

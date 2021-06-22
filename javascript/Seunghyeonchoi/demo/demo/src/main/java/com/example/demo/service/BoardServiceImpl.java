@@ -25,4 +25,16 @@ public class BoardServiceImpl implements BoardService {
     public List<Board> list() throws Exception {
         return repository.list();
     }
+
+    //SeventhController 추가 내용. 게시물 본문 보기, 삭제 등
+    @Override
+    public Board read(Integer boardNo) throws Exception {
+        return repository.read(boardNo);
+    }
+
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
+    }
+
 }
