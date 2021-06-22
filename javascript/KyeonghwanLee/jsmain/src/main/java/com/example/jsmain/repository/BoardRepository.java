@@ -29,7 +29,6 @@ public class BoardRepository {
         // 나머지 3개: query에 있는 ?에 배치할 값들을 결정함
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getWriter());
     }
-
     public List<Board> list() throws Exception {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
@@ -52,13 +51,16 @@ public class BoardRepository {
                         board.setContent(rs.getString("content"));
                         board.setWriter(rs.getString("writer"));
                         // rs.getDate()는 DB에 있는 날자 정보를 얻어옴
+                        // board.setRegDate(rs.getDate("reg_date"));
 
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 
                         board.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
 
-                        //System.out.println("rs.getDate():"+ rs.getTimestamp("reg.date");
+                        //System.out.println("rs.getDate(): " + rs.getTimestamp("reg_date"));
+                        //System.out.println("rs.getDate(): " + rs.getDate("reg_date"));
+                        //System.out.println("rs.getTime(): " + rs.getTime("reg_date"));
 
                         return board;
                     }
@@ -66,5 +68,33 @@ public class BoardRepository {
         );
 
         return results;
+    }
+
+    public Board read (Integer boardNo) throws Exception {
+        List<Board> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from board where board_no = ?",
+                new RowMapper<Board>() {
+                    @Override
+                    public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Board board = new Board();
+
+                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setTitle(rs.getString("title"));
+                        board.setContent(rs.getString("content"));
+                        board.setWriter(rs.getString("writer"));
+                        board.setRegDate(rs.getDate("reg_date"));
+
+                        return board;
+                    }
+                }, boardNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer boardNo) throws Exception{
+        String query = "delete from board where board_no = ?";
+
+        jdbcTemplate.update(query, boardNo);
+
     }
 }
