@@ -29,4 +29,9 @@ public class BoardServiceImpl implements BoardService {
     public Board read(Integer boardNo) throws Exception {
         return repository.read(boardNo);
     }
+
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
+    }
 }
