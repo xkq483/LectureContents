@@ -72,4 +72,39 @@ public class BoardRepository {
 
         return results;
     }
+    // seventhController
+    public Board read (Integer boardNo) throws Exception {
+        List<Board> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from board where board_no = ?",
+                new RowMapper<Board>() {
+                    @Override
+                    public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Board board = new Board();
+
+                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setTitle(rs.getString("title"));
+                        board.setContent(rs.getString("content"));
+                        board.setWriter(rs.getString("writer"));
+                        board.setRegDate(rs.getDate("reg_date"));
+
+                        // board가 리턴이 되는데 List<Board> results 에 들어가게됨
+                        return board;
+                    }
+                }, boardNo);
+
+        //++ empty일경우 0값을 받게 됨.
+        // results에 기록된 내용이 list.
+        // results.isEmpty() 리스트에 값이 있냐? 리스트가 비었냐?
+        // 비었다면 null, 비어있지 않았다면 results.get(0)
+        // 0번 인덱스(노드)의 리스트를 리턴
+        //
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer boardNo) throws Exception {
+        //+ 번호를 지워버리겠습니다 라는 말
+        String query = "delete from board where board_no = ?";
+
+        jdbcTemplate.update(query, boardNo);
+    }
 }

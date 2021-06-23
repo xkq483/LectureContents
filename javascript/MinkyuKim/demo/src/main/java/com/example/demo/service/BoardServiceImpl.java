@@ -25,4 +25,14 @@ public class BoardServiceImpl implements BoardService {
         //++ 이 list는 리턴을 해줘야한다. 리스트로 전달된 객체정보를 전달해줘야하기 때문에
         return repository.list();
     }
+
+    @Override
+    public Board read(Integer boardNo) throws Exception {
+        return repository.read(boardNo);
+    }
+
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
+    }
 }
