@@ -63,4 +63,40 @@ public class BoardRepository {
 
         return results;
     }
+
+    public Board read(Integer boardNo) throws Exception{
+        //여기서 매개변수가 들어가는 시점이 언제일까?
+
+        List<Board> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from board where board_no =? ",
+                new RowMapper<Board>() {
+                    @SneakyThrows
+                    @Override
+                    public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Board board = new Board();
+
+                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setTitle(rs.getString("title"));
+                        board.setContent(rs.getString("content"));
+                        board.setWriter(rs.getString("writer"));
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        board.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
+
+                        return board;
+                    }
+                },boardNo);
+        //굳이 리스트를써서 results.get(0)인 이유는 query의 반환값이 리스트이기때문에 형변환을 따로 하지않으려고 쓴것이다.
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer boardNo) throws Exception{
+
+        String query = "delete from board where board_no =?";
+
+        jdbcTemplate.update(query,boardNo);
+
+    }
+
+
 }
