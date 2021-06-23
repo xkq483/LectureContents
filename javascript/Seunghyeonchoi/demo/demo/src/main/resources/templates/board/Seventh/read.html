@@ -6,7 +6,7 @@
 </head>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-//SeventhController 추가 내용. 게시물 본문 보기 등
+
 <script>
     $(document).ready(function() {
         var formObj = $("#board");
@@ -18,7 +18,7 @@
 
             self.location = "modify?boardNo=" + boardNoVal;
         });
-           //method default 값은 post
+
         $("#btnRemove").on("click", function() {
             formObj.attr("action", "remove");
             formObj.submit();
@@ -31,7 +31,7 @@
 </script>
 
 <body>
-<h2>게시글 등록</h2>
+<h2>게시글 읽기</h2>
 
 <form id="board" th:object="${board}" method="post">
   <input type="hidden" name="boardNo" th:field="*{boardNo}"/>
