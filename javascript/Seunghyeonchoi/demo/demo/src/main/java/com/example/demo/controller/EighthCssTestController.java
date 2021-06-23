@@ -46,4 +46,17 @@ public class EighthCssTestController {
 
         return "csstest/eighth/allTest";
     }
+
+    @GetMapping("/classSelectTest")
+    public String getClassSelectTest()  {
+        log.info("getClassSelectTest()");
+
+        return "csstest/eighth/classSelectTest";
+    }
+    @GetMapping("/tagClassSelectTest")
+    public String getTagClassSelectTest()  {
+        log.info("getTagClassSelectTest()");
+
+        return "csstest/eighth/tagClassSelectTest";
+    }
 }
