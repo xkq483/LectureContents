@@ -60,4 +60,46 @@ public class EighthCssTestController {
 
         return "csstest/eighth/tagClassSelectTest";
     }
+
+    @GetMapping("/boxTest")
+    public String getBoxTest () {
+        log.info("getBoxTest");
+
+        return "csstest/eighth/boxTest";
+    }
+
+    @GetMapping("/boxHoverTest")
+    public String getBoxHoverTest () {
+        log.info("getBoxHoverTest()");
+
+        return "csstest/eighth/boxHoverTest";
+    }
+
+    @GetMapping("/fontTest")
+    public String getFontTest () {
+        log.info("getFontTest()");
+
+        return "csstest/eighth/fontTest";
+    }
+
+    @GetMapping("/shadowTest")
+    public String getShadowTest () {
+        log.info("getShadowTest()");
+
+        return "csstest/eighth/shadowTest";
+    }
+
+    @GetMapping("/movieFeelShadowTest")
+    public String getMovieFeelShadowTest() {
+        log.info("getMovieFeelShadowTest()");
+
+        return "csstest/eighth/movieFeelShadowTest";
+    }
+
+    @GetMapping("/textAlignTest")
+    public String getTextAlignTest () {
+        log.info("getTextAlignTest()");
+
+        return "csstest/eighth/textAlignTest";
+    }
 }
