@@ -12,5 +12,7 @@ public interface BoardService {
     public Board read(Integer boardNo) throws Exception;
 
     public void remove(Integer boardNo) throws Exception;
+
+    public void modify(Board board) throws Exception;
 }
 
