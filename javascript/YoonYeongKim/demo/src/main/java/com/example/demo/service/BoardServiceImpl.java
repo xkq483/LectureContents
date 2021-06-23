@@ -13,6 +13,7 @@ import java.util.List;
 public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardRepository repository;
+
     @Override
     public void register(Board board) throws Exception {
         repository.create(board);
@@ -21,5 +22,15 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public List<Board> list() throws Exception {
         return repository.list();
+    }
+
+    @Override
+    public Board read(Integer boardNo) throws Exception {
+        return repository.read(boardNo);
+    }
+
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
     }
 }

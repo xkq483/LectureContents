@@ -64,4 +64,34 @@ public class BoardRepository {
         );
         return results;
     }
+
+    public Board read (Integer boardNo) throws Exception {
+        List<Board> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from board where board_no = ?",
+                new RowMapper<Board>() {
+                    @Override
+                    public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Board board = new Board();
+
+                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setTitle(rs.getString("board_no"));
+                        board.setContent(rs.getString("board_no"));
+                        board.setWriter(rs.getString("board_no"));
+                        board.setRegDate(rs.getDate("board_no"));
+
+
+                        return board;
+
+                    }
+
+                }, boardNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer boardNo) throws Exception {
+        String query = "delete from board where board_no = ?";
+
+        jdbcTemplate.update(query, boardNo);
+    }
 }
