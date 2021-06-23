@@ -30,11 +30,12 @@ public class BoardController {
         log.info("Board: " + board);
 
         service.register(board);
-        model.addAttribute("msg");
+        model.addAttribute("msg", "게시물 등록이 완료되었습니다.");
 
         return "/board/success";
     }
 
+    // 게시판 목록
     @GetMapping("/lists")
     public String getLists (Model model) throws Exception {
         log.info("getLists()");
@@ -42,6 +43,27 @@ public class BoardController {
         model.addAttribute("lists",service.list());
 
         return "/board/lists";
+
+    }
+
+    // 게시판 제목 클릭
+    @GetMapping("/read")
+    public String getRead(int boardNo, Model model) throws Exception {
+        log.info("read");
+        model.addAttribute(service.read(boardNo));
+
+        return "/board/read";
+    }
+
+    // 게시글 지우기
+    @PostMapping("/remove")
+    public String remove (int boardNo, Model model) throws Exception {
+        log.info("remove");
+
+        service.remove(boardNo);
+        model.addAttribute("msg", "게시물 삭제가 완료되었습니다.");
+
+        return "/board/success";
 
     }
 }

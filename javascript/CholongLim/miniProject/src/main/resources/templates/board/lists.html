@@ -34,7 +34,7 @@
   </tr>
   <tr th:each="board : ${lists}">
     <td align="center" th:text="${board.boardNo}"></td>
-    <td align="left" th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}"></td>
+    <td align="left"><a th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}"/></td>
     <td align="right" th:text="${board.writer}"></td>
 
     <td align="center" th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
