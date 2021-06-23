@@ -22,9 +22,21 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public List<Board> list() throws Exception {
-        return  repository.list();
+        return repository.list();
+    }
+
+        //seventh
+
+        @Override
+        public Board read(Integer boardNo) throws Exception {
+            return repository.read(boardNo);
+        }
+        @Override
+        public void remove(Integer boardNo) throws Exception {
+            repository.delete(boardNo);
+        }
     }
 
 
     //상품 등록, 게시판에 글 쓰는것, 댓글쓰는것
-}
+
