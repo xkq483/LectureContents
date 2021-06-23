@@ -1,4 +1,5 @@
-package com.example.demo.eutity;
+package com.example.personalProject.eutity;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,19 +7,24 @@ import lombok.ToString;
 
 import java.util.Date;
 
+
 @Getter
 @Setter
 @ToString
-public class Board {
-    private int boardNo;
-    private String title;
-    // th:filed로 맵핑됨
-    private String content;
-    private String writer;
-    private Date regDate;
-
-
+public class Member {
+    private int memberNo;
+    private String userId;
+    private String userPass;
+    private String name;
+    private String sex;
+    private String phoneNo;
+    private String birth;
+    private Date joinDate;
 }
+
+
+
+
 /*
     create table member(
             member_no int not null auto_increment,
@@ -26,7 +32,8 @@ public class Board {
             user_pass varchar(20) not null,
              name varchar(10) not null,
              sex varchar(10) not null,
-            phone_no varchar(11) not null,dateOfBirth date not null ,
+            phone_no varchar(11) not null,
+            dateOfBirth date not null ,
             join_date timestamp not null default now(),
             primary key(member_no));
 
