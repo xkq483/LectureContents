@@ -14,4 +14,9 @@ public interface BoardService {
 
     //++ util의 list (알트 엔터)
     public List<Board> list() throws Exception;
+
+    //++32일차(SeventhController)
+    public Board read(Integer boardNo) throws Exception;
+
+    public void remove(Integer boardNo) throws Exception;
 }

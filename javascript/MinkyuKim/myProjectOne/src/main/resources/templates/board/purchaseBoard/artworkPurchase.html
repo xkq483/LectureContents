@@ -32,6 +32,7 @@
 </script>
 
 <body>
+<h1>판매 및 대여 상품글 작성</h1>
     <formd id="artworkPurchase" th:action="@{artworkPurchase}" th:object="${artworkPurchaseBoard}" method="post">
         <table>
             <tr>
@@ -48,6 +49,11 @@
             <tr>
                 <td>작성자</td>
                 <td><input type="text" name="saleWriter" th:field="*{saleWriter}"></td>
+            </tr>
+
+            <tr>
+                <td>상품명</td>
+                <td><input type="text" name="productName" th:field="*{productName}"></td>
             </tr>
 
             <tr>
