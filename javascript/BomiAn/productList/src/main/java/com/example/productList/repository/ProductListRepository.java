@@ -60,4 +60,30 @@ public class ProductListRepository {
 
         return results;
     }
+
+    public Product read(Integer productNo) throws Exception {
+        List<Product> results = jdbcTemplate.query(
+                "select product_no, product_name, writer, content, reg_date from product where product_no = ?",
+                new RowMapper<Product>() {
+                    @Override
+                    public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Product product = new Product();
+                        product.setProductNo(rs.getInt("product_no"));
+                        product.setProductName(rs.getString("product_name"));
+                        product.setContent(rs.getString("content"));
+                        product.setWriter(rs.getString("writer"));
+                        product.setRegDate(rs.getDate("reg_date"));
+
+                        return product;
+                    }
+                }, productNo);
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer productNo) {
+        String query = "delete from product where product_no = ?";
+
+        jdbcTemplate.update(query, productNo);
+    }
+
 }

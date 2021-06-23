@@ -12,11 +12,8 @@
     $(document).ready(function() {
         var formObj = $("#product");
 
-        // id="btnRegister"를 클릭했을때
         $("#btnRegister").on("click", function() {
-            // URL register로 보낸다.
             formObj.attr("action", "shopRegister");
-            // PostMapping
             formObj.attr("method", "post");
             formObj.submit();
         });

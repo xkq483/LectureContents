@@ -9,4 +9,7 @@ public interface ProductListService {
 
     public List<Product> list() throws Exception;
 
+    public Product read(Integer productNo) throws Exception;
+    public void remove(Integer productNo) throws Exception;
+
 }

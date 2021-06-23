@@ -41,6 +41,24 @@ public class FirstController {
 
         return "/product/shopLists";
     }
+
+    @GetMapping("/read")
+    public String getRead (int productNo, Model model) throws Exception{
+        log.info("read");
+        model.addAttribute(service.read(productNo));
+        return "product/read";
+
+    }
+
+    @PostMapping("/remove")
+    public String remove(int productNo, Model model) throws Exception {
+        log.info("remove");
+
+
+        service.remove(productNo);
+        model.addAttribute("msg", "삭제가 완료되었습니다. ");
+        return "product/success";
+    }
 }
 
 
