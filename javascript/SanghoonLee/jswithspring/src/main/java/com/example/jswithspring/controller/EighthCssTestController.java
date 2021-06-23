@@ -25,4 +25,39 @@ public class EighthCssTestController {
 
         return "csstest/eighth/styleTest";
     }
+
+    @GetMapping("/marginTest")
+    public String getMarginTest () {
+        log.info("getMarginTest()");
+
+        return "csstest/eighth/marginTest";
+    }
+
+    @GetMapping("/idSelectTest")
+    public String getIdSelectTest () {
+        log.info("getIdSelectTest()");
+
+        return "csstest/eighth/idSelectTest";
+    }
+
+    @GetMapping("/allTest")
+    public String getAllTest () {
+        log.info("getAllTest()");
+
+        return "csstest/eighth/allTest";
+    }
+
+    @GetMapping("/classSelectTest")
+    public String getClassSelectTest () {
+        log.info("getClassSelectTest()");
+
+        return "csstest/eighth/classSelectTest";
+    }
+
+    @GetMapping("/tagClassSelectTest")
+    public String getTagClassSelectTest () {
+        log.info("getTagClassSelectTest()");
+
+        return "csstest/eighth/tagClassSelectTest";
+    }
 }
