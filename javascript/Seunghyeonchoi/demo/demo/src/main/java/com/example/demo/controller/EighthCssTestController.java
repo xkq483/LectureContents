@@ -39,4 +39,11 @@ public class EighthCssTestController {
 
         return "csstest/eighth/idSelectTest";
     }
+
+    @GetMapping("/allTest")
+    public String getAllTest() {
+        log.info("getAllTest()");
+
+        return "csstest/eighth/allTest";
+    }
 }
