@@ -1,4 +1,4 @@
-package com.example.jswithspring.controller.board;
+package com.example.demo.controller.board;
 
 import com.example.demo.entity.Board;
 import com.example.demo.service.BoardService;
@@ -34,5 +34,12 @@ public class EighthController {
         model.addAttribute("msg", "수정이 성공적으로 완료되었습니다!");
 
         return "/board/fourth/success";
+    }
+
+    @GetMapping("/styleTest")
+    public String getStyleTest ()   {
+        log.info("getStyleTest()");
+
+        return "cssTest/eighth/styleTest";
     }
 }
