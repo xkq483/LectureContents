@@ -92,6 +92,12 @@ public class BoardRepository {
         jdbcTemplate.update(query, boardNo);
     }
 
+    public void update(Board board) throws Exception{
+        String query = "update board set title=?, content=? where board_no=?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
+    }
+
 
 }
 
