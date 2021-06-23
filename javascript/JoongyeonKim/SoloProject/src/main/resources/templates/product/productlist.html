@@ -24,10 +24,7 @@
   </tr>
   <tr th:each="productElem : ${product}">
     <td align="center" th:text="${productElem.productNo}"></td>
-    <!-- |read?boardNo=${board.boardNo}| 는 결국 아래를 의미함
-         read?boardNo=1, read?boardNo=3, read?boardNo=7 형태로
-         게시물 번호에 해당하는 값을 셋한다고 보면됨 -->
-    <td align="left" th:href="@{|read?productNo=${productElem.productNo}|}" th:text="${productElem.name}"></td>
+    <td align="left"> <a th:href="@{|read?productNo=${productElem.productNo}|}" th:text="${productElem.name}"/></td>
     <td align="right" th:text="${productElem.price}"></td>
     <td th:text="${productElem.description}"></td>
     <td align="right" th:text="${productElem.writer}"></td>

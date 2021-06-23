@@ -59,6 +59,7 @@ public class SixthController {
         // json 내에 Object 형식이 구성된 경우의 파싱
         JSONObject jObj = new JSONObject(jsonString);
 
+        //JSON코드의 값을 출력함
         JSONObject movie1Obj = jObj.getJSONObject("movie1");
         log.info("movie1: " + movie1Obj.toString() +
                 "\ntitle: " + movie1Obj.getString("title") +
@@ -110,7 +111,8 @@ public class SixthController {
         for (int i = 0; i < jArr.length(); i++) {
             JSONObject obj = jArr.getJSONObject(i);
 
-            String title = obj.getString("title");
+            //위에 있는 JSON코드의 값을 설정해줌
+            String title = obj.getString("title");    
             Boolean draft = obj.getBoolean("draft");
             Float star = obj.getFloat("star");
 
