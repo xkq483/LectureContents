@@ -35,8 +35,9 @@ public class HtmlTestController {
 
         return "test";
     }
+
     @GetMapping("/serverOn")
-    public String startServer () {
+    public String startServer() {
         log.info("startServer()");
 
         Server server = new Server();
@@ -46,7 +47,7 @@ public class HtmlTestController {
     }
 
     @GetMapping("/clientOn")
-    public String startClient () {
+    public String startClient() {
         log.info("startClient()");
 
         Client client = new Client();
