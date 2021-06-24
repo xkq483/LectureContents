@@ -45,5 +45,6 @@ public class SeventhController {
         model.addAttribute("msg", "삭제가 완료되었습니다!");
 
         return "board/fourth/success";
+
     }
 }

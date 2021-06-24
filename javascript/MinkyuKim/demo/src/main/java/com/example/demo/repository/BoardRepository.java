@@ -20,6 +20,7 @@ public class BoardRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    //++ db처리를 해야하기 때문에 exception
     public void create(Board board) throws Exception {
         // insert into board: DB에 있는 board 테이블에 값을 집어넣겠다.
         // (title, content, writer): board 테이블 내에 있는 컬럼들임
@@ -36,11 +37,15 @@ public class BoardRepository {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Board> results = jdbcTemplate.query(
+                // 셀렉트로 아래와같은 정보를 얻어온다.
                 "select board_no, title, content, writer, reg_date from board " +
                         "where board_no > 0 order by board_no desc",
                 // Row: 행
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음
                 // 여러 열들을 얻어와서 행으로 맵핑하는 작업을 수행함
+
+                //jpa를 쓰면 해당 내용들이 싹다없어짐. 지금은 전부 수기로 입력해서 데이터를 넣는 작업
+                // ++다만 jpa를 쓰더라도 해당 개념을 습득하고 있어야 jpa를 사용할 수 있음
                 new RowMapper<Board>() {
                     @SneakyThrows
                     @Override
@@ -68,7 +73,7 @@ public class BoardRepository {
                         return board;
                     }
                 }
-        );
+        );                //++ 익명객체의 특성
 
         return results;
     }
@@ -106,5 +111,11 @@ public class BoardRepository {
         String query = "delete from board where board_no = ?";
 
         jdbcTemplate.update(query, boardNo);
+    }
+
+    public void update(Board board) throws Exception {
+        String query = "update board set title = ?, content = ? where board_no = ?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }
 }
