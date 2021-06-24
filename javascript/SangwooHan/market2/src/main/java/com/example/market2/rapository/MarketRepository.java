@@ -1,5 +1,6 @@
 package com.example.market2.rapository;
 
+import com.example.market2.entity.Login;
 import com.example.market2.entity.Market;
 import com.example.market2.entity.Signup;
 import lombok.SneakyThrows;
@@ -26,6 +27,11 @@ public class MarketRepository {
         String query = "insert into signup (userid ,password, name, birthday, gender) values (?,?,?,?,?)";
 
         jdbcTemplate.update(query,signup.getUserid(),signup.getPassword(),signup.getName(),signup.getBirthday(),signup.getGender());
+    }
+    public void create3(Login login){
+        String query = "insert into login (id, pw) values (?,?)";
+
+        jdbcTemplate.update(query,login.getId(),login.getPw());
     }
     public List<Market> list() throws  Exception {
 

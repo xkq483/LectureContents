@@ -1,5 +1,6 @@
 package com.example.market2.controller;
 
+import com.example.market2.entity.Login;
 import com.example.market2.entity.Market;
 import com.example.market2.entity.Signup;
 import com.example.market2.service.marketService;
@@ -126,7 +127,21 @@ public String getModify(int productNo, Model model)throws  Exception{
 
         return "/market/nagnetshoppingmall";
     }
+    @GetMapping("/login")
+    public  String getLogin (Login login , Model model) throws  Exception{
+        log.info("getLogin");
 
+
+        return "/market/login";
+    }
+    @PostMapping("/login")
+    public String postLogin(Login login,Model model) throws  Exception{
+        log.info("postLogin()");
+        service.login(login);
+
+        model.addAttribute("msg","로그인이 성공적으로 되었습니다.");
+        return "/market/success";
+    }
 
 
 }

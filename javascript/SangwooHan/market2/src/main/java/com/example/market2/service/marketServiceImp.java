@@ -1,5 +1,6 @@
 package com.example.market2.service;
 
+import com.example.market2.entity.Login;
 import com.example.market2.entity.Market;
 import com.example.market2.entity.Signup;
 import com.example.market2.rapository.MarketRepository;
@@ -40,6 +41,11 @@ public class marketServiceImp implements  marketService{
   @Override
   public void signup(Signup signup) {
     repository.create2(signup);
+  }
+
+  @Override
+  public void login(Login login) {
+    repository.create3(login);
   }
 }
 

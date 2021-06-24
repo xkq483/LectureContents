@@ -9,16 +9,10 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Signup {
-    private int bulletinNo;
-    private String userid;
-    private int password;
-    private String name;
-    private int birthday;
-    private String  gender;
+public class Login {
+    private int BulletinNo;
+    private String id;
+    private int pw;
     private Date regdate;
-
-
-
 
 }
