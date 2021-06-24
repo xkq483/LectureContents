@@ -37,4 +37,39 @@ public class NinethController {
 
         return "/csstest/nineth/gradientTest";
     }
+
+    @GetMapping("customBoxTest")
+    public String getCustomBoxTest () {
+        log.info("getCustomBoxTest()");
+
+        return "/csstest/nineth/customBoxTest";
+    }
+
+    @GetMapping("getInlineBlockTest")
+    public String getInlineBlockTest () {
+        log.info("getInlineBlockTest()");
+
+        return "/csstest/nineth/inlineBlockTest";
+    }
+
+    @GetMapping("getNavigationBarTest")
+    public String getNavigationBarTest () {
+        log.info("getNavigationBarTest()");
+
+        return "/csstest/nineth/navigationBarTest";
+    }
+
+    @GetMapping("getParentChildTest")
+    public String getParentChildTest () {
+        log.info("getParentChildTest()");
+
+        return "/csstest/nineth/parentChildTest";
+    }
+
+    @GetMapping("getBackgroundUrlTest")
+    public String getBackgroundUrlTest () {
+        log.info("getBackgroundUrlTest()");
+
+        return "/csstest/nineth/backgroundUrlTest";
+    }
 }
