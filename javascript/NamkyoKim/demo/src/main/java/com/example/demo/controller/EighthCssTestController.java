@@ -26,4 +26,77 @@ public class EighthCssTestController {
 
         return "csstest/eighth/styleTest";
     }
+
+    @GetMapping("/marginTest")
+    public String getmarginTest(){
+        log.info("getmarginTest()");
+
+        return "csstest/eighth/marginTest";
+    }
+    @GetMapping("/idSelectTest")
+    public String getIdSelectTest(){
+        log.info("getIdSelectTest()");
+
+        return "csstest/eighth/idSelectTest";
+    }
+    @GetMapping("/allTest")
+    public String getAlltest(){
+        log.info("getAlltest()");
+
+        return "csstest/eighth/allTest";
+    }
+
+    @GetMapping("/classSelectTest")
+    public String getClassSelectTest(){
+        log.info("getClassSelectTest()");
+
+        return "csstest/eighth/classSelectTest";
+    }
+
+    @GetMapping("/tagClassSelectTest")
+    public String getTagClassSelectTest(){
+        log.info("getTagClassSelectTest()");
+
+        return "csstest/eighth/tagClassSelectTest";
+    }
+
+    @GetMapping("/boxTest")
+    public String getBoxTest(){
+        log.info("getBoxTest()");
+
+        return "csstest/eighth/boxTest";
+    }
+
+    @GetMapping("/boxHoverTest")
+    public String getBoxHoverTest(){
+        log.info("getBoxHoverTest()");
+
+        return "csstest/eighth/boxHoverTest";
+    }
+
+    @GetMapping("/fontTest")
+    public String getFontTest(){
+        log.info("getFontTest()");
+
+        return "csstest/eighth/fontTest";
+    }
+
+    @GetMapping("/shadowTest")
+    public String getShadowTest(){
+        log.info("getShadowTest()");
+
+        return "csstest/eighth/shadowTest";
+    }
+    @GetMapping("/movieFeelShadowTest")
+    public String getMovieFeelShadowTest(){
+        log.info("getMovieFeelShadowTest()");
+
+        return "csstest/eighth/movieFeelShadowTest";
+    }
+    @GetMapping("/textAlignTest")
+    public String getTextAlignTest(){
+        log.info("getTextAlignTest()");
+
+        return "csstest/eighth/textAlignTest";
+    }
 }
