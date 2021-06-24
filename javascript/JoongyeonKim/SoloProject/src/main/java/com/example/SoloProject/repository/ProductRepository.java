@@ -1,5 +1,6 @@
 package com.example.SoloProject.repository;
 
+
 import com.example.SoloProject.entity.Product;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,19 +17,19 @@ import java.util.List;
 public class ProductRepository {
 
     @Autowired
-    private JdbcTemplate ProductTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public void create(Product product) {
 
-        String query = "insert into board (name, price, description, writer) values (?, ?, ?, ?)";
+        String query = "insert into product (name, price, description, writer) values (?, ?, ?, ?)";
 
-        ProductTemplate.update(query, product.getName(), product.getPrice(), product.getDescription(), product.getWriter());
+        jdbcTemplate.update(query, product.getName(), product.getPrice(), product.getDescription(), product.getWriter());
     }
 
     public List<Product> productlist() throws Exception {
 
-        List<Product> results = ProductTemplate.query(
-                "select product_no, name, price, description, writer, reg_date from board " +
+        List<Product> results = jdbcTemplate.query(
+                "select product_no, name, price, description, writer, reg_date from product " +
                         "where product_no > 0 order by product_no desc",
 
                 new RowMapper<Product>() {
@@ -52,5 +53,33 @@ public class ProductRepository {
                 }
         );
         return results;
+    }
+
+    public Product productread (Integer productNo) throws Exception {
+        List<Product> results = jdbcTemplate.query(
+                "select product_no, name, price, description, writer, reg_date from product where product_no = ?",
+                new RowMapper<Product>() {
+                    @Override
+                    public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Product product = new Product();
+
+                        product.setProductNo(rs.getInt("product_no"));
+                        product.setName(rs.getString("name"));
+                        product.setPrice(rs.getInt("price"));
+                        product.setDescription(rs.getString("description"));
+                        product.setWriter(rs.getString("writer"));
+                        product.setRegDate(rs.getDate("reg_date"));
+
+                        return product;
+                    }
+                }, productNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer productNo) throws Exception{
+        String query = "delete from product where product_no=?";
+
+        jdbcTemplate.update(query, productNo);
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
 @Controller
-public class FourthController {
+public class FourthController {   //게시글 적는 페이지
 
     // 스프링이 자동으로 객체를 찾을 수 있게 서포트함
     @Autowired
