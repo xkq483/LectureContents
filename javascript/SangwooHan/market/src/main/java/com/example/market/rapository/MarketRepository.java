@@ -56,4 +56,38 @@ public class MarketRepository {
 
         return results;
     }
-}
+
+    public Market read (Integer productNo) throws Exception {
+        List<Market> results = jdbcTemplate.query(
+                "select market_no, username, name, price, description, reg_date from market where market_no = ?",
+                new RowMapper<Market>() {
+                    @Override
+                    public Market mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Market market = new Market();
+
+                        market.setProductNo(rs.getInt("market_no"));
+                        market.setUsername(rs.getString("username"));
+                        market.setName(rs.getString("name"));
+                        market.setPrice(rs.getInt("price"));
+                        market.setDescription(rs.getString("description"));
+                        market.setRegDate(rs.getDate("reg_date"));
+
+                        return market;
+                    }
+                }, productNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+    public  void delete(Integer productNo) throws Exception{
+        String query = "delete from market where market_no = ?";
+
+        jdbcTemplate.update(query,productNo);
+    }
+
+    public void update(Market market) throws  Exception{
+        String query = "update market set name = ?, price = ?, description = ? where market_no = ?";
+        // where market_no = ? 앞에오는 ?에는 ,부호를 생략해야 에러가 뜨질않는다. 왤까???
+
+        jdbcTemplate.update(query, market.getName(), market.getPrice(), market.getDescription(), market.getProductNo());
+    }
+    }
