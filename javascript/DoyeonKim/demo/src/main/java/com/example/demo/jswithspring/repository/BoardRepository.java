@@ -1,12 +1,13 @@
-package com.example.jswithspring.repository;
+package com.example.demo.jswithspring.repository;
 
-import com.example.jswithspring.entity.Board;
+import com.example.demo.jswithspring.entity.Board;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+//import javax.swing.tree.RowMapper;
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -72,9 +73,10 @@ public class BoardRepository {
 
         return results;
     }
-        public Board read (Integer boardNo) throws Exception {
+
+    public Board read (Integer boardNo) throws Exception {
         List<Board> results = jdbcTemplate.query(
-                "select board_no, title, cotent, writer, reg_date from board where board_no = ?",
+                "select board_no, title, content, writer, reg_date from board where board_no = ?",
                 new RowMapper<Board>() {
                     @Override
                     public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -83,19 +85,25 @@ public class BoardRepository {
                         board.setBoardNo(rs.getInt("board_no"));
                         board.setTitle(rs.getString("title"));
                         board.setContent(rs.getString("content"));
-                        board.setContent(rs.getString("witer"));
+                        board.setWriter(rs.getString("writer"));
                         board.setRegDate(rs.getDate("reg_date"));
 
                         return board;
                     }
                 }, boardNo);
 
-            return results.isEmpty() ? null : results.get(0);
+        return results.isEmpty() ? null : results.get(0);
     }
 
     public void delete(Integer boardNo) throws Exception {
-        String query = "delete from board where boaed_no = ?";
+        String query = "delete from board where board_no = ?";
 
         jdbcTemplate.update(query, boardNo);
+    }
+
+    public void update(Board board) throws Exception {
+        String query = "update board set title = ?, content = ? where board_no = ?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }
 }

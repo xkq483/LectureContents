@@ -1,7 +1,7 @@
-package com.example.jswithspring.service;
+package com.example.demo.jswithspring.service;
 
-import com.example.jswithspring.entity.Board;
-import com.example.jswithspring.repository.BoardRepository;
+import com.example.demo.jswithspring.entity.Board;
+import com.example.demo.jswithspring.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,4 +34,10 @@ public class BoardServiceImpl implements BoardService {
     public void remove(Integer boardNo) throws Exception {
         repository.delete(boardNo);
     }
+
+    @Override
+    public void modify(Board board) throws Exception {
+        repository.update(board);
+    }
+
 }

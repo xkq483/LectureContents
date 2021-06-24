@@ -1,6 +1,6 @@
-package com.example.jswithspring.service;
+package com.example.demo.jswithspring.service;
 
-import com.example.jswithspring.entity.Board;
+import com.example.demo.jswithspring.entity.Board;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,4 +14,6 @@ public interface BoardService {
     public Board read(Integer boardNo) throws Exception;
 
     public void remove(Integer boardNo) throws Exception;
+
+    public void modify(Board board) throws Exception;
 }
