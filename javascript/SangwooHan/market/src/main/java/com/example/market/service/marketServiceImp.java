@@ -20,4 +20,21 @@ public class marketServiceImp implements  marketService{
     public List<Market> list() throws Exception {
         return repository.list();
     }
+
+  @Override
+  public Market read(Integer productNo) throws Exception {
+    return repository.read(productNo);
+  }
+
+  @Override
+  public void remove(Integer productNo) throws Exception {
+     repository.delete(productNo);
+  }
+
+  @Override
+  public void modify(Market market) throws Exception {
+    repository.update(market);
+  }
 }
+
+
