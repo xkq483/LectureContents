@@ -50,8 +50,30 @@ public class MainController {
     public String getLists(Model model) throws Exception {
         log.info("getLists()");
 
-        model.addAttribute("lists",service.list());
+        model.addAttribute("lists",service.lists());
 
         return "product/lists";
+    }
+
+    @GetMapping("/read")
+    public String getRead(Integer productNo,Model model) throws Exception{
+        log.info("read()"+productNo);
+
+        //service.read로 바로 전달해주는건 안되는가?
+        model.addAttribute(service.read(productNo));
+
+        return "product/read";
+
+
+    }
+
+    @PostMapping("/remove")
+    public String postRemove(Integer productNo, Model model) throws Exception{
+        log.info("remove");
+
+        service.remove(productNo);
+        model.addAttribute("msg","삭제가 완료되었습니다");
+
+        return "product/success";
     }
 }
