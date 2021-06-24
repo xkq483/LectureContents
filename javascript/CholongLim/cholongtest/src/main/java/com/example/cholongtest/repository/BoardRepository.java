@@ -69,4 +69,46 @@ public class BoardRepository {
 
         return results;
     }
+
+    //seventh
+    public Board read(Integer boardNo) throws Exception {
+        List<Board> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from board where board_no = ? ",
+                new RowMapper<Board>() {
+                    @Override
+                    public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Board board = new Board();
+
+                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setTitle(rs.getString("title"));
+                        board.setContent(rs.getString("content"));
+                        board.setWriter(rs.getString("writer"));
+                        board.setRegDate(rs.getDate("reg_date"));
+
+                        return board;
+                    }
+                }, boardNo);
+
+
+        return results.isEmpty() ? null : results.get(0);
+        // results.isEmpty() 리스가 비어있는지 ?
+        // 비어있다면 null
+        // 비어있지 않다면 results.get(0)
+        // 0번 인덱스의 리스트를 리턴
+
+    }
+
+    public void delete(Integer boardNo) throws Exception {
+        String quary = "delete from board where board_no = ? ";
+
+        jdbcTemplate.update(quary, boardNo);
+    }
+
+    //eighth - modify
+
+    public void update(Board board) throws Exception {
+        String query = "update board set title = ?, content = ? where board_no = ?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
+    }
 }

@@ -9,4 +9,15 @@ public interface BoardService {
     public void register(Board board) throws Exception;
 
     public List<Board> list() throws Exception;
+
+    //seventh
+    public Board read(Integer boardNo) throws Exception;
+
+    public void remove(Integer boardNo) throws Exception;
+
+
+    // eighth
+    // modify
+    public void modify(Board board) throws Exception;
+
 }
