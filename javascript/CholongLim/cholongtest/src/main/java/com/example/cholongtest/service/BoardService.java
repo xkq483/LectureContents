@@ -15,4 +15,9 @@ public interface BoardService {
 
     public void remove(Integer boardNo) throws Exception;
 
+
+    // eighth
+    // modify
+    public void modify(Board board) throws Exception;
+
 }

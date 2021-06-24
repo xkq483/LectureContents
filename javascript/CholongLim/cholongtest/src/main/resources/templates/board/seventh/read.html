@@ -15,9 +15,9 @@
         $("#btnModify").on("click", function() {
         // 아래 절차를 통해 실제 boardNo 값을 획득한다.
         var boardNo = $("#boardNo");
-        var boardNoval = board.val();
+        var boardNoVal = boardNo.val();
 
-        self.location = "modify?boardNo=" + boardNoval;
+        self.location = "modify?boardNo=" + boardNoVal;
         });
 
         $("#btnRemove").on("click", function() {
@@ -34,7 +34,7 @@
 </script>
 
 <body>
-<h2>게시글 등록</h2>
+<h2>게시글 읽기</h2>
 
 <form id="board" th:object="${board}" method="post">
     <input type="hidden" name="boardNo" th:field="*{boardNo}"/>

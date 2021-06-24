@@ -25,18 +25,25 @@ public class BoardServiceImpl implements BoardService {
         return repository.list();
     }
 
-        //seventh
+    //seventh
 
-        @Override
-        public Board read(Integer boardNo) throws Exception {
-            return repository.read(boardNo);
-        }
-        @Override
-        public void remove(Integer boardNo) throws Exception {
-            repository.delete(boardNo);
-        }
+    @Override
+    public Board read(Integer boardNo) throws Exception {
+        return repository.read(boardNo);
     }
 
+    @Override
+    public void remove(Integer boardNo) throws Exception {
+        repository.delete(boardNo);
+    }
+
+    // eighth
+    // modify
+    @Override
+    public void modify(Board board) throws Exception {
+        repository.update(board);
+    }
+}
 
     //상품 등록, 게시판에 글 쓰는것, 댓글쓰는것
 
