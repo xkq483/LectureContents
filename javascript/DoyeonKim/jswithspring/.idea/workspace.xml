@@ -2,7 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1da0aec1-2d61-480a-8c01-caa081b2a676" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/first/tableTest3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/controller/MemberSignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/repository/SignUpRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/service/SignUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/service/SignUpServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/resources/templates/member/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/resources/templates/member/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/sql/member.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/JswithspringApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/SixthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/fifthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fifth/lists.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/JswithspringApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/HtmlTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/HtmlTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/FourthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/FourthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/firstController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/FirstController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/repository/BoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Server2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/scuccese.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/scuccese.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
