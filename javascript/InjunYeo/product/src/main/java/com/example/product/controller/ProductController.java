@@ -20,7 +20,7 @@ public class ProductController{
     public String getRegister (Product product, Model model) {
         log.info("getRegister()");
 
-        return "/product/register";
+        return "product/register";
     }
 
     @PostMapping("/register")
