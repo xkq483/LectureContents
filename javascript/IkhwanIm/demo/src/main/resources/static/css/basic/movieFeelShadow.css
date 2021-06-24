@@ -3,7 +3,7 @@ body {
 }
 h1 {
     font-size: 40px;
-    font-family: "Arial Rounded MT"
+    font-family: "Arial Rounded MT";
     letter-spacing: 4px;        /*자간 */
 }
 .movieFeelShadow {
