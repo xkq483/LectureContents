@@ -29,11 +29,8 @@ public class MemberSignUpController {
 
         signupservice.signup(member);
 
-        model.addAttribute("msg", "가입이 완료되었습니다!");
+        model.addAttribute("msg", "로그인이 완료되었습니다!");
 
         return "/member/success";
     }
-
-
-
 }

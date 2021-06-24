@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
     $(document).ready(function() {
-         //form id랑 같아야 한다
         var formObj = $("#productread");
 
         $("#btnModify").on("click", function() {
@@ -20,7 +19,6 @@
         });
 
         $("#btnRemove").on("click", function() {
-            // form에는 url값이 와야한다
             formObj.attr("action", "productremove");
             formObj.submit();
         });
@@ -39,15 +37,15 @@
   <table>
     <tr>
       <td>상품명</td>
-      <td><input type="text" name="name" th:field="*{name}" readonly="readonly"></td>
+      <td><input type="text" name="name" th:field="*{name}" ></td>
     </tr>
     <tr>
       <td>가격</td>
-      <td><input type="number" name="price" th:field="*{price}" readonly="readonly"></td>
+      <td><input type="number" name="price" th:field="*{price}" ></td>
     </tr>
     <tr>
       <td>상품설명</td>
-      <td><input type="text" name="description" th:field="*{description}" readonly="readonly"></td>
+      <td><input type="text" name="description" th:field="*{description}" ></td>
     </tr>
     <tr>
       <td>작성자</td>

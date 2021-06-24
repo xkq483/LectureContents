@@ -59,7 +59,7 @@ public class ProductController {
     // 배열 100개에서 중간의 값을 지우는 경우가 있는가
     // 애초에 중간에 지워진 값을 채우는 것 또한 큰 낭비다
     @PostMapping("/productremove")
-    public String ProductRemove (int productNo, Model model) throws Exception{
+    public String productremove (int productNo, Model model) throws Exception{
         log.info("productremove");
 
         productservice.productremove(productNo);

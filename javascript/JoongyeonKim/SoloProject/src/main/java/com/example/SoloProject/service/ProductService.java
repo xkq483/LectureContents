@@ -1,6 +1,5 @@
 package com.example.SoloProject.service;
 
-import com.example.SoloProject.entity.Board;
 import com.example.SoloProject.entity.Product;
 
 import java.util.List;

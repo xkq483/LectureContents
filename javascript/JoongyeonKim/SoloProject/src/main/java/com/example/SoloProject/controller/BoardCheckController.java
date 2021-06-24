@@ -70,4 +70,23 @@ public class BoardCheckController {
 
         return "/board/lists";
     }
+
+    @GetMapping("/modify")
+    public String getModify(int boardNo, Model model) throws Exception{
+        log.info("getmodify()");
+
+        model.addAttribute(boardservice.read(boardNo));
+
+        return "/board/modify";
+    }
+
+    @PostMapping("/modify")
+    public String postModify (Board board, Model model) throws Exception{
+        log.info("postModify()");
+
+        boardservice.modify(board);
+        model.addAttribute("msg", "수정이 성공적으로 완료되었습니다");
+
+        return  "/board/success";
+    }
 }
