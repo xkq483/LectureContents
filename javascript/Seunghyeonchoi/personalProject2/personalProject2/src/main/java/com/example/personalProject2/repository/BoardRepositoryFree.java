@@ -16,40 +16,68 @@ import java.util.List;
 public class BoardRepositoryFree {
 
     @Autowired
-    private JdbcTemplate jdbcTemplateFree;
+    private JdbcTemplate jdbcTemplate;
 
     //메서드 앞에 throws Exception 이라고 붙이고 throw new Exception 구문에서 강제로 예외처리를 발생시킵니다.
     public void create(BoardFree boardfree) throws Exception  {
-        String queryFree = "insert into boardfree (titlefree, contentfree, writerfree) values (?, ?, ?)";
+        String queryFree = "insert into boardfree (title, content, writer) values (?, ?, ?)";
 
-        jdbcTemplateFree.update(queryFree, boardfree.getTitleFree(), boardfree.getContentFree(),
+        jdbcTemplate.update(queryFree, boardfree.getTitleFree(), boardfree.getContentFree(),
                 boardfree.getWriterFree());
     }
     public List<BoardFree> listFree() throws Exception {
-        List<BoardFree> results = jdbcTemplateFree.query(
-                "select board_no_free, titlefree, contentfree, writerfree, reg_date from boardfree " +
-                        "where board_no_free > 0 order by board_no_free desc",
+        List<BoardFree> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from boardfree " +
+                        "where board_no > 0 order by board_no desc",
 
                 new RowMapper<BoardFree>() {
                     @SneakyThrows
                     @Override
                     public BoardFree mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        BoardFree boardFree = new BoardFree();
+                        BoardFree board = new BoardFree();
 
-                        boardFree.setBoardNoFree(rs.getInt("board_no_free"));
-                        boardFree.setTitleFree(rs.getString("titlefree"));
-                        boardFree.setContentFree(rs.getString("contentfree"));
-                        boardFree.setWriterFree(rs.getString("writerfree"));
+                        board.setBoardNoFree(rs.getInt("board_no"));
+                        board.setTitleFree(rs.getString("title"));
+                        board.setContentFree(rs.getString("content"));
+                        board.setWriterFree(rs.getString("writer"));
 
-                        SimpleDateFormat sdfFree = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                        boardFree.setRegDateFree(sdfFree.parse(rs.getDate("reg_date") + " " +
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        board.setRegDateFree(sdf.parse(rs.getDate("reg_date") + " " +
                                 rs.getTime("reg_date")));
 
-                        return boardFree;
+                        return board;
                     }
                 }
         );
 
         return results;
+    }
+
+    public BoardFree read(Integer boardNo) throws Exception {
+        List<BoardFree> results = jdbcTemplate.query(
+                "select board_no, title, content, writer, reg_date from boardfree where board_no = ?",
+                new RowMapper<BoardFree>() {
+                    @Override
+                    public BoardFree mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        BoardFree board = new BoardFree();
+
+                        board.setBoardNoFree(rs.getInt("board_no"));
+                        board.setTitleFree(rs.getString("title"));
+                        board.setContentFree(rs.getString("content"));
+                        board.setWriterFree(rs.getString("writer"));
+                        board.setRegDateFree(rs.getDate("reg_date"));
+
+                        return board;
+                    }
+                }, boardNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer boardNo) throws Exception {
+        String query = "delete from boardfree where board_no = ?";
+
+        jdbcTemplate.update(query, boardNo);
+
     }
 }

@@ -22,11 +22,11 @@
         </td>
     </tr>
     <tr th:each="boardnotice : ${listsNotice}">
-        <td align="center" th:text="${boardnotice.BoardNoNotice}"></td>
+        <td align="center" th:text="${boardnotice.boardNoNotice}"></td>
         <!-- |read?boardNo=${board.boardNo}| 는 결국 아래를 의미함
              read?boardNo=1, read?boardNo=3, read?boardNo=7 형태로
              게시물 번호에 해당하는 값을 셋한다고 보면됨 -->
-        <td align="left" th:href="@{|read?BoardNoNotice=${boardnotice.BoardNoNotice}|}" th:text="${boardnotice.titleNotice}"></td>
+        <td align="left"><a th:href="@{|readNotice?boardNoNotice=${boardnotice.boardNoNotice}|}" th:text="${boardnotice.titleNotice}"/></td>
         <td align="right" th:text="${boardnotice.writerNotice}"></td>
         <!-- dates.format()은 특정한 형식으로 날짜를 표현해줌
              아래 예는 연-월-일 시:분:초 형식임 -->
