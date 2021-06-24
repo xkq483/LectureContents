@@ -34,5 +34,10 @@ public class BoardServiceImpl implements BoardService {
     public void remove(Integer boardNo) throws Exception {
         repository.delete(boardNo);
     }
+
+    @Override
+    public void modify(Board board) throws Exception {
+        repository.update(board);
+    }
 }
 
