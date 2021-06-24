@@ -8,7 +8,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class PurchasingSignUp {
+public class PurchaseMember {
 
 
 
