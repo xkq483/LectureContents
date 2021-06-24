@@ -28,7 +28,7 @@
     <td align="center" th:text="${board.boardNo}"></td>
     <!-- |read?boardNo=${board.boardNo}|: read?boardNo=1, read?boardNo=3,
          read?boardNo=7 형태로 게시물 번호에 해당하는 값을 셋함 -->
-    <td align="left" th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}"></td>
+    <td align="left"> <a th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}"/></td>
     <td align="right" th:text="${board.writer}"></td>
     <!-- dates.format: 특정한 형식으로 날짜를 나타냄(아래는 년-월-일 시:분:초)-->
     <td align="center" th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
