@@ -35,4 +35,11 @@ public class TenthJavaScriptTestController {
 
         return "/javascript/tenth/jsTime";
     }
+
+    @GetMapping("/getSaleProductTest")
+    public String getSaleProductTest () {
+        log.info("getSaleProductTest");
+
+        return "/javascript/tenth/saleProduct";
+    }
 }
