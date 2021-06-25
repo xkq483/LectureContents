@@ -1,20 +1,18 @@
-package com.example.market2.controller;
+package com.example.market3.Controller1;
 
-import com.example.market2.entity.Login;
-import com.example.market2.entity.Market;
-import com.example.market2.entity.Signup;
-import com.example.market2.service.marketService;
+import com.example.market3.Entity.Login;
+import com.example.market3.Entity.Market;
+import com.example.market3.Entity.Signup;
+import com.example.market3.Service.marketService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 
 @Slf4j
@@ -141,38 +139,23 @@ public String getModify(int productNo, Model model)throws  Exception{
         return "/market/login";
     }
     @PostMapping("/login")
-    public String postLogin(Login login, Model model, Signup signup, HttpServletResponse response, HttpServletRequest request) throws  Exception {
-        PrintWriter out = response.getWriter();
-        request.setCharacterEncoding("UTF-8");
+    public String postLogin(Login login, Model model) throws  Exception {
+      log.info("postLogin()");
+        int i = 0;
+      service.logincheck(login);
 
+      if(i==1){
+          return "/market/success";
+      }else{
+          return "/market/fail";
+      }
 
-        log.info("postLogin()");
-        int num = service.login(login);
-        System.out.println("성공여부 = " +num);
-        if(num == 1){
+    }
+    @GetMapping("/fail")
+    public  String getFail(){
+        log.info("getFail()");
 
-            num = 0;
-            return "/market/success";
-        }else{
-            response.setContentType("text/html; charset=UTF-8");
-            response.setCharacterEncoding("UTF-8");
-            String htmlResponse = "<script>alert('login fail'); location.href='/login';</script>";
-            out.println(htmlResponse);
-            out.close();
-        }
-
-
-        //   service.logincheck(login,signup);
-        // if(service.logincheck(login,signup)==true){
-
-        // model.addAttribute("msg","로그인이 성공적으로 되었습니다.");
-        // return "/market/success";
-        // }else{
-        //     model.addAttribute("msg","정보가일치하지않습니다 다시로그인해주세요");
-        //    return "/market/success";
-
-        // }
-    return "/market/success";
+        return "/market/fail";
     }
 
 

@@ -1,8 +1,8 @@
-package com.example.market2.rapository;
+package com.example.market3.Rapository;
 
-import com.example.market2.entity.Login;
-import com.example.market2.entity.Market;
-import com.example.market2.entity.Signup;
+import com.example.market3.Entity.Login;
+import com.example.market3.Entity.Market;
+import com.example.market3.Entity.Signup;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -29,34 +29,20 @@ public class MarketRepository {
 
         jdbcTemplate.update(query,signup.getUserid(),signup.getPassword(),signup.getName(),signup.getBirthday(),signup.getGender());
     }
-    public int create3(Login login){
+    public int loginchecking(Login login){
             String query = "SELECT * FROM signup WHERE userid = ? and password = ?";
+            String query1 = "SELECT * FROM login WHERE id = ? and pw = ?";
+            int i =0;
+            if(query==query1){
+                i = 1;
+                return i;
+            }else{
+                return  i;
+            }
 
-                jdbcTemplate.query(query,new RowMapper<Login>(){
-
-                @Override
-                public Login mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    System.out.println("jdbc들어옴");
-                    Login login = new Login();
-                    login.setId(rs.getString("userid"));
-                    login.setPw(rs.getString("password"));
-                    num = 1;
-                    return login;
-                }
-            },login.getId(),login.getPw());
-
-            return num;
 
     }
-    public boolean logincheck(Login login, Signup signup){
 
-        if(login.getId()==signup.getUserid()&login.getPw()==signup.getPassword()){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 
     public List<Market> list() throws  Exception {
 

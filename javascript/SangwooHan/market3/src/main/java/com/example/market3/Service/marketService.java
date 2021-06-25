@@ -1,8 +1,8 @@
-package com.example.market2.service;
+package com.example.market3.Service;
 
-import com.example.market2.entity.Login;
-import com.example.market2.entity.Market;
-import com.example.market2.entity.Signup;
+import com.example.market3.Entity.Login;
+import com.example.market3.Entity.Market;
+import com.example.market3.Entity.Signup;
 
 import java.util.List;
 
@@ -16,8 +16,9 @@ public interface marketService {
 
     public  void modify(Market market) throws  Exception;
     public void signup(Signup signup);
-    public  int login(Login login);
 
-    public boolean logincheck(Login login, Signup signup);
+    public int logincheck(Login login);
+
+
 
 }

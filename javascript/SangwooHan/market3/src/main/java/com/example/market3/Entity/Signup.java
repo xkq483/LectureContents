@@ -1,4 +1,4 @@
-package com.example.market2.entity;
+package com.example.market3.Entity;
 
 import lombok.Getter;
 import lombok.Setter;
