@@ -15,4 +15,9 @@ public class MemberServiceImpl implements MemberService {
     public void register(Member board) throws Exception {
         repository.create(board);
     }
+
+    @Override
+    public void login(Member member) throws Exception {
+        repository.login(member);
+    }
 }
