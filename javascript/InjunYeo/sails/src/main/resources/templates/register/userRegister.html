@@ -19,8 +19,7 @@
 </script>
 <body>
     <h2>회원 가입</h2>
-    //
-    <form id="userAccount" th:action="@{userRegister}" th:object="${userAccount}" method="post">
+    <form id="userAccount" th:object="${userAccount}" method="post">
         <table>
             <tr>
                 <td>이름</td>
@@ -41,7 +40,6 @@
         </table>
         <div>
             <button type="submit" id="btnRegister">회원가입</button>
-
         </div>
         
     </form>
