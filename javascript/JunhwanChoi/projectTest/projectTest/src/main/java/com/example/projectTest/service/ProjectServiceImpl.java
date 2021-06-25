@@ -22,4 +22,19 @@ public class ProjectServiceImpl implements ProjectService {
     public List<Project> list() throws Exception {
         return repository.list();
     }
+
+    @Override
+    public Project read(Integer signupNo) throws Exception {
+        return repository.read(signupNo);
+    }
+
+    @Override
+    public void remove(Integer signupNo) throws Exception {
+        repository.delete(signupNo);
+    }
+
+    @Override
+    public void modify(Project project) throws Exception {
+        repository.update(project);
+    }
 }

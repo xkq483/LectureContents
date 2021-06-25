@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-//커밋테스트
 @Slf4j
 @Controller
 public class ProjectController {
@@ -43,7 +42,6 @@ public class ProjectController {
 
         return "/project/lists";
     }
-
     @GetMapping("/mainPage")
     public String getmainPage() {
         log.info("getmainPage()");
@@ -64,5 +62,53 @@ public class ProjectController {
 
         return "/project/reservation";
     }
+
+    @GetMapping("/backupTest")
+    public String backupTest() {
+        log.info("backupTest()");
+
+        return "/project/backupTest";
+    }
+
+    @GetMapping("/read")
+    public String getRead(int signupNo, Model model) throws Exception {
+        log.info("read");
+
+        model.addAttribute(service.read(signupNo));
+
+        return "project/read";
+    }
+
+    @PostMapping("/remove")
+    public String remove(int signupNo, Model model) throws Exception {
+        log.info("remove");
+
+        service.remove(signupNo);
+
+        model.addAttribute("msg", "탈퇴가 완료되었습니다!");
+
+        return "project/success";
+    }
+
+    @GetMapping("/modify")
+    public String getModify (int signupNo, Model model) throws Exception {
+        log.info("getModify()");
+
+        model.addAttribute(service.read(signupNo));
+
+        return "/project/modify";
+    }
+
+    @PostMapping("/modify")
+    public String postModify (Project project, Model model) throws Exception {
+        log.info("postModify(): " + project);
+
+        service.modify(project);
+        model.addAttribute("msg", "수정이 성공적으로 완료되었습니다!");
+
+        return "/project/success";
+    }
+
+
 
 }
