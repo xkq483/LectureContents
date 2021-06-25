@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @Controller
 @RequestMapping(value = "/css")
-public class Controller0624 {
+public class Controller0624Css {
 
     @GetMapping("/percent")
     public String getPercent(){
