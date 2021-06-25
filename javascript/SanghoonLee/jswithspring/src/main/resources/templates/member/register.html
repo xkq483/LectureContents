@@ -13,7 +13,7 @@
 
         $("#btnRegister").on("click", function() {
             var passwordObj = $("#password");
-            alert("passwordObj: " + passwordObj);
+            alert("member: " + JSON.stringify(member));
 
             formObj.attr("action", "register");
             formObj.attr("method", "post");

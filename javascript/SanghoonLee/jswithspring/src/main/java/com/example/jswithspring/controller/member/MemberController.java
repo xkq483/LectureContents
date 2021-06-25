@@ -31,6 +31,11 @@ public class MemberController {
         log.info("postMemberRegister()");
         log.info("Member: " + member);
 
+        String pw = member.getPw();
+        if (pw.length() <= 8) {
+            return "redirect:/member/register";
+        }
+
         service.register(member);
 
         model.addAttribute("msg", "등록이 완료되었습니다!");
