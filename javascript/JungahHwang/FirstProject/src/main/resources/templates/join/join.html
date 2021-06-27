@@ -16,37 +16,55 @@
       formObj.attr("method", "post");
       formObj.submit();
     });
+
+    $("#btnLogin").on("click", function() {
+      self.location = "login";
+    });
   });
 </script>
 
 <body>
-<h2>회원가입</h2>
+<h2>Join Now!!</h2>
 <form id="join" th:action="@{join}" th:object="${join}" method="post">
     <table>
         <tr>
-            <td>아이디</td>
+            <td>id</td>
             <td><input type="text" name="id" th:field="*{id}"></td>
         </tr>
         <tr>
-            <td>비밀번호</td>
-            <td><input type="text" name="pw" th:field="*{pw}"></td>
+            <td>password</td>
+            <td><input type="password" name="pw" th:field="*{pw}"></td>
         </tr>
         <tr>
-            <td>이름</td>
+            <td>name</td>
             <td><input type="text" name="name" th:field="*{name}"></td>
         </tr>
         <tr>
-            <td>전화번호</td>
+            <td>gender</td>
+            <td><input type="text" name="gender" th:field="*{gender}"></td>
+        </tr>
+        <tr>
+            <td>birth</td>
+            <td><input type="text" name="birth" th:field="*{birth}"></td>
+        </tr>
+        <tr>
+            <td>e-mali</td>
+            <td><input type="text" name="email" th:field="*{email}"></td>
+        </tr>
+        <tr>
+            <td>phone</td>
             <td><input type="text" name="tel" th:field="*{tel}"></td>
         </tr>
         <tr>
-            <td>주소</td>
+            <td>address</td>
             <td><textarea cols="20" rows="5" name="addr" th:field="*{addr}"></textarea></td>
         </tr>
     </table>
 </form>
 <div>
-    <button type="submit" id="btnJoin">회원가입</button>
+    <button type="submit" id="btnJoin">Join</button>
+    <button type="submit" id="btnLogin">Login</button>
+
 </div>
 </body>
 </html>
