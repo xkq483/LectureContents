@@ -1,7 +1,7 @@
-package com.example.demo.controller.member;
+package com.example.personalProject2.controller;
 
-import com.example.demo.entity.Member;
-import com.example.demo.service.MemberService;
+import com.example.personalProject2.entity.Member;
+import com.example.personalProject2.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+
+
 @Slf4j
 @Controller
 @RequestMapping("/member")
-public class MemberController {
+public class ControllerMember {
 
     @Autowired
     private MemberService service;
@@ -26,13 +30,20 @@ public class MemberController {
     }
 
     @PostMapping("/register")
-    public String postMemberRegister (Member member, Model model) throws Exception {
+    public String postMemberRegister (Member member, Model model, HttpServletResponse response) throws Exception {
         log.info("postMemberRegister()");
         log.info("Member: " + member);
 
 //        비밀번호 길이 체크 로직 시작
         String pw = member.getPw();
         if (pw.length() <= 8) {
+            response.setCharacterEncoding("EUC-KR");
+            PrintWriter writer = response.getWriter();
+            writer.println("<script type='text/javascript'>");
+            writer.println("alert('비밀번호를 8자리 이상 입력해주세요');");
+            writer.println("history.back();");
+            writer.println("</script>");
+            writer.flush();
             return "redirect:/member/register";
         }
 //        비밀번호 길이 체크 로직 끝
@@ -41,7 +52,7 @@ public class MemberController {
 
         model.addAttribute("msg", "등록이 완료되었습니다!");
 
-        return "/member/success";
+        return "/board/success/success";
     }
 
     @GetMapping("/login")
@@ -59,6 +70,6 @@ public class MemberController {
 
         model.addAttribute("msg", "로그인 성공!");
 
-        return "/member/success";
+        return "/board/success/success";
     }
 }
