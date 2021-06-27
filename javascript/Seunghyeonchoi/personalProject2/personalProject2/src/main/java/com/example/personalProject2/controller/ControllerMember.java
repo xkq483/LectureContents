@@ -40,7 +40,7 @@ public class ControllerMember {
             response.setCharacterEncoding("EUC-KR");
             PrintWriter writer = response.getWriter();
             writer.println("<script type='text/javascript'>");
-            writer.println("alert('비밀번호를 8자리 이상 입력해주세요');");
+            writer.println("alert('비밀번호를 다시 한번 확인해주세요');");
             writer.println("history.back();");
             writer.println("</script>");
             writer.flush();
