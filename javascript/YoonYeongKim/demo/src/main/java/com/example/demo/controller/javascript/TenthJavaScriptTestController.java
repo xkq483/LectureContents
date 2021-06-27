@@ -46,4 +46,55 @@ public class TenthJavaScriptTestController {
 
         return "javascript/tenth/saleProduct";
     }
+
+    // 페이지에 입력창을 띄움 -> 숫자를 입력하면
+    // -> JS에 입력한 if문 출력값을 페이지에 출력하는 동작(HTML, CSS, JS)
+    @GetMapping("/getIfTest")
+    public String getIfTest() {
+        log.info("getIfTest()");
+
+        return "/javascript/tenth/ifTest";
+    }
+
+    // 페이지에 입력창을 띄움 -> 세션을 입력하면
+    // -> JS에 입력한 switch문 출력값을 페이지에 출력하는 동작(HTML, CSS, JS)
+    @GetMapping("/getSwitchTest")
+    public String getSwitchTest() {
+        log.info("getSwitchTest()");
+
+        return "/javascript/tenth/switchTest";
+    }
+
+    // JS에 입력한 for문 출력값을 페이지에 출력하는 동작(HTML, CSS, JS)
+    @GetMapping("/getForTest")
+    public String getForTest() {
+        log.info("getForTest()");
+
+        return "/javascript/tenth/forTest";
+    }
+
+    // 버튼박스를 클릭 -> 두 번의 입력창을 띄우고
+    // -> 각 입력값을 더한 값을 페이지에 출력하는 동작(HTML, CSS, JS)
+    @GetMapping("/getAddNumber")
+    public String getAddNumber() {
+        log.info("getAddNumber()");
+
+        return "/javascript/tenth/addNum";
+    }
+
+    // 버튼박스에 마우스를 올렸을 때 메세지창을 띄우는 동작(HTML, CSS, JS)
+    @GetMapping("/getMouseOverTest")
+    public String getMouseOverTest() {
+        log.info("getMouseOverTest()");
+
+        return "/javascript/tenth/mouseOver";
+    }
+
+    // 버튼박스를 클릭해서 본문을 보여주고 숨겨주는 동작(HTML, CSS, JS)
+    @GetMapping("/getInvisibilityTest")
+    public String getInvisibilityTest() {
+        log.info("getInvisibilityTest()");
+
+        return "/javascript/tenth/invisibility";
+    }
 }
