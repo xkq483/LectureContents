@@ -45,6 +45,7 @@ public class ControllerMember {
             writer.println("</script>");
             writer.flush();
             return "redirect:/member/register";
+
         }
 //        비밀번호 길이 체크 로직 끝
 
