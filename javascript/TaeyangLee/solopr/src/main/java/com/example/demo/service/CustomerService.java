@@ -6,4 +6,6 @@ import com.example.demo.entity.Customer;
 public interface CustomerService {
     public void join(Customer customer) throws Exception;
 
+    public void login(Customer customer) throws Exception;
+
 }

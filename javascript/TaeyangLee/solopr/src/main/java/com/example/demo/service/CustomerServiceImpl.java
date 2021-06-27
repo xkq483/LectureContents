@@ -17,4 +17,9 @@ public class CustomerServiceImpl implements CustomerService{
     public void join(Customer customer) throws Exception {
         customerRepository.create(customer);
     }
+
+    @Override
+    public void login(Customer customer) throws Exception {
+        customerRepository.login(customer);
+    }
 }
