@@ -21,28 +21,27 @@
         });
          $("#btnPwCheck").on("click", function() {
             var passwordObj = $("#password");
+            var valueByPw = $('#password').val();
 
-            if (valueById.length  <= 8)  {
+            if (valueByPw.length  <= 8)  {
               alert("비밀번호는 8자리 이상만 ㄱㄴ")
             }else {
               alert("사용 가능한 비밀번호입니다.")
             }
 
-<!--            -->
+<!--            개인공부            -->
 <!--            console.log(password);-->
 <!--            console.log(passwordObj);-->
-
 <!--            var pass2 = '{ "NAME" : "ggmouse", "AGE" : 30 }';-->
 <!--            console.log(pass2);-->
 <!--            var jsonObj = JSON.parse(pass2);-->
 <!--            console.log(jsonObj.NAME);-->
 <!--            var pass3 = jsonObj.NAME;-->
 <!--            console.log(pass3.length);-->
-
-<!--            var valueById = $('#password').val();-->
-
 <!--            console.log(+valueById);-->
 <!--            console.log(+valueById.length);-->
+
+
         });
 
 
