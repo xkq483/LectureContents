@@ -49,6 +49,23 @@ public class MemberRepository {
             log.info("Password Incorrect");
         }
     }
+    public List<Member> memberList() throws Exception{
+        List<Member> result = jdbcTemplate.query(
+                "select id from member",
+
+                new RowMapper<Member>() {
+                    @Override
+                    public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Member member = new Member();
+
+                        member.setId(rs.getString("id"));
+
+                        return member;
+                    }
+                }
+        );
+    return result;
+    }
 }
 
 

@@ -15,6 +15,9 @@
             formObj.attr("method", "post");
             formObj.submit();
         });
+        $("#btnLists").on("click", function() {
+            self.location = "memberLists";
+        });
     });
 </script>
 
@@ -34,6 +37,7 @@
 </form>
 <div>
   <button type="submit" id="btnSignUp">Login</button>
+  <button type="submit" id="btnLists">Member Lists</button>
 </div>
 </body>
 </html>
