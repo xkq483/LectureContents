@@ -1,6 +1,5 @@
 package com.example.market3.Service;
 
-import com.example.market3.Entity.Login;
 import com.example.market3.Entity.Market;
 import com.example.market3.Entity.Signup;
 import com.example.market3.Rapository.MarketRepository;
@@ -46,11 +45,8 @@ public class marketServiceImp implements  marketService {
   }
 
   @Override
-  public int logincheck(Login login) {
-    int i = 0;
-    repository.loginchecking(login);
-
-    return  i;
+  public void login(Signup signup) throws Exception {
+    repository.login (signup);
   }
 }
 

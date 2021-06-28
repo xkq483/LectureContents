@@ -23,6 +23,7 @@
     }
     </style>
 </head>
+<link rel="stylesheet" href="/css/homepage/BackgroundUrl.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -35,7 +36,7 @@
          });
 </script>
 <style>
-    table, th, td {
+    table, th, td  a {
  border: 1px solid #000000;
     margin-left: auto;
     margin-right: auto;
@@ -43,14 +44,16 @@
     h1{
         margin-inline-start: 37%;
 
-        color: green;
+        color: black;
     }
 
 
 </style>
 <body>
+<div class="bg">
 <h1>나그넷에 오신것을 환영합니다!</h1>
-<table>
+<table id="a">
+
     <tr>
        <th><a href="/signup">회원가입</a></th>
         <th><a href="/register">티켓예매</a></th>
@@ -60,13 +63,20 @@
     </tr>
 
 </table>
+    <table>
+        <tr>
+            <th> <a href="/menu">메뉴보기</a> </th>
+        </tr>
+    </table>
 <table>
     <tr>
-        <th><a href="/login">로그인</a></th>
+        <th><a href="/loginpage">로그인</a></th>
     </tr>
     <tr>
         <th><a href="/login">로그아웃</a></th>
     </tr>
 </table>
+
+    </div>
 </body>
 </html>

@@ -1,9 +1,9 @@
 package com.example.market3.Rapository;
 
-import com.example.market3.Entity.Login;
 import com.example.market3.Entity.Market;
 import com.example.market3.Entity.Signup;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,34 +13,49 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-
+@Slf4j
 @Repository
 public class MarketRepository {
     int num = 0;
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    public void create(Market market){
+
+    public void create(Market market) {
         String query = "insert into market (username ,name, price, description) values (?,?,?,?)";
 
-        jdbcTemplate.update(query,market.getUsername(),market.getName(), market.getPrice(), market.getDescription());
+        jdbcTemplate.update(query, market.getUsername(), market.getName(), market.getPrice(), market.getDescription());
     }
-    public void create2(Signup signup){
+
+    public void create2(Signup signup) {
         String query = "insert into signup (userid ,password, name, birthday, gender) values (?,?,?,?,?)";
 
-        jdbcTemplate.update(query,signup.getUserid(),signup.getPassword(),signup.getName(),signup.getBirthday(),signup.getGender());
+        jdbcTemplate.update(query, signup.getUserid(), signup.getPassword(), signup.getName(), signup.getBirthday(), signup.getGender());
     }
-    public int loginchecking(Login login){
-            String query = "SELECT * FROM signup WHERE userid = ? and password = ?";
-            String query1 = "SELECT * FROM login WHERE id = ? and pw = ?";
-            int i =0;
-            if(query==query1){
-                i = 1;
-                return i;
-            }else{
-                return  i;
-            }
 
+    public  void login (Signup signup)throws  Exception{
+        List<Signup> results = jdbcTemplate.query(
+                "select userid, password from signup where userid = ?",
 
+                new RowMapper<Signup>() {
+                    @Override
+                    public Signup mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Signup signup = new Signup();
+
+                        signup.setUserid(rs.getString("userid"));
+                        signup.setPassword(rs.getString("password"));
+
+                        return signup;
+                    }
+                }, signup.getUserid());
+
+        Signup tmp = results.get(0);
+        log.info("tmp: " + tmp);
+
+        if (tmp.getPassword().equals(signup.getPassword())) {
+            log.info("Password Correct");
+        } else {
+            log.info("Password Incorrect");
+        }
     }
 
 

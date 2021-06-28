@@ -1,6 +1,5 @@
 package com.example.market3.Controller1;
 
-import com.example.market3.Entity.Login;
 import com.example.market3.Entity.Market;
 import com.example.market3.Entity.Signup;
 import com.example.market3.Service.marketService;
@@ -10,10 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 
 @Slf4j
 @Controller
@@ -123,7 +118,7 @@ public String getModify(int productNo, Model model)throws  Exception{
         service.signup(signup);
         model.addAttribute("msg","회원가입을 축하합니다.");
 
-        return "/Market/success";
+        return "/Market/signupcomplete";
     }
     @GetMapping("/nagnetshoppingmall")
     public String getnagnetshoppingmall () throws Exception{
@@ -131,33 +126,29 @@ public String getModify(int productNo, Model model)throws  Exception{
 
         return "/market/nagnetshoppingmall";
     }
-    @GetMapping("/login")
-    public  String getLogin (Login login , Model model,Signup signup) throws  Exception{
-        log.info("getLogin");
 
 
-        return "/market/login";
-    }
-    @PostMapping("/login")
-    public String postLogin(Login login, Model model) throws  Exception {
-      log.info("postLogin()");
-        int i = 0;
-      service.logincheck(login);
-
-      if(i==1){
-          return "/market/success";
-      }else{
-          return "/market/fail";
-      }
-
-    }
     @GetMapping("/fail")
     public  String getFail(){
         log.info("getFail()");
 
         return "/market/fail";
     }
+    @GetMapping("/loginpage")
+    public  String getloginpage(Signup signup, Model model) throws  Exception{
+        log.info("getloginpage");
 
+        return  "/market/loginpage";
+
+    }
+    @PostMapping("/loginpage")
+    public  String postloginpage(Signup signup, Model model)throws  Exception{
+        log.info("postloginpage()");
+           service.login(signup);
+
+        model.addAttribute("msg", "로그인성공");
+        return "/market/success";
+    }
 
 
 

@@ -1,6 +1,5 @@
 package com.example.market3.Service;
 
-import com.example.market3.Entity.Login;
 import com.example.market3.Entity.Market;
 import com.example.market3.Entity.Signup;
 
@@ -17,7 +16,8 @@ public interface marketService {
     public  void modify(Market market) throws  Exception;
     public void signup(Signup signup);
 
-    public int logincheck(Login login);
+    public void login  (Signup signup) throws  Exception;
+
 
 
 
