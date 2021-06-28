@@ -63,4 +63,11 @@ public class MemberController {
 
         return "/member/success";
     }
+
+    @GetMapping("/memberList")
+    public String getMemberList () {
+        log.info("getMemberList()");
+
+        return "/member/memberList";
+    }
 }
