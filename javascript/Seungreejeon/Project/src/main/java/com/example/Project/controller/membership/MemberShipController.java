@@ -56,4 +56,13 @@ public class MemberShipController {
 
         return "/membership/m_success";
     }
+
+    @GetMapping("/memberList")
+    public String getMemberList(Model model) throws Exception {
+        log.info("getMemberList()");
+
+        model.addAttribute("lists", membershipService.list());
+
+        return "/membership/memberList";
+    }
 }
