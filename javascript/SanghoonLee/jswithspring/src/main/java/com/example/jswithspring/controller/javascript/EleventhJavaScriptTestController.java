@@ -21,4 +21,11 @@ public class EleventhJavaScriptTestController {
 
         return "/javascript/eleventh/customObjectTest";
     }
+
+    @GetMapping("/destDayTest")
+    public String getDestDayTest () {
+        log.info("getDestDayTest()");
+
+        return "/javascript/eleventh/destDayTest";
+    }
 }
