@@ -32,8 +32,8 @@ public class MemberController {
         log.info("Member: " + member);
 
         /* 비밀번호 길이 체크 로직 시작 */
-        String pw = member.getPw();
-        if (pw.length() <= 8) {
+        String password = member.getPassword();
+        if (password.length() <= 8) {
             // model.addAttribute("alertMsg", "8자리 이상의 비밀번호를 기입해주세요");
             return "redirect:/member/register";
         }
@@ -64,10 +64,12 @@ public class MemberController {
         return "/member/success";
     }
 
-    @GetMapping("/memberList")
-    public String getMemberList () {
-        log.info("getMemberList()");
+    @GetMapping("/lists")
+    public String getLists (Model model) throws Exception {
+        log.info("getLists(): " + service.list());
 
-        return "/member/memberList";
+        model.addAttribute("member", service.list());
+
+        return "/member/lists";
     }
 }

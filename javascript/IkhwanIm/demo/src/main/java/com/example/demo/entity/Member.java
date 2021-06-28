@@ -11,7 +11,9 @@ import java.util.Date;
 @ToString
 public class Member {
     private int memberNo;
-    private String id;
-    private String pw;
+    private String email;
+    private String password;
+    private String name;
+    private String phoneNum;
     private Date regDate;
 }

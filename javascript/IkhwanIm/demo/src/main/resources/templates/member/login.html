@@ -25,12 +25,12 @@
 <form id="member" th:object="${member}" method="post">
   <table>
     <tr>
-      <td>아이디</td>
-      <td><input type="text" name="id" th:field="*{id}"></td>
+      <td>이메일</td>
+      <td><input type="text" name="email" th:field="*{email}"></td>
     </tr>
     <tr>
       <td>비밀번호</td>
-      <td><input type="password" id="password" name="pw" th:field="*{pw}"></td>
+      <td><input type="password" id="password" name="pw" th:field="*{password}"></td>
     </tr>
   </table>
 </form>
