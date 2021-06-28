@@ -22,10 +22,16 @@
            var formObj = $("#member");
 
            $("#btnSignup").on("click", function() {
+              var passwordObj = $("#pw");
+              if(passwordObj.length() <= 8) {
+                alert("비밀번호를 8자 이상 입력해주세요.");
+              } else {
               formObj.attr("action", "memberSignup");
               formObj.attr("method", "post");
-              formObj.submit();
+              formObj.submit(); }
            });
+           
+           //이부분 버튼이 넘어가지 않습니다.
 
            $("#btnMemberList").on("click", function() {
               self.location = "memberList";
