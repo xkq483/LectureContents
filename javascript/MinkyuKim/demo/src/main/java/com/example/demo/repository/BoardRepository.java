@@ -33,6 +33,8 @@ public class BoardRepository {
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getWriter());
     }
 
+
+
     public List<Board> list() throws Exception {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
@@ -44,7 +46,7 @@ public class BoardRepository {
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음
                 // 여러 열들을 얻어와서 행으로 맵핑하는 작업을 수행함
 
-                //jpa를 쓰면 해당 내용들이 싹다없어짐. 지금은 전부 수기로 입력해서 데이터를 넣는 작업
+                // jpa를 쓰면 해당 내용들이 싹다없어짐. 지금은 전부 수기로 입력해서 데이터를 넣는 작업
                 // ++다만 jpa를 쓰더라도 해당 개념을 습득하고 있어야 jpa를 사용할 수 있음
                 new RowMapper<Board>() {
                     @SneakyThrows

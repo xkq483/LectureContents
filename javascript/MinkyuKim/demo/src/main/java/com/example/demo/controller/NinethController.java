@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
+//url 더 추가해주고싶을때
 @RequestMapping(value = "/css")
 public class NinethController {
 
