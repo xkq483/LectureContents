@@ -7,6 +7,8 @@ import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerServiceImpl implements CustomerService{
    @Autowired
@@ -21,5 +23,10 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public void login(Customer customer) throws Exception {
         customerRepository.login(customer);
+    }
+
+    @Override
+    public List<Customer> list() throws Exception {
+        return customerRepository.list();
     }
 }

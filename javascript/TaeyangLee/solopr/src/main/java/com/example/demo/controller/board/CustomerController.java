@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
-
+@RequestMapping("/customer")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
@@ -64,6 +64,17 @@ public class CustomerController {
 
         return "/customer/joinsuccess";
     }
+
+
+    @GetMapping("/lists")
+    public String getLists (Model model) throws Exception {
+        log.info("getLists(): " + customerService.list());
+
+        model.addAttribute("customer", customerService.list());
+
+        return "/customer/customerIdList";
+    }
+
 
 
 }
