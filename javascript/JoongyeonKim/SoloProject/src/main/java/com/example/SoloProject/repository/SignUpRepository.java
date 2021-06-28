@@ -15,5 +15,7 @@ public class SignUpRepository {
         String query = "insert into member (name, id, pw) values (?, ?, ?)";
 
         jdbcTemplate.update(query, member.getName(), member.getId(), member.getPw());
+
+
     }
 }

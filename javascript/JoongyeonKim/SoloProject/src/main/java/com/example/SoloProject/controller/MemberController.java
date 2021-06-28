@@ -8,10 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
-public class MemberSignUpController {
+@RequestMapping("/member")
+public class MemberController {
 
     @Autowired
     private SignUpService signupservice;
@@ -26,6 +28,12 @@ public class MemberSignUpController {
     @PostMapping("/signup")
     public String postSignUp (Member member, Model model) {
         log.info("postSignUp(): " + member);
+        log.info("Member: " + member);
+
+        String pw = member.getPw();
+        if (pw.length() <= 8) {
+            return "redirect:/member/signup";
+        }
 
         signupservice.signup(member);
 
