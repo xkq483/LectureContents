@@ -7,6 +7,6 @@ div {
     border-radius: 70px/40px; /* 라운딩을 통해 약간 둥글게 */
 }
 .bg {
-    background: url(/img/mark1.png) no-repeat;
+    background: url(/img/mark2.png) no-repeat;
     background-size: cover;
 }
