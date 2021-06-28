@@ -2,13 +2,14 @@
 var now = new Date();
 // 처음 만난 날자 정보
 var firstDay = new Date("2008-10-23");
-// 오늘 날자 정보를 컴퓨터가 계산하는 숫자 정보로 변환
+// 오늘 날자 정보를 컴퓨터가 계산하는 숫자 정보로 변환 (정확하겐 ms 단위로 바꿈)
 var toNow = now.getTime();
 // 처음 만난 날자를 컴퓨터가 계산하는 숫자 정보로 변환
 var toFirst = firstDay.getTime();
 // 오늘 날자 - 첫 만남
 var passedTime = toNow - toFirst;
 // 다시 날자로 변환
+// Math.round(반올림)
 var passedDay = Math.round(passedTime / (24 * 60 * 60 * 1000));
 
 document.querySelector('#accent').innerText = passedDay + "일";
