@@ -28,4 +28,11 @@ public class EleventhJavaScriptTestController {
 
         return "/javascript/eleventh/destDayTest";
     }
+
+    @GetMapping("/bankTest")
+    public String getBankTest () {
+        log.info("getBankTest()");
+
+        return "/javascript/eleventh/bankTest";
+    }
 }
