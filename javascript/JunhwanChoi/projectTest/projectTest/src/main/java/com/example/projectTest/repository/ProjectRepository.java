@@ -2,6 +2,7 @@ package com.example.projectTest.repository;
 
 import com.example.projectTest.entity.Project;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class ProjectRepository {
 
@@ -83,5 +85,32 @@ public class ProjectRepository {
         String query = "update project set password = ? where signup_no = ?";
 
         jdbcTemplate.update(query, project.getPassword(), project.getSignupNo());
+    }
+
+    public void login(Project project) throws Exception {
+
+        List<Project> results = jdbcTemplate.query(
+                "select id, password from project where id = ?",
+
+                new RowMapper<Project>() {
+                    @Override
+                    public Project mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Project project = new Project();
+
+                        project.setId(rs.getString("id"));
+                        project.setPassword(rs.getString("password"));
+
+                        return project;
+                    }
+                }, project.getId());
+
+        Project tmp = results.get(0);
+        log.info("tmp: " + tmp);
+
+        if (tmp.getPassword().equals(project.getPassword())) {
+            log.info("Password Correct");
+        } else {
+            log.info("Password Incorrect");
+        }
     }
 }

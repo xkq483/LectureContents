@@ -15,4 +15,6 @@ public interface ProjectService {
 
     public void modify(Project project) throws Exception;
 
+    public void login(Project project) throws Exception;
+
 }

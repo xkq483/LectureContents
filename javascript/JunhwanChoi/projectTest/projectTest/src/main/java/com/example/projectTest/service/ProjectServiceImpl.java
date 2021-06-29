@@ -37,4 +37,9 @@ public class ProjectServiceImpl implements ProjectService {
     public void modify(Project project) throws Exception {
         repository.update(project);
     }
+
+    @Override
+    public void login(Project project) throws Exception {
+        repository.login(project);
+    }
 }

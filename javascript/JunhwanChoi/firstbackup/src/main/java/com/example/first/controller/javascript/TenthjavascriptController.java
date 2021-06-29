@@ -1,4 +1,4 @@
-package com.example.first.controller.board.javascript;
+package com.example.first.controller.javascript;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -96,6 +96,8 @@ public class TenthjavascriptController {
 
         return "/javascript/tenth/invisibility";
     }
+
+
 
 
 }
