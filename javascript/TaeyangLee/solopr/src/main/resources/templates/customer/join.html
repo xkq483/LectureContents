@@ -9,18 +9,23 @@
 
 
 <script>
-    // document는 현재 웹 상에 떠 있는 페이지 자체를 의미한다고 보면 됨
+
     $(document).ready(function() {
 
         var joinObj = $("#customer");
 
 
         $("#btnJoin").on("click", function() {
+            var passwordObj = $("#password");
+            alert("passwordObj: " + JSON.stringify(customer));
 
             joinObj.attr("action", "join");
             // PostMapping
             joinObj.attr("method", "post");
             joinObj.submit();
+        });
+        $("#btnCancel").on("click",function() {
+        self.location = "lists";
         });
     });
 </script>
@@ -31,14 +36,20 @@
 <form id="customer" th:action="@{join}" th:object="${customer}" method="post">
     <table>
         <tr>
-            <td>id</td>
+            <td>아이디</td>
 
             <td><input type="text" name="id" th:field="*{id}"></td>
         </tr>
         <tr>
-            <td>password</td>
+            <td>비밀번호</td>
 
-            <td><input type="text" name="password" th:field="*{password}"></td>
+            <td><input type="password" name="password" th:field="*{password}" id="password"></td>
+        </tr>
+        <tr>
+            <td>비밀번호확인</td>
+
+            <td><input type="password" name="password2" id="password2">
+                <button onclick="checkPw()" id="btnPw">비밀번호확인</button></td>
         </tr>
         <tr>
             <td>이름</td>
@@ -69,5 +80,6 @@
     <button type="submit" id="btnJoin">회원가입</button>
     <button type="submit" id="btnCancel">돌아가기</button>
 </div>
+
 </body>
 </html>
