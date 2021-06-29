@@ -13,10 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @Controller
 @RequestMapping("/member")
+// 서로 같은 이름의 맵핑이 있을 때 오류가 나오는 것을 막기위해 하나 더 만들어 주는것이다 /member/lists
 public class MemberController {
 
     @Autowired
-    private SignUpService signupservice;
+    private SignUpService memberservice;
+
+    @GetMapping("/lists")
+    public String getList (Model model) throws Exception {
+        log.info("getList():"+ memberservice.list());
+
+        model.addAttribute("member", memberservice.list());
+
+        return "/member/memberIdList";
+    }
 
     @GetMapping("/signup")
     public String getSignUp (Member member, Model model) {
@@ -35,9 +45,9 @@ public class MemberController {
             return "redirect:/member/signup";
         }
 
-        signupservice.signup(member);
+        memberservice.signup(member);
 
-        model.addAttribute("msg", "로그인이 완료되었습니다!");
+        model.addAttribute("msg", "등록이 완료되었습니다!");
 
         return "/member/success";
     }
