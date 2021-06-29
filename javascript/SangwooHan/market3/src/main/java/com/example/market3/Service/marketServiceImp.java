@@ -48,6 +48,21 @@ public class marketServiceImp implements  marketService {
   public void login(Signup signup) throws Exception {
     repository.login (signup);
   }
+
+  @Override
+  public List<Signup> memberList() throws Exception {
+    return repository.memberlist();
+  }
+
+  @Override
+  public Signup memberRead(Integer bulletinNo) throws Exception {
+    return repository.memberRead(bulletinNo);
+  }
+
+  @Override
+  public void memberRemove(Integer bulletinNo) throws Exception {
+    repository.memberDelete(bulletinNo);
+  }
 }
 
 

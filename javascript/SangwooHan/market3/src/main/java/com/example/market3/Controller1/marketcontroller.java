@@ -37,8 +37,6 @@ class marketcontroller {
         return "/market/success";
     }
 
-
-
     @GetMapping("/lists")
     public String getlist (Model model) throws Exception{
         log.info("getList():"+service.list());
@@ -78,6 +76,14 @@ class marketcontroller {
 
         return "/Market/read";
 }
+@GetMapping("/read2")
+    public String getRead2(int bulletinNo, Model model) throws  Exception{
+        log.info("getRead2");
+
+       model.addAttribute(service.memberRead(bulletinNo));
+
+        return "/Market/memberRead";
+}
     @PostMapping("/remove")
     public  String remove(int productNo, Model model) throws  Exception{
         log.info("remove()");
@@ -85,7 +91,15 @@ class marketcontroller {
         model.addAttribute("msg","삭제가완료되었습니다.");
 
         return "/market/success";
+
     }
+        @PostMapping("/memberRemove")
+        public String memberRemove(int bulletinNo ,Model model)throws Exception{
+        log.info("memberRemove()");
+        service.memberRemove(bulletinNo);
+        model.addAttribute("msg","회원이 정상적으로탈퇴되었습니다.");
+        return "/market/success";
+        }
     //수정할때 기존정보를 가져와야함 그래서 read를 하여 해당정보를 가져왔음.
     @GetMapping("/modify")
 public String getModify(int productNo, Model model)throws  Exception{
@@ -149,7 +163,22 @@ public String getModify(int productNo, Model model)throws  Exception{
         model.addAttribute("msg", "로그인성공");
         return "/market/success";
     }
+    @GetMapping("/memberList")
+    public String memberList (Model model) throws Exception{
+        log.info("memberList():"+service.memberList());
 
+
+        model.addAttribute("signup",service.memberList());
+
+
+        return "/Market/memberList";
+    }
+@GetMapping("/Reservation")
+    public String getReservation(){
+        log.info("getReservation()");
+
+        return "/market/reservation";
+}
 
 
 

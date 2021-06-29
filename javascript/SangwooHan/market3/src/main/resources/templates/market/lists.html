@@ -30,7 +30,7 @@
     </tr>
     <tr th:each="marketElem : ${market}">
         <td align="center"><a th:href="@{|read?productNo=${marketElem.productNo}|}" th:text="${marketElem.productNo}"/></td>
-        <td align="left"><a th:hr="@{ef|read?productNo=${marketElem.productNo}|}" th:text="${marketElem.username}"/></td>
+        <td align="left"><a th:href="@{|read?productNo=${marketElem.productNo}|}" th:text="${marketElem.username}"/></td>
         <td align="center"><a th:href="@{|read?productNo=${marketElem.productNo}|}" th:text="${marketElem.name}"/></td>
         <td align="center" th:text="${marketElem.price}"></td>
         <td th:text="${marketElem.description}"></td>

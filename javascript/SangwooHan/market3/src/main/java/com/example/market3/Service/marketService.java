@@ -18,6 +18,11 @@ public interface marketService {
 
     public void login  (Signup signup) throws  Exception;
 
+    public List<Signup> memberList() throws Exception;
+
+    public Signup memberRead(Integer bulletinNo) throws Exception;
+
+    public  void memberRemove(Integer bulletinNo) throws Exception;
 
 
 

@@ -57,6 +57,34 @@ public class MarketRepository {
             log.info("Password Incorrect");
         }
     }
+    public List<Signup> memberlist() throws Exception{
+
+
+        List<Signup> results = jdbcTemplate.query(
+                "select userid, signup_no, reg_date from signup " +
+                        "where  signup_no> 0 order by signup_no asc",
+
+                new RowMapper<Signup>() {
+                    @SneakyThrows
+                    @Override
+                    public Signup mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Signup signup = new Signup();
+
+                        signup.setUserid(rs.getString("userid"));
+                        signup.setBulletinNo(rs.getInt("signup_no"));
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                        signup.setRegdate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
+
+
+                        return signup;
+                    }
+                }
+        );
+
+        return results;
+    }
 
 
     public List<Market> list() throws  Exception {
@@ -117,11 +145,56 @@ public class MarketRepository {
 
         return results.isEmpty() ? null : results.get(0);
     }
+
+    public Signup memberRead (Integer bulletinNo) throws Exception {
+        List<Signup> results = jdbcTemplate.query(
+                "select signup_no, userid, password, name, birthday, gender, reg_date from signup where signup_no = ?",
+                new RowMapper<Signup>() {
+                    @Override
+                    public Signup mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Signup signup = new Signup();
+
+                        signup.setBulletinNo(rs.getInt("signup_no"));
+                        signup.setUserid(rs.getString("userid"));
+                        signup.setPassword(rs.getString("password"));
+                        signup.setName(rs.getString("name"));
+                        signup.setBirthday(rs.getInt("birthday"));
+                        signup.setGender(rs.getString("gender"));
+                        signup.setRegdate(rs.getDate("reg_date"));
+
+                        return signup;
+                    }
+                }, bulletinNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public  void delete(Integer productNo) throws Exception{
         String query = "delete from market where market_no = ?";
 
         jdbcTemplate.update(query,productNo);
     }
+    public void memberDelete(Integer bulletinNo) throws Exception{
+        String query = "delete from signup where signup_no = ?";
+        jdbcTemplate.update(query,bulletinNo);
+    }
+
 
     public void update(Market market) throws  Exception{
         String query = "update market set name = ?, price = ?, description = ? where market_no = ?";
