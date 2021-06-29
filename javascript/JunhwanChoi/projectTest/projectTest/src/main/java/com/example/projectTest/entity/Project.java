@@ -12,6 +12,8 @@ import java.util.Date;
 @ToString
 public class Project {
 
+
+    private int signupNo;
     private String username;
     private int birth;
     private String id;
