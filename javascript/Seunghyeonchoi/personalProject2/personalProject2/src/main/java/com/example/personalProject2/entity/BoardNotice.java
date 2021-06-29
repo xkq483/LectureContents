@@ -12,7 +12,7 @@ import java.util.Date;
 @ToString
 public class BoardNotice {
 
-    private int BoardNoNotice;
+    private int boardNoNotice;
     private String titleNotice;
     private String contentNotice;
     private String writerNotice;

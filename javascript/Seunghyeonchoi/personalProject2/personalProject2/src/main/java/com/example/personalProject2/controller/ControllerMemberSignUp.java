@@ -28,8 +28,8 @@ public class ControllerMemberSignUp {
         log.info("postSignUp(): " + member);
 
         service.signup(member);
-        model.addAttribute("msgSignUp", "가입이 완료되었습니다!");
+        model.addAttribute("msg", "가입이 완료되었습니다!");
 
-        return "/board/success/successSignUp";
+        return "/board/success/success";
     }
 }

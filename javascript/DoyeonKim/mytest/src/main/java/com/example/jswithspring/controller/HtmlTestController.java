@@ -1,7 +1,7 @@
 package com.example.jswithspring.controller;
 
-import com.example.jswithspring.utility.Client1;
-import com.example.jswithspring.utility.Server2;
+import com.example.jswithspring.utility.Client;
+import com.example.jswithspring.utility.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,7 +43,7 @@ public class HtmlTestController {
     public String startServer () {
         log.info("startServer()");
 
-        Server2 server = new Server2();
+        Server server = new Server();
         server.waitForClientTest();
 
         return "test";
@@ -53,7 +53,7 @@ public class HtmlTestController {
     public String startClient () {
         log.info("startClient()");
 
-        Client1 client = new Client1();
+        Client client = new Client();
         client.connectToServerTest();
 
         return "test";

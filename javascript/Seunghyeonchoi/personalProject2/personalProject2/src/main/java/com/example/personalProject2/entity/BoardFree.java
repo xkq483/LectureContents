@@ -12,7 +12,7 @@ import java.util.Date;
 @ToString
 public class BoardFree {
 
-    private int BoardNoFree;
+    private int boardNoFree;
     private String titleFree;
     private String contentFree;
     private String writerFree;

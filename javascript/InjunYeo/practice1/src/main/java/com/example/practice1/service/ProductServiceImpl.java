@@ -18,7 +18,17 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<Product> list() throws Exception{
-        return repository.list();
+    public List<Product> lists() throws Exception{
+        return repository.lists();
+    }
+
+    @Override
+    public Product read(Integer productNo) throws Exception {
+        return repository.read(productNo);
+    }
+
+    @Override
+    public void remove(Integer prductNo) throws Exception {
+        repository.delete(prductNo);
     }
 }

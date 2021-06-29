@@ -20,9 +20,10 @@
       현재 등록된 게시물이 없습니다!
     </td>
   </tr>
+  <!--아래 애들은 entity 애들-->
   <tr th:each="boardfree : ${listsFree}">
-    <td align="center" th:text="${boardfree.BoardNoFree}"></td>
-    <td align="left" th:href="@{|read?BoardNoFree=${boardfree.BoardNoFree}|}" th:text="${boardfree.titleFree}"></td>
+    <td align="center" th:text="${boardfree.boardNoFree}"></td>
+    <td align="left"><a th:href="@{|readFree?boardNoFree=${boardfree.boardNoFree}|}" th:text="${boardfree.titleFree}"/></td>
     <td align="right" th:text="${boardfree.writerFree}"></td>
     <td align="center" th:text="${#dates.format(boardfree.regDateFree, 'yyyy-MM-dd HH:mm:ss')}"></td>
   </tr>

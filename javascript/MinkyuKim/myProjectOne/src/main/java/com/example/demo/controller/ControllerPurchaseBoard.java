@@ -1,41 +1,33 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.DrawingPurchaseBoard;
-import com.example.demo.repository.DrawingPurchaseRepository;
-import com.example.demo.service.PurchasingSignUpService;
-import com.example.demo.service.purchaseBoard.DrawingPurchaseBoardService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
 @Controller
 public class ControllerPurchaseBoard {
 /*
     @Autowired
-    private DrawingPurchaseBoard drawingPurchaseBoardService;
+    private ArtworkPurchaseBoard artworkPurchaseBoardService;
 
-    @GetMapping("/drawingPurchase")
-    private String getDrawingPurchase(DrawingPurchaseBoard drawingPurchaseBoard, Model modelPurchase) {
-        log.info("getDrawingPurchase()");
+    @GetMapping("/artworkPurchase")
+    private String getArtworkPurchase(ArtworkPurchaseBoard artworkPurchaseBoard, Model modelPurchase) {
+        log.info("getArtworkPurchase()");
 
-        return "/board/purchaseBoard/drawingPurchase";
+        return "/board/purchaseBoard/artworkPurchase";
 
-        // @PostMapping("/drawingPurchase")
-        //private String postDrawingPurchase(DrawingPurchaseBoard drawingPurchaseBoard, modelPurchase) {
-        //   log.info("postDrawingPurchase");
+        // @PostMapping("/artworkPurchase")
+        //private String postArtworkPurchase(ArtworkPurchaseBoard artworkPurchaseBoard, Model modelPurchase) {
+        //   log.info("postArtworkPurchase");
 
-        //log.info("DrawingPurchaseBoard: " + DrawingPurchaseBoard);
+        //log.info("ArtworkPurchaseBoard: " + ArtworkPurchaseBoard);
 
-        //DrawingPurchaseBoardService.drawingPurchaseBoard(DrawingPurchaseRepository);
-        //modelPurchase.addAttribute(DrawingPurchaseBoard);
+        //ArtworkPurchaseBoardService.artworkPurchaseBoard(ArtworkPurchaseRepository);
+        //modelPurchase.addAttribute(ArtworkPurchaseBoard);
         //modelPurchase.addAttribute("salesMSG", "게시글 등록이 완료되었습니다." )
 
 
     }
+*/
 
- */
 }

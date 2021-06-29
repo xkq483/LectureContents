@@ -22,12 +22,12 @@
     </td>
   </tr>
 
-  <tr th:each="drawingPurchaseBoard : ${lists_PB}">
-    <td align="left" th:text="${drawingPurchaseBoard.saleWriter}" th:text="${board.title}"></td>
+  <tr th:each="artworkPurchaseBoard : ${lists_PB}">
+    <td align="left" th:text="${artworkPurchaseBoard.saleWriter}" th:text="${board.title}"></td>
 
-    <td align="center" th:text="${drawingPurchaseBoard.saleContent}"></td>
+    <td align="center" th:text="${artworkPurchaseBoard.saleContent}"></td>
 
-    <td align="right" th:text="${drawingPurchaseBoard.size}"></td>
+    <td align="right" th:text="${artworkPurchaseBoard.size}"></td>
 
   </tr>
 </table>

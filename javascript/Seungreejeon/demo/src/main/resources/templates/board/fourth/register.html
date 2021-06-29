@@ -39,7 +39,7 @@
      th:object는 Board 객체(현재 텅 빔)를 전달받기 위한 목적으로 활용
      객체를 전달 받을 경우엔 $를 사용한다.
      $단방향 * 양방향 -->
-<form id="board" th:action="@{register}" th:object="${board}" method="post">
+<form id="board"  th:object="${board}" method="post">
     <table>
         <tr>
             <td>제목</td>
