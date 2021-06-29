@@ -6,6 +6,8 @@ import com.example.demo.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -20,6 +22,11 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void login(Member member) throws Exception {
         repository.login(member);
+    }
+
+    @Override
+    public List<Member> list() throws Exception {
+        return repository.list();
     }
 }
 
