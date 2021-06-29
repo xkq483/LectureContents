@@ -1,4 +1,4 @@
-package com.example.personalProject2.entity;
+package com.example.demo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ public class Member {
     private int memberNo;
     private String id;
     private String pw;
-    private String name;
     private int point;
     private Date regDate;
+
 }
