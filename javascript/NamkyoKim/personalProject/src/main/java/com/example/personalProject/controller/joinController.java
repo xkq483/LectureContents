@@ -31,6 +31,13 @@ public class joinController {
 
             log.info("Member: " + member);
 
+             /* 비밀번호 길이 체크 로직 시작 */
+            String pw = member.getUserPass();
+            if (pw.length() <= 8 || pw.length() > 20 ){
+                // model.addAttribute("alertMsg", "8~ 20 이내의 비밀번호를 기재해주세요");
+                return "redirect:/join";
+            }
+            /* 비밀번호 길이 체크 로직 끝 */
             service.join(member);
 
             // msg 라는 속성값에 "등록이 완료되었습니다!"을 맵핑함
@@ -39,5 +46,11 @@ public class joinController {
 
             return "/joinHTML/joinSuccess";
         }
+      /*
+        @GetMapping("/login")
+    public String getLogin (Member member, Model model){
+
+        }*/
+    
     }
 
