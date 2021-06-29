@@ -1,6 +1,8 @@
 package com.example.cholongtest.repository;
 
+import com.example.cholongtest.entity.Board;
 import com.example.cholongtest.entity.Membership;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Slf4j
@@ -23,6 +26,33 @@ public class MembershipRepository {
 
         jdbcTemplate.update(query, membership.getMemName(), membership.getMemID(), membership.getMemPassword(),
                 membership.getPhoneNum(), membership.getMemBirth());
+    }
+
+    public List<Membership> list() throws Exception {
+
+        List<Membership> results = jdbcTemplate.query(
+                "select membership_no, memName, memID, memPassword,phoneNum, memBirth, reg_date from membership " +
+                        "where membership_no > 0 order by membership_no desc",
+
+                new RowMapper<Membership>() {
+                    @SneakyThrows
+                    @Override
+                    public Membership mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Membership membership = new Membership();
+
+                        membership.setMembershipNo(rs.getInt("membership_no"));
+                        membership.setMemName(rs.getString("memName"));
+                        membership.setMemID(rs.getString("memID"));
+                        membership.setMemPassword(rs.getString("memPassword"));
+                        membership.setPhoneNum(rs.getString("phoneNum"));
+                        membership.setMemBirth(rs.getString("memBirth"));
+
+                        return membership;
+                    }
+                }
+        );
+
+        return results;
     }
 
     public void login(Membership membership) throws Exception {

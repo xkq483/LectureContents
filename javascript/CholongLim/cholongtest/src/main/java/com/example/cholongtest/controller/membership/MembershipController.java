@@ -1,6 +1,7 @@
 package com.example.cholongtest.controller.membership;
 
 import com.example.cholongtest.entity.Membership;
+import com.example.cholongtest.service.BoardService;
 import com.example.cholongtest.service.MembershipService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,15 @@ public class MembershipController {
         model.addAttribute("signUp","회원 가입이 완료되었습니다!");
 
         return "/membership/success";
+    }
+
+    @GetMapping("/lists")
+    public String getLists (Model model) throws Exception {
+        log.info("getLists(): " + service.list());
+
+        model.addAttribute("member", service.list());
+
+        return "/membership/memIdLists";
     }
 
     @GetMapping("/login")

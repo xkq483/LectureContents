@@ -18,5 +18,5 @@ public class Membership {
     private String memPassword;
     private String phoneNum;
     private String memBirth;
-    private Data regData;
+    private Data regDate;
 }
