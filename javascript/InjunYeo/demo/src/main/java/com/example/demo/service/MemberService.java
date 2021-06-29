@@ -9,6 +9,7 @@ public interface MemberService {
 
     public void register(Member member) throws Exception;
 
+    public List<Member> list() throws Exception;
 
 }
 

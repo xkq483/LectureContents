@@ -2,6 +2,7 @@ package com.example.demo.controller.member;
 
 import com.example.demo.entity.Board;
 import com.example.demo.entity.Member;
+import com.example.demo.service.BoardService;
 import com.example.demo.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,16 @@ public class MemberController {
         return "/member/success";
     }
 
+    @GetMapping("/lists")
+    public String getLists(Model model) throws Exception {
+        log.info("getLists()");
 
+        model.addAttribute("lists",service.list());
+
+        return "board/fifth/lists";
+    }
 }
+
+
+
+

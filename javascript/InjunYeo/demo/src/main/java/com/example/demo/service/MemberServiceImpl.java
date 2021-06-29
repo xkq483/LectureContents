@@ -24,4 +24,9 @@ public class MemberServiceImpl implements MemberService {
     public void register(Member member) throws Exception {
         repository.create(member);
     }
+
+    @Override
+    public List<Member> list() throws Exception {
+        return null;
+    }
 }
