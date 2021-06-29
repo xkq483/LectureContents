@@ -37,12 +37,19 @@
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="text" name="pw" th:field="*{pw}"></td>
+            <td><input type="password" name="pw" th:field="*{pw}"></td>
+        </tr>
+
+        <tr>
+            <td>비밀번호 확인</td>
+            <td><input type="password" name="pwCheck" th:field="*{pwCheck}"></td>
+
         </tr>
 
         <tr>
             <td>이름</td>
-            <td><input type="text" name="name" th:field="*{name}"></td>
+            <!-- onchange는 -->
+            <td><input type="text" name="name" th:field="*{name}" onchange="isSame"></td>
         </tr>
 
         <tr>
