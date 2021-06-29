@@ -1,8 +1,7 @@
-package com.example.project1.repository;
+package com.example.jsmain.repository;
 
-
-import com.example.project1.entity.Member;
-import com.example.project1.entity.Member;
+import com.example.jsmain.entity.Board;
+import com.example.jsmain.entity.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,16 +14,17 @@ import java.util.List;
 
 @Slf4j
 @Repository
-public class SignUpRepository {
+public class MemberRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public void create (Member member) throws Exception {
-        String query = "insert into member (id, pw, name, phoneNumber, email, address) values (?, ?, ?, ?, ?, ?)";
+    public void create(Member member) throws Exception {
+        String query = "insert into member (id, pw) values (?, ?)";
 
-        jdbcTemplate.update(query, member.getId(), member.getPw(), member.getName(), member.getPhoneNumber(), member.getEmail(), member.getAddress());
+        jdbcTemplate.update(query, member.getId(), member.getPw());
     }
+
     public void login(Member member) throws Exception {
 
         List<Member> results = jdbcTemplate.query(
