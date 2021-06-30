@@ -9,9 +9,9 @@ var toyRobot = {
     price: "25,000,000",
     madeIn: "Korea",
     quantity: 1,
-    showStock: function () {
+    showStock: function () {    // function은 메소드랑 같은 것
         document.querySelector('#display').innerHTML =
-        this.name + " 제품은 " + this.quantity + "개 남아있고, " + "가격은 " + this.price + " 이다.";
+        this.name + " 제품은 " + this.quantity + "개 남아있다.";
     }
 };
 
