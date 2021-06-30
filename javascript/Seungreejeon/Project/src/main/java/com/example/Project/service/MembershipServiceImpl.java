@@ -23,4 +23,9 @@ public class MembershipServiceImpl implements MembershipService{
     public List<Membership> list() throws Exception {
         return repository.list();
     }
+
+    @Override
+    public Membership read(Integer memberNo) throws Exception {
+        return null;
+    }
 }

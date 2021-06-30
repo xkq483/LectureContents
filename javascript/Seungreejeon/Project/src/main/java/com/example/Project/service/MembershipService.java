@@ -8,4 +8,7 @@ public interface MembershipService {
     public void M_register(Membership membership) throws Exception;
 
     public List<Membership> list() throws Exception;
+
+    public Membership read(Integer memberNo) throws Exception;
+
 }
