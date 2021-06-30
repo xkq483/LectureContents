@@ -9,6 +9,13 @@
     $(document).ready(function() {
 
         var formObj = $("#signupBoard");
+      $("#modifybtn").on("click", function() {
+
+            var bulletinNo = $("#bulletinNo");
+            var bulletinNoVal = bulletinNo.val();
+
+            self.location = "memberModify?bulletinNo=" + bulletinNoVal;
+        });
 
         $("#removebtn").on("click", function() {
 
@@ -25,7 +32,7 @@
          });
 </script>
 <body>
-<h1>나그넷 회원가입.</h1>
+<h1>회원 정보.</h1>
 <form id="signupBoard"  th:object="${signup}" method="post">
   <input type="hidden" name="bulletinNo" th:field="*{bulletinNo}"/>
   <table>
@@ -64,9 +71,26 @@
       <td><input type="text" name="gender"
                  th:field="*{gender}" readonly="readonly"></td>
     </tr>
+    <tr>
+      <td>주소</td>
+    </tr>
+    <tr>
+      <td><textarea cols="30" rows="2"  name="address"
+                    th:field="*{address}" readonly="readonly"></textarea></td>
+    </tr>
+    <tr>
+      <td>번호</td>
+    </tr>
+    <tr>
+      <td><input type="text" name="phoneNo"
+                 th:field="*{phoneNo}" readonly="readonly"></td>
+    </tr>
+
+
   </table>
 </form>
-<button id="removebtn">회원삭제하기!</button>
-<button id="memberlistbtn">회원리스트보기</button>
+<button type="submit" id="modifybtn">회원정보수정하기!</button>
+<button type="submit" id="removebtn">회원삭제하기!</button>
+<button type="submit" id="memberlistbtn">회원리스트보기</button>
 </body>
 </html>

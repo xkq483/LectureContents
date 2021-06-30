@@ -10,4 +10,3 @@ phoneNo int not null,
 reg_date timestamp not null default now(),
 primary key(signup_no)
 );
-

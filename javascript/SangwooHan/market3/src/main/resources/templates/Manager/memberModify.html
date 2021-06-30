@@ -10,9 +10,9 @@
 
         var formObj = $("#signupBoard");
 
-        $("#signupbtn").on("click", function() {
+        $("#memberModifybtn").on("click", function() {
 
-            formObj.attr("action", "signup");
+            formObj.attr("action", "memberModify");
 
             formObj.attr("method", "post");
             formObj.submit();
@@ -22,26 +22,29 @@
          });
 </script>
 <body>
-<h1>나그넷 회원가입.</h1>
+<h1>회원 정보수정.</h1>
 <form id="signupBoard" th:action="@{signup}" th:object="${signup}" method="post">
+    <input type="hidden" name="bulletinNo" th:field="*{bulletinNo}"/>
     <table>
         <tr>
             <td>아이디</td>
         </tr>
         <tr>
-            <td><input type="text" name="userid" th:field="*{userid}"></td>
+            <td><input type="text" name="userid"
+                       th:field="*{userid}" readonly="readonly"></td>
         </tr>
         <tr>
             <td>비밀번호</td>
         </tr>
         <tr>
-            <td><input type="password" name="password" th:field="*{password}"></td>
+            <td><input type="text" name="password" th:field="*{password}"></td>
         </tr>
         <tr>
             <td>이름</td>
         </tr>
         <tr>
-            <td><input type="text" name="name" th:field="*{name}"></td>
+            <td><input type="text" name="name"
+                       th:field="*{name}" readonly="readonly"></td>
         </tr>
         <tr>
             <td>생년원일</td>
@@ -55,8 +58,22 @@
         <tr>
             <td><input type="text" name="gender" th:field="*{gender}"></td>
         </tr>
+        <tr>
+            <td>주소</td>
+        </tr>
+        <tr>
+            <td><textarea cols="30" rows="2"  name="address"관리자
+                          th:field="*{address}" ></textarea></td>
+        </tr>
+        <tr>
+            <td>휴대전화</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="phoneNo" th:field="*{phoneNo}"></td>
+        </tr>
+
     </table>
 </form>
-<button id="signupbtn">회원가입하기!</button>
+<button type="submit" id="memberModifybtn">회원정보수정하기!</button>
 </body>
 </html>
