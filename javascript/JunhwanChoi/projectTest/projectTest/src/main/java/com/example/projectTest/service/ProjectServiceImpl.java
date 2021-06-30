@@ -1,5 +1,6 @@
 package com.example.projectTest.service;
 
+import com.example.projectTest.controller.ProjectController;
 import com.example.projectTest.entity.Project;
 import com.example.projectTest.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Autowired
     private ProjectRepository repository;
+    @Autowired
+    private ProjectController controllerRepo;
 
     @Override
     public void register(Project project) {
@@ -40,6 +43,6 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void login(Project project) throws Exception {
-        repository.login(project);
+        controllerRepo.login(project);
     }
 }
