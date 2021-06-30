@@ -6,7 +6,7 @@ function calcDeposit () {
     var money3 = Math.round(myMoney * Math.pow(interestRate, 3));
     var money10 = Math.round(myMoney * Math.pow(interestRate, 10));
 
-    document.querySelector('#showMoney1').innerHTML = 
+    document.querySelector('#showMoney1').innerHTML =
     + money1 + "원"
     document.querySelector('#showMoney3').innerHTML =
     + money3 + "원"
