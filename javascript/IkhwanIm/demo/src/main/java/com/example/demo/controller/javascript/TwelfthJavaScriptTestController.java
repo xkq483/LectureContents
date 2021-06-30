@@ -21,4 +21,17 @@ public class TwelfthJavaScriptTestController {
 
         return "/javascript/twelfth/userList";
     }
+
+    @GetMapping("/domTest")
+    public String getDomTest () {
+        log.info("getDomTest()");
+
+        return "/javascript/twelfth/domTest";
+    }
+    @GetMapping("/querySelectorAllTest")
+    public String getQuerySelectorAllTest () {
+        log.info("querySelectorAllTest()");
+
+        return "/javascript/twelfth/querySelectorAllTest";
+    }
 }
