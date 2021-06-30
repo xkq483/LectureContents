@@ -14,4 +14,11 @@ public class TwelfthJavaScriptTestController {
 
         return "/javascript/twelfth/checkListWithArrayTest";
     }
+
+    @GetMapping("/userListWithArrayTest")
+    public String getUserListWithArrayTest () {
+        log.info("getUserListWithArrayTest()");
+
+        return "/javascript/twelfth/userList";
+    }
 }
