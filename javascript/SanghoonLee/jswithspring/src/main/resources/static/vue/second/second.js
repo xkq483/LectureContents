@@ -7,7 +7,13 @@ var app = new Vue ({
         show: true,
         num: 3,
         count: 0,
-        radius: 50
+        radius: 50,
+        monsterName: '',
+        monsters: [
+            { id: 1, name: '슬라임', hp: 30 },
+            { id: 2, name: '고블린', hp: 50 },
+            { id: 3, name: '카오스 드래곤', hp: 99999999 }
+        ]
     },
     methods: {
         // event: 사용자가 어떤 이벤트를 발생시켰는지 알 수 있음
@@ -18,6 +24,40 @@ var app = new Vue ({
         // 함수 이름: function () {} ===> 중괄호 내부는 일반 매서드 작성과 동일
         increment: function () {
             this.count += 1
+        },
+        addMonster: function () {
+            // 샘플용 코드
+            var arr = [1, 2, 3, 4];
+            // reduce ( function (유지되는 값, 반복하며 비교하거나 연산 대상이 되는 값))
+            var sum = arr.reduce( function (accumulator, currentValue) {
+                alert(accumulator)
+                return accumulator + currentValue
+            }, 0)
+
+            alert(sum)
+
+            // reduce()를 사용하면 알아서 내부에 있는 요소를 전부 낱개로 쪼개서 하나하나 비교하게됨
+            // 그래서 function(a, b)에 입력으로 들어가는 a, b는
+            // 모두 monsters 배열에 있는 각각의 낱개 요소들임
+            // 계속 낱개 단위로 끝까지 비교를 한다면
+            // 마지막엔 제일 큰 숫자(결국 맨 마지막 녀석)를 얻게 될 것이다.
+
+            // reduce는 전체 순회를 끝낼때까지 동작이 값이 증발되지 않으며
+            // 최종 결과를 얻을때까진 이전 결과를 유지하며 연산이 진행됨
+            var max = this.monsters.reduce( function (a, b) {
+                return a > b.id ? a : b.id
+            }, 0)
+
+            this.monsters.push({
+                id: max + 1,
+                name: this.monsterName,
+                hp: 500
+            })
+        },
+        removeMonster: function (index) {
+            // 찾은 인덱스 값에서 1개를 지워라
+            // 즉 인덱스 값의 정보를 지워라!
+            this.monsters.splice(index, 1);
         }
     }
 })

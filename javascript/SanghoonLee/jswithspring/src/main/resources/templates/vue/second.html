@@ -29,7 +29,19 @@
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <circle cx="0" cy="75" v-bind:r="radius" fill="lightblue"/>
         </svg>
-        <input type="range" min="0" max="100" v-model="radius">
+        <input type="range" min="0" max="100" v-model="radius"><br><br><br>
+
+        <input v-model="monsterName">
+        <button v-on:click="addMonster">몬스터 추가하기</button>
+        <ul>
+            <li v-for="(monster, index) in monsters"
+                v-bind:key="monster.id"
+                v-bind:class="{ strong: monster.hp > 300 }">
+                ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
+                <span v-if="monster.hp > 300">개쎄다</span>
+                <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+            </li>
+        </ul>
     </div>
     <!-- 요렇게 해라고 오더함 -->
     <script src="/vue/second/second.js"></script>
