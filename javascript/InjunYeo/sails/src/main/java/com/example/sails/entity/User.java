@@ -1,21 +1,14 @@
 package com.example.sails.entity;
 
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import java.security.PrivateKey;
 import java.util.Date;
 
-@Getter
-@Setter
-@ToString
+public class User {
 
-public class UserAccount {
     private int userNo;
     private String name;
     private String id;
     private String password;
-    private String emali;
+    private String email;
     private Date regDate;
 }
