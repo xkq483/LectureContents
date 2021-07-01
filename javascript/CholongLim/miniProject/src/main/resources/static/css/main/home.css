@@ -1,0 +1,60 @@
+body {
+    background:url('/img/main/sea.jpg') no-repeat;
+    background-size: cover;
+}
+h1 {
+    margin: 0 auto;
+    width: 450px;
+    margin-top: 15%;
+}
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 110px;
+    background: #f5fffd;
+    border-right: 1px solid #cccccc;
+}
+div p {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 70px;
+    text-align: center;
+    font-family: "Arial Rounded MT";
+}
+.menu {
+    margin-left: 0px;
+    margin-top: 0px;;
+    float: left;
+    height: 1000px;
+    width: 300px;
+    background: #003663
+}
+div nav ul {
+    list-style-type: none;
+    padding: 0px;
+    text-align: center;
+    font-family: "Arial Rounded MT";
+}
+div nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #003663
+}
+div nav ul li:hover > ul {
+    display: block;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 200px;
+    background-color: #003663
+}
+div nav ul li {
+    display: block;
+    position: relative;
+    margin-top: 15px;
+    text-align: center;
+}
+div nav ul li ul li {
+    color: #ffffff;
+}
