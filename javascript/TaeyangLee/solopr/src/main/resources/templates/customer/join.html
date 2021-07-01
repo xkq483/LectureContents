@@ -27,6 +27,24 @@
         $("#btnCancel").on("click",function() {
         self.location = "lists";
         });
+    //비밀번호 일치 불일치 체킹
+        $('.pw').focusout(function () {
+        var pwd1 = $("#password").val();
+        var pwd2 = $("#password2").val();
+
+        if ( pwd1 != '' && pwd2 == '' ) {
+            null;
+        } else if (pwd1 != "" || pwd2 != "") {
+            if (pwd1 == pwd2) {
+                $("#alert-success").css('display', 'inline-block');
+                $("#alert-danger").css('display', 'none');
+            } else {
+                alert("비밀번호가 일치하지 않습니다. 비밀번호를 재확인해주세요.");
+                $("#alert-success").css('display', 'none');
+                $("#alert-danger").css('display', 'inline-block');
+            }
+        }
+    });
     });
 </script>
 
@@ -43,13 +61,14 @@
         <tr>
             <td>비밀번호</td>
 
-            <td><input type="password" name="password" th:field="*{password}" id="password"></td>
+            <td><input type="password" name="password" class="pw" th:field="*{password}" id="password"></td>
         </tr>
         <tr>
             <td>비밀번호확인</td>
 
-            <td><input type="password" name="password2" id="password2">
-                <button onclick="checkPw()" id="btnPw">비밀번호확인</button></td>
+            <td><input type="password" name="password2" class="pw" id="password2">
+            <td><span id="alert-success" style="display: none;">비밀번호가 일치합니다.</span></td>
+            <td><span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span></td>
         </tr>
         <tr>
             <td>이름</td>
@@ -80,6 +99,7 @@
     <button type="submit" id="btnJoin">회원가입</button>
     <button type="submit" id="btnCancel">돌아가기</button>
 </div>
+<script src="/js/pwCheck.js"></script>
 
 </body>
 </html>
