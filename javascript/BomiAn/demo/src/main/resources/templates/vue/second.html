@@ -36,19 +36,26 @@
         <p>{{ randomNumber }}</p><br><br><br>
 
         <p>사용자의 포인트 : {{usersPoint}}p</p>
-        <ul>
-          <li>
-
-          </li>
-        </ul>
+       
+          
+          <transition>
+            <ul>
+            <button v-on:click="show = !show">몬스터 도감!</button>
+            <li v-for="showMonster in showMonsters" v-if="show">
+              {{ showMonster }}
+            </li>
+          </ul>
+            </transition>
+       
         <button v-on:click="randMonster">몬스터 랜덤생성 -50p</button>
+        
         <input v-model="monsterName">
-        <button v-on:click="addMonster">몬스터 추가하기</button>
+        <button v-on:click="addMonster">시크릿 몬스터 추가하기 -100p</button>
         <ul>
           <li v-for="(monster, index) in monsters"
           v-bind:key= "monster.id"
           v-bind:class="{ strong: monster.hp > 300 }">
-          ID.{{ monster.id }} {{monster.name}} HP.{{ monster.hp }}
+          ID.{{ monster.id }} {{monster.name}} HP.{{ monster.hp }} POINT.{{ monster.point }}
           <span v-if="monster.hp > 300">개쎄다.</span>
           <button v-on:click="userAttack(index)">평타</button>
           <button v-on:click="removeMonster(index)">몬스터 삭제</button>
