@@ -104,7 +104,7 @@ public class BoardRepository {
         // results.isEmpty() 리스트에 값이 있냐? 리스트가 비었냐?
         // 비었다면 null, 비어있지 않았다면 results.get(0)
         // 0번 인덱스(노드)의 리스트를 리턴
-        //
+        // 비어있다면 null, 비어있지않다면 값을 가져와라.
         return results.isEmpty() ? null : results.get(0);
     }
 
