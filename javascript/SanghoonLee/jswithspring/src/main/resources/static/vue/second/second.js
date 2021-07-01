@@ -8,6 +8,7 @@ var app = new Vue ({
         num: 3,
         count: 0,
         radius: 50,
+        randomNumber: 0,
         monsterName: '',
         monsters: [
             { id: 1, name: '슬라임', hp: 30 },
@@ -61,6 +62,10 @@ var app = new Vue ({
         },
         userAttack: function (index) {
             this.monsters[index].hp -= 10
+        },
+        randomGeneration () {
+            // 1 ~ 10까지 난수를 생성합니다.
+            this.randomNumber = Math.floor(Math.random() * 10) + 1;
         }
     },
     beforeCreate() {
