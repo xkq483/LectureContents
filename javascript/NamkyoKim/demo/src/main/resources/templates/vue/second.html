@@ -31,6 +31,9 @@
     </svg>
     <input type="range" min="0" max="100" v-model="radius"><br><br><br>
 
+    <p>{{ randomNumber }}</p>
+    <button v-on:click="randomGeneration">랜덤 숫자 발생 !</button>
+    
     <input v-model="monsterName">
     <button v-on:click="addMonster">몬스터 추가히기</button>
     <ul>
