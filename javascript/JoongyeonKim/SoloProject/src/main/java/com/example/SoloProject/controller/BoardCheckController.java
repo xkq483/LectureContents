@@ -89,4 +89,23 @@ public class BoardCheckController {
 
         return  "/board/success";
     }
+
+    @GetMapping("/search")
+    public String getSearch(int boardNo, Model model) throws Exception{
+        log.info("getSearch()");
+
+        model.addAttribute(boardservice.read(boardNo));
+
+        return "/board/modify";
+    }
+
+    @PostMapping("/search")
+    public String postSearch (Board board, Model model) throws Exception{
+        log.info("postSearch()");
+
+        boardservice.modify(board);
+        model.addAttribute("msg", "수정이 성공적으로 완료되었습니다");
+
+        return  "/board/success";
+    }
 }

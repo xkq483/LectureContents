@@ -1,7 +1,8 @@
 package com.example.SoloProject.controller;
 
+import com.example.SoloProject.entity.Board;
 import com.example.SoloProject.entity.Member;
-import com.example.SoloProject.service.SignUpService;
+import com.example.SoloProject.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberController {
 
     @Autowired
-    private SignUpService memberservice;
+    private MemberService memberservice;
 
     @GetMapping("/lists")
     public String getList (Model model) throws Exception {
@@ -41,7 +42,7 @@ public class MemberController {
         log.info("Member: " + member);
 
         String pw = member.getPw();
-        if (pw.length() <= 8) {
+        if (pw.length() <= 9) {
             return "redirect:/member/signup";
         }
 
@@ -50,5 +51,51 @@ public class MemberController {
         model.addAttribute("msg", "등록이 완료되었습니다!");
 
         return "/member/success";
+    }
+
+    @GetMapping("/login")
+    public String getLogin (Member member, Model model) {
+        log.info("getLogin()");
+
+        return "/member/login";
+    }
+
+    @PostMapping("/login")
+    public String postLogin (Member member, Model model) throws Exception {
+        log.info("postLogin(): " + member);
+
+        memberservice.login(member);
+
+        model.addAttribute("msg", "로그인 성공!");
+
+        return "/member/success";
+    }
+
+    @GetMapping("/read")
+    public String getRead (int memberNo, Model model) throws Exception{
+        log.info("read");
+
+        model.addAttribute(memberservice.read(memberNo));
+
+        return "/member/read";
+    }
+
+    @GetMapping("/modify")
+    public String getModify(int memberNo, Model model) throws Exception {
+        log.info("getmodify()");
+
+        model.addAttribute(memberservice.read(memberNo));
+
+        return "/member/modify";
+    }
+
+    @PostMapping("/modify")
+    public String postModify (Member member, Model model) throws Exception{
+        log.info("postModify()");
+
+        memberservice.modify(member);
+        model.addAttribute("msg", "수정이 성공적으로 완료되었습니다");
+
+        return  "/member/success";
     }
 }
