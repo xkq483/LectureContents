@@ -23,7 +23,8 @@ var app = new Vue ({
             // 전체 필요 경험치량
             totalLevelBar: 10,
             // 현재 누적한 경험치량
-            currentLevelBar: 0
+            currentLevelBar: 0,
+            money: 0
         },
         monsterName: '',
         monsters: [
@@ -32,29 +33,29 @@ var app = new Vue ({
             { id: 3, name: '카오스 드래곤', hp: 99999999 }
         ],
         monsterBook: [
-            { name: '슬라임', hp: 30, exp: 1 },
-            { name: '고블린', hp: 50, exp: 2 },
-            { name: '레드 슬라임', hp: 70, exp: 4 },
-            { name: '홉 고블린', hp: 120, exp: 8 },
-            { name: '그린 슬라임', hp: 150, exp: 12 },
-            { name: '스켈레톤', hp: 200, exp: 20 },
-            { name: '고블린 마법사', hp: 250, exp: 25 },
-            { name: '블루 슬라임', hp: 300, exp: 35 },
-            { name: '트롤', hp: 500, exp: 50 },
-            { name: '원혼', hp: 700, exp: 60 },
-            { name: '고블린 족장', hp: 800, exp: 70 },
-            { name: '스켈레톤 기사', hp: 1000, exp: 80 },
-            { name: '오우거', hp: 1200, exp: 90 },
-            { name: '오우거 메이지', hp: 1500, exp: 100 },
-            { name: '스켈레톤 근위병', hp: 2000, exp: 120 },
-            { name: '고블린 대사장', hp: 2500, exp: 150 },
-            { name: '귀인', hp: 2800, exp: 180 },
-            { name: '킹 슬라임', hp: 3000, exp: 200 },
-            { name: '고스트', hp: 3200, exp: 250 },
-            { name: '리치', hp: 9000, exp: 500 },
-            { name: '리치 킹', hp: 90000, exp: 2500 },
-            { name: '카오스 드래곤', hp: 99999999, exp: 10000000 },
-            { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999 }
+            { name: '슬라임', hp: 30, exp: 1, money: 10 },
+            { name: '고블린', hp: 50, exp: 2, money: 20 },
+            { name: '레드 슬라임', hp: 70, exp: 4, money: 40 },
+            { name: '홉 고블린', hp: 120, exp: 8, money: 80 },
+            { name: '그린 슬라임', hp: 150, exp: 12, money: 160 },
+            { name: '스켈레톤', hp: 200, exp: 20, money: 320 },
+            { name: '고블린 마법사', hp: 250, exp: 25, money: 640 },
+            { name: '블루 슬라임', hp: 300, exp: 35, money: 1280 },
+            { name: '트롤', hp: 500, exp: 50, money: 2000 },
+            { name: '원혼', hp: 700, exp: 60, money: 4000 },
+            { name: '고블린 족장', hp: 800, exp: 70, money: 5000 },
+            { name: '스켈레톤 기사', hp: 1000, exp: 80, money: 10000 },
+            { name: '오우거', hp: 1200, exp: 90, money: 12000 },
+            { name: '오우거 메이지', hp: 1500, exp: 100, money: 15000 },
+            { name: '스켈레톤 근위병', hp: 2000, exp: 120, money: 20000 },
+            { name: '고블린 대사장', hp: 2500, exp: 150, money: 25000 },
+            { name: '귀인', hp: 2800, exp: 180, money: 28000 },
+            { name: '킹 슬라임', hp: 3000, exp: 200, money: 30000 },
+            { name: '고스트', hp: 3200, exp: 250, money: 32000 },
+            { name: '리치', hp: 9000, exp: 500, money: 90000 },
+            { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
+            { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
+            { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ]
     },
     methods: {
@@ -132,6 +133,7 @@ var app = new Vue ({
                 for (var j = 0; j < this.monsterBook.length; j++) {
                     if (this.monsters[i].name === this.monsterBook[j].name) {
                         this.characterStatus.currentLevelBar += this.monsterBook[j].exp
+                        this.characterStatus.money += this.monsterBook[j].money
                     }
                 }
                 this.monsters.splice(i, 1)
