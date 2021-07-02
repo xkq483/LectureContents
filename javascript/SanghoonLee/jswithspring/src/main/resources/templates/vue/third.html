@@ -20,7 +20,35 @@
             DEF: {{ characterStatus.def }} MEN: {{ characterStatus.men }}</p>
         <p>현재 경험치 상태: {{ characterStatus.currentLevelBar }} / 
             {{ characterStatus.totalLevelBar }}</p>
-        <p>소지금: {{ characterStatus.money }}</p>
+        <p>소지금: {{ characterStatus.money }}</p><br><br>
+
+        <h3>상점</h3>
+        <label>
+            <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">판매 목록
+        </label>
+        <table border="1" v-if="shopView">
+            <tr>
+                <th align="center" width="40">번호</th>
+                <th align="center" width="120">아이템명</th>
+                <th align="center" width="160">가격</th>
+                <th align="center" width="320">아이템 설명</th>
+                <th align="center" width="40">구매</th>
+            </tr>
+            <tr v-for="(list, idx) in shopList"
+                v-bind:key="list.name">
+                <th align="center" width="40">{{ idx + 1 }}</th>
+                <th align="center" width="120">{{ list.name }}</th>
+                <th align="center" width="160">{{ list.price }}</th>
+                <th align="center" width="320">{{ list.effect.desc }}</th>
+                <th align="center" width="40">
+                    <label>
+                        <input type="checkbox" 
+                                v-model="shopListValue"
+                                v-bind:value="idx">
+                    </label>
+                </th>
+            </tr>
+        </table>
 
         <button v-on:click="myDarknessDragon()">내안의흑염룡</button>
         <!-- 1. 몬스터 도감을 적당히 아무렇게나 만든다

@@ -9,6 +9,9 @@ var app = new Vue ({
         count: 0,
         radius: 50,
         randomNumber: 0,
+        shopView: false,
+        shopList: [],
+        shopListValue: [],
         characterStatus: {
             level: 1,
             hp: 70,
@@ -56,9 +59,31 @@ var app = new Vue ({
             { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
             { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
             { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
+        ],
+        itemBook: [
+            { name: 'HP 포션 I', price: 50, effect: { desc: 'hp 회복', amount: 200 }},
+            { name: 'HP 포션 II', price: 200, effect: { desc: 'hp 회복', amount: 700 }},
+            { name: 'HP 포션 III', price: 1000, effect: { desc: 'hp 회복', amount: 2000 }},
+            { name: 'HP 포션 IV', price: 6000, effect: { desc: 'hp 회복', amount: 6000 }},
+            { name: 'HP 포션 V', price: 42000, effect: { desc: 'hp 회복', amount: 15000 }},
+            { name: '검', price: 10000000, effect: { desc: '무기', atk: 100 }},
+            { name: '강철검', price: 50000000, effect: { desc: '무기', atk: 200 }},
+            { name: '환두대도', price: 250000000, effect: { desc: '무기', atk: 350 }},
+            { name: '발라리아 강철검', price: 1250000000, effect: { desc: '무기', atk: 500 }},
+            { name: '칠지도', price: 10000000000, effect: { desc: '무기', atk: 1000 }},
         ]
     },
     methods: {
+        shuffleShopList () {
+            if (!this.shopView) {
+                this.shopListValue = []
+            }
+
+            for (var i = 0; i < 10; i++) {
+                var randIdx = Math.floor(Math.random() * this.itemBook.length)
+                this.shopList[i] = this.itemBook[randIdx]
+            }
+        },
         buttonClickTest: function (event) {
             alert('뷰 짱')
         },
