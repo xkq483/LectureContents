@@ -15,4 +15,10 @@ public class SecondVueController {
 
         return "/vue/second";
     }
+    @GetMapping("/prob77")
+    public String getProb77(){
+        log.info("getProb77(): 게임중");
+
+        return "/vue/prob77";
+    }
 }
