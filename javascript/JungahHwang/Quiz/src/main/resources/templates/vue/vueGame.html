@@ -3,17 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
 <div id="app">
-  <button v-on:click="addMonster">랜덤 포켓몬 뽑기</button>
+  <p>캐릭터 상태 창</p>
+  <table border="1" width="650">
+    <tr>
+      <th>Lv</th>
+      <th>HP</th>
+      <th>MP</th>
+      <th>ATK</th>
+      <th>MONEY</th>
+    </tr>
+    <tr>
+      <td align="center">{{ myStatus.level }}</td>
+      <td align="center">{{ Math.floor(myStatus.hp) }}</td>
+      <td align="center">{{ myStatus.mp }}</td>
+      <td align="center">{{ Math.floor(myStatus.atk) }}</td>
+      <td align="center">{{ myStatus.myMoney }}</td>
+    </tr>
+  </table>
+  <p>STR: {{ myStatus.str }} INT: {{ myStatus.intelligence }}
+      DEX: {{ myStatus.dex }} VIT: {{ myStatus.vit }}
+      DEF: {{ myStatus.def }} MEN: {{ myStatus.men }}</p>
+  <p>내 경험치: {{ myStatus.currentExp }} / 레벨업 경험치: {{ myStatus.needExp }} </p>
+  
+  <h3>&lt;SHOP&gt;</h3>
+  <label>
+    <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">View List
+    <table border="1" v-if="shopView">
+      <tr>
+        <th width="50">NO</th>
+        <th width="150">ITEM</th>
+        <th width="100">PRICE</th>
+        <th width="300">EXPLANATION</th>
+        <th width="50">BUY</th>
+      </tr>
+      <tr v-for="(list, idx) in shopList" v-bind:key="list.name">
+        <th align="center">{{ idx + 1 }}</th>
+        <th align="center">{{ list.name }}</th>
+        <th align="center">{{ list.price }}</th>
+        <th align="center">{{ list.effect.desc }}</th>
+        <th align="center">
+          <label>
+            <input type="checkbox" v-model="shopListValue" v-bind:value="idx">
+          </label>
+        </th>
+      </tr>
+    </table>
+  </label>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button v-on:click="addMonster">Random Monster(1)</button>
+  <button v-on:click="addManyMonster">Random Monsters(100)</button>
   <ul>
-    <li v-for="(monster, index) in myMonsters"
-        v-bind:key="monster.no">
-      NO.{{ monster.no }} / NAME.{{ monster.name }} / TYPE.{{ monster.type }} / HP.{{ monster.hp }}
-      <button v-on:click="userAttack(index)">평타</button>
-      <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+    <button v-on:click="skill">SKILL</button>
+    <li v-for="(monster, index) in myMonsters" v-bind:key="monster.no">
+      NO.{{ monster.no }} / NAME.{{ monster.name }} / TYPE.{{ monster.type }} / 
+      HP.{{ monster.hp }} / EXP.{{ monster.exp }} / MONEY.{{ monster.money }}
+      <button v-on:click="userAttack(index)">때리기</button>
     </li>
   </ul>
 </div>
