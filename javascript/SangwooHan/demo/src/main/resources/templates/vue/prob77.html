@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="game">
+
+  <p>{{ message }}</p>
+  <ol>
+    <li v-for="(item,index) in list">{{ item }}</li>
+  </ol>
+    <p>{{message2}}</p>
+    <ol>
+        <li v-for="item in inventory"> {{ item }}</li>
+    </ol>
+   <button v-on:click="addMonster">몬스터 추가하기</button> 
+    <ul>
+        <li
+                v-for="(monster,index) in monsters"
+                v-bind:key="monster.id"
+                v-bind:class="{ strong: monster.hp >500}">
+            ID.{{ monster.id }} {{ monster.name3 }} HP.{{ monster.hp }}
+            <span v-if="monster.hp >500">상위몹</span>
+            <button v-on:click="userAttack(index)">평타</button>
+            <button v-on:click="removeMonster(index)">몬스터 삭제.</button>
+        </li>
+    </ul>
+
+</div>
+<script src="/vue/second/game.js"></script>
+</body>
+</html>
