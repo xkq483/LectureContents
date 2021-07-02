@@ -26,7 +26,7 @@ function showList () {
 
     // 요소마다 반복시켜 리스팅하고 x 표시 눌러서 사라지게
     for (var i = 0; i < itemList.length; i++) {
-        list += "<li>" + itemList[i] + "<span class='close' id=" + i + "> X</span></li>";
+        list += "<li>" + itemList[i] + "<span class='close' id=" + i + ">X</span></li>";
     }
     // 리스팅을 끝내는 </ul> 태그 셋팅
     list += "</ul>";

@@ -38,10 +38,3 @@ input {
     cursor: pointer;
     transition: 0.3; /* 포커싱에 걸리는 시간 및 변경 타이밍 */
 }
-
-/* 후처리 */
-form::after{
-    content: "";
-    display: table;
-    clear: both;
-}
