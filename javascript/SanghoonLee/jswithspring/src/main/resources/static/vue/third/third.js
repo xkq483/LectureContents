@@ -77,6 +77,23 @@ var app = new Vue ({
                 hp: this.monsterBook[randNum].hp
             })
         },
+        addManyMonster () {
+            // 100마리씩 추가
+            for (var i = 0; i < 100; i++) {
+                var max = this.monsters.reduce( function (a, b) {
+                    return a > b.id ? a : b.id
+                }, 0)
+
+                var monBookLen = this.monsterBook.length
+                var idx = Math.floor(Math.random() * monBookLen)
+
+                this.monsters.push({
+                    id: max + 1,
+                    name: this.monsterBook[idx].name,
+                    hp: this.monsterBook[idx].hp
+                })
+            }
+        },
         removeMonster: function (index) {
             this.monsters.splice(index, 1);
         },
@@ -85,6 +102,12 @@ var app = new Vue ({
         },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
+        },
+        myDarknessDragon () {
+            for (var i = 0; i < this.monsters.length; i++) {
+                this.monsters[i].hp = 
+                    parseInt(this.monsters[i].hp - this.characterStatus.atk * 3.5)
+            }
         }
     },
     beforeCreate() {
