@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <button v-on:click="addMonster">랜덤 포켓몬 뽑기</button>
+  <ul>
+    <li v-for="(monster, index) in myMonsters"
+        v-bind:key="monster.no">
+      NO.{{ monster.no }} / NAME.{{ monster.name }} / TYPE.{{ monster.type }} / HP.{{ monster.hp }}
+      <button v-on:click="userAttack(index)">평타</button>
+      <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+    </li>
+  </ul>
+</div>
+<script src="/vue/vueGame.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
