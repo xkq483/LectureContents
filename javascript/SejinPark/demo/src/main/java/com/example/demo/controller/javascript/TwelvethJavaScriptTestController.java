@@ -20,4 +20,17 @@ public class TwelvethJavaScriptTestController {
 
         return "/javascript/twelveth/userListWithArrayTest";
     }
+    @GetMapping("/domTest")
+    public String getDomTest () {
+        log.info("getDomTest()");
+
+        return "/javascript/twelveth/domTest";
+    }
+
+    @GetMapping("/domEventTest")
+    public String getDomEventTest () {
+        log.info("getDomEventTest()");
+
+        return "/javascript/twelveth/domEventTest";
+    }
 }
