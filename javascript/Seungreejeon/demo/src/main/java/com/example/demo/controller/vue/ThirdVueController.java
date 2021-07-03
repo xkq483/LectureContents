@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
-public class SecondVueController {
+public class ThirdVueController {
 
-    @GetMapping("/vueForTest")
-    public String getVueForTest() {
-        log.info("vueForTest(): 뷰로 for문을 맥이자!");
+    @GetMapping("/vueGame")
+    public String getVueGame(){
+        log.info("getVueGame()");
 
-        return "/vue/second";
+        return "/vue/third";
+
     }
 
 }

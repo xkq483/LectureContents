@@ -8,11 +8,12 @@ var app = new Vue ({
         num: 3,
         count: 0,
         radius: 50,
-        randomNumber: "",
+        randomNumber: 0,
         monsterName: '',
-        monsterHP: '',
         monsters: [
-            { id: null, name: null, hp: null },
+            { id: 1, name: '슬라임', hp: 30 },
+            { id: 2, name: '고블린', hp: 50 },
+            { id: 3, name: '카오스 드래곤', hp: 99999999 }
         ]
     },
     methods: {
@@ -27,14 +28,14 @@ var app = new Vue ({
         },
         addMonster: function () {
             // 샘플용 코드
-            // var arr = [1, 2, 3, 4];
-            // // reduce ( function (유지되는 값, 반복하며 비교하거나 연산 대상이 되는 값))
-            // var sum = arr.reduce( function (accumulator, currentValue) {
-            //     alert(accumulator)
-            //     return accumulator + currentValue
-            // }, 0)
+            var arr = [1, 2, 3, 4];
+            // reduce ( function (유지되는 값, 반복하며 비교하거나 연산 대상이 되는 값))
+            var sum = arr.reduce( function (accumulator, currentValue) {
+                alert(accumulator)
+                return accumulator + currentValue
+            }, 0)
 
-            // alert(sum)
+            alert(sum)
 
             // reduce()를 사용하면 알아서 내부에 있는 요소를 전부 낱개로 쪼개서 하나하나 비교하게됨
             // 그래서 function(a, b)에 입력으로 들어가는 a, b는
@@ -51,10 +52,8 @@ var app = new Vue ({
             this.monsters.push({
                 id: max + 1,
                 name: this.monsterName,
-                hp: this.monsterHP
+                hp: 500
             })
-       
-          
         },
         removeMonster: function (index) {
             // 찾은 인덱스 값에서 1개를 지워라
@@ -65,9 +64,9 @@ var app = new Vue ({
             this.monsters[index].hp -= 10
         },
         randomGeneration () {
-            this.randomNumber = Math.floor(Math.random() * 10)
+            // 1 ~ 10까지 난수를 생성합니다.
+            this.randomNumber = Math.floor(Math.random() * 10) + 1;
         }
-
     },
     beforeCreate() {
         console.log('Vue 객체를 만들기 이전입니다.')
