@@ -21,6 +21,8 @@ var app = new Vue ({
         shopList: [],
         shopListValue: [],
         totalPrice: 0,
+        inventory: [],
+        tempNumber: 0,
         characterStatus: {
             level: 1,
             hp: 70,
@@ -92,11 +94,11 @@ var app = new Vue ({
             
             // console.log(JSON.stringify(this.shopList[1], ['price']))
             // console.log(JSON.parse(jsonData).price)
-            console.log(this.totalPrice)
-            console.log(JSON.stringify(this.shopList[1], ['price']))
-            console.log(JSON.parse(JSON.stringify(this.shopList[1], ['price'])).price)
-            var jsonData = JSON.stringify(this.shopList[1], ['price']) 
-            console.log(JSON.parse(jsonData).price)
+            // console.log(this.totalPrice)
+            // console.log(JSON.stringify(this.shopList[1], ['price']))
+            // console.log(JSON.parse(JSON.stringify(this.shopList[1], ['price'])).price)
+            // var jsonData = JSON.stringify(this.shopList[1], ['price']) 
+            // console.log(JSON.parse(jsonData).price)
             
             
 
@@ -109,10 +111,46 @@ var app = new Vue ({
                 var j = this.shopListValue[i]                
                 console.log('shopList[' + i + ']의 상품이름은 : '+ JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name +
                 '이고 가격은 : ' + JSON.parse(JSON.stringify(this.shopList[j], ['price'])).price + '원이다')
+
                 this.totalPrice +=  JSON.parse(JSON.stringify(this.shopList[j], ['price'])).price
             }
-            this.totalPrice = this.totalPrice + 1
-            console.log('결제금액 : ' + this.totalPrice)     
+            console.log('결제금액 : ' + this.totalPrice)
+
+        },
+        equipItem () {
+            for (var i = 0; i < this.shopListValue.length; i++)    {
+              
+                var j = this.shopListValue[i]                
+                
+                console.log(typeof this.shopList[j].effect.atk)
+                this.characterStatus.atk += JSON.parse(this.shopList[j].effect.atk)
+                console.log("공격력이 " + JSON.parse(this.shopList[j].effect.atk) + " 올랐습니다.")
+                
+                // 2. amount를 못뽑겠습니다.
+                // console.log(typeof this.shopList[j].effect.amount)
+                // this.characterStatus.hp += JSON.parse(this.shopList[j].effect.amount)
+                // console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 회복됐습니다.")
+            }
+            
+        },
+        myInventory () {
+         
+            for (var i = 0; i < this.shopListValue.length; i++)    {
+                var j = this.shopListValue[i]
+                var e = this.tempNumber
+
+                this.inventory[e+i+1] = JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name 
+                
+            }
+            this.tempNumber += this.shopListValue.length
+            console.log(this.inventory)
+            console.log(':: Inventory ::')
+            for (var i = 0; i < this.inventory.length; i++) {          
+
+                console.log(JSON.parse(JSON.stringify(this.inventory)))
+                console.log(JSON.parse(JSON.stringify(this.inventory)).i)
+                console.log(JSON.parse(JSON.stringify(this.inventory)).i)
+            }
 
         },
         shuffleShopList () {
@@ -194,6 +232,7 @@ var app = new Vue ({
         console.log('totalPrive의 현재 상태는 : ' + this.totalPrice)
 
 
+        // 1, 2번 기능 : 구매 및 소지금 차감
         if ( this.totalPrice > 0) {
             console.log("소지금액 : " + this.characterStatus.money)
             console.log("결제금액 : " + this.totalPrice)
@@ -203,7 +242,9 @@ var app = new Vue ({
             j = this.shopListValue.length
             this.shopListValue.splice(j, 1)
             this.totalPrice = 0
-            console.log("제대로 작동중인가?")           
+            console.log("제대로 작동중인가?")
+
+
         }
             
 
