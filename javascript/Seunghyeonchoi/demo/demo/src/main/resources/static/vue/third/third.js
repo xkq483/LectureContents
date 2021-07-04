@@ -149,6 +149,23 @@ var app = new Vue ({
             for (var i = 1; i < this.inventory.length; i++) {          
                 console.log(+ i +'번 아이템 : ' + this.inventory[i])
             }
+            console.log('장바구니 비우기 실행')
+            this.shopListValue.length = 0
+            console.log(this.shopListValue.length)
+            
+
+            
+            
+            // console.log(this.shopList.length)
+            // console.log('this.shopList.splice(0, this.shopList.length) 실행')
+            // this.shopList.splice(0, this.shopList.length)
+            // console.log(this.shopList.length)
+            // console.log('this.shopList.length = 0 실행')
+            // this.shopList.length = 0
+            // console.log(this.shopList.length)
+            
+
+
             console.log('왜 안 되냐 형태가 어떻게 되는 거냐 : ' + inventory)
 
         },
