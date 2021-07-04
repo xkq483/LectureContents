@@ -87,7 +87,7 @@ var app = new Vue ({
     },
     methods: {
         purchase() {
-     
+            console.log('purchase ()')   
 
             // var jsonData = JSON.stringify(this.shopList[1], ['price'])       
 
@@ -119,22 +119,46 @@ var app = new Vue ({
 
         },
         equipItem () {
+            console.log('equipItem ()')
             for (var i = 0; i < this.shopListValue.length; i++)    {
               
-                var j = this.shopListValue[i]                
+                var j = this.shopListValue[i]
+
                 
-                console.log(typeof this.shopList[j].effect.atk)
-                this.characterStatus.atk += JSON.parse(this.shopList[j].effect.atk)
-                console.log("공격력이 " + JSON.parse(this.shopList[j].effect.atk) + " 올랐습니다.")
+                if (JSON.parse(JSON.stringify(this.shopList[j].effect.desc)) == 'hp 회복') {
+                    this.characterStatus.hp += JSON.parse(this.shopList[j].effect.amount)
+                    console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 올랐습니다.")
+                } else {
+                    this.characterStatus.atk += JSON.parse(this.shopList[j].effect.atk)
+                    console.log("공격력이 " + JSON.parse(this.shopList[j].effect.atk) + " 올랐습니다.")
+                }
+
+                // if (JSON.parse(JSON.stringify(this.shopList[j].effect.desc)) == 'hp 회복') {
+                //     this.characterStatus.amout += JSON.parse(this.shopList[j].effect.amout)
+                //     console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 올랐습니다.")
+                // } else {
+                //     this.characterStatus.atk += JSON.parse(this.shopList[j].effect.atk)
+                //     console.log("공격력이 " + JSON.parse(this.shopList[j].effect.atk) + " 올랐습니다.")
+                // }
                 
-                // 2. amount를 못뽑겠습니다.
-                // console.log(typeof this.shopList[j].effect.amount)
                 // this.characterStatus.hp += JSON.parse(this.shopList[j].effect.amount)
                 // console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 회복됐습니다.")
+                // var temp01 = JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name  
+                // console.log(temp01)
+                // console.log(typeof temp01)
+                // console.log(temp01 == 'HP 포션 II')
+                // console.log('잠시 쉬고')
+                // console.log('잠시 쉬고')
+                // var temp02 = JSON.parse(JSON.stringify(this.shopList[j].effect.desc))  
+                // console.log(temp02)
+                // console.log(typeof temp02)
+                // console.log(temp02 == 'hp 회복')
+                // console.log(JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name)
             }
             
         },
         myInventory () {
+            console.log('myInventory ()')  
          
             for (var i = 0; i < this.shopListValue.length; i++)    {
                 var j = this.shopListValue[i]
