@@ -23,6 +23,7 @@ var app = new Vue ({
         totalPrice: 0,
         inventory: [],
         tempNumber: 0,
+        inventoryView: false,
         characterStatus: {
             level: 1,
             hp: 70,
@@ -139,18 +140,16 @@ var app = new Vue ({
                 var j = this.shopListValue[i]
                 var e = this.tempNumber
 
-                this.inventory[e+i+1] = JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name 
-                
+                this.inventory[e+i+1] = JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name                 
             }
             this.tempNumber += this.shopListValue.length
-            console.log(this.inventory)
-            console.log(':: Inventory ::')
-            for (var i = 0; i < this.inventory.length; i++) {          
 
-                console.log(JSON.parse(JSON.stringify(this.inventory)))
-                console.log(JSON.parse(JSON.stringify(this.inventory)).i)
-                console.log(JSON.parse(JSON.stringify(this.inventory)).i)
+            console.log(':: Inventory ::')
+
+            for (var i = 1; i < this.inventory.length; i++) {          
+                console.log(+ i +'번 아이템 : ' + this.inventory[i])
             }
+            console.log('왜 안 되냐 형태가 어떻게 되는 거냐 : ' + inventory)
 
         },
         shuffleShopList () {

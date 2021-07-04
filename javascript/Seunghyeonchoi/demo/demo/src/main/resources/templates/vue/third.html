@@ -53,7 +53,22 @@
             </th>
             <button v-if="shopView" v-on:click="purchase()">구매</button>
             <button v-if="shopView" v-on:click="equipItem()">구매한 물건 장착</button>
-            <button v-if="shopView" v-on:click="myInventory()">인벤토리</button>
+<!--            <button v-if="shopView" v-on:click="myInventory()">인벤토리</button>-->
+        </tr>
+    </table>
+
+    <label>
+    <input type="checkbox" v-model="inventoryView" v-on:click="myInventory()">인벤토리
+    </label>
+    <table border="1" v-if="inventoryView">
+        <tr>
+            <th align="center" width="40">번호</th>
+            <th align="center" width="120">아이템명</th>
+        </tr>
+        <tr v-for="(list, idx) in inventory"
+            v-bind:key="list">
+            <th align="center" width="40">{{ idx + 1 }}</th>
+            <th align="center" width="120">{{ list }}</th>
         </tr>
     </table>
 
