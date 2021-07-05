@@ -66,7 +66,13 @@ var app = new Vue ({
             { name: '리치', hp: 9000, exp: 500, money: 90000 },
             { name: '듀라한', hp: 15000, exp: 700, money: 150000 },
             { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
-            { name: '뱀파이어 로드', hp: 150000, exp: 45000, money: 1500000 },
+            { name: '뱀파이어 로드', hp: 150000, exp: 4500, money: 1500000 },
+            { name: '이무기', hp: 300000, exp: 10000, money: 3000000 },
+            { name: '베헤모스', hp: 500000, exp: 20000, money: 5000000 },
+            { name: '리치 로드', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '베헤모스 킹', hp: 2000000, exp: 80000, money: 20000000 },
+            { name: '드래곤', hp: 4000000, exp: 150000, money: 40000000 },
+            { name: '데스 나이트', hp: 10000000, exp: 300000, money: 100000000 },
             { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
             { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ],
@@ -194,6 +200,12 @@ var app = new Vue ({
         userAttack: function (index) {
             this.monsters[index].hp -= this.characterStatus.atk
         },
+        spiritChaosDevilBlade (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 20 +
+                                        this.characterStatus.str * 8 +
+                                        this.characterStatus.dex * 3 +
+                                        this.characterStatus.intelligence * 0.7
+        },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
@@ -244,6 +256,12 @@ var app = new Vue ({
             this.characterStatus.defaultAtk += 3
             this.characterStatus.atk += 3
             this.characterStatus.def += 1
+            this.characterStatus.str *= 1.1
+            this.characterStatus.intelligence *= 1.1
+            this.characterStatus.dex *= 1.1
+            this.characterStatus.vit *= 1.1
+            this.characterStatus.def *= 1.1
+            this.characterStatus.men *= 1.1
 
             // 레벨링 시스템 구축
             if (this.characterStatus.level < 10) {
