@@ -22,10 +22,10 @@ public class FirstVueController {
         return "/vue/vueForTest";
     }
 
-    @GetMapping("/prob77")
-    public String getProb77() {
-        log.info("getProb77()");
+    @GetMapping("/prob78")
+    public String getProb78() {
+        log.info("getProb78()");
 
-        return "/vue/prob77";
+        return "/vue/prob78";
     }
 }
