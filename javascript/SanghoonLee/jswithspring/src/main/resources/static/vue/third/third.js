@@ -14,10 +14,13 @@ var app = new Vue ({
         shopListValue: [],
         inventoryView: false,
         myInventory: [],
+        myInventoryValue: [],
         characterStatus: {
             level: 1,
             hp: 70,
             mp: 30,
+            itemAtk: 0,
+            defaultAtk: 10,
             atk: 10,
             str: 10,
             intelligence: 10,
@@ -57,8 +60,13 @@ var app = new Vue ({
             { name: '귀인', hp: 2800, exp: 180, money: 28000 },
             { name: '킹 슬라임', hp: 3000, exp: 200, money: 30000 },
             { name: '고스트', hp: 3200, exp: 250, money: 32000 },
+            { name: '흡혈귀', hp: 4000, exp: 300, money: 44000 },
+            { name: '스켈레톤 나이트', hp: 5500, exp: 350, money: 55000 },
+            { name: '메탈 슬라임', hp: 7000, exp: 40000, money: 70000 },
             { name: '리치', hp: 9000, exp: 500, money: 90000 },
+            { name: '듀라한', hp: 15000, exp: 700, money: 150000 },
             { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
+            { name: '뱀파이어 로드', hp: 150000, exp: 45000, money: 1500000 },
             { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
             { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ],
@@ -119,6 +127,30 @@ var app = new Vue ({
             } else {
                 alert('돈.벌.어.와!')
             }
+        },
+        equipItem () {
+            var tmpSum = 0
+
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory length: ' + this.myInventory.length)
+
+            for (var i = 0; i < this.myInventoryValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for (var j = 0; j < this.myInventory.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.myInventoryValue[i] == j) {
+                        console.log('매칭 성공!')
+
+                        tmpSum += this.myInventory[j].effect.atk
+                        break
+                    }
+                }
+            }
+
+            this.characterStatus.itemAtk = tmpSum
+            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum
         },
         buttonClickTest: function (event) {
             alert('뷰 짱')
@@ -209,6 +241,7 @@ var app = new Vue ({
                     this.characterStatus.totalLevelBar)
             this.characterStatus.level += 1
             this.characterStatus.hp *= 1.2
+            this.characterStatus.defaultAtk += 3
             this.characterStatus.atk += 3
             this.characterStatus.def += 1
 
