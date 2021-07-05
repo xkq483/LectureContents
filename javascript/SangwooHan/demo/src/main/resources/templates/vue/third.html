@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+  <p>캐릭터 상태 창</p>
+  <p>HP: {{ characterStatus.hp }} MP: {{ characterStatus.mp }}
+    ATK: {{ characterStatus.atk }} Lv: {{ characterStatus.level }}</p>
+  <p>STR: {{ characterStatus.str }} INT: {{ characterStatus.intelligence }}
+    DEX: {{ characterStatus.dex }} VIT: {{ characterStatus.vit }}
+    DEF: {{ characterStatus.def }} MEN: {{ characterStatus.men }}</p>
+  <p>총경험치통:{{characterStatus.totalLevelBar}} </p>
+  <P>현재 경험치:{{characterStatus.currentLevelBar}} </P>
+  <p>현재 내 골드:{{characterStatus.mygold}}</p><br><br>
+
+  <p>상점</p>
+    <label>
+      <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">판매목록
+    </label>
+    <table border="1" v-if="itemBook">
+      <tr>
+        <th align="center" whidth="20">번호</th>
+        <th align="center" whidth="80">이이템명</th>
+        <th align="center" whidth="80">가격</th>
+        <th align="center" whidth="320">아이템설명</th>
+        <th align="center" whidth="40">구매</th>
+      </tr>
+      <tr v-for="(list, idx) in itemBook"
+      v-bind:key="list.name">
+      <th align="center" whidth="40">{{idx + 1}}</th>
+      <th align="center" whidth="120">{{list.name}}</th>
+      <th align="center" whidth="160">{{list.price}}</th>
+      <th align="center" whidth="320">{{list.effect.desc}}</th>
+      <th align="center">
+        <label>
+          <input type="checkbox"
+          v-model="shopListValue"
+          v-bind:value="idx">
+
+        </label>
+
+
+
+      </tr>
+
+    </table>
+
+  <button v-on:click="crymydarkdragon">울부짖어라 내안의 흑.염.룡.!</button>
+  <!-- 1. 몬스터 도감을 적당히 아무렇게나 만든다
+       2. 랜덤과 몬스터 도감을 활용하여 몬스터 생성시 랜덤하게 몬스터를 생성 -->
+  <input v-model="monsterName">
+  <button v-on:click="addMonster">몬스터 추가하기</button>
+  <button v-on:click="add100Monster">몬스터 100마리 추가</button>
+  <ul>
+    <li v-for="(monster, index) in monsters"
+        v-bind:key="monster.id"
+        v-bind:class="{ strong: monster.hp > 300 }">
+      ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }} EXP.{{monster.exp}} Gold.{{monster.gold}}
+      <span v-if="monster.hp > 300">짱쎄다</span>
+      <button v-on:click="userAttack(index)">평타</button>
+
+    </li>
+  </ul>
+
+  <p>몬스터 도감이며 앞으로 계속 업데이트 될 예정입니다!</p>
+  <ul>
+    <li v-for="monsterInfo in monsterBook"
+        v-bind:key="monsterInfo.name">
+      이름: {{ monsterInfo.name }}, HP: {{ monsterInfo.hp }} EXP.{{monsterInfo.exp}} Gold.{{monsterInfo.gold}}
+    </li>
+  </ul>
+ </div>
+
+<script src="/vue/third/third.js"></script>
+</body>
+</html>
