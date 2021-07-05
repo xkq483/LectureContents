@@ -10,12 +10,19 @@ var app = new Vue ({
         radius: 50,
         randomNumber: 0,
         shopView: false,
+        jobView: false,
+        goGetJob: false,
         shopList: [],
         shopListValue: [],
+        inventoryView: false,
+        myInventory: [],
+        myInventoryValue: [],
         characterStatus: {
             level: 1,
             hp: 70,
             mp: 30,
+            itemAtk: 0,
+            defaultAtk: 10,
             atk: 10,
             str: 10,
             intelligence: 10,
@@ -27,7 +34,8 @@ var app = new Vue ({
             totalLevelBar: 10,
             // 현재 누적한 경험치량
             currentLevelBar: 0,
-            wallet: 0
+            money: 0,
+            jobSelect: '모험가',
         },
         monsterName: '',
         monsters: [
@@ -36,41 +44,52 @@ var app = new Vue ({
             { id: 3, name: '카오스 드래곤', hp: 99999999 }
         ],
         monsterBook: [
-            { name: '슬라임', hp: 30, exp: 1, money: 30},
-            { name: '고블린', hp: 50, exp: 2, money: 50},
-            { name: '레드 슬라임', hp: 70, exp: 4, money: 70},
-            { name: '홉 고블린', hp: 120, exp: 8, money: 120},
-            { name: '그린 슬라임', hp: 150, exp: 12, money: 150},
-            { name: '스켈레톤', hp: 200, exp: 20, money: 200},
-            { name: '고블린 마법사', hp: 250, exp: 25, money: 250},
-            { name: '블루 슬라임', hp: 300, exp: 35, money: 300},
-            { name: '트롤', hp: 500, exp: 50, money: 500},
-            { name: '원혼', hp: 700, exp: 60, money: 700},
-            { name: '고블린 족장', hp: 800, exp: 70, money: 800},
-            { name: '스켈레톤 기사', hp: 1000, exp: 80, money: 1000},
-            { name: '오우거', hp: 1200, exp: 90, money: 1200},
-            { name: '오우거 메이지', hp: 1500, exp: 100, money: 1500},
-            { name: '스켈레톤 근위병', hp: 2000, exp: 120, money: 2000},
-            { name: '고블린 대사장', hp: 2500, exp: 150, money: 2500},
-            { name: '귀인', hp: 2800, exp: 180, money: 2800},
-            { name: '킹 슬라임', hp: 3000, exp: 200, money: 3000},
-            { name: '고스트', hp: 3200, exp: 250, money: 3200},
-            { name: '리치', hp: 9000, exp: 500, money: 9000},
-            { name: '리치 킹', hp: 90000, exp: 2500, money: 90000},
-            { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 99999999},
-            { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 999999999999999}
+            { name: '슬라임', hp: 30, exp: 1, money: 10 },
+            { name: '고블린', hp: 50, exp: 2, money: 20 },
+            { name: '레드 슬라임', hp: 70, exp: 4, money: 40 },
+            { name: '홉 고블린', hp: 120, exp: 8, money: 80 },
+            { name: '그린 슬라임', hp: 150, exp: 12, money: 160 },
+            { name: '스켈레톤', hp: 200, exp: 20, money: 320 },
+            { name: '고블린 마법사', hp: 250, exp: 25, money: 640 },
+            { name: '블루 슬라임', hp: 300, exp: 35, money: 1280 },
+            { name: '트롤', hp: 500, exp: 50, money: 2000 },
+            { name: '원혼', hp: 700, exp: 60, money: 4000 },
+            { name: '고블린 족장', hp: 800, exp: 70, money: 5000 },
+            { name: '스켈레톤 기사', hp: 1000, exp: 80, money: 10000 },
+            { name: '오우거', hp: 1200, exp: 90, money: 12000 },
+            { name: '오우거 메이지', hp: 1500, exp: 100, money: 15000 },
+            { name: '스켈레톤 근위병', hp: 2000, exp: 120, money: 20000 },
+            { name: '고블린 대사장', hp: 2500, exp: 150, money: 25000 },
+            { name: '귀인', hp: 2800, exp: 180, money: 28000 },
+            { name: '킹 슬라임', hp: 3000, exp: 200, money: 30000 },
+            { name: '고스트', hp: 3200, exp: 250, money: 32000 },
+            { name: '흡혈귀', hp: 4000, exp: 300, money: 44000 },
+            { name: '스켈레톤 나이트', hp: 5500, exp: 350, money: 55000 },
+            { name: '메탈 슬라임', hp: 7000, exp: 40000, money: 70000 },
+            { name: '리치', hp: 9000, exp: 500, money: 90000 },
+            { name: '듀라한', hp: 15000, exp: 700, money: 150000 },
+            { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
+            { name: '뱀파이어 로드', hp: 150000, exp: 4500, money: 1500000 },
+            { name: '이무기', hp: 300000, exp: 10000, money: 3000000 },
+            { name: '베헤모스', hp: 500000, exp: 20000, money: 5000000 },
+            { name: '리치 로드', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '베헤모스 킹', hp: 2000000, exp: 80000, money: 20000000 },
+            { name: '드래곤', hp: 4000000, exp: 150000, money: 40000000 },
+            { name: '데스 나이트', hp: 10000000, exp: 300000, money: 100000000 },
+            { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
+            { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ],
         itemBook: [
-            { name: 'HP 포션 I',price: 50, effect: { desc: 'hp 회복', amount: 200 }},
-            { name: 'HP 포션 II',price: 200, effect: { desc: 'hp 회복', amount: 700 }},
-            { name: 'HP 포션 III',price: 1000, effect: { desc: 'hp 회복', amount: 2000 }},
-            { name: 'HP 포션 IV',price: 6000, effect: { desc: 'hp 회복', amount: 6000 }},
-            { name: 'HP 포션 V',price: 42000, effect: { desc: 'hp 회복', amount: 15000 }},
-            { name: '검',price: 10000000, effect: { desc: '무기', atk: 100 }},
-            { name: '강철검',price: 50000000, effect: { desc: '무기', atk: 200 }},
-            { name: '환두대도',price: 250000000, effect: { desc: '무기', atk: 350 }},
-            { name: '발라디아 강철검',price: 125000000, effect: { desc: '무기', atk: 500 }},
-            { name: '칠지도',price: 100000000000, effect: { desc: '무기', atk: 1000 }},
+            { name: 'HP 포션 I', price: 50, effect: { desc: 'hp 회복', amount: 200 }},
+            { name: 'HP 포션 II', price: 200, effect: { desc: 'hp 회복', amount: 700 }},
+            { name: 'HP 포션 III', price: 1000, effect: { desc: 'hp 회복', amount: 2000 }},
+            { name: 'HP 포션 IV', price: 6000, effect: { desc: 'hp 회복', amount: 6000 }},
+            { name: 'HP 포션 V', price: 42000, effect: { desc: 'hp 회복', amount: 15000 }},
+            { name: '검', price: 10000000, effect: { desc: '무기', atk: 100 }},
+            { name: '강철검', price: 50000000, effect: { desc: '무기', atk: 200 }},
+            { name: '환두대도', price: 250000000, effect: { desc: '무기', atk: 350 }},
+            { name: '발라리아 강철검', price: 1250000000, effect: { desc: '무기', atk: 500 }},
+            { name: '칠지도', price: 10000000000, effect: { desc: '무기', atk: 1000 }},
         ]
     },
     methods: {
@@ -79,10 +98,68 @@ var app = new Vue ({
                 this.shopListValue = []
             }
 
-            for ( var i = 0; i < 10; i++) {
+            for (var i = 0; i < 10; i++) {
                 var randIdx = Math.floor(Math.random() * this.itemBook.length)
                 this.shopList[i] = this.itemBook[randIdx]
             }
+        },
+        calcBuy: function () {
+            var tmpSum = 0
+
+            console.log('calcBuy(): ' + this.shopListValue.length)
+            console.log('shoplist length: ' + this.shopList.length)
+
+            for (var i = 0; i < this.shopListValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.shopListValue[i])
+
+                for (var j = 0; j < this.shopList.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.shopListValue[i] == j) {
+                        console.log('매칭 성공!')
+                        tmpSum += this.shopList[j].price
+                        break
+                    }
+                }
+            }
+
+            if (this.characterStatus.money - tmpSum >= 0) {
+                this.characterStatus.money -= tmpSum
+
+                // 사용자 인벤토리 구현시 필요한 로직 작성
+                for (var i = 0; i < this.shopListValue.length; i++) {
+                    this.myInventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        effect: this.shopList[this.shopListValue[i]].effect
+                    })
+                }
+            } else {
+                alert('돈.벌.어.와!')
+            }
+        },
+        equipItem () {
+            var tmpSum = 0
+
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory length: ' + this.myInventory.length)
+
+            for (var i = 0; i < this.myInventoryValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for (var j = 0; j < this.myInventory.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.myInventoryValue[i] == j) {
+                        console.log('매칭 성공!')
+
+                        tmpSum += this.myInventory[j].effect.atk
+                        break
+                    }
+                }
+            }
+
+            this.characterStatus.itemAtk = tmpSum
+            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum
         },
         buttonClickTest: function (event) {
             alert('뷰 짱')
@@ -94,7 +171,9 @@ var app = new Vue ({
             var max = this.monsters.reduce( function (a, b) {
                 return a > b.id ? a : b.id
             }, 0)
+
             var randNum = Math.floor(Math.random() * this.monsterBook.length);
+
             this.monsters.push({
                 id: max + 1,
                 name: this.monsterBook[randNum].name,
@@ -124,6 +203,12 @@ var app = new Vue ({
         userAttack: function (index) {
             this.monsters[index].hp -= this.characterStatus.atk
         },
+        spiritChaosDevilBlade (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 20 +
+                this.characterStatus.str * 8 +
+                this.characterStatus.dex * 3 +
+                this.characterStatus.intelligence * 0.7
+        },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
@@ -148,6 +233,7 @@ var app = new Vue ({
     },
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
+
         var i
         for (i = 0; i < this.monsters.length; i++) {
             if (this.monsters[i].hp <= 0) {
@@ -155,21 +241,31 @@ var app = new Vue ({
                 for (var j = 0; j < this.monsterBook.length; j++) {
                     if (this.monsters[i].name === this.monsterBook[j].name) {
                         this.characterStatus.currentLevelBar += this.monsterBook[j].exp
-                        this.characterStatus.wallet += this.monsterBook[j].money
+                        this.characterStatus.money += this.monsterBook[j].money
                     }
                 }
                 this.monsters.splice(i, 1)
             }
         }
+
         var criteria = this.characterStatus.currentLevelBar
+
         for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
             this.characterStatus.currentLevelBar =
                 parseInt(this.characterStatus.currentLevelBar -
                     this.characterStatus.totalLevelBar)
             this.characterStatus.level += 1
             this.characterStatus.hp *= 1.2
+            this.characterStatus.defaultAtk += 3
             this.characterStatus.atk += 3
             this.characterStatus.def += 1
+            this.characterStatus.str *= 1.1
+            this.characterStatus.intelligence *= 1.1
+            this.characterStatus.dex *= 1.1
+            this.characterStatus.vit *= 1.1
+            this.characterStatus.def *= 1.1
+            this.characterStatus.men *= 1.1
+
             // 레벨링 시스템 구축
             if (this.characterStatus.level < 10) {
                 this.characterStatus.totalLevelBar =
@@ -194,7 +290,9 @@ var app = new Vue ({
                     parseInt(this.characterStatus.totalLevelBar * 2)
             }
         }
-
+        if(this.characterStatus.level >= 50) {
+            this.goGetJob = true;
+        }
     },
     updated() {
         console.log('VDOM의 변화를 적용합니다.')

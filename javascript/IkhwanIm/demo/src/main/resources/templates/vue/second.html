@@ -35,7 +35,7 @@
         <h3>몬스터 도감</h3>
         <ul>
             <li v-for="(monster, index) in monsterBook"
-                v-bind:key="monsterBook.id"
+                v-bind:key="monster.id"
                 v-bind:class="{ strong: monster.hp > 300 }">
                 ID.{{ monster.id }} {{ monster.name }} HP.{{ monster. hp }}
                 <span v-if="monster.hp > 500">졸라쌤</span>
