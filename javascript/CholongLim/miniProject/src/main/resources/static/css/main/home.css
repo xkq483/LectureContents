@@ -19,17 +19,30 @@ h1 {
 div p {
     list-style-type: none;
     padding: 0px;
-    margin-top: 70px;
+    margin-top: 30px;
     text-align: center;
     font-family: "Arial Rounded MT";
 }
 .menu {
-    margin-left: 0px;
+    margin-left: 111px;
     margin-top: 0px;;
     float: left;
     height: 1000px;
     width: 300px;
     background: #003663
+    color: #ffffff;
+}
+input.img-menu {
+     background:url('/img/main/menu.png') no-repeat;
+     background-size: 50px 50px;
+     background-position: center center;
+     border: none;
+     cursor: pointer;
+     padding: 40px 0px 0px 80px;
+}
+.btn-center{
+    text-align:center;
+    padding-top:20px;
 }
 div nav ul {
     list-style-type: none;
