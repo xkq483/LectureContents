@@ -13,6 +13,7 @@ var app = new Vue ({
         shopList: [],
         shopListValue: [],
         inventoryView: false,
+        myInventory: [],
         characterStatus: {
             level: 1,
             hp: 70,
@@ -109,6 +110,12 @@ var app = new Vue ({
                 this.characterStatus.money -= tmpSum
 
                 // 사용자 인벤토리 구현시 필요한 로직 작성
+                for (var i = 0; i < this.shopListValue.length; i++) {
+                    this.myInventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        effect: this.shopList[this.shopListValue[i]].effect
+                    })
+                }
             } else {
                 alert('돈.벌.어.와!')
             }
