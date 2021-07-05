@@ -20,7 +20,24 @@
             DEF: {{ Math.floor(characterStatus.def) }} MEN: {{ Math.floor(characterStatus.men) }}</p>
         <p>현재 경험치 상태: {{ characterStatus.currentLevelBar }} / 
             {{ characterStatus.totalLevelBar }}</p>
-        <p>소지금: {{ characterStatus.money }}</p><br><br>
+        <p>소지금: {{ characterStatus.money }}</p><br>
+        <!-- 조건: 레벨 50 이상에서 활성화됨 -->
+        <select v-model="characterStatus.selectJob" v-if="firstFormerView">
+            <!-- 도적, 전사, 광전사, 암흑기사, 성기사, 궁수, 총사, 권사, 사제 -->
+            <option disabled="disabled">전직을 선택하세요!</option>
+            <option value="madWarrior">광전사</option>
+            <option value="warrior">전사</option>
+            <option value="magician">마법사</option>
+            <option value="thief">도적</option>
+            <option value="archer">궁수</option>
+            <option value="gunner">총사</option>
+            <option value="boxer">권사</option>
+            <option value="priest">사제</option>
+            <option value="knight">기사</option>
+            <option value="darkKnight">암흑기사</option>
+            <option value="holyKnight">성기사</option>
+        </select>
+        <p>당신이 선택한 직업은 {{ characterStatus.selectJob }} 입니다!</p><br><br>
 
         <h3>인벤토리</h3>
         <label>

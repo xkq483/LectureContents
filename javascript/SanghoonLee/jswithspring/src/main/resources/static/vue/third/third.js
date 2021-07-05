@@ -9,6 +9,7 @@ var app = new Vue ({
         count: 0,
         radius: 50,
         randomNumber: 0,
+        firstFormerView: false,
         shopView: false,
         shopList: [],
         shopListValue: [],
@@ -32,7 +33,8 @@ var app = new Vue ({
             totalLevelBar: 10,
             // 현재 누적한 경험치량
             currentLevelBar: 0,
-            money: 0
+            money: 0,
+            selectJob: '모험가'
         },
         monsterName: '',
         monsters: [
@@ -230,6 +232,12 @@ var app = new Vue ({
     },
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
+
+        if ((this.characterStatus.level >= 50) && (this.characterStatus.selectJob === '모험가')) {
+            this.firstFormerView = true
+        } else {
+            this.firstFormerView = false
+        }
 
         var i
         for (i = 0; i < this.monsters.length; i++) {
