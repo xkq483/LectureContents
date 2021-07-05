@@ -251,7 +251,7 @@ var app = new Vue ({
                 // 몬스터 제거 이전에 무엇을 해야할까요 ? 경험치 획득
                 for (var j = 0; j < this.monsterBook.length; j++) {
                     if (this.monsters[i].name === this.monsterBook[j].name) {
-                        this.characterStatus.currentLevelBar += this.monsterBook[j].exp
+                        this.criteria += this.monsterBook[j].exp
                         this.characterStatus.money += this.monsterBook[j].money
                     }
                 }
@@ -267,9 +267,9 @@ var app = new Vue ({
 
         var criteria = this.characterStatus.currentLevelBar
 
-        for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
-            this.characterStatus.currentLevelBar =
-                parseInt(this.characterStatus.currentLevelBar - 
+        for (; this.criteria >= this.characterStatus.totalLevelBar; ) {
+            this.criteria =
+                parseInt(this.criteria - 
                     this.characterStatus.totalLevelBar)
             this.characterStatus.level += 1
             this.characterStatus.hp *= 1.2
@@ -301,7 +301,7 @@ var app = new Vue ({
             }
            
         }
-        this.characterStatus.needExp = Math.abs(this.characterStatus.totalLevelBar - this.characterStatus.currentLevelBar) 
+        this.characterStatus.needExp = Math.abs(this.characterStatus.totalLevelBar - this.criteria) 
 
     },
     

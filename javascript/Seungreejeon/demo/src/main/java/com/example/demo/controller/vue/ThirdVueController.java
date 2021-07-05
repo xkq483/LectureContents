@@ -17,4 +17,12 @@ public class ThirdVueController {
 
     }
 
+    @GetMapping("/ansVueGame")
+    public String getAnsVueGame(){
+        log.info("getVueGame()");
+
+        return "/vue/Ans_third";
+
+    }
+
 }
