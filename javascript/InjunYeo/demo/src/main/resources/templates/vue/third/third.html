@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/css/vue/second.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 어떤 동작을 하겠다는 가다를 잡아놓고 -->
+<div id="app">
+  <p>캐릭터 상태 창</p>
+  <p> {{characterStatus.level}}</p> <p> HP:{{characterStatus.hp}} MP : {{characterStatus.mp}}</p>
+
+    <p>ATK : {{characterStatus.atk}} DEF : {{characterStatus.def}} INT : {{characterStatus.int}} DEX : {{characterStatus.dex}} </p>
+    <p>현재 경험치 상태: {{characterStatus.currentLevelBar}} / {{characterStatus.totalLevelBar }} </p>
+    <p>소지금: {{ characterStatus.money }}</p><br><br>
+
+  <h3>상점</h3>
+  <label>
+    <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">판매목록
+  </label>
+  <table border="1" v-if="shopView">
+    <tr >
+      <th align="center" width="40">번호</th>
+      <th align="center" width="120">아이템명</th>
+      <th align="center" width="160">가격</th>
+      <th align="center" width="320">아이템설명</th>
+      <th align="center" width="40">구매</th>
+    </tr>
+    <tr v-for="(list,idx) in shopList"
+        v-bind:key="list.name">
+      <th align="center" width="40">{{idx +1 }}</th>
+      <th align="center" width="120">{{list.name}}</th>
+      <th align="center" width="160">{{list.price}}</th>
+      <th align="center" width="320">{{list.effect.desc}}</th>
+      <th align="center" width="40">
+        <label>
+          <input type="checkbox"
+                  v-model="shopListValue"
+                  v-bind:value="idx"
+            >
+        </label>
+
+      </th>
+
+    </tr>
+  </table>
+
+  <button v-on:click="wideSkill()">광역기기</button>
+
+  <p> {{randomNumber}} </p>
+  <button v-on:click="randomGeneration">랜덤숫자발생!</button>
+
+
+  <!--1. 몬스터 도감을 적당히 만든다
+      2. 랜덤과 몬스터 도감을 활용하여 몬스터 ㅐ생성시 랜덤하게 몬스터를 생성-->
+  <input v-model="monsterName">
+  <button v-on:click="addMonster">몬스터 추가하기</button>
+  <button v-on:click="addManyMonster">몬스터 100마리씩 리젠시키기</button>
+  <ul>
+    <li v-for="(monster, index) in monsters"
+        v-bind:key="monster.id"
+        v-bind:class="{ strong: monster.hp > 300 }">
+      ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }},경험치:{{monster.exp}}
+      <span v-if="monster.hp > 300">개쎄다</span>
+      <button v-on:click="userAttack(index)">평타</button>
+      <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+    </li>
+  </ul>
+
+  <p>몬스터 도감</p>
+  <ul>
+    <li v-for="monsterInfo in monsterBook"
+        v-bind:key="monsterInfo.name">
+        이름:{{monsterInfo.name}},HP:{{monsterInfo.hp}},경험치:{{monsterInfo.exp}}, 돈:{{monsterInfo.money}}
+    </li>
+
+  </ul>
+
+</div>
+
+<script src="/vue/second/third.js"></script>
+</body>
+</html>
