@@ -24,7 +24,7 @@
 
         <h3>인벤토리</h3>
         <label>
-            <input type="checkbox" v-model="inventoryView" v-on:click="printMyInventory()">소지품보기
+            <input type="checkbox" v-model="inventoryView">소지품보기
         </label>
         <button v-on:click="equipItem()">아이템적용!</button>
         <table border="1" v-if="inventoryView">
@@ -34,8 +34,7 @@
                 <th align="center" width="320">아이템 설명</th>
                 <th align="center" width="40">장착</th>
             </tr>
-            <!--
-            <tr v-for="(list, idx) in shopList"
+            <tr v-for="(list, idx) in myInventory"
                 v-bind:key="list.idx">
                 <th align="center" width="40">{{ idx + 1 }}</th>
                 <th align="center" width="120">{{ list.name }}</th>
@@ -43,12 +42,11 @@
                 <th align="center" width="40">
                     <label>
                         <input type="checkbox" 
-                                v-model="shopListValue"
+                                v-model="inventoryListValue"
                                 v-bind:value="idx">
                     </label>
                 </th>
             </tr>
-            -->
         </table>
         <h3>상점</h3>
         <label>
