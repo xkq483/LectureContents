@@ -137,6 +137,32 @@ var app = new Vue ({
                 alert('돈.벌.어.와!')
             }
         },
+        getJob() {
+          if(this.characterStatus.jobSelect == "warrior") {
+              this.characterStatus.str *= 2
+              this.characterStatus.def *= 2
+              this.characterStatus.atk *= 2
+          }else if(this.characterStatus.jobSelect == "mage") {
+              this.characterStatus.intelligence *= 2
+              this.characterStatus.mp *=2
+              this.characterStatus.men *=2
+              this.characterStatus.atk *= 2
+          }else if(this.characterStatus.jobSelect == "archer") {
+              this.characterStatus.dex *= 2
+              this.characterStatus.atk *= 2
+          }else if(this.characterStatus.jobSelect == "thief") {
+              this.characterStatus.str *= 1.5
+              this.characterStatus.dex *= 1.5
+              this.characterStatus.atk *= 2
+          }else if(this.characterStatus.jobSelect == "pirate") {
+              this.characterStatus.str *= 1.5
+              this.characterStatus.dex *= 1.5
+              this.characterStatus.atk *= 2
+          }
+
+            this.jobView = false;
+
+        },
         equipItem () {
             var tmpSum = 0
 
@@ -290,7 +316,7 @@ var app = new Vue ({
                     parseInt(this.characterStatus.totalLevelBar * 2)
             }
         }
-        if(this.characterStatus.level >= 50) {
+        if(this.characterStatus.level >= 20) {
             this.goGetJob = true;
         }
     },
