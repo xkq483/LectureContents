@@ -13,25 +13,19 @@
     <ol>
         <li v-for="item in list">{{ item }}</li>
     </ol>
-
     <button v-on:click="buttonClickTest">클릭해봐!</button>
-
     <input v-model="initMsg">
     <p>{{ initMsg }}</p>
-
     <button v-on:click="show = !show">얍!</button>
     <transition>
         <p v-if="show">invisibility도 쉽게 제어 되네 ?</p>
     </transition>
-
     <p>Hello {{ message }}</p>
     <p>{{ message.length }}</p>
     <p>{{ list[3] }}</p>
     <p>{{ list[num] }}</p>
-
     <button v-on:click="increment">숫자를 카운팅 해보자!</button>
     <p>{{ count }}번 클릭했습니다.</p>
-
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <circle cx="100" cy="75" v-bind:r="radius" fill="lightblue"/>
     </svg>
@@ -53,17 +47,7 @@
         </li>
     </ul>
 
-    <input v-model="monsterName">
-    <button v-on:click="addMonster">몬스터 추가하기</button>
-    <ul>
-        <p>몬스터 도감</p>
-        <li v-for="(monster, index) in monsterList"
-            v-bind:key="monster.id"
-            v-bind:class="{ strong: monster.hp > 300 }">
-            ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
-            <span v-if="monster.hp > 300">개쎄다</span>
-        </li>
-    </ul>
+    
 </div>
 <!-- 요렇게 해라고 오더함 -->
 <script src="/vue/second/second.js"></script>

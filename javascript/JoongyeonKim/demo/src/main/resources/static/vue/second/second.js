@@ -10,11 +10,6 @@ var app = new Vue ({
         radius: 50,
         randomNumber: 0,
         monsterName: '',
-        monsterList: [
-           { id: 1, name: '슬라임', hp: 30 },
-           { id: 2, name: '고블린', hp: 50 },
-           { id: 3, name: '드래곤', hp: 9999999 }
-        ],
         //먼저 몬스터 도감을 적당히 아무렇게나 만든다(배열 사용)
         //그리고 몬스터 생성이 현재 사용자가 직접 이름을 넣고 생성하며
         //hp는 재미없게도 무조건 500으로 맞춰지고 있다.

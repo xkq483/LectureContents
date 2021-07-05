@@ -45,9 +45,6 @@ public class BoardCheckController {
         return "/board/read";
     }
 
-    // 글을 지워도 숫자가 올라가야만 하는 이유가 무엇인가?
-    // 배열 100개에서 중간의 값을 지우는 경우가 있는가
-    // 애초에 중간에 지워진 값을 채우는 것 또한 큰 낭비다
     @PostMapping("/remove")
     public String remove (int boardNo, Model model) throws Exception{
         log.info("remove");
