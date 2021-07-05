@@ -15,11 +15,4 @@ public class SecondVueController {
 
         return "/vue/second";
     }
-
-    @GetMapping("/vueForHw")
-    public String getVueForHw () {
-        log.info("getVueForHw(): Let's use v-for!");
-
-        return "/vue/secondHw";
-    }
 }
