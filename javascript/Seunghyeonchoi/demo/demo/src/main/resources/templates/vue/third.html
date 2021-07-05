@@ -37,7 +37,7 @@
             <th align="center" width="40">구매</th>
         </tr>
         <tr v-for="(list, idx) in shopList"
-            v-bind:key="list.name">
+            v-bind:key="list.idx">
             <th align="center" width="40">{{ idx + 1 }}</th>
             <th align="center" width="120">{{ list.name }}</th>
             <th align="center" width="160">{{ list.price }}</th>

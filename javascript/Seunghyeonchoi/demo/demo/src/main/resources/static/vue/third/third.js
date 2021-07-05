@@ -87,6 +87,7 @@ var app = new Vue ({
     },
     methods: {
         purchase() {
+            console.log('')
             console.log('purchase ()')   
 
             // var jsonData = JSON.stringify(this.shopList[1], ['price'])       
@@ -106,7 +107,7 @@ var app = new Vue ({
             console.log('shopListValue : ' + this.shopListValue)
             console.log('shopListValue.length : ' + this.shopListValue.length)
 
-            console.log('계산 시작')
+            console.log(':: 계산서 ::')
             for (var i = 0; i < this.shopListValue.length; i++)    {
               
                 var j = this.shopListValue[i]                
@@ -115,10 +116,11 @@ var app = new Vue ({
 
                 this.totalPrice +=  JSON.parse(JSON.stringify(this.shopList[j], ['price'])).price
             }
-            console.log('결제금액 : ' + this.totalPrice)
+            console.log('합계금액 : ' + this.totalPrice)
 
         },
         equipItem () {
+            console.log('')
             console.log('equipItem ()')
             for (var i = 0; i < this.shopListValue.length; i++)    {
               
@@ -158,6 +160,7 @@ var app = new Vue ({
             
         },
         myInventory () {
+            console.log('')
             console.log('myInventory ()')  
          
             for (var i = 0; i < this.shopListValue.length; i++)    {
@@ -187,10 +190,6 @@ var app = new Vue ({
             // console.log('this.shopList.length = 0 실행')
             // this.shopList.length = 0
             // console.log(this.shopList.length)
-            
-
-
-            console.log('왜 안 되냐 형태가 어떻게 되는 거냐 : ' + inventory)
 
         },
         shuffleShopList () {
@@ -269,11 +268,13 @@ var app = new Vue ({
     },
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
-        console.log('totalPrive의 현재 상태는 : ' + this.totalPrice)
+        // console.log('totalPrive의 현재 상태는 : ' + this.totalPrice)
 
 
         // 1, 2번 기능 : 구매 및 소지금 차감
         if ( this.totalPrice > 0) {
+            console.log('')
+            console.log('계산 실행')
             console.log("소지금액 : " + this.characterStatus.money)
             console.log("결제금액 : " + this.totalPrice)
             this.characterStatus.money = this.characterStatus.money - this.totalPrice 
@@ -282,12 +283,7 @@ var app = new Vue ({
             j = this.shopListValue.length
             this.shopListValue.splice(j, 1)
             this.totalPrice = 0
-            console.log("제대로 작동중인가?")
-
-
         }
-            
-
 
 
         var i
