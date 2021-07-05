@@ -12,6 +12,7 @@ var app = new Vue ({
         shopView: false,
         shopList: [],
         shopListValue: [],
+        inventoryView: false,
         characterStatus: {
             level: 1,
             hp: 70,
@@ -82,6 +83,34 @@ var app = new Vue ({
             for (var i = 0; i < 10; i++) {
                 var randIdx = Math.floor(Math.random() * this.itemBook.length)
                 this.shopList[i] = this.itemBook[randIdx]
+            }
+        },
+        calcBuy: function () {
+            var tmpSum = 0
+
+            console.log('calcBuy(): ' + this.shopListValue.length)
+            console.log('shoplist length: ' + this.shopList.length)
+
+            for (var i = 0; i < this.shopListValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.shopListValue[i])
+
+                for (var j = 0; j < this.shopList.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.shopListValue[i] == j) {
+                        console.log('매칭 성공!')
+                        tmpSum += this.shopList[j].price
+                        break
+                    }
+                }
+            }
+
+            if (this.characterStatus.money - tmpSum >= 0) {
+                this.characterStatus.money -= tmpSum
+
+                // 사용자 인벤토리 구현시 필요한 로직 작성
+            } else {
+                alert('돈.벌.어.와!')
             }
         },
         buttonClickTest: function (event) {
