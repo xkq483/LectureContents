@@ -1,6 +1,6 @@
-var prob77 = new Vue ({
+var prob80 = new Vue ({
 
-    el: '#prob77',
+    el: '#prob80',
 
     data: {
         userExp: 0,
@@ -11,6 +11,9 @@ var prob77 = new Vue ({
         job: '',
         userJob: 'none',
         changeCareer: false,
+        choosableClass: ["warrior", "archer", "thief", "magician"],
+        usedSkillName: '',
+        usedSkillShow: false,
         userStat: {
              lev: 1, str: 10, vit: 50, dex: 30, mana: 40
         },
@@ -139,31 +142,89 @@ var prob77 = new Vue ({
             }
         },
         normalAttack(index) {
-            this.summonedCreatures[index].hp -= this.userStat.str
+            this.usedSkillName = '평타 공격'
+
+            if(this.userJob === 'warrior') {
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.str*0.7 + this.userStat.dex*0.3)
+            } else if (this.userJob === 'archer') {
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.str*0.5 + this.userStat.dex*0.5)
+            } else if (this.userJob === 'thief') {
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.str*0.3 + this.userStat.dex*0.7)
+            } else if (this.userJob === 'magician') {
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.dex*0.2 + this.userStat.mana*0.8)
+            } else {
+                this.summonedCreatures[index].hp -= this.userStat.str
+            }
         },
         ultimateAttack(index) {
+            this.usedSkillName = '궁극기'
             this.summonedCreatures[index].hp -= 500
         },
         meteorStrike() {
+            this.usedSkillName = '메테오 스트라이크'
             for(var i=0; i<this.summonedCreatures.length; i++) {
                 this.summonedCreatures[i].hp -= 10000
             }
         },
-        chooseJob() {
-            this.userJob = this.job
+        advancedWideSkill() {
+
+            for(var i=0; i<this.summonedCreatures.length; i++) {
+                if(this.userJob === 'warrior') {
+                    this.summonedCreatures[i].hp -= Math.floor(this.userStat.str*1.7 + this.userStat.dex*1.3)
+                    this.usedSkillName = '휠윈드'
+                } else if (this.userJob === 'archer') {
+                    this.summonedCreatures[i].hp -= Math.floor(this.userStat.str*1.5 + this.userStat.dex*1.5)
+                    this.usedSkillName = '데스 애로우'
+                } else if (this.userJob === 'thief') {
+                    this.summonedCreatures[i].hp -= Math.floor(this.userStat.str*1.3 + this.userStat.dex*1.7)
+                    this.usedSkillName = '새비지 플로우'
+                } else if (this.userJob === 'magician') {
+                    this.summonedCreatures[i].hp -= Math.floor(this.userStat.dex*1.2 + this.userStat.mana*1.8)
+                    this.usedSkillName = '프로스트 노바'
+                }
+            }
+        },
+        advancedSkill(index) {
 
             if(this.userJob === 'warrior') {
-                this.userStat.str += 10
-                alert('전사로 전직하셨습니다! 추가 str + 10up!!!')
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.str*1.2 + this.userStat.dex*0.8)
+                this.usedSkillName = '매시브 어택'
             } else if (this.userJob === 'archer') {
-                this.userStat.dex += 10
-                alert('궁수로 전직하셨습니다! 추가 dex + 10up!!!')
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.str*0.5 + this.userStat.dex*1.5)
+                this.usedSkillName = '라이트닝 애로우'
             } else if (this.userJob === 'thief') {
-                this.userStat.dex += 10
-                alert('도적으로 전직하셨습니다! 추가 dex + 10up!!!')
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.str*1.0 + this.userStat.dex*1.0)
+                this.usedSkillName = '표창 던지기'
             } else if (this.userJob === 'magician') {
-                this.userStat.mana += 10
-                alert('법사로 전직하셨습니다! 추가 mana + 10up!!!')
+                this.summonedCreatures[index].hp -= Math.floor(this.userStat.dex*0.2 + this.userStat.mana*1.8)
+                this.usedSkillName = '파이어볼트'
+            }
+        },
+        chooseJob() {
+            var j=0;
+
+            for(var i=0; i<this.choosableClass.length; i++) {
+                if(this.job === this.choosableClass[i]) {
+                    j++
+                    this.userJob = this.job
+
+                    if(this.userJob === 'warrior') {
+                        this.userStat.str += 10
+                        alert('전사로 전직하셨습니다! 추가 str + 10up!!!')
+                    } else if (this.userJob === 'archer') {
+                        this.userStat.dex += 10
+                        alert('궁수로 전직하셨습니다! 추가 dex + 10up!!!')
+                    } else if (this.userJob === 'thief') {
+                        this.userStat.dex += 10
+                        alert('도적으로 전직하셨습니다! 추가 dex + 10up!!!')
+                    } else if (this.userJob === 'magician') {
+                        this.userStat.mana += 10
+                        alert('법사로 전직하셨습니다! 추가 mana + 10up!!!')
+                    }
+                }
+            }
+            if(j != 1) {
+                alert("전직 직업을 선택하세요!")
             }
         }
     },
@@ -218,7 +279,7 @@ var prob77 = new Vue ({
                     this.userStat.str += 1
                     this.userStat.vit += parseInt(this.userStat.vit * 0.05)
                     this.userStat.dex += 2
-                    this.userStat.mana += 3
+                    this.userStat.mana += 2
                 }
             }
         }

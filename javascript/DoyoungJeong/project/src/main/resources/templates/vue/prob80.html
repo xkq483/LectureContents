@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/css/vue/second.css">
 </head>
     <script>
-        #prob77 {
-            line-height: 10px;
-        }
     </script>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <div id="prob77">
+    <div id="prob80">
 
         <p>userLev.{{ userStat.lev }} userStr.{{ userStat.str }} userVit.{{ userStat.vit }}
             userDex.{{ userStat.dex }} userMana.{{ userStat.mana }}</p>
@@ -83,6 +81,12 @@
         <p>등장할 크리처 번호 : {{ ranNum }}</p>
         <button v-on:click="show5Creature">show 5 Creature</button>
         <button v-on:click="meteorStrike">meteor Strike!!</button>
+        <dic v-if="userJob != 'none'">
+        <button v-on:click="advancedWideSkill">전직 전용 광역기!!</button>
+        <transition>
+        <p>{{ usedSkillName }} 사용!</p>
+        </transition>
+        </dic>
         <ul>
             <li v-for="(summonedCreature, index) in summonedCreatures"
                 v-bind:key="summonedCreature.id">
@@ -95,10 +99,11 @@
                 ID.{{ summonedCreature.id }} {{ summonedCreature.name }} HP.{{ summonedCreature.hp }}
                 <button v-on:click="normalAttack(index)">평타</button>
                 <button v-on:click="ultimateAttack(index)">궁</button>
+                <button v-on:click="advancedSkill(index)" v-if="userJob != 'none'">전직 전용 단일기!!</button>
             </li>
         </ul>
 
     </div>
-    <script src="/vue/second/prob79.js"></script>
+    <script src="/vue/second/prob80.js"></script>
 </body>
 </html>
