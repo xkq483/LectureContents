@@ -242,9 +242,12 @@ var app = new Vue ({
             this.firstFormerView = false
         }
 
-        if ((!this.firstFormerStat) && (this.firstFormerView))
+        if (!(this.characterStatus.selectJob === '모험가') && !(this.firstFormerStat))
         {
-            this.characterStatus.atk += 500
+            this.characterStatus.atk += 1000
+            this.characterStatus.defaultAtk += 1000
+            
+            this.characterStatus.str += 500
             this.characterStatus.int += 50
             this.characterStatus.dex += 1000
             this.characterStatus.vit += 50
