@@ -8,15 +8,21 @@ var app = new Vue ({
         num: 3,
         count: 0,
         radius: 50,
-        randomNumber: 0,  
+        randomNumber: 0,
+        firstFormerView: false,
         shopView: false,
         shopList: [],
         shopListValue: [],
         // 배열로 만들어보기      
+        inventoryView: false,
+        myInventory: [],
+        myInventoryValue: [],
         characterStatus: {
             level: 1,
             hp: 70,
             mp: 30,
+            itemAtk: 0,
+            defaultAtk: 10,
             atk: 10,
             str: 10,
             intelligence: 10,
@@ -28,7 +34,8 @@ var app = new Vue ({
             totalLevelBar: 10,
             // 현재 누적한 경험치량
             currentLevelBar: 0,
-            money: 0
+            money: 0,
+            selectJob: '모험가'
         },
         monsterName: '',
         monsters: [
@@ -58,8 +65,8 @@ var app = new Vue ({
             { name: '고스트', hp: 3200, exp: 10000000, money: 80000 },
             { name: '리치', hp: 9000, exp: 500000000, money: 90000 },
             { name: '리치 킹', hp: 90000, exp: 99999999999, money: 1000900000 },
-            { name: '카오스 드래곤', hp: 99999999, exp: 999999999999999999, money: 5666750055556 },
-            { name: '리무루 템페스트', hp: 999999999999999, exp: 9999999999999999999999, money: 999999999999999 }
+            { name: '카오스 드래곤', hp: 9999999999, exp: 9999999999999999999, money: 5666750055556 },
+            { name: '리무루 템페스트', hp: 99999999999999, exp: 999999999999999999999999999999999999999999, money: 999999999999999 }
         ],
         itemBook: [
             { name: 'HP 포션 I', price: 50, effect: {desc: 'hp 회복', amount: 200}},
@@ -71,19 +78,10 @@ var app = new Vue ({
             { name: '강철검', price: 10000000, effect: {desc: '무기', atk: 200}},
             { name: '환두대도', price: 50000000, effect: {desc: '무기', atk: 350}},
             { name: '발라리아 검', price: 150000000, effect: {desc: '무기', atk: 500}},
-            { name: '칠지도', price: 10000000000, effect: {desc: '무기', amount: 10000}}
+            { name: '칠지도', price: 10000000000, effect: {desc: '무기', atk: 100000000}}
         ]
     },
     methods: {
-            purchaseButton: function () {
-            // 아이템 리스트 목록을 가져온다.
-            // 버튼을 눌러 구매를 진행하고, 아이템 구매 시 소지금에서 차감시킨다.
-            // 만약 소지금이 부족할시 아이템 구매는 이어지지 않고, 소지금이 부족하다고 알린다.
-            // 구매가 완료되면 아이템은 인벤토리 창으로 옮겨진다.
-
-            }
-
-
         shuffleShopList() {
             if(!this.shopView) {
                 this.shopListValue = []
@@ -95,6 +93,69 @@ var app = new Vue ({
             }
 
         },
+        calcBuy: function () {
+            var tmpSum = 0
+
+            console.log('calcBuy(): ' + this.shopListValue.length)
+            console.log('shopList length: ' + this.shopList.length)
+
+            for(var i = 0; i < this.shopListValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.shopListValue[i])
+
+                for(var j = 0; j < this.shopList.length; j++) {
+                    console.log('내부 루프')
+
+                    if(this.shopListValue[i] ==j) {
+                        console.log('매칭 성공!')
+                        tmpSum += this.shopList[j].price
+                        break
+                    }
+                }
+            }
+
+            if(this.characterStatus.money - tmpSum >= 0 ) {
+                this.characterStatus.money -= tmpSum
+                
+                //사용자 인벤토리 구현시 필요한 로직 작성
+                for(var i = 0; i < this.shopListValue.length; i++) {
+                    this.myInventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        effect: this.shopList[this.shopListValue[i]].effect
+                    })
+                }
+
+            } else {
+                alert('돈.벌.어.와!')
+            }           
+
+        },
+
+        equipItem() {
+            var tmpSum = 0
+
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory length: ' + this.myInventory.length)
+
+            for(var i = 0; i < this.myInventoryValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for(var j = 0; j < this.myInventory.length; j++) {
+                    console.log('내부 루프')
+
+                    if(this.myInventoryValue[i] ==j) {
+                        console.log('매칭 성공!')
+                        tmpSum += this.myInventory[j].effect.atk                        
+                        break
+                    }
+                }
+            
+            }            
+        //공격력이 중복되어 올라가는 부분을 수정
+        //this.characterStatus.atk += this.myInventory[j].effect.atk
+        this.characterStatus.itemAtk = tmpSum                       
+        this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum        
+        },
+
         buttonClickTest: function (event) {
             alert('뷰 짱')
         },
@@ -137,6 +198,13 @@ var app = new Vue ({
         userAttack: function (index) {
             this.monsters[index].hp -=  this.characterStatus.atk
         },
+        spiritChaosDevilBlade (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 20 + 
+                                        this.characterStatus.str * 8 + 
+                                        this.characterStatus.dex * 3 +
+                                        this.characterStatus.intelligence * 0.7
+
+        },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
@@ -162,6 +230,13 @@ var app = new Vue ({
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
 
+        if (this.characterStatus.level >= 50 && (this.characterStatus.selectJob === '모험가')) {
+            this.firstFormerView = true
+        } else {
+            this.firstFormerView = false
+        }    
+        
+
         var i
         for (i = 0; i < this.monsters.length; i++) {
             if (this.monsters[i].hp <= 0) {
@@ -186,8 +261,15 @@ var app = new Vue ({
                     this.characterStatus.totalLevelBar)
             this.characterStatus.level += 1
             this.characterStatus.hp *= 1.2
-            this.characterStatus.atk += 100
-            this.characterStatus.def +=1
+            this.characterStatus.defaultAtk += 3
+            this.characterStatus.atk += 3
+            this.characterStatus.def += 1
+            this.characterStatus.str *= 1.1
+            this.characterStatus.intelligence *= 1.1
+            this.characterStatus.vit *= 1.1
+            this.characterStatus.dex *= 1.1
+            this.characterStatus.def *= 1.1
+            this.characterStatus.men *= 1.1
 
             //레벨링 시스템 구축
             if (this.characterStatus.level < 10) {

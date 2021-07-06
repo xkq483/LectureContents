@@ -22,7 +22,7 @@
 </script>
 
 <body>
-<h1>회원가입</h1>
+<h1>회원가입(구매 회원)</h1>
 <h4>(*)필수항목</h4>
 
 <!-- form id="board"객체를 formObj에 대입한다.-->
@@ -39,12 +39,12 @@
         </tr>
         <tr>
             <td>*비밀번호</td>
-            <td><input type="password" id="pw" name="pw" th:field="*{pw}" onchange="isSame()"></td>
+            <td><input type="password" id="pw" name="pw" th:field="*{pw}" onchange="pwIsSame()"></td>
         </tr>
 
         <tr>
             <td>*비밀번호 확인</td>
-            <td><input type="password" id="pwCheck" name="pwCheck" th:field="*{pwCheck}" onchange="isSame()"><span id="same"></span></td>
+            <td><input type="password" id="pwCheck" name="pwCheck" th:field="*{pwCheck}" onchange="pwIsSame()"><span id="same"></span></td>
 
         </tr>
 
@@ -73,7 +73,7 @@
         <tr>
             <td>*배송받을 주소</td>
             <td><input type="text" name="address" th:field="*{address}">
-                <input type="submit" name="searchAddress" value="주소검색" th:field="*{searchAddress}" >
+               <!-- <input type="submit" name="searchAddress" value="주소검색" th:field="*{searchAddress}" >-->
             </td>
         </tr>
     </table>

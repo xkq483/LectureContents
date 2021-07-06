@@ -41,27 +41,27 @@ body {
     background-color: grey;
     border: 1px solid #cccccc;
     width: 100%;
-    height: 400px
+    height: 500px
 }
 .main-board1 {
+    float: left;
     background-color: grey;
     border: 1px solid #cccccc;
-    width: 49.5%;
-    float: left;
-    height: 250px;
+    width: 49.8%;
+    height: 300px;
 }
 .main-board2 {
     float: right;
     background-color: grey;
     border: 1px solid #cccccc;
-    width: 49.5%;
-    height: 250px;
+    width: 49.8%;
+    height: 300px;
 }
 
 .main-board3 {
-    display:inline-block;
+    display: inline-block;
     background-color: grey;
     border: 1px solid #cccccc;
     width: 100%;
-    height: 250px;
+    height: 300px;
 }

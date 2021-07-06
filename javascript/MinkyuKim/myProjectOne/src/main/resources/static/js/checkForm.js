@@ -8,7 +8,7 @@ if(theForm.id.value=="" || theForm.pw.value=="" || theForm.pwCheck.value=="" || 
     } else if(theForm.pw.value=="") {
         alert("필수 입력란(pw)이 비어있습니다. 확인해주세요")}
     } else if(theForm.pwCheck.value=="") {
-            alert("필수 입력란(pww)이 비어있습니다. 확인해주세요")}
+            alert("필수 입력란(pw)이 비어있습니다. 확인해주세요")}
     } else {
         alert("필수 입력란(address)이 비어있습니다. 확인해주세요")}
 }

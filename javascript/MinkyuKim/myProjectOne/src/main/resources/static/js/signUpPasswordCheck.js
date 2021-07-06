@@ -1,4 +1,4 @@
- function isSame() {
+ function pwIsSame() {
      var pw = document.twin.pw.value;
      var pwCheck = document.twin.pwCheck.value;
 
