@@ -8,7 +8,9 @@ var prob77 = new Vue ({
         levUp: 100,
         ranNum: Math.floor(Math.random() * 10) + 1,
         showShopList: false,
-        attNum: 0,
+        job: '',
+        userJob: 'none',
+        changeCareer: false,
         userStat: {
              lev: 1, str: 10, vit: 50, dex: 30, mana: 40
         },
@@ -87,18 +89,18 @@ var prob77 = new Vue ({
             this.shopListValue[0] = this.shopList[index]
         },
         buyItem() {
-            for(var i=0; i<this.itemsList.length; i++) {
-                if(this.shopListValue[0].name === this.itemsList[i].name) {
-                    if(this.userMoney >= this.itemsList[i].price) {
-                        this.inventory.push({
-                            name: this.itemsList[i].name,
-                            price: this.itemsList[i].price,
-                            effect: this.itemsList[i].effect,
-                        })
-                        this.userMoney -= this.itemsList[i].price
-                    } else {
-                        alert("돈이 부족합니다!")
-                    }
+
+            for(var i=0; i<this.shopListValue.length; i++) {
+
+                if(this.userMoney >= this.shopList[this.shopListValue[i]].price) {
+                    this.inventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        price: this.shopList[this.shopListValue[i]].price,
+                        effect: this.shopList[this.shopListValue[i]].effect
+                    })
+                    this.userMoney -= this.shopList[this.shopListValue[i]].price
+                } else {
+                   alert(this.shopList[this.shopListValue[i]].name + "을 구매할 돈이 부족합니다!")
                 }
             }
             this.shopListValue = []
@@ -146,6 +148,23 @@ var prob77 = new Vue ({
             for(var i=0; i<this.summonedCreatures.length; i++) {
                 this.summonedCreatures[i].hp -= 10000
             }
+        },
+        chooseJob() {
+            this.userJob = this.job
+
+            if(this.userJob === 'warrior') {
+                this.userStat.str += 10
+                alert('전사로 전직하셨습니다! 추가 str + 10up!!!')
+            } else if (this.userJob === 'archer') {
+                this.userStat.dex += 10
+                alert('궁수로 전직하셨습니다! 추가 dex + 10up!!!')
+            } else if (this.userJob === 'thief') {
+                this.userStat.dex += 10
+                alert('도적으로 전직하셨습니다! 추가 dex + 10up!!!')
+            } else if (this.userJob === 'magician') {
+                this.userStat.mana += 10
+                alert('법사로 전직하셨습니다! 추가 mana + 10up!!!')
+            }
         }
     },
     beforeUpdate() {
@@ -165,11 +184,6 @@ var prob77 = new Vue ({
                 this.userExp = this.userExp - this.levUp
                 this.userStat.lev ++
 
-                this.userStat.str += 1
-                this.userStat.vit += parseInt(this.userStat.vit * 0.05)
-                this.userStat.dex += 2
-                this.userStat.mana += 3
-
                 if(this.userStat.lev < 10) {
                     this.levUp += parseInt(this.levUp * 0.05)
                 } else if(this.userStat.lev < 20) {
@@ -178,6 +192,33 @@ var prob77 = new Vue ({
                     this.levUp += parseInt(this.levUp * 0.09)
                 } else if(this.userStat.lev < 40) {
                     this.levUp += parseInt(this.levUp * 0.1)
+                }
+
+                if(this.userJob === 'warrior') {
+                    this.userStat.str += 3
+                    this.userStat.vit += parseInt(this.userStat.vit * 0.02)
+                    this.userStat.dex += 4
+                    this.userStat.mana += 1
+                } else if (this.userJob === 'archer') {
+                    this.userStat.str += 2
+                    this.userStat.vit += parseInt(this.userStat.vit * 0.05)
+                    this.userStat.dex += 2
+                    this.userStat.mana += 3
+                } else if (this.userJob === 'thief') {
+                    this.userStat.str += 2
+                    this.userStat.vit += parseInt(this.userStat.vit * 0.08)
+                    this.userStat.dex += 2
+                    this.userStat.mana += 2
+                } else if (this.userJob === 'magician') {
+                    this.userStat.str += 1
+                    this.userStat.vit += parseInt(this.userStat.vit * 0.01)
+                    this.userStat.dex += 1
+                    this.userStat.mana += 8
+                } else {
+                    this.userStat.str += 1
+                    this.userStat.vit += parseInt(this.userStat.vit * 0.05)
+                    this.userStat.dex += 2
+                    this.userStat.mana += 3
                 }
             }
         }
@@ -193,5 +234,14 @@ var prob77 = new Vue ({
             }
         }
 
+        if(this.userStat.lev >= 10) {
+            this.changeCareer = true
+        } else {
+            this.changeCareer = false
+        }
+
+        if(this.userJob != 'none') {
+            this.changeCareer = false
+        }
     }
 })

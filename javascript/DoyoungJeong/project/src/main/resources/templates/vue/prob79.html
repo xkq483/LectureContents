@@ -15,8 +15,22 @@
 
         <p>userLev.{{ userStat.lev }} userStr.{{ userStat.str }} userVit.{{ userStat.vit }}
             userDex.{{ userStat.dex }} userMana.{{ userStat.mana }}</p>
+        <p>직업.{{ userJob }}</p>
         <p>사용자 경험치 / 레벨업. "{{ userExp }}" / "{{ levUp }}"</p>
         <p>사용자 소지금 : {{ userMoney }}</p>
+
+        <div id="changeCareer" v-if="changeCareer">
+
+        <select v-model="job">
+            <option disabled="disabled">Choose Your Path!</option>
+            <option value="warrior">warrior</option>
+            <option value="archer">archer</option>
+            <option value="thief">thief</option>
+            <option value="magician">magician</option>
+        </select>
+
+        <button v-on:click="chooseJob">직업 선택</button></p>
+        </div>
 
         <p>인벤토리 - 소지 아이템</p>
         <ul>
@@ -54,14 +68,17 @@
                 <th align="center" width="200">{{ item.effect }}</th>
                 <th align="center" width="40">
                     <label>
-                    <input type="checkbox" v-model="shopListValue" v-bind:value="index" v-on:click="chooseItem(index)">
+                    <input type="checkbox" v-model="shopListValue" v-bind:value="index">
                     <!-- 개개별로 체크하려면 v-bind:value가 필요 -->
                     </label>
                 </th>
             </tr>
         </table>
+
         <button v-on:click="buyItem">아이템 구매</button>
+        <p>선택한 아이템 번호. {{ shopListValue }}</p>
         <br>
+
         <button v-on:click="showCreature">show Creature</button>
         <p>등장할 크리처 번호 : {{ ranNum }}</p>
         <button v-on:click="show5Creature">show 5 Creature</button>
@@ -82,6 +99,6 @@
         </ul>
 
     </div>
-    <script src="/vue/second/prob78.js"></script>
+    <script src="/vue/second/prob79.js"></script>
 </body>
 </html>
