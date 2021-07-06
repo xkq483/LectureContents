@@ -9,13 +9,20 @@ var app = new Vue ({
         count: 0,
         radius: 50,
         randomNumber: 0,
+        firstFomerView: false,
         shopView: false,
+        inventoryView: false,
+        myInventory: [],
+        myInventoryValue:[],
         shopList: [],
         shopListValue: [],
         characterStatus: {
-            level: 1,
+            level: 30,
+            selectJob:'모험가',
             hp: 70,
             mp: 30,
+            itemAtk: 0,
+            defaultAtk: 10,
             atk: 10,
             str: 10,
             intelligence: 10,
@@ -46,7 +53,7 @@ var app = new Vue ({
             { name: '블루 슬라임', hp: 300, exp: 35, drop: 1280},
             { name: '트롤', hp: 500, exp: 50, drop: 2000},
             { name: '원혼', hp: 700, exp: 60, drop: 4000},
-            { name: '고블린 족장', hp: 800, exp: 70, drop: 5000},
+            { name: '무야호', hp: 800, exp: 70, drop: 5000},
             { name: '스켈레톤 기사', hp: 1000, exp: 80, drop: 10000},
             { name: '오우거', hp: 1200, exp: 90, drop: 12000},
             { name: '오우거 메이지', hp: 1500, exp: 100, drop: 15000},
@@ -55,6 +62,22 @@ var app = new Vue ({
             { name: '귀인', hp: 2800, exp: 180, drop: 28000},
             { name: '킹 슬라임', hp: 3000, exp: 200, drop: 30000},
             { name: '고스트', hp: 3200, exp: 250, drop: 32000},
+            { name: '고블린 족장', hp: 3000, exp: 200, drop: 30000},
+            { name: '대왕고블린', hp: 3500, exp: 250, drop: 33000},
+            { name: '흡혈귀', hp: 3800, exp: 280, drop: 35000},
+            { name: '머쉬맘', hp: 4000, exp: 300, drop: 36000},
+            { name: '자쿰', hp: 4300, exp: 330, drop: 38000},
+            { name: '노멀 자쿰', hp: 4700, exp: 400, drop: 44000},
+            { name: '하드 자쿰', hp: 5300, exp: 450, drop: 50000},
+            { name: '오니', hp: 5600, exp: 480, drop: 53000},
+            { name: '피아누스', hp: 5900, exp: 520, drop: 56000},
+            { name: '리셀스퀴드', hp: 6500, exp: 600, drop: 60000},
+            { name: '콜드샤크', hp: 6800, exp: 630, drop: 63000},
+            { name: '페페', hp: 7000, exp: 650, drop: 65000},
+            { name: '푸퍼', hp: 7400, exp: 700, drop: 68000},
+            { name: '씨코', hp: 8000, exp: 800, drop: 75000},
+            { name: '주니어 씰', hp: 8500, exp: 850, drop: 85000},
+            { name: '크라피', hp: 9000, exp: 900, drop: 90000},
             { name: '리치', hp: 9000, exp: 500, drop: 90000},
             { name: '리치 킹', hp: 90000, exp: 2500, drop: 900000},
             { name: '카오스 드래곤', hp: 99999999, exp: 1000000, drop:100000000},
@@ -84,22 +107,64 @@ var app = new Vue ({
               this.shopList[i] = this.itemBook[randIdx]
           }
         },
-        purchaseButton(shopListValue) {
-            var mugi = '무기'
-            var dddd = 'hp 회복'
+        calcBuy: function() {
+            var tmpSum = 0
 
-            if(this.shopList[shopListValue].price <= this.characterStatus.money){
-                this.characterStatus.money -= this.shopList[shopListValue].price
-                alert('구매가 완료되었습니다. 구매하신 금액만큼 소지금에서 차감합니다')
-                if(this.shopList[shopListValue].effect.des === mugi){
-                    this.characterStatus.atk += this.shopList[shopListValue].effect.atk
-                }else if(this.shopList[shopListValue].effect.des === dddd){
-                    this.characterStatus.hp += this.shopList[shopListValue].effect.amount
+            console.log('calcBuy(): ' + this.shopListValue.length)
+            console.log('shoplist length: ' + this.shopList.length)
+
+            for(var i = 0; i < this.shopListValue.length; i++){
+                console.log('외각루프 - 선택된 값: ' + this.shopListValue[i])
+
+                for(var j = 0; j < this.shopList.length; j++){
+                    console.log('내부 루프')
+
+                    if(this.shopListValue[i] == j){
+                        console.log('매칭 성공!')
+                        tmpSum += this.shopList[j].price
+                        break
+                    }
                 }
             }
-            else if(this.shopList[shopListValue].price > this.characterStatus.money){
-                alert('돈이 부족합니다. 다시 선택해주세요.')
+
+            if(this.characterStatus.money - tmpSum >= 0){
+                this.characterStatus.money -= tmpSum
+                alert('구매가 완료되었습니다!!')
+                // 사용자 인벤토리 구현시 필요한 로직 작성 
+                for(var i = 0; i < this.shopListValue.length; i++){
+                    this.myInventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        effect: this.shopList[this.shopListValue[i]].effect
+                    })
+                }
+            }else{
+                alert('돈이 부족합니다 더버세욤!!')
             }
+            
+        },
+        equipItem () {
+            var tmpSum = 0
+
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory length: ' + this.myInventory.length)
+
+            for(var i = 0; i < this.myInventoryValue.length; i++){
+                console.log('외각루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for(var j = 0; j < this.myInventory.length; j++){
+                    console.log('내부 루프')
+
+                    if(this.myInventoryValue[i] == j){
+                        console.log('매칭 성공!')
+
+                        tmpSum += this.myInventory[j].effect.atk
+                        break
+                    }
+                } 
+            }
+
+            this.characterStatus.itemAtk = tmpSum
+            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum
         },
         buttonClickTest: function (event) {
             alert('뷰 짱')
@@ -145,6 +210,12 @@ var app = new Vue ({
         userAttack: function (index) {
             this.monsters[index].hp -= this.characterStatus.atk
         },
+        spiritChaosDevilBlade(index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 20 +
+             this.characterStatus.str * 8 + this.characterStatus.dex * 8 +
+             this.characterStatus.intelligence * 8
+
+        },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
@@ -172,6 +243,89 @@ var app = new Vue ({
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
 
+    if((this.characterStatus.level >= 50) && (this.characterStatus.selectJob === '모험가')){
+        this.firstFomerView = true
+    }else{
+        this.firstFomerView = false
+    }
+
+
+    // 전사계열로 전직했을때 렙업 스텟 비율 조정
+    if((this.characterStatus.selectJob === 'madWarrior') || 
+    (this.characterStatus.selectJob === 'warrior') || 
+    (this.characterStatus.selectJob === 'boxer') || 
+    (this.characterStatus.selectJob === 'knight')||
+     (this.characterStatus.selectJob === 'darkKnight') ||
+     (this.characterStatus.selectJob === 'holyKnight') ){
+
+        // 스텟 비율 조정
+        var criteria = this.characterStatus.currentLevelBar
+
+        for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
+            this.characterStatus.currentLevelBar =
+                parseInt(this.characterStatus.currentLevelBar - 
+                    this.characterStatus.totalLevelBar)
+            this.characterStatus.level += 1
+            this.characterStatus.hp *= 1.5
+            this.characterStatus.defaultAtk += 6
+            this.characterStatus.atk += 6
+            this.characterStatus.def += 2
+            this.characterStatus.str *= 2.1
+            this.characterStatus.intelligence *= 1.1
+            this.characterStatus.dex *= 1.2
+            this.characterStatus.vit *= 1.1
+            this.characterStatus.men *= 1.1
+         }
+
+    // 마법사 계열로 전직했을시
+    }else if((this.characterStatus.selectJob === 'magician') ||
+    (this.characterStatus.selectJob === 'priest')){
+        
+        // 스텟 비율 조정
+        var criteria = this.characterStatus.currentLevelBar
+
+        for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
+            this.characterStatus.currentLevelBar =
+                parseInt(this.characterStatus.currentLevelBar - 
+                    this.characterStatus.totalLevelBar)
+            this.characterStatus.level += 1
+            this.characterStatus.hp *= 1.5
+            this.characterStatus.defaultAtk += 5
+            this.characterStatus.atk += 5
+            this.characterStatus.def += 1
+            this.characterStatus.str *= 1.1
+            this.characterStatus.intelligence *= 2.1
+            this.characterStatus.dex *= 1.2
+            this.characterStatus.vit *= 1.1
+            this.characterStatus.men *= 2.1
+        }
+
+        // 궁수 계열로 전직했을시
+    }else if((this.characterStatus.selectJob === 'thief') || 
+    (this.characterStatus.selectJob === 'archer') || 
+    (this.characterStatus.selectJob === 'gunner')){
+
+        // 스텟 비율 조정
+        var criteria = this.characterStatus.currentLevelBar
+
+        for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
+            this.characterStatus.currentLevelBar =
+                parseInt(this.characterStatus.currentLevelBar - 
+                    this.characterStatus.totalLevelBar)
+            this.characterStatus.level += 1
+            this.characterStatus.hp *= 1.5
+            this.characterStatus.defaultAtk += 6
+            this.characterStatus.atk += 6
+            this.characterStatus.def += 2
+            this.characterStatus.str *= 1.1
+            this.characterStatus.intelligence *= 1.1
+            this.characterStatus.dex *= 2.2
+            this.characterStatus.vit *= 2.1
+            this.characterStatus.men *= 1.1
+        }
+    }
+
+
         var i
         for (i = 0; i < this.monsters.length; i++) {
             if (this.monsters[i].hp <= 0) {
@@ -186,17 +340,26 @@ var app = new Vue ({
             }
         }
 
-        var criteria = this.characterStatus.currentLevelBar
 
+        var criteria = this.characterStatus.currentLevelBar
+    
         for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
             this.characterStatus.currentLevelBar =
                 parseInt(this.characterStatus.currentLevelBar - 
                     this.characterStatus.totalLevelBar)
+                 if(this.characterStatus.selectJob === '모험가'){
             this.characterStatus.level += 1
             this.characterStatus.hp *= 1.2
+            this.characterStatus.defaultAtk += 3
             this.characterStatus.atk += 3
             this.characterStatus.def += 1
-
+            this.characterStatus.str *= 1.1
+            this.characterStatus.intelligence *= 1.1
+            this.characterStatus.dex *= 1.1
+            this.characterStatus.vit *= 1.1
+            this.characterStatus.men *= 1.1
+        }
+                
             // 레벨링 시스템 구축
             if (this.characterStatus.level < 10) {
                 this.characterStatus.totalLevelBar =
@@ -221,9 +384,11 @@ var app = new Vue ({
                     parseInt(this.characterStatus.totalLevelBar * 2)
             }
         }
+
     },
     updated() {
         console.log('VDOM의 변화를 적용합니다.')
+        
     },
     beforeDestroy() {
         console.log('Vue 객체를 파괴하기 이전입니다.')

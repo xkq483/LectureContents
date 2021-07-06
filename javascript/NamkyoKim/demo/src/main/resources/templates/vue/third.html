@@ -10,16 +10,17 @@
     <p>캐릭터 상태 창</p>
     <p>HP: {{ Math.floor(characterStatus.hp) }} 
         MP:  {{ characterStatus.mp }} 
-        ATK:  {{ characterStatus.atk }}
+        ATK:  {{ Math.floor(characterStatus.atk) }}
          Lv: {{ characterStatus.level }}
+         JOB: {{ characterStatus.selectJob }}
     </p>
     <p>
-        STR: {{ characterStatus.str }}
-         INT: {{ characterStatus.intelligence }}
-          DEX: {{ characterStatus.str }}
-          VIT: {{ characterStatus.str }}
-          DEF: {{ characterStatus.str }}
-          MEN: {{ characterStatus.str }}
+        STR: {{ Math.floor(characterStatus.str) }}
+         INT: {{ Math.floor(characterStatus.intelligence) }}
+          DEX: {{ Math.floor(characterStatus.dex) }}
+          VIT: {{ Math.floor(characterStatus.vit) }}
+          DEF: {{ Math.floor(characterStatus.def) }}
+          MEN: {{ Math.floor(characterStatus.men) }}
     </p>
     <p>
         소지금: {{ characterStatus.money }}원
@@ -29,11 +30,54 @@
          {{ characterStatus.currentLevelBar }} /
         {{ characterStatus.totalLevelBar }}
     </p><br><br>
+    <!-- 50레벨 이상 활성화!-->
+    <select v-model="characterStatus.selectJob" v-if="firstFomerView">
+        <option disabled="disabled">전직을 선택하세요!</option>
+        <option value="madWarrior">광전사</option>
+        <option value="warrior">전사</option>
+        <option value="magician">마법사</option>
+        <option value="thief">도적</option>
+        <option value="archer">궁수</option>
+        <option value="gunner">총사</option>
+        <option value="boxer">권투사</option>
+        <option value="priest">사제</option>
+        <option value="knight">기사</option>
+        <option value="darkKnight">암흑기사</option>
+        <option value="holyKnight">성기사</option>
+    </select>
+    <h3>인벤토리</h3>
+    <label>
+    <input type="checkbox" v-model="inventoryView">
+    소지품보기
+    </label>
+    <button v-on:click="equipItem()">아이템적용</button>
+    <table border="1" v-if="inventoryView">
+        <tr>
+            <th align="center" width="40">번호</th>
+            <th align="center" width="120">아이템명</th>
+            <th align="center" width="320">아이템설명</th>
+            <th align="center" width="40">장착</th>
+        </tr>
+        <tr v-for="(list, idx) in myInventory" 
+            v-bind:key="list.idx">
+            <th align="center" width="40">{{ idx + 1 }}</th>
+            <th align="center" width="120">{{ list.name }}</th>
+            <th align="center" width="320">{{ list.effect.desc }}</th>
+            <th align="center" width="40">
+                <label>
+                    <input type="checkbox"
+                            v-model="myInventoryValue"
+                            v-bind:value="idx">
+                </label>
+            </th>
+        </tr>
+    </table>
 
     <h3>상점</h3>
     <label>
         <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">판매목록
     </label>
+    <button v-on:click="calcBuy()">구매하기</button>
     <table border="1" v-if="shopView">
         <tr>
             <th align="center" width="40">번호</th>
@@ -43,8 +87,8 @@
             <th align="center" width="40">구매</th>
         </tr>
         <tr v-for="(list, idx) in shopList" 
-            v-bind:key="list.name">
-            <button v-on:click="purchaseButton(shopListValue, idx)">구매하기</button>
+            v-bind:key="list.idx">
+            
             <th align="center" width="40">{{ idx + 1 }}</th>
             <th align="center" width="120">{{ list.name }}</th>
             <th align="center" width="160">{{ list.price }}</th>
@@ -68,8 +112,9 @@
         <li v-for="(monster, index) in monsters"
             v-bind:key="monster.id"
             v-bind:class="{ strong: monster.hp > 300 }">
-            ID.{{ monster.id  }} {{ monster.name }} HP.{{ monster.hp }}
+            ID.{{ monster.id  }} {{ monster.name }} HP.{{ Math.floor(monster.hp) }}
             <button v-on:click="userAttack(index)">평타</button>
+            <button v-on:click="spiritChaosDevilBlade(index)">혼돈의악마영혼검</button>
             <button v-on:click="removeMonster(index)">몬스터 삭제</button>
         </li>
     </ul>
