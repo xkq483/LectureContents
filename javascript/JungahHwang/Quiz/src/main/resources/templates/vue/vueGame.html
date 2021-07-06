@@ -8,38 +8,39 @@
 </head>
 <body>
 <div id="app">
-  <p>캐릭터 상태 창</p>
+  <p>My Status</p>
   <table border="1" width="600">
     <tr>
       <th>Lv</th>
-      <th>HP</th>
-      <th>MP</th>
-      <th>ATK</th>
+      <th>Job</th>
+      <th>Hp</th>
+      <th>Mp</th>
+      <th>Atk</th>
       <th>Money</th>
     </tr>
     <tr>
-      <td align="center">{{ myStatus.level }}</td>
-      <td align="center">{{ Math.floor(myStatus.hp) }}</td>
-      <td align="center">{{ Math.floor(myStatus.mp) }}</td>
-      <td align="center">{{ Math.floor(myStatus.atk) }}</td>
-      <td align="center">{{ myStatus.myMoney }}</td>
+      <th align="center">{{ myStatus.level }}</th>
+      <th align="center">{{ myStatus.myJob }}</th>
+      <th align="center">{{ Math.floor(myStatus.hp) }}</th>
+      <th align="center">{{ Math.floor(myStatus.mp) }}</th>
+      <th align="center">{{ Math.floor(myStatus.atk) }}</th>
+      <th align="center">{{ myStatus.myMoney }}</th>
     </tr>
   </table>
-  <p>STR: {{ Math.floor(myStatus.str) }} INT: {{ Math.floor(myStatus.intelligence) }}
-      DEX: {{ Math.floor(myStatus.dex) }} VIT: {{ Math.floor(myStatus.vit) }}
-      DEF: {{ Math.floor(myStatus.def) }} MEN: {{ Math.floor(myStatus.men) }} 
+  <p>STR: {{ Math.floor(myStatus.str) }} | INT: {{ Math.floor(myStatus.intelligence) }} |
+      DEX: {{ Math.floor(myStatus.dex) }} | VIT: {{ Math.floor(myStatus.vit) }} |
+      DEF: {{ Math.floor(myStatus.def) }} | MEN: {{ Math.floor(myStatus.men) }} |
       EXP: {{ myStatus.currentExp }} / {{ myStatus.needExp }} </p>
-  <br>
   <label>
-    <h3>&lt;Change Job&gt;</h3>
+    <p v-if="jobListView">- Change Job -</p>
     <select v-model="myStatus.myJob" v-if="jobListView">
-      <option disabled="disabled">선택하세요.</option>
-      <option value="magician">마법사</option>
-      <option value="warrior">전사</option>
-      <option value="knight">기사</option>
+      <option disabled="disabled">Select job</option>
+      <option value="Magician">magician</option>
+      <option value="Warrior">warrior</option>
+      <option value="Knight">knight</option>
     </select>
+    <span id="job">Your job is {{ myStatus.myJob }}!!</span>
   </label>
-  <br>
   <br>
   <h3>&lt;Inventory&gt;</h3>
   <label>
@@ -64,7 +65,6 @@
     </table>
     <button id="itemBtn" v-if="inventoryView" v-on:click="equipItem()">Equip</button>
   </label>
-  <br>
   <br>
   <br>
   <h3>&lt;Shop&gt;</h3>
@@ -95,16 +95,17 @@
   <br>
   <br>
   <br>
-  <br>
   <button v-on:click="addMonster">Random Monster(1)</button>
   <button v-on:click="addManyMonster">Random Monsters(100)</button>
   <ul>
     <button v-on:click="skill">SKILL</button>
+    <button v-on:click="jobSkill" v-if="jobStat">Job SKILL</button>
     <li v-for="(monster, index) in myMonsters" v-bind:key="monster.no">
       No.{{ monster.no }} / Name.{{ monster.name }} / Type.{{ monster.type }} / 
       HP.{{ Math.floor(monster.hp) }} / EXP.{{ monster.exp }} / Money.{{ monster.money }}
       <button v-on:click="userAttack(index)">Attack</button>
       <button v-on:click="userStrongAttack(index)">Strong Attack</button>
+      <button v-on:click="userJobAttack(index)" v-if="jobStat">Job Attack</button>
     </li>
   </ul>
 </div>

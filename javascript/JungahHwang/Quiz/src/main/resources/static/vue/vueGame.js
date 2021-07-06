@@ -10,7 +10,7 @@ var app = new Vue ({
         myInventory: [],
         myInventoryValue: [],
         jobListView: false,
-        
+        jobStat: false,
         myStatus: {
             level: 1,
             hp: 100,
@@ -23,11 +23,11 @@ var app = new Vue ({
             dex: 10, // 기교
             vit: 10, // 활력
             def: 10, // 방어력
-            men: 0, // 정신력
+            men: 10, // 정신력
             needExp: 20, // 전체 필요 경험치량
             currentExp: 0, // 현재 경험치량
             myMoney: 0,
-            myJob: '',
+            myJob: 'Adventurer',
             
         },
         monsterGuide: [
@@ -87,13 +87,8 @@ var app = new Vue ({
             { name: '강철검', price: 800000, effect: { desc: '무기(200)', atk: 200 }},
             { name: '은검', price: 1500000, effect: { desc: '무기(300)', atk: 300 }},
             { name: '금검', price: 2000000, effect: { desc: '무기(400)', atk: 400 }},
-        ],
-        jobGuide: [
-            { job: 'magician', effect: {}},
-            { job: 'warrior', effect: {}},
-            { job: 'knight', effect: {}},
         ]
-        
+         
     },
     methods: {
         addMonster: function (){
@@ -132,8 +127,7 @@ var app = new Vue ({
             this.myMonsters[index].hp -= ( this.myStatus.atk * 3 +
                                             this.myStatus.str * 5 +
                                             this.myStatus.dex * 3 +
-                                            this.myStatus.intelligence * 0.5 )
-
+                                            this.myStatus.intelligence * 1.5 )
         },
         skill: function () {
             for (var i = 0; i < this.myMonsters.length; i++){
@@ -181,22 +175,41 @@ var app = new Vue ({
             }
         },
         equipItem () {
-            tmpSum = 0
+            var tmpSum = 0
 
-            for (var i = 0; i < this.myInventoryValue.length; i++){
-                
-                for (var j = 0; j < this.myInventory.length; i++){
-                    
-                    if (this.myInventoryValue[i] == j){
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory length: ' + this.myInventory.length)
+
+            for (var i = 0; i < this.myInventoryValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for (var j = 0; j < this.myInventory.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.myInventoryValue[i] == j) {
+                        console.log('매칭 성공!')
+
                         tmpSum += this.myInventory[j].effect.atk
                         break
-                    }
-                }
+                    } 
+                } 
             }
             this.myStatus.itemAtk = tmpSum
-            this.myStatus.atk = this.myStatus.defaultAtk + tmpSum
-            alert('장착을 완료하였습니다!')
-        } 
+            this.myStatus.atk = this.myStatus.defaultAtk + tmpSum 
+            
+            alert('장착되었습니다!')
+        },
+        jobSkill: function () {
+            for (var i = 0; i < this.myMonsters.length; i++){
+                this.myMonsters[i].hp = parseInt(this.myMonsters[i].hp - this.myStatus.atk * 4)
+            }
+        },
+        userJobAttack: function (index) {
+            this.myMonsters[index].hp -= ( this.myStatus.atk * 5 +
+                                            this.myStatus.str * 6 +
+                                            this.myStatus.dex * 4 +
+                                            this.myStatus.intelligence * 2 )
+        },
     },
     beforeUpdate() {
         for(var i = 0; i < this.myMonsters.length; i++){
@@ -209,37 +222,99 @@ var app = new Vue ({
         
         for (; this.myStatus.currentExp >= this.myStatus.needExp; ) {
             this.myStatus.currentExp = parseInt(this.myStatus.currentExp - this.myStatus.needExp)
-            this.myStatus.level += 1
-            this.myStatus.hp *= 1.1
-            this.myStatus.atk *= 1.05
-            this.myStatus.defaultAtk *= 1.05
-            this.myStatus.def += 1
-            this.myStatus.str *= 1.1
-            this.myStatus.intelligence *= 1.1
-            this.myStatus.dex *= 1.1
-            this.myStatus.vit *= 1.1
-            this.myStatus.def *= 1.1
-            this.myStatus.men *= 1.1
-
+            
+            if (this.myStatus.myJob === 'Adventurer') { 
+                this.myStatus.level += 1
+                this.myStatus.hp *= 1.1
+                this.myStatus.atk *= 1.05
+                this.myStatus.defaultAtk *= 1.05
+                this.myStatus.def += 1
+                this.myStatus.str *= 1.1
+                this.myStatus.intelligence *= 1.1
+                this.myStatus.dex *= 1.1
+                this.myStatus.vit *= 1.1
+                this.myStatus.def *= 1.1
+                this.myStatus.men *= 1.1
+            } else if (this.myStatus.myJob === 'Magician'){
+                var tmpSum = this.myStatus.atk - this.myStatus.defaultAtk
+                
+                this.myStatus.level += 1
+                this.myStatus.hp *= 1.15
+                this.myStatus.atk = this.myStatus.defaultAtk + tmpSum
+                this.myStatus.defaultAtk *= 1.1
+                this.myStatus.def += 1
+                this.myStatus.str *= 1.1
+                this.myStatus.intelligence *= 1.2
+                this.myStatus.dex *= 1.2
+                this.myStatus.vit *= 1.15
+                this.myStatus.def *= 1.1
+                this.myStatus.men *= 1.2
+            } else if (this.myStatus.myJob === 'Warrior'){
+                var tmpSum = this.myStatus.atk - this.myStatus.defaultAtk
+                
+                this.myStatus.level += 1
+                this.myStatus.hp *= 1.3
+                this.myStatus.atk = this.myStatus.defaultAtk + tmpSum
+                this.myStatus.defaultAtk *= 1.2
+                this.myStatus.def += 1
+                this.myStatus.str *= 1.2
+                this.myStatus.intelligence *= 1.15
+                this.myStatus.dex *= 1.15
+                this.myStatus.vit *= 1.2
+                this.myStatus.def *= 1.4
+                this.myStatus.men *= 1.2
+            } else if (this.myStatus.myJob === 'Knight'){
+                var tmpSum = this.myStatus.atk - this.myStatus.defaultAtk
+                
+                this.myStatus.level += 1
+                this.myStatus.hp *= 1.2
+                this.myStatus.atk = this.myStatus.defaultAtk + tmpSum
+                this.myStatus.defaultAtk *= 1.5
+                this.myStatus.def += 1
+                this.myStatus.str *= 1.15
+                this.myStatus.intelligence *= 1.15
+                this.myStatus.dex *= 1.1
+                this.myStatus.vit *= 1.2
+                this.myStatus.def *= 1.25
+                this.myStatus.men *= 1.2
+            }
+            
             if (this.myStatus.level < 10) {
                 this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.1)
             } else if (this.myStatus.level < 20) {
-                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.2)
+                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.15)
             } else if (this.myStatus.level < 30) {
-                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.3)
+                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.2)
             } else if (this.myStatus.level < 40) {
-                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.4)
+                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.3)
             } else if (this.myStatus.level < 50) {
-                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.5)
+                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.4)
             } else if (this.myStatus.level < 80) {
-                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.7)
+                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.5)
             } else if (this.myStatus.level < 100) {
-                this.myStatus.needExp = parseInt(this.myStatus.needExp * 2)
+                this.myStatus.needExp = parseInt(this.myStatus.needExp * 1.7)
             }
         }
         
-        if ((this.myStatus.level >= 50) && (this.myStatus.selectJob === '')) {
-            this.formerView = true
+        if ((this.myStatus.level >= 50) && (this.myStatus.myJob === 'Adventurer')) {
+            this.jobListView = true
+        } else {
+            this.jobListView = false
         }
+
+        if (!(this.myStatus.myJob === 'Adventurer') && !(this.jobStat)) {
+            this.myStatus.atk += 100
+            this.myStatus.defaultAtk += 100
+            this.myStatus.str += 50
+            this.myStatus.int += 50
+            this.myStatus.dex += 50
+            this.myStatus.vit += 50
+            this.myStatus.def += 50
+            this.myStatus.men += 50
+
+            this.jobStat = true
+        }
+
+        
     }
 })
