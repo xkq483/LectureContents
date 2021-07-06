@@ -15,4 +15,11 @@ public class ThirdVueController {
 
         return "/vue/third";
     }
+
+    @GetMapping("/getVueGame2")
+    public String getVueGame2 ()  {
+        log.info("getVueGame2(): 뷰로 for문을 먹이자");
+
+        return "/vue/third2";
+    }
 }
