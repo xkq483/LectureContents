@@ -4,10 +4,15 @@ import com.example.projectTest.entity.Project;
 import com.example.projectTest.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -133,6 +138,48 @@ public class ProjectController {
         model.addAttribute("msg", "로그인 성공!");
 
         return "/project/success";
-    }
+    }*/
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @PostMapping("/login")
+    public String login(Project project) throws Exception {
+
+
+        List<Project> results = jdbcTemplate.query(
+                "select id, password from project where id = ?",
+
+                new RowMapper<Project>() {
+                    @Override
+                    public Project mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Project project = new Project();
+
+                        project.setId(rs.getString("id"));
+                        project.setPassword(rs.getString("password"));
+
+                        return project;
+                    }
+                }, project.getId());
+
+        Project tmp = results.get(0);
+        log.info("tmp: " + tmp);
+
+        if (tmp.getPassword().equals(project.getPassword())) {
+            log.info("Password Correct");
+
+            return "project/success";
+        }
+        else if(!(tmp.getId().equals(project.getId())))
+        {
+            log.info("ID Incorrect");
+
+            return "project/idFail";
+        } //동작안함
+        else
+        {
+            log.info("Password Incorrect");
+            return "project/fail";
+        }
+    }
 }

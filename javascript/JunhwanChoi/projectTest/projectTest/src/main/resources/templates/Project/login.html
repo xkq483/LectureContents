@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="/cssfile/login.css">
 </head>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -20,23 +21,20 @@
 </script>
 
 <body>
-<h2>로그인</h2>
-
-<form id="board" th:object="${project}" method="post">
-  <table>
-    <tr>
-      <td>아이디</td>
-      <td><input type="text" name="id" th:field="*{id}"></td>
-    </tr>
-    <tr>
-      <td>비밀번호</td>
-      <td><input type="text" id="password" name="password" th:field="*{password}"></td>
-    </tr>
-  </table>
-</form>
-
-<div>
-  <button type="submit" id="btnRegister">로그인</button>
-</div>
+<form id="board" th:object="${project}" method="post" class="loginForm">
+  <h2>Login</h2>
+  <div class="idForm">
+    <input type="text" class="id" placeholder="ID" name="id" th:field="*{id}">
+  </div>
+  <div class="passForm">
+    <input type="password" class="pw" placeholder="PW" name="password " th:field="*{password}">
+  </div>
+  <button type="submit" class="btn" id="btnRegister" onclick="button()">
+    LOG IN
+  </button>
+  <div class="bottomText">
+    Don't you have ID? <a href="/register">sign up</a>
+  </div>
+ </form>
 </body>
 </html>
