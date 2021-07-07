@@ -17,6 +17,9 @@ var app = new Vue ({
         myInventory: [],
         myInventoryValue: [],
         firstChangeJobView: false,
+        firstChangeJobStat:false,
+        jobsAoE: false,
+        jobsAttack: false,
         characterStatus: {
             level: 1,
             hp: 70,
@@ -62,20 +65,22 @@ var app = new Vue ({
             { name: '고블린 대사장', hp: 2500, exp: 150, money: 25000 },
             { name: '귀인', hp: 2800, exp: 180, money: 28000 },
             { name: '킹 슬라임', hp: 3000, exp: 200, money: 30000 },
-            { name: '고스트', hp: 3200, exp: 2500, money: 32000 },
-            { name: '흡혈귀', hp: 4000, exp: 3000, money: 44000 },
+            { name: '고스트', hp: 3200, exp: 250, money: 32000 },
+            { name: '흡혈귀', hp: 4000, exp: 300, money: 44000 },
             { name: '스켈레톤 나이트', hp: 5500, exp: 350, money: 55000 },
             { name: '메탈 슬라임', hp: 7000, exp: 40000, money: 70000 },
-            { name: '리치', hp: 9000, exp: 5000, money: 90000 },
-            { name: '듀라한', hp: 15000, exp: 7000, money: 150000 },
+            { name: '리치', hp: 9000, exp: 500, money: 90000 },
+            { name: '듀라한', hp: 15000, exp: 700, money: 150000 },
             { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
             { name: '뱀파이어 로드', hp: 150000, exp: 4500, money: 1500000 },
-            { name: '이무기', hp: 300000, exp: 100000, money: 3000000 },
-            { name: '베헤모스', hp: 500000, exp: 200000, money: 5000000 },
-            { name: '리치 로드', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '이무기', hp: 300000, exp: 10000, money: 3000000 },
+            { name: '베헤모스', hp: 500000, exp: 20000, money: 5000000 },
+            { name: '하급 악마', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '리치 로드', hp: 1500000, exp: 60000, money: 15000000 },
             { name: '베헤모스 킹', hp: 2000000, exp: 80000, money: 20000000 },
             { name: '드래곤', hp: 4000000, exp: 150000, money: 40000000 },
             { name: '데스 나이트', hp: 10000000, exp: 300000, money: 100000000 },
+            { name: '고위 악마', hp: 12000000, exp: 600000, money: 200000000 },
             { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
             { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ],
@@ -104,7 +109,7 @@ var app = new Vue ({
             }
         },
         calcBuy() {
-            var tmpSum = 0
+            var tmpsum = 0
 
             console.log('calcBuy(): ' + this.shopListValue.length)
             console.log('shoplist length: ' + this.shopList.length)
@@ -117,13 +122,13 @@ var app = new Vue ({
 
                     if(this.shopListValue[i] == j){
                         console.log('매칭 성공!')
-                        tmpSum += this.shopList[j].price
+                        tmpsum += this.shopList[j].price
                         break
                     }
                 }
             }
-            if(this.characterStatus.money - tmpSum >= 0) {
-                this.characterStatus.money -= tmpSum
+            if(this.characterStatus.money - tmpsum >= 0) {
+                this.characterStatus.money -= tmpsum
 
                 // 사용자 인벤토리 구현시 필요한 로직 작성
                 for(var i =0; i < this.shopListValue.length; i++){
@@ -156,8 +161,8 @@ var app = new Vue ({
                     }
                 }
             }
-            this.characterStatus.itemAtk = tmpsum
-            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpsum  
+            this.characterStatus.itemAtk = tmpSum
+            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum  
         },
            buttonClickTest: function (event) {
                alert('뷰 짱')
@@ -215,6 +220,18 @@ var app = new Vue ({
                    this.monsters[i].hp =
                        parseInt(this.monsters[i].hp - this.characterStatus.atk * 3.5)
                }
+           },
+           jobsDarknessDragon () {
+               for(var i = 0; i < this.monsters.length; i++){
+                   this.monsters[i].hp =
+                   parseInt(this.monsters[i].hp - this.characterStatus.atk * 8)
+               }
+           },
+           jobsChaosDevil (index) {
+               this.monsters[index].hp -= this.characterStatus.atk * 40 +
+                                            this.characterStatus.str * 15 +
+                                            this.characterStatus.dex * 10 +
+                                            this.characterStatus.intelligence * 5
            }
        },
        beforeCreate() {
@@ -238,6 +255,28 @@ var app = new Vue ({
                 this.firstChangeJobView = false
            }
 
+           if(!(this.characterStatus.selectJob === '모험가')){
+                this.jobsAoE = true
+                this.jobsAttack = true
+           } else {
+               this.jobsAoE = false
+               this.jobsAttack =false
+           }
+
+           if ((!(this.characterStatus.selectJob === '모험가')) && (!(this.firstChangeJobStat))) 
+           {
+               this.characterStatus.atk += 1000
+               this.characterStatus.defaultAtk += 1000
+               this.characterStatus.str += 500
+               this.characterStatus.intelligence += 50
+               this.characterStatus.dex +=1000
+               this.characterStatus.vit += 50
+               this.characterStatus.def += 50
+               this.characterStatus.men += 50
+   
+               this.firstChangeJobStat = true
+           }
+
            var i
            for (i = 0; i < this.monsters.length; i++) {
                if (this.monsters[i].hp <= 0) {
@@ -258,17 +297,157 @@ var app = new Vue ({
                this.characterStatus.currentLevelBar =
                    parseInt(this.characterStatus.currentLevelBar -
                        this.characterStatus.totalLevelBar)
-               this.characterStatus.level += 1
-               this.characterStatus.hp *= 1.2
-               this.characterStatus.defaultAtk += 3
-               this.characterStatus.atk += 3
-               this.characterStatus.def += 1
-               this.characterStatus.str *= 1.1
-               this.characterStatus.increment *= 1.1
-               this.characterStatus.dex *= 1.1
-               this.characterStatus.def *= 1.1
-               this.characterStatus.vit *= 1.1
-               this.characterStatus.men *= 1.1
+
+                if (this.characterStatus.selectJob === '모험가') {
+                    console.log('모험가입니다')
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.2
+                    this.characterStatus.defaultAtk += 3
+                    this.characterStatus.atk += 3
+                    this.characterStatus.str *= 1.1
+                    this.characterStatus.intelligence *= 1.1
+                    this.characterStatus.dex *= 1.1
+                    this.characterStatus.def *= 1.1
+                    this.characterStatus.vit *= 1.1
+                    this.characterStatus.men *= 1.1
+
+                } else if(this.characterStatus.selectJob === 'thief') {
+                    console.log('도적입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.1
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1.15
+                    this.characterStatus.intelligence *= 1.1
+                    this.characterStatus.dex *= 1.5
+                    this.characterStatus.def *= 1.05
+                    this.characterStatus.vit *= 1.05
+                    this.characterStatus.men *= 1.05
+
+                } else if(this.characterStatus.selectJob === 'warrior') {
+                    console.log('전사입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.2
+                    this.characterStatus.defaultAtk *= 1.3
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1.2
+                    this.characterStatus.intelligence *= 1
+                    this.characterStatus.dex *= 1.3
+                    this.characterStatus.def *= 1
+                    this.characterStatus.vit *= 1.3
+                    this.characterStatus.men *= 1.1
+
+                } else if(this.characterStatus.selectJob === 'magician') {
+                    console.log('마법사입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.1
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1
+                    this.characterStatus.intelligence *= 1.25
+                    this.characterStatus.dex *= 1.5
+                    this.characterStatus.def *= 1
+                    this.characterStatus.vit *= 1
+                    this.characterStatus.men *= 1.2
+
+                } else if(this.characterStatus.selectJob === 'archer') {
+                    console.log('궁수입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.1
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1.15
+                    this.characterStatus.intelligence *= 1.15
+                    this.characterStatus.dex *= 1.3
+                    this.characterStatus.def *= 1
+                    this.characterStatus.vit *= 1.2
+                    this.characterStatus.men *= 1
+
+                } else if(this.characterStatus.selectJob === 'gunner') {
+                    console.log('총사입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.1
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1
+                    this.characterStatus.intelligence *= 1.15
+                    this.characterStatus.dex *= 1.3
+                    this.characterStatus.def *= 1
+                    this.characterStatus.vit *= 1.1
+                    this.characterStatus.men *= 1.3
+
+                } else if(this.characterStatus.selectJob === 'darkKnight') {
+                    console.log('암흑기사입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.5
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1.25
+                    this.characterStatus.intelligence *= 1
+                    this.characterStatus.dex *= 1.2
+                    this.characterStatus.def *= 1.15
+                    this.characterStatus.vit *= 1
+                    this.characterStatus.men *= 1
+
+                } else if(this.characterStatus.selectJob === 'holyKnight') {
+                    console.log('기사입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.4
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1.2
+                    this.characterStatus.intelligence *= 1.1
+                    this.characterStatus.dex *= 1.2
+                    this.characterStatus.def *= 1.1
+                    this.characterStatus.vit *= 1.4
+                    this.characterStatus.men *= 1.3
+                
+                } else if(this.characterStatus.selectJob === 'priest') {
+                    console.log('사제입니다')
+                    var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                    this.characterStatus.level += 1
+                    this.characterStatus.hp *= 1.1
+                    this.characterStatus.defaultAtk *= 1.1
+                    
+                    this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                    this.characterStatus.str *= 1
+                    this.characterStatus.intelligence *= 1.15
+                    this.characterStatus.dex *= 1.1
+                    this.characterStatus.def *= 1
+                    this.characterStatus.vit *= 1
+                    this.characterStatus.men *= 1.3
+                }
+               
 
                // 레벨링 시스템 구축
                if (this.characterStatus.level < 10) {
@@ -276,22 +455,22 @@ var app = new Vue ({
                        parseInt(this.characterStatus.totalLevelBar * 1.1)
                } else if (this.characterStatus.level < 20) {
                    this.characterStatus.totalLevelBar =
-                       parseInt(this.characterStatus.totalLevelBar * 1.2)
+                       parseInt(this.characterStatus.totalLevelBar * 1.15)
                } else if (this.characterStatus.level < 30) {
                    this.characterStatus.totalLevelBar =
-                       parseInt(this.characterStatus.totalLevelBar * 1.3)
+                       parseInt(this.characterStatus.totalLevelBar * 1.2)
                } else if (this.characterStatus.level < 40) {
                    this.characterStatus.totalLevelBar =
-                       parseInt(this.characterStatus.totalLevelBar * 1.4)
+                       parseInt(this.characterStatus.totalLevelBar * 1.25)
                } else if (this.characterStatus.level < 50) {
                    this.characterStatus.totalLevelBar =
-                       parseInt(this.characterStatus.totalLevelBar * 1.5)
+                       parseInt(this.characterStatus.totalLevelBar * 1.3)
                } else if (this.characterStatus.level < 80) {
                    this.characterStatus.totalLevelBar =
-                       parseInt(this.characterStatus.totalLevelBar * 1.7)
+                       parseInt(this.characterStatus.totalLevelBar * 1.35)
                } else if (this.characterStatus.level < 100) {
                    this.characterStatus.totalLevelBar =
-                       parseInt(this.characterStatus.totalLevelBar * 2)
+                       parseInt(this.characterStatus.totalLevelBar * 1.5)
                }
            }
        },
