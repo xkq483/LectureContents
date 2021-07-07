@@ -59,7 +59,7 @@ public class MemberRepository {
             log.info("Access Denied.");
             return false;
         }
-    }
+    } //login check
 
     public List<Member> list() throws Exception {
         List<Member> results = jdbcTemplate.query(
@@ -90,5 +90,35 @@ public class MemberRepository {
                 }
         );
         return results;
+    }
+
+    public void delete(String id, String pw) throws Exception {
+        log.info("parameterId: " + id);
+        log.info("parameterPw: " + pw);
+
+        List<Member> results = jdbcTemplate.query("select id, pw from memberList where id = ?",
+                new RowMapper<Member>() {
+                    @Override
+                    public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Member member = new Member();
+
+                        member.setId(rs.getString("id"));
+                        member.setPw(rs.getString("pw"));
+                        return member;
+                    }
+                }, id);
+
+        Member targetMember = results.get(0);
+
+        log.info("targetId: " + targetMember.getId());
+        log.info("targetPw: " + targetMember.getPw());
+
+        if(id.equals(targetMember.getId()) && (pw.equals(targetMember.getPw()))) {
+            String query = "delete from memberList where id = ?";
+            jdbcTemplate.update(query, id);
+        } else {
+            log.info("Cannot delete account due to input of wrong id or pw.");
+        } //동일한 id 삭제하는것 방지 처리 아직 미구현.
+
     }
 }

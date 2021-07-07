@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/css/css.css">
 </head>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -25,7 +26,7 @@
 
 <body>
     <center><h2>로그인</h2></center>
-
+    <div class="box2">
     <form id="member" th:object="${member}" method="post">
         <center>
         <table>
@@ -40,6 +41,7 @@
         </table>
         </center>
     </form>
+    </div>
     <center>
         <button type="submit" id="btnLogin">로그인</button>
         <button type="submit" id="btnMemberSignup">회원가입하기</button>
