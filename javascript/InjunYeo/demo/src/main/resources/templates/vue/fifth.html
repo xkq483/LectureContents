@@ -7,11 +7,6 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <div id="app">
-  <!-- 돌발 퀴즈:
-       1. 몬스터 도감에 몬스터가 주는 경험치를 만들자!
-       2. 경험치를 적용하여 레벨업하도록 만든다.
-       3. 레벨업 할 경우 캐릭터 스탯을 상승시킨다!
-       4. 현재 경험치 상태 / 필요한 경험치량 표기를 해보도록 하자! -->
   <p>캐릭터 상태 창</p>
   <p>HP: {{ Math.floor(characterStatus.hp) }} MP: {{ characterStatus.mp }}
     ATK: {{ Math.floor(characterStatus.atk) }} Lv: {{ characterStatus.level }}</p>
@@ -21,7 +16,6 @@
   <p>현재 경험치 상태: {{ characterStatus.currentLevelBar }} /
     {{ characterStatus.totalLevelBar }}</p>
   <p>소지금: {{ characterStatus.money }}</p><br>
-  <!-- 조건: 레벨 50 이상에서 활성화됨 -->
   <select v-model="characterStatus.selectJob" v-if="firstFormerView">
     <!-- 도적, 전사, 광전사, 암흑기사, 성기사, 궁수, 총사, 권사, 사제 -->
     <option disabled="disabled">전직을 선택하세요!</option>
@@ -95,10 +89,6 @@
   </table>
 
   <button v-on:click="myDarknessDragon()">내안의흑염룡</button>
-  <!-- 1. 몬스터 도감을 적당히 아무렇게나 만든다
-       2. 랜덤과 몬스터 도감을 활용하여 몬스터 생성시 랜덤하게 몬스터를 생성 -->
-
-  <!-- 추가적으로 몬스터를 통해 게임 머니를 획득할 수 있도록 만들어보자! -->
   <input v-model="monsterName">
   <button v-on:click="addMonster">몬스터 추가하기</button>
   <button v-on:click="addManyMonster">몬스터 100마리씩 리젠시키기</button>
@@ -124,6 +114,6 @@
   </ul>
 </div>
 
-<script src="/vue/second/third.js"></script>
+<script src="/vue/fifth/fifth.js"></script>
 </body>
 </html>
