@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 
 @Slf4j
 @Controller
-public class ControllerPurchaseBoard {
+public class SalesBoardController {
 /*
     @Autowired
     private ArtworkPurchaseBoard artworkPurchaseBoardService;

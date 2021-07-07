@@ -64,6 +64,7 @@ public class MemberController {
         return "/member/success";
     }
 
+    // Member ID 목록보기(관리자페잊)
     @GetMapping("/lists")
     public String getLists (Model model) throws Exception {
         log.info("getLists(): " + service.list());

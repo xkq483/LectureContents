@@ -54,6 +54,7 @@ public class MemberRepository {
         }
     }
 
+    // Member ID 목록보기
     public List<Member> list() throws Exception {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
