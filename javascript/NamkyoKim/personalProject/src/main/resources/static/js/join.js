@@ -3,7 +3,7 @@
         var formObj = $("#member");
 
         $("#btnMember").on("click", function() {
-            var passwordObj = $("#password");
+            var passwordObj = $("#userPass");
 
             
             formObj.attr("action", "join");
