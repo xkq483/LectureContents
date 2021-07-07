@@ -10,8 +10,11 @@ calcYear(10);
 
 
 function calcYear(year) {
-    var interestMoney = myMoney * year * interestRate;
-        bankMoney = myMoney + interestMoney;
+        var interestMoney = myMoney * year * interestRate;
+    for(var i = 0; i < year; i++) {
+
+            bankMoney = myMoney + interestMoney;
+    }
 
     document.querySelector("#money" + year).innerText =
    bankMoney + "원";
