@@ -15,3 +15,7 @@ if (userNumber != null) {
 ==의 경우 서로 타입이 달라도 같은 타입으로 강제 변환하여 비교함
 ===의 경우 타입까지 같아야 일치하는 것으로 인정
 */
+
+//fullpage_api.getActiveSection() 현재 페이지의 정보를 가지고온다.
+//현재페이지 앵커의 정보를 가져온다.
+var curHeader = document.querySelector('#header');
