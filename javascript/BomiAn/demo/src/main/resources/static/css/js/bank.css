@@ -6,7 +6,7 @@
 }
 
 .container {
-    width: 600px;
+    width: 450px;
     margin: 0 auto;
     border: 1px solid #cccccc;
     border-radius: 2%;
@@ -43,14 +43,14 @@
 }
 
 .ready-money {
-    width: 600px;
+    width: 420px;
     margin: 20px auto 20px auto;
 }
 
 .ready-money ul {
     list-style: none;
     border-bottom: 1px dashed #cccccc;
-    height: 100px;
+    height: 60px;
 }
 
 .ready-money ul:last-child {
@@ -59,9 +59,9 @@
 
 .item-title {
     float: left;
-    width: 160px;
+    width: 180px;
     font-size: 1.5em;
-    line-height: 100px;
+    line-height: 60px;
 }
 
 .item-money {
@@ -70,5 +70,5 @@
     font-size: 1.2em;
     color: #222222;
     text-align: right;
-    line-height: 100px;
+    line-height: 60px;
 }

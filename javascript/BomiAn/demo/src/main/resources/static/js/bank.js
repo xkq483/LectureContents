@@ -11,7 +11,7 @@ function bankMoney (term) {
     var totalMoney = myMoney + myInterest;
 
     document.querySelector('#money' + term).innerText =
-            "맡기신 금액은 " + myMoney + "원 이고," + term + "년 후 받을 이자는 " + myInterest + "원 입니다. 최종 받을 금액은 " + totalMoney + "원 입니다!";
+           totalMoney + "원";
 };
 
 
