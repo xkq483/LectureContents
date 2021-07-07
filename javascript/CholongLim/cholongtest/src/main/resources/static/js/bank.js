@@ -1,13 +1,16 @@
 var myMoney = 1000000;
-var interest = 0.04;
 
 document.querySelector('#accent').innerText = myMoney + "원";
-calcYear(1);
-calcYear(3);
-calcYear(10);
+calcMoney(1);
+calcMoney(3);
+calcMoney(10);
 
-function calcYear (years) {
-    var nowMoney = myMoney * ( 1 + (interest * years));
+function calcMoney (years) {
+    var nowMoney = myMoney;
+
+    for (var i =0 ; i < years; i++){
+        nowMoney *= 1.03;
+    }
     document.querySelector("#money" + years).innerText = nowMoney + "원";
 }
 
