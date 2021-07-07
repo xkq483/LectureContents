@@ -185,6 +185,7 @@ var app = new Vue ({
                     this.characterStatus.dex += 300
                     this.characterStatus.vit += 200
                     this.characterStatus.def += 50
+                    console.log(this.characterStatus.selectJob)
                     break
                     case 'warrior' :
                     this.characterStatus.hp += 5000
