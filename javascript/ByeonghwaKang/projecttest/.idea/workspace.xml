@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e2012533-dc49-433e-a62d-2b7b2658ef05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/FirstController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/HtmlTestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/board/fifthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/board/fourthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/secondCont.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/thirdCont.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/entity/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/repository/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/service/BoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/service/BoardServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/utility/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/utility/network/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/utility/network/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/dd.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fifth/lists.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fourth/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fourth/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/fail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/font.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/image.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/mark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/tabletest1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/tabletest2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/htmlHi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/second/aTagTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/button.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/checkbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/fieldsetLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/formRadio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/numberRange.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/optgroup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/radioTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/third/select.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/sql/product.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/java/com/example/membershiptest/controller/MenberSignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/java/com/example/membershiptest/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/java/com/example/membershiptest/repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/java/service/SignUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/resources/templates/ddxdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/resources/templates/member/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../membershiptest/src/main/resources/templates/member/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../producttest/src/main/resources/templates/product/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projecttest/controller/ProjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projecttest/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projecttest/entity/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projecttest/repository/ProjectRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projecttest/service/ProjectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projecttest/service/ProjectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sql/project.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/aa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/project/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/ByeonghwaKang/twenthree/src/neyworkdicegame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/ByeonghwaKang/twenthree/src/neyworkdicegame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/tabletest3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/first/tabletest3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producttest/src/main/java/com/example/producttest/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producttest/src/main/java/com/example/producttest/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producttest/src/main/java/com/example/producttest/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../producttest/src/main/java/com/example/producttest/service/ProductService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1uFQIj4xxta5RFYvG436pcE8AiB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.projecttest.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java_work\LectureContents\javascript\ByeonghwaKang\projecttest\src\main\resources\templatest" />
+      <recent name="D:\java_work\LectureContents\javascript\ByeonghwaKang\projecttest\src\main\resources\templatest\project" />
+      <recent name="D:\java_work\LectureContents\javascript\ByeonghwaKang\projecttest\src\main\resources\templates\project" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.projecttest.service" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ProjecttestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.projecttest.ProjecttestApplication" />
+      <module name="projecttest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.projecttest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProjecttestApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2012533-dc49-433e-a62d-2b7b2658ef05" name="Default Changelist" comment="" />
+      <created>1624258780508</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624258780508</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projecttest/repository/ProjectRepository.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

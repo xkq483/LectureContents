@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:left="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        var formObj = $("#board");
+
+
+        $("#btnRegister").on("click", function() {
+
+            formObj.attr("action", "register");
+
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+        self.location = "lists";
+        });
+    });
+</script>
+<body>
+
+
+<form id="board" th:action="@{insert.no}" th:object="${board}" method="post">
+  <table>
+    <tr>
+      <td>제목</td>
+      <td><input type="text" name="title" th:field="*{title}"></td>
+    </tr>
+
+
+    <tr>
+      <td>내용</td>
+
+      <td><textarea cols="50" rows="20" name="content" th:field="*{content}"></textarea></td>
+    </tr>
+
+    <tr>
+      <td>첨부파일</td>
+        <td>
+          <div>
+            <input type="file" name="uploadfile">
+          </div>
+        </td>
+    </tr>
+
+  </table>
+
+</form>
+<div>
+
+  <button type="submit" id="btnregister">작성하기 </button>
+</div>
+
+
+
+
+</body>
+
+
+
+</html>

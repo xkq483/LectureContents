@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Jua');
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 450px;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px #333333;
+}
+\
+*2021-4-20 10:45:25 AM*/@charset "UTF-8";@font-face
+{font-family:NanumSquareL;font-weight:400;src:url
+(https://ssl.pstatic.net/static/nid/webfont/NanumSquareL.eot);src:url
+(https://ssl.pstatic.net/static/nid/webfont/NanumSquareL.eot?#iefix)
+format("embedded-opentype");src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareL.woff2)
+format("woff2"),url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareL.woff) format("woff"),
+url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareL.ttf) format("truetype")
+}@font-face{font-family:NanumSquareR;font-weight:400;src:
+(https://ssl.pstatic.net/static/nid/webfont/NanumSquareR.eot);
+src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareR.eot?#iefix)
+ format("embedded-opentype");src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareR.woff2)
+ format("woff2"),url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareR.woff) format("woff"),
+ url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareR.ttf) format("truetype")}@font-face{font
+ -family:NanumSquareB;font-weight:400;src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareB.eot)
+ ;src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareB.eot?#iefix) format("embedded-opentype");
+ src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareB.woff2) format("woff2"),
+ url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareB.woff) format("woff"),
+ url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareB.ttf) format("truetype")}
+ @font-face{font-family:NanumSquareEB;font-weight:400;src:url(https://ssl.pstatic.net/static/nid/webfo
+ nt/NanumSquareEB.eot);src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareEB.eot?#iefix)
+ format("embedded-opentype");src:url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareEB.woff2)
+  format("woff2"),url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareEB.woff) format("woff"),
+  url(https://ssl.pstatic.net/static/nid/webfont/NanumSquareEB.ttf)
+  format("truetype")}body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li
+  ,ol,p,select,table,td,textarea,th,ul{margin:0;padding:0;-webkit-text-size-adjust:none}body,
+  button,input,select,table,textarea{font-family:Dotum,'ë‹ì›€',Helvetica,sans-serif;
+  font-size:12px;-webkit-text-size-adjust:none}html{font-size:12px}body,html{width:100%;height:100%}
+  button,input,select,textarea{border-radius:0;border:none;background:0 0;-webkit-appearance:none;-
+  moz-appearance:none;appearance:none;outline:0;text-decoration:none;cursor:pointer;-webkit-text-size
+
+  -adjust:none}button{cursor:pointer}label{cursor:pointer}fieldset,img{border:0}ol,ul{list-style:none}
+  address,em{font-style:normal}a{text-decoration:none;cursor:pointer}a:active,a:focus,a:hover{text-deco
+  ration:underline}table{border-collapse:collapse;border-spacing:0;-webkit-text-size-adjust:none}hr{di
+  splay:none}.u_skip{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hi
+  dden}.u_skip::before{display:block;width:0;height:0;content:'\00a0';font-size:0}#header .lang .sel::b
+  efore{background-image:url(https://ssl.pstatic.net/static/nid/join/m_sp_00_common_b64fc3c2.png);backg
+  round-size:42px 23px;background-repeat:no-repeat}.blind{position:absolute;overflow:hidden;clip:rect(0
+   0 0);margin:-1px;width:1px;height:1px}body{position:relative;background:#f5f6f7;}html[lang=en] body,ht
+   ml[lang=en] button,html[lang=en] input,html[lang=en] select,html[lang=en] table,html[lang=en] textare
+   a,html[lang=zh-Hans] body,html[lang=zh-Hans] button,html[lang=zh-Hans] input,html[lang=zh-Hans] select,
+   html[lang=zh-Hans] table,html[lang=zh-Hans] textarea,html[lang=zh-Hant] body,html[lang=zh-Hant] button,
+   html[lang=zh-Hant] input,html[lang=zh-Hant] select,html[lang=zh-Hant] table,html[lang=zh-Hant]
+   textarea{font-family:Arial}#u_skip{position:relative;z-index:2147483647}#u_skip a
+   {position:absolute;top:-30px;left:0;width:128px;text-align:center;border:1px solid #4ec53d;outline:0;
+   background:url(https://static.nid.naver.com/images/web/user/sp_u_skip.png) repeat-x 0 -11px}#u_skip
+   a:active,#u_skip a:focus{top:0;cursor:pointer;text-decoration:none;*zoom:1}#u_skip span{font-size:11p
+   x;line-height:26px;display:inline-block;padding:2px 6px 0 0;letter-spacing:-1px;color:#fff;background
+   :url(https://static.nid.naver.com/images/web/user/sp_u_skip.png) no-repeat 100% 11px}div[tabindex='-1
+   ']{outline:0}#footer{clear:both;margin:0 auto;padding:30px 0 15px 0;text-align:center}#footer *{font-s
+   ize:12px;font-style:normal;line-height:normal;margin:0;padding:0;list-style:none;color:#333}#footer a{
+
+
+

@@ -17,6 +17,9 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
+
+
+
     @GetMapping("/register")
     public String getRegister (Product product, Model model) {
         log.info("getRegister()");

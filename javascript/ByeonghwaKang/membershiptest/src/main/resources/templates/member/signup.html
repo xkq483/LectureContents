@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 아래 파트는 Run-Time에 작동하므로 오류에 좀 더 민감할 필요가 있음(발견하기 쉽지 않음) -->
+<script>
+    // document는 현재 웹 상에 떠 있는 페이지 자체를 의미한다고 보면 됨
+    $(document).ready(function() {
+        // form 태그에 id="board"에 해당하는 객체를 얻어옴
+        var formObj = $("#board");
+
+        // id="btnRegister"를 클릭했을때
+        $("#btnRegister").on("click", function() {
+            // URL register로 보낸다.
+            formObj.attr("action", "signup");
+            // PostMapping
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+    });
+</script>
+  <h2>회원가입</h2>
+<form id="board" th:action="@{signup}" th:object="${member}" method="post">
+  <table>
+    <tr>
+      <td>id</td>
+      <td><input type="text" name="title" th:field="*{title}"></td>
+    </tr>
+
+
+    <tr>
+      <td>주소</td>
+      <td><input type="text" name="writer" th:field="*{writer}"></td>
+    </tr>
+
+
+    <tr>
+      <td>비밀번호</td>
+      <td><input type="password" name="writer" th:field="*{writer}"></td>
+    </tr>
+
+  </table>
+
+</form>
+
+<div>
+  <button type="submit" id="btnSignUp">회원가입</button>
+  <button type="submit" id="btnList">게시글 목록 보기 </button>
+</div>
+
+</b>
+
+
+
+</html>
